@@ -1,7 +1,8 @@
 import NavBar from "./navbar";
 import LandingSection from "./landing-section";
-import { apexFont } from "@/assets/fonts";
 import ServicesSection from "./services-section";
+import BenefitsSection from "./benefits-section";
+import { apexFont } from "@/assets/fonts";
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
         <LandingSection />
 
         <ServicesSection />
+
+        <BenefitsSection />
       </main>
     </>
   );
