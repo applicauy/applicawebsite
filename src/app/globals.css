@@ -4,7 +4,8 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-color: #1b1b1b;
+  --background-color: rgb(27, 27, 27); /* #1b1b1b */
+  --background-color-86: rgba(27, 27, 27, 0.86);
   --highlight-color: #e5a818;
 }
 
@@ -38,10 +39,53 @@ h3 {
   line-height: 1.2;
 }
 
+h5 {
+  font-size: 1.5625rem; /* 25px */
+}
+
 button {
   font-size: 2.25rem; /* 36px */
 }
 
 .image {
   transform: scale(-1, 1);
+}
+
+.service-gradient {
+  border-radius: 500px;
+  opacity: 0.9;
+  background-image: radial-gradient(
+      41.39% 101.88% at 77.03% 94.27%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    radial-gradient(
+      45.88% 94.27% at 62.95% 94.72%,
+      #0543c5 0%,
+      rgba(88, 125, 203, 0) 100%
+    ),
+    radial-gradient(
+      210.81% 103.54% at 76.2% 2.7%,
+      #600064 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    radial-gradient(
+      138.01% 71.11% at 17.5% 12.81%,
+      #350093 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    radial-gradient(
+      62.61% 80.12% at 56.65% 105.39%,
+      #37cfe4 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    radial-gradient(
+      179.56% 78.03% at 10.31% 88.31%,
+      #d32072 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    #0b0b0b;
+  background-blend-mode: normal, plus-lighter, plus-lighter, plus-lighter,
+    plus-lighter, plus-lighter, normal;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
 }
