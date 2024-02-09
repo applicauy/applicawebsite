@@ -4,6 +4,29 @@ import Image from "next/image";
 import placeholderImg from "@/assets/placeholder-img-2.png";
 import Benefit from "./benefit";
 
+const BENEFITS = [
+  {
+    image: placeholderImg,
+    description: "Improved cost-effectiveness",
+    alt: "",
+  },
+  {
+    image: placeholderImg,
+    description: "Time saving",
+    alt: "",
+  },
+  {
+    image: placeholderImg,
+    description: "Focused strategy",
+    alt: "",
+  },
+  {
+    image: placeholderImg,
+    description: "Flexibility & fast replacement",
+    alt: "",
+  },
+];
+
 export default function BenefitsSection() {
   return (
     <Section classNameInner="flex gap-8 items-center">
@@ -23,15 +46,11 @@ export default function BenefitsSection() {
       </div>
 
       <div className="w-2/4 grid grid-cols-2">
-        <Benefit imageSrc={placeholderImg}>Improved cost-effectiveness</Benefit>
-
-        <Benefit imageSrc={placeholderImg}>Time saving</Benefit>
-
-        <Benefit imageSrc={placeholderImg}>Focused strategy</Benefit>
-
-        <Benefit imageSrc={placeholderImg}>
-          Flexibility & fast replacement
-        </Benefit>
+        {BENEFITS.map((b, index) => (
+          <Benefit key={index} imageSrc={b.image} imageAlt={b.alt}>
+            {b.description}
+          </Benefit>
+        ))}
       </div>
     </Section>
   );
