@@ -3,6 +3,7 @@ import LandingSection from "./landing-section";
 import ServicesSection from "./services-section";
 import BenefitsSection from "./benefits-section";
 import { apexFont } from "@/assets/fonts";
+import ProcessSection from "./process-section";
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
         <ServicesSection />
 
         <BenefitsSection />
+
+        <ProcessSection />
       </main>
     </>
   );
