@@ -6,7 +6,7 @@ import { apexFont } from "@/assets/fonts";
 export default function NavBar() {
   return (
     <nav className={`sticky flex justify-center ${apexFont.className}`}>
-      <div className="flex justify-between content-center max-w-[1200px] w-full px-5 md:px-0 py-8">
+      <div className="flex justify-between content-center container px-5 md:px-0 py-8">
         <div className="logo">
           <Image alt="Applica's logo" src={logo} height={80} />
         </div>

@@ -12,13 +12,12 @@ export default function Section({
     <section
       className={
         "flex justify-center items-center" +
-        (classNameOuter ? " " + classNameOuter : "")
+        (classNameOuter ? " " + classNameOuter : "") +
+        (classNameInner ? " " + classNameInner : "")
       }
     >
       <div
-        className={
-          "max-w-[1200px]" + (classNameInner ? " " + classNameInner : "")
-        }
+        className={"container" + (classNameInner ? " " + classNameInner : "")}
       >
         {children}
       </div>
