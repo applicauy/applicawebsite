@@ -10,7 +10,7 @@ export default function Home() {
       <NavBar />
 
       <main
-        className={`${apexFont.className} flex min-h-screen flex-col items-center justify-between p-24 gap-48`}
+        className={`${apexFont.className} flex min-h-screen flex-col items-center justify-between p-24 gap-36`}
       >
         <LandingSection />
 
