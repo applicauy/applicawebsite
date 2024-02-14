@@ -4,7 +4,6 @@ import Section from "@/components/section";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import placeholderImg from "@/assets/placeholder-img-2.png";
-import localFont from "next/font/local";
 import { avigeaFont } from "@/assets/fonts";
 import checkboxIcon from "@/assets/icons/checkbox-icon.svg";
 import searchIcon from "@/assets/icons/seach-icon.svg";
