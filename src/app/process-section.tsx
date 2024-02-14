@@ -36,10 +36,18 @@ export default function ProcessSection() {
                 </ProcessItem>
 
                 <ProcessItem iconSrc="" contentPosition={ContentPosition.Right}>
-                    <ProcessItemBody title="Candidates deliver">
-                        Meet a tailor-made group of applicants who are in line
-                        with the initial requirements.
-                    </ProcessItemBody>
+                    <div>
+                        <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full w-fit py-4 px-6 mb-4">
+                            <h3 className="translate-y-[2px] font-normal">
+                                Candidates deliver
+                            </h3>
+                        </div>
+
+                        <h5>
+                            Meet a tailor-made group of applicants who are in
+                            line with the initial requirements.
+                        </h5>
+                    </div>
                 </ProcessItem>
 
                 <ProcessItem iconSrc="" contentPosition={ContentPosition.Left}>
