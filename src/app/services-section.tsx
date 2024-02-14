@@ -13,7 +13,7 @@ import Button from "../components/button";
 
 export default function ServicesSection() {
   return (
-    <Section>
+    <Section classNameInner="flex flex-col gap-20">
       <motion.div
         className="flex gap-8"
         initial={{ opacity: 0, x: "-20px" }}
@@ -55,7 +55,7 @@ export default function ServicesSection() {
         whileInView={{ opacity: 1, x: "0px" }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.8 }}
-        className="flex gap-6 mt-8"
+        className="flex gap-6"
       >
         <Attribute icon={searchIcon}>
           Pre-vetted & tailor match nearshore IT talent you can count on.
@@ -76,7 +76,7 @@ export default function ServicesSection() {
         whileInView={{ opacity: 1, x: "0px" }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.8 }}
-        className="flex flex-col gap-6 mt-8 px-36 pt-16 pb-9 rounded-full border text-center items-center service-gradient"
+        className="flex flex-col gap-6 px-36 pt-16 pb-9 rounded-full border text-center items-center service-gradient"
       >
         <h2 className="font-medium">
           Find the{" "}
