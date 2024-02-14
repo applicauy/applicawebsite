@@ -24,92 +24,92 @@ import swiftLogo from "@/assets/technologies/swift.png";
 import vuejsLogo from "@/assets/technologies/vuejs.png";
 
 const TECHNOLOGIES: Array<{ src: StaticImageData; alt: string }> = [
-  {
-    src: angularLogo,
-    alt: "Angular",
-  },
-  {
-    src: awsLogo,
-    alt: "AWS",
-  },
-  {
-    src: cplusplusLogo,
-    alt: "C++",
-  },
-  {
-    src: csharpLogo,
-    alt: "C#",
-  },
-  {
-    src: flutterLogo,
-    alt: "Flutter",
-  },
-  {
-    src: html5Logo,
-    alt: "HTML5",
-  },
-  {
-    src: informaticaLogo,
-    alt: "Informatica",
-  },
-  {
-    src: javaLogo,
-    alt: "Java",
-  },
-  {
-    src: javascriptLogo,
-    alt: "JavaScript",
-  },
-  {
-    src: mysqlLogo,
-    alt: "MySQL",
-  },
-  {
-    src: phpLogo,
-    alt: "PHP",
-  },
-  {
-    src: pythonLogo,
-    alt: "Python",
-  },
-  {
-    src: powerautomateLogo,
-    alt: "Power Automate",
-  },
-  {
-    src: reactLogo,
-    alt: "React",
-  },
-  {
-    src: rubionrailsLogo,
-    alt: "Ruby on Rails",
-  },
-  {
-    src: swiftLogo,
-    alt: "Swift",
-  },
-  {
-    src: vuejsLogo,
-    alt: "VueJS",
-  },
+    {
+        src: angularLogo,
+        alt: "Angular",
+    },
+    {
+        src: awsLogo,
+        alt: "AWS",
+    },
+    {
+        src: cplusplusLogo,
+        alt: "C++",
+    },
+    {
+        src: csharpLogo,
+        alt: "C#",
+    },
+    {
+        src: flutterLogo,
+        alt: "Flutter",
+    },
+    {
+        src: html5Logo,
+        alt: "HTML5",
+    },
+    {
+        src: informaticaLogo,
+        alt: "Informatica",
+    },
+    {
+        src: javaLogo,
+        alt: "Java",
+    },
+    {
+        src: javascriptLogo,
+        alt: "JavaScript",
+    },
+    {
+        src: mysqlLogo,
+        alt: "MySQL",
+    },
+    {
+        src: phpLogo,
+        alt: "PHP",
+    },
+    {
+        src: pythonLogo,
+        alt: "Python",
+    },
+    {
+        src: powerautomateLogo,
+        alt: "Power Automate",
+    },
+    {
+        src: reactLogo,
+        alt: "React",
+    },
+    {
+        src: rubionrailsLogo,
+        alt: "Ruby on Rails",
+    },
+    {
+        src: swiftLogo,
+        alt: "Swift",
+    },
+    {
+        src: vuejsLogo,
+        alt: "VueJS",
+    },
 ];
 
 const CAROUSEL_SETTINGS: SliderSettings = {
-  infinite: true,
-  speed: 800,
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  autoplay: true,
-  arrows: false,
-  responsive: [],
+    infinite: true,
+    speed: 800,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: false,
+    responsive: [],
 };
 
 export default function Carousel() {
-  return (
-      <Slider {...CAROUSEL_SETTINGS}>
-        {TECHNOLOGIES.map((t, index) => (
-          <TechnologySlide key={index} src={t.src} alt={t.alt} />
-        ))}
-      </Slider>
-  );
+    return (
+        <Slider {...CAROUSEL_SETTINGS}>
+            {TECHNOLOGIES.map((t, index) => (
+                <TechnologySlide key={index} src={t.src} alt={t.alt} />
+            ))}
+        </Slider>
+    );
 }

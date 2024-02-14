@@ -1,26 +1,28 @@
 import { PropsWithChildren } from "react";
 
 export default function Section({
-  classNameOuter,
-  classNameInner,
-  children,
+    classNameOuter,
+    classNameInner,
+    children,
 }: PropsWithChildren<{
-  classNameOuter?: string;
-  classNameInner?: string;
+    classNameOuter?: string;
+    classNameInner?: string;
 }>) {
-  return (
-    <section
-      className={
-        "flex justify-center items-center" +
-        (classNameOuter ? " " + classNameOuter : "") +
-        (classNameInner ? " " + classNameInner : "")
-      }
-    >
-      <div
-        className={"container" + (classNameInner ? " " + classNameInner : "")}
-      >
-        {children}
-      </div>
-    </section>
-  );
+    return (
+        <section
+            className={
+                "flex justify-center items-center" +
+                (classNameOuter ? " " + classNameOuter : "") +
+                (classNameInner ? " " + classNameInner : "")
+            }
+        >
+            <div
+                className={
+                    "container" + (classNameInner ? " " + classNameInner : "")
+                }
+            >
+                {children}
+            </div>
+        </section>
+    );
 }

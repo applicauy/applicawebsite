@@ -6,21 +6,21 @@ import { apexFont } from "@/assets/fonts";
 import ProcessSection from "./process-section";
 
 export default function Home() {
-  return (
-    <>
-      <NavBar />
+    return (
+        <>
+            <NavBar />
 
-      <main
-        className={`${apexFont.className} flex min-h-screen flex-col items-center justify-between p-24 gap-36`}
-      >
-        <LandingSection />
+            <main
+                className={`${apexFont.className} flex min-h-screen flex-col items-center justify-between p-24 gap-36`}
+            >
+                <LandingSection />
 
-        <ServicesSection />
+                <ServicesSection />
 
-        <BenefitsSection />
+                <BenefitsSection />
 
-        <ProcessSection />
-      </main>
-    </>
-  );
+                <ProcessSection />
+            </main>
+        </>
+    );
 }
