@@ -89,3 +89,10 @@ button {
     background-size: 50% 50%;
     background-repeat: no-repeat;
 }
+
+.dot {
+    --diameter: 25px;
+    min-width: var(--diameter);
+    min-height: var(--diameter);
+    border-radius: 50%;
+}
