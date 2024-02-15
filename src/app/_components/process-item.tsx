@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
 
 export enum ContentPosition {
@@ -31,7 +31,11 @@ export default function ProcessItem({
 
             {/* Central line box */}
             <div className="min-h-full w-fit flex flex-col items-center">
-                <div className="dot bg-white"></div>
+                {iconSrc ? (
+                    <Image src={iconSrc} alt="" />
+                ) : (
+                    <div className="dot bg-white"></div>
+                )}
 
                 <div
                     className="w-[2px] bg-white"
