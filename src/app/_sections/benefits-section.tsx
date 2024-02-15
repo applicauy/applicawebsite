@@ -1,8 +1,8 @@
 import { avigeaFont } from "@/assets/fonts";
 import Section from "@/components/section";
 import placeholderImg from "@/assets/placeholder-img-2.png";
-import Benefit from "./benefit";
-import Carousel from "./carousel";
+import Benefit from "../_components/benefit";
+import Carousel from "../_components/carousel";
 
 const BENEFITS = [
     {

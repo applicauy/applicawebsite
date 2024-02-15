@@ -1,7 +1,8 @@
 import Section from "@/components/section";
 import { avigeaFont } from "@/assets/fonts";
-import ProcessItem, { ContentPosition } from "./process-item";
-import ProcessItemBody from "./process-item-body";
+import ProcessItem, { ContentPosition } from "../_components/process-item";
+import ProcessItemBody from "../_components/process-item-body";
+import icon72Hours from "@/assets/icons/72-hours.svg";
 
 export default function ProcessSection() {
     return (
@@ -35,7 +36,7 @@ export default function ProcessSection() {
                     </ProcessItemBody>
                 </ProcessItem>
 
-                <ProcessItem iconSrc="" contentPosition={ContentPosition.Right}>
+                <ProcessItem iconSrc={icon72Hours} contentPosition={ContentPosition.Right}>
                     <div>
                         <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full w-fit py-4 px-6 mb-4">
                             <h3 className="translate-y-[2px] font-normal">

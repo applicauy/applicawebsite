@@ -8,8 +8,8 @@ import { avigeaFont } from "@/assets/fonts";
 import checkboxIcon from "@/assets/icons/checkbox-icon.svg";
 import searchIcon from "@/assets/icons/seach-icon.svg";
 import lampIcon from "@/assets/icons/lamp-icon.svg";
-import Attribute from "./attribute";
-import Button from "../components/button";
+import Attribute from "../_components/attribute";
+import Button from "../../components/button";
 
 export default function ServicesSection() {
     return (
