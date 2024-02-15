@@ -1,9 +1,9 @@
-import NavBar from "./navbar";
-import LandingSection from "./landing-section";
-import ServicesSection from "./services-section";
-import BenefitsSection from "./benefits-section";
+import NavBar from "./_components/navbar";
+import LandingSection from "./_sections/landing-section";
+import ServicesSection from "./_sections/services-section";
+import BenefitsSection from "./_sections/benefits-section";
 import { apexFont } from "@/assets/fonts";
-import ProcessSection from "./process-section";
+import ProcessSection from "./_sections/process-section";
 
 export default function Home() {
     return (
