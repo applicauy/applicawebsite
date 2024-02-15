@@ -14,7 +14,6 @@ export default function ProcessItem({
     dashedEndOfLine,
     dashedEndOfLineHeight,
     className,
-    lineContainerClassName,
 }: PropsWithChildren<{
     customIcon?: ReactNode;
     colored?: boolean;
@@ -23,7 +22,6 @@ export default function ProcessItem({
     dashedEndOfLine?: boolean;
     dashedEndOfLineHeight?: string;
     className?: string;
-    lineContainerClassName?: string;
 }>) {
     return (
         <div
