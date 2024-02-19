@@ -15,7 +15,7 @@ export default function Button({
             onClick={onClick}
             className="flex content-center pe-4 ps-9 py-4 items-center border border-white rounded-full font-medium w-fit"
         >
-            <span className="relative translate-y-[2px]">{children}</span>
+            <span className="relative">{children}</span>
 
             <div
                 className="rounded-full w-fit p-3 ms-9"
