@@ -6,10 +6,12 @@ import GradientBall from "../_components/gradient-ball";
 export default function AboutUsSection() {
     return (
         <Section classNameInner="flex">
-            <div className="flex flex-col w-[55%]">
+            <div className="flex flex-col w-[60%]">
                 <h2 className="mb-12">
                     Talent on demand{" "}
-                    <strong className={`font-normal ${avigeaFont.className}`}>
+                    <strong
+                        className={`font-normal ${avigeaFont.className} block`}
+                    >
                         ready to be hired.
                     </strong>
                 </h2>
