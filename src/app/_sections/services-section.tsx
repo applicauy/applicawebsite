@@ -98,7 +98,7 @@ export default function ServicesSection() {
                     on deck, Our IT talents are here to help.
                 </h3>
 
-                <Button arrowIconColor="white">Meet our process</Button>
+                <Button>Meet our process</Button>
             </motion.div>
         </Section>
     );

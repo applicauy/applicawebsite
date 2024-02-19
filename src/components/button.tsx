@@ -3,11 +3,11 @@ import Image from "next/image";
 import arrowIcon from "@/assets/icons/arrow-right.svg";
 
 export default function Button({
-    arrowIconColor,
+    arrowIconColor = "white",
     onClick,
     children,
 }: PropsWithChildren<{
-    arrowIconColor: string;
+    arrowIconColor?: string;
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }>) {
     return (
