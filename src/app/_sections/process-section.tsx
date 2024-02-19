@@ -33,7 +33,7 @@ export default function ProcessSection() {
                 <ProcessItem
                     contentPosition={ContentPosition.Left}
                     customLineHeight="5rem"
-                    className="min-h-20"
+                    className="min-h-[5rem]"
                 >
                     <ProcessItemBody title="Profiles selection">
                         Best fitted to your requirements, ensuring their
