@@ -10,7 +10,7 @@ import { avigeaFont } from "@/assets/fonts";
 
 export default function LandingSection() {
     return (
-        <Section>
+        <Section className="py-24">
             <motion.div
                 className="max-w-[66%]"
                 initial={{ opacity: 0, x: "-20px" }}
