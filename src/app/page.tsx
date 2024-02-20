@@ -4,7 +4,8 @@ import ServicesSection from "./_sections/services-section";
 import BenefitsSection from "./_sections/benefits-section";
 import { apexFont } from "@/assets/fonts";
 import ProcessSection from "./_sections/process-section";
-import AboutUsSection from './_sections/about-us-section';
+import AboutUsSection from "./_sections/about-us-section";
+import BlogSection from "./_sections/blog-section";
 
 export default function Home() {
     return (
@@ -23,6 +24,8 @@ export default function Home() {
                 <ProcessSection />
 
                 <AboutUsSection />
+
+                <BlogSection />
             </main>
         </>
     );
