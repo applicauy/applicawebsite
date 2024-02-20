@@ -4,8 +4,8 @@
 
 :root {
     --foreground-rgb: 0, 0, 0;
-    --background-color: rgb(27, 27, 27); /* #1b1b1b */
-    --background-color-86: rgba(27, 27, 27, 0.86);
+    --background-color: #1b1b1b;
+    --background-color-86: #252525;
     --highlight-color: #e5a818;
 }
 
