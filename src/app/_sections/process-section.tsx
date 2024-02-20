@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function ProcessSection() {
     return (
-        <Section classNameInner="flex flex-col items-center w-full">
+        <Section className="flex flex-col items-center w-full">
             <h2 className="mb-12 text-center">
                 Hiring{" "}
                 <strong className={`font-normal ${avigeaFont.className}`}>

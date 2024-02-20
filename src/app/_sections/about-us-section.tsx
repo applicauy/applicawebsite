@@ -5,7 +5,7 @@ import GradientBall from "../_components/gradient-ball";
 
 export default function AboutUsSection() {
     return (
-        <Section classNameInner="flex">
+        <Section className="flex">
             <div className="flex flex-col w-[60%]">
                 <h2 className="mb-12">
                     Talent on demand{" "}

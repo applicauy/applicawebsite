@@ -13,7 +13,7 @@ import Button from "../../components/button";
 
 export default function ServicesSection() {
     return (
-        <Section classNameInner="flex flex-col gap-20">
+        <Section className="flex flex-col gap-20">
             <motion.div
                 className="flex gap-8"
                 initial={{ opacity: 0, x: "-20px" }}

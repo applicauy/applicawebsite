@@ -29,7 +29,7 @@ const BENEFITS = [
 
 export default function BenefitsSection() {
     return (
-        <Section classNameInner="flex flex-col gap-36">
+        <Section className="flex flex-col gap-36">
             <div className="flex gap-8 items-center">
                 <div className="flex flex-col w-2/4 gap-12">
                     <h2 className="md:max-w-[80%]">
