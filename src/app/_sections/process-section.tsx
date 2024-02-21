@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function ProcessSection() {
     return (
-        <Section classNameInner="flex flex-col items-center w-full">
+        <Section className="flex flex-col items-center w-full">
             <h2 className="mb-12 text-center">
                 Hiring{" "}
                 <strong className={`font-normal ${avigeaFont.className}`}>
@@ -33,7 +33,7 @@ export default function ProcessSection() {
                 <ProcessItem
                     contentPosition={ContentPosition.Left}
                     customLineHeight="5rem"
-                    className="min-h-20"
+                    className="min-h-[5rem]"
                 >
                     <ProcessItemBody title="Profiles selection">
                         Best fitted to your requirements, ensuring their
