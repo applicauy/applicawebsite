@@ -12,24 +12,26 @@ export default function PostCard({
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }>) {
     return (
-        <div className="rounded-tr-[100px] rounded-bl-[50px] overflow-hidden h-[400px] w-[400px] flex flex-col flex-nowrap">
+        <div className="rounded-tr-[80px] rounded-bl-[35px] h-[456px] w-[465px] flex flex-col overflow-hidden border border-[--background-color-86]">
             {/* Image container */}
-            <div className="flex-grow max-h-[75%]">
+            <div className="max-h-[75%]">
                 <Image
                     src={imageSrc}
                     alt={imageAlt}
-                    className="w-full max-h-[100%] object-cover"
+                    className="object-cover object-center"
                 />
             </div>
 
             {/* Lower section container */}
-            <div className="flex bg-[--background-color-86] px-6 py-4 flex-shrink-0">
+            <div className="grow flex bg-[--background-color-86] px-6 py-4 items-center gap-9">
                 {/* Text container */}
-                <div className="flex-grow">{children}</div>
+                <div>
+                    <h4 className="line-clamp-2 leading-tight">{children}</h4>
+                </div>
 
                 {/* Button container */}
-                <div className="flex-shrink-0">
-                    <button className="rounded-full w-fit p-3 ms-9 bg-[--highlight-color]">
+                <div className="shrink-0">
+                    <button className="rounded-full size-fit p-2.5 bg-[--highlight-color]">
                         <Image
                             src={arrowIcon}
                             height={40}
