@@ -30,7 +30,8 @@ h2 {
     line-height: 1;
 }
 
-h2 strong {
+h2 strong,
+h3 strong {
     letter-spacing: 0.1rem;
 }
 
