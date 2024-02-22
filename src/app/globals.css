@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-    --foreground-rgb: 0, 0, 0;
     --background-color: #1b1b1b;
     --background-color-86: #252525;
     --highlight-color: #e5a818;
+    --muted-text-color: #848483;
 }
 
 body {
@@ -102,4 +102,8 @@ button {
     min-width: var(--diameter);
     min-height: var(--diameter);
     border-radius: 50%;
+}
+
+.text-muted {
+    color: var(--muted-text-color);
 }

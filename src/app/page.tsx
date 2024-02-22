@@ -6,7 +6,8 @@ import { apexFont } from "@/assets/fonts";
 import ProcessSection from "./_sections/process-section";
 import AboutUsSection from "./_sections/about-us-section";
 import BlogSection from "./_sections/blog-section";
-import LetsTalkSection from './_sections/lets-talk-section';
+import LetsTalkSection from "./_sections/lets-talk-section";
+import Footer from "./_sections/footer";
 
 export default function Home() {
     return (
@@ -30,6 +31,8 @@ export default function Home() {
 
                 <LetsTalkSection />
             </main>
+
+            <Footer />
         </>
     );
 }
