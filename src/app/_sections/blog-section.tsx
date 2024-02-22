@@ -13,7 +13,7 @@ export default function BlogSection() {
                 </strong>
             </h2>
 
-            <div className="flex gap-12">
+            <div className="flex justify-between">
                 <PostCard imageSrc={placeholderImg} imageAlt="">
                     The role of Talent Pools: what are the benefits
                 </PostCard>
