@@ -1,4 +1,3 @@
-import NavBar from "./_components/navbar";
 import LandingSection from "./_sections/landing-section";
 import ServicesSection from "./_sections/services-section";
 import BenefitsSection from "./_sections/benefits-section";
@@ -7,32 +6,25 @@ import ProcessSection from "./_sections/process-section";
 import AboutUsSection from "./_sections/about-us-section";
 import BlogSection from "./_sections/blog-section";
 import LetsTalkSection from "./_sections/lets-talk-section";
-import Footer from "./_sections/footer";
 
 export default function Home() {
     return (
-        <>
-            <NavBar />
+        <main
+            className={`${apexFont.className} flex min-h-screen flex-col items-center justify-between gap-36`}
+        >
+            <LandingSection />
 
-            <main
-                className={`${apexFont.className} flex min-h-screen flex-col items-center justify-between gap-36`}
-            >
-                <LandingSection />
+            <ServicesSection />
 
-                <ServicesSection />
+            <BenefitsSection />
 
-                <BenefitsSection />
+            <ProcessSection />
 
-                <ProcessSection />
+            <AboutUsSection />
 
-                <AboutUsSection />
+            <BlogSection />
 
-                <BlogSection />
-
-                <LetsTalkSection />
-            </main>
-
-            <Footer />
-        </>
+            <LetsTalkSection />
+        </main>
     );
 }
