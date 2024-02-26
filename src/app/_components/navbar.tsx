@@ -34,7 +34,10 @@ export default function NavBar() {
                     </li>
 
                     <li>
-                        <Link href="#" className="text-[#e5a818]">
+                        <Link
+                            href="/contact"
+                            className="text-[--highlight-color]"
+                        >
                             contact
                         </Link>
                     </li>
