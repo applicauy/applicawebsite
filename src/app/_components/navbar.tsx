@@ -8,12 +8,14 @@ export default function NavBar() {
         <nav className={`sticky flex justify-center ${apexFont.className}`}>
             <div className="flex justify-between content-center container px-5 md:px-0 py-8">
                 <div className="logo">
-                    <Image
-                        alt="Applica's logo"
-                        src={logo}
-                        height={80}
-                        priority
-                    />
+                    <Link href="/">
+                        <Image
+                            alt="Applica's logo"
+                            src={logo}
+                            height={80}
+                            priority
+                        />
+                    </Link>
                 </div>
 
                 <ul className="flex gap-11 h-fit max-h-fit self-center">
