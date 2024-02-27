@@ -2,10 +2,11 @@
 
 import Input from "@/components/input";
 import Label from "@/components/label";
-import TextArea from "../../../components/textarea";
+import TextArea from "@/components/textarea";
 import { useFormState, useFormStatus } from "react-dom";
 import { handleContactRequest, FormDataErrors } from "./actions";
 import Errors from "../_components/errors";
+import Button from "@/components/button";
 
 const REFERRALS_VALUES = [
     "Google search",
@@ -85,9 +86,13 @@ export default function FormSection() {
                 )}
             </div>
 
-            <button type="submit" disabled={status.pending}>
+            <Button
+                type="submit"
+                disabled={status.pending}
+                arrowIconColor="var(--highlight-color)"
+            >
                 Submit
-            </button>
+            </Button>
         </form>
     );
 }
