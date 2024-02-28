@@ -4,9 +4,10 @@ import Input from "@/components/input";
 import Label from "@/components/label";
 import TextArea from "@/components/textarea";
 import { useFormState, useFormStatus } from "react-dom";
-import { handleContactRequest, FormDataErrors } from "./actions";
+import { handleContactRequest, Response } from "./actions";
 import Errors from "../_components/errors";
 import Button from "@/components/button";
+import { useEffect } from "react";
 
 const REFERRALS_VALUES = [
     "Google search",
@@ -16,9 +17,8 @@ const REFERRALS_VALUES = [
     "Referral",
 ];
 
-const initialState: FormDataErrors = {
-    formErrors: [],
-    fieldErrors: {},
+const initialState: Response = {
+    success: false,
 };
 
 export default function FormSection() {
@@ -26,8 +26,16 @@ export default function FormSection() {
 
     const [state, formAction] = useFormState(
         handleContactRequest,
-        initialState
+        initialState,
     );
+
+    useEffect(() => {
+        if (!state.success) {
+            return;
+        }
+
+        // TODO Show banner
+    }, [state.success]);
 
     return (
         <form action={formAction} className="grid grid-cols-1 gap-8">
@@ -36,8 +44,8 @@ export default function FormSection() {
                     <Input name="name" type="text" required />
                 </Label>
 
-                {state?.fieldErrors.name && (
-                    <Errors errors={state?.fieldErrors.name} />
+                {state.errors?.fieldErrors.name && (
+                    <Errors errors={state.errors?.fieldErrors.name} />
                 )}
             </div>
 
@@ -46,8 +54,8 @@ export default function FormSection() {
                     <Input name="email" type="email" required />
                 </Label>
 
-                {state?.fieldErrors.email && (
-                    <Errors errors={state?.fieldErrors.email} />
+                {state.errors?.fieldErrors.email && (
+                    <Errors errors={state.errors?.fieldErrors.email} />
                 )}
             </div>
 
@@ -56,8 +64,8 @@ export default function FormSection() {
                     <Input name="phone" type="tel" />
                 </Label>
 
-                {state?.fieldErrors.phone && (
-                    <Errors errors={state?.fieldErrors.phone} />
+                {state.errors?.fieldErrors.phone && (
+                    <Errors errors={state.errors?.fieldErrors.phone} />
                 )}
             </div>
 
@@ -71,8 +79,8 @@ export default function FormSection() {
                     />
                 </Label>
 
-                {state?.fieldErrors.referral && (
-                    <Errors errors={state?.fieldErrors.referral} />
+                {state.errors?.fieldErrors.referral && (
+                    <Errors errors={state.errors?.fieldErrors.referral} />
                 )}
             </div>
 
@@ -81,8 +89,8 @@ export default function FormSection() {
                     <TextArea name="message" />
                 </Label>
 
-                {state?.fieldErrors.message && (
-                    <Errors errors={state?.fieldErrors.message} />
+                {state.errors?.fieldErrors.message && (
+                    <Errors errors={state.errors?.fieldErrors.message} />
                 )}
             </div>
 
@@ -93,6 +101,8 @@ export default function FormSection() {
             >
                 Submit
             </Button>
+
+            <p>{state.message}</p>
         </form>
     );
 }

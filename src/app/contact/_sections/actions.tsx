@@ -23,10 +23,16 @@ export type FormDataErrors = z.inferFlattenedErrors<
     { message: string; errorCode: string }
 >;
 
+export type Response = {
+    success: boolean;
+    message?: string;
+    errors?: FormDataErrors;
+};
+
 export const handleContactRequest = async (
     prevState: any,
-    formData: FormData
-): Promise<FormDataErrors | undefined> => {
+    formData: FormData,
+): Promise<Response> => {
     const validationResult = Schema.safeParse({
         [FieldName.NAME]: formData.get(FieldName.NAME),
         [FieldName.EMAIL]: formData.get(FieldName.EMAIL),
@@ -36,11 +42,17 @@ export const handleContactRequest = async (
     });
 
     if (!validationResult.success) {
-        return validationResult.error.flatten((issue: ZodIssue) => ({
-            message: issue.message,
-            errorCode: issue.code,
-        }));
+        return {
+            errors: validationResult.error.flatten((issue: ZodIssue) => ({
+                message: issue.message,
+                errorCode: issue.code,
+            })),
+            message: "Form with errors!",
+            success: false,
+        };
     }
 
     // TODO: do something with the data
+
+    return { success: true, message: "Data validated successfully!" };
 };
