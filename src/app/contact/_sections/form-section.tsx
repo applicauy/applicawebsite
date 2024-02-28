@@ -86,7 +86,7 @@ export default function FormSection() {
 
             <div>
                 <Label title="Tell us about your needs" required>
-                    <TextArea name="message" />
+                    <TextArea name="message" required />
                 </Label>
 
                 {state.errors?.fieldErrors.message && (
