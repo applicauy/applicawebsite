@@ -70,7 +70,12 @@ export default function Footer() {
             className={`${apexFont.className} py-28 bg-[--background-color-86] text-xl flex flex-col gap-8`}
         >
             <div className="container mx-auto flex gap-16 justify-between">
-                <Image src={logo} alt="Applica Corp's logo" width={250} />
+                <Image
+                    src={logo}
+                    alt="Applica Corp's logo"
+                    style={{ width: "auto", height: "auto" }}
+                    width={250}
+                />
 
                 <div>
                     <ul>
