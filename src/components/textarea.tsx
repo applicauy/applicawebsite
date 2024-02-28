@@ -26,7 +26,7 @@ export default function TextArea({
             placeholder={placeholder}
             required={required}
             onChange={onChange}
-            className="mt-4 block w-full px-0.5 border border-[--highlight-color] focus:ring-0 focus:border-[--highlight-color] focus:border-2 bg-transparent rounded-br-[50px] resize-none"
+            className="mt-4 block w-full px-3 border border-[--highlight-color] focus:ring-0 focus:border-[--highlight-color] focus:border-2 bg-transparent rounded-br-[50px] resize-none"
         />
     );
 }
