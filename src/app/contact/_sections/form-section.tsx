@@ -8,6 +8,7 @@ import { handleContactRequest, Response } from "./actions";
 import Errors from "../_components/errors";
 import Button from "@/components/button";
 import { useEffect } from "react";
+import Checkbox from "../../../components/checkbox";
 
 const REFERRALS_VALUES = [
     "Google search",
@@ -94,13 +95,23 @@ export default function FormSection() {
                 )}
             </div>
 
-            <Button
-                type="submit"
-                disabled={status.pending}
-                arrowIconColor="var(--highlight-color)"
-            >
-                Submit
-            </Button>
+            <label className="flex items-center gap-2">
+                <Checkbox name="subscribe" />
+
+                <span>
+                    I accept to receive news & communications from Applica Corp.
+                </span>
+            </label>
+
+            <div className="mt-10 justify-between">
+                <Button
+                    type="submit"
+                    disabled={status.pending}
+                    arrowIconColor="var(--highlight-color)"
+                >
+                    Submit
+                </Button>
+            </div>
 
             <p>{state.message}</p>
         </form>

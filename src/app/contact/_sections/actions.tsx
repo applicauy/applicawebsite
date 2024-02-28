@@ -8,14 +8,19 @@ const FieldName = {
     PHONE: "phone",
     REFERRAL: "referral",
     MESSAGE: "message",
+    SUBSCRIBE: "subscribe",
 };
 
 const Schema = z.object({
     [FieldName.NAME]: z.string(),
     [FieldName.EMAIL]: z.string().email(),
-    [FieldName.PHONE]: z.string().regex(/^\+?[0-9]+$/, "Invalid phone format"),
+    [FieldName.PHONE]: z
+        .string()
+        .regex(/^\+?[0-9]+$/, "Invalid phone format")
+        .optional(),
     [FieldName.REFERRAL]: z.string(),
     [FieldName.MESSAGE]: z.string(),
+    [FieldName.SUBSCRIBE]: z.coerce.boolean(),
 });
 
 export type FormDataErrors = z.inferFlattenedErrors<
@@ -39,6 +44,7 @@ export const handleContactRequest = async (
         [FieldName.PHONE]: formData.get(FieldName.PHONE),
         [FieldName.REFERRAL]: formData.get(FieldName.REFERRAL),
         [FieldName.MESSAGE]: formData.get(FieldName.MESSAGE),
+        [FieldName.SUBSCRIBE]: formData.get(FieldName.SUBSCRIBE),
     });
 
     if (!validationResult.success) {
