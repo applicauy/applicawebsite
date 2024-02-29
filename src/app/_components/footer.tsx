@@ -73,8 +73,8 @@ export default function Footer() {
                 <Image
                     src={logo}
                     alt="Applica Corp's logo"
-                    style={{ width: "auto", height: "auto" }}
                     width={250}
+                    height={220}
                 />
 
                 <div>
