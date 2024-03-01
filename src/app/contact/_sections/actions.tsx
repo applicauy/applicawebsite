@@ -1,6 +1,7 @@
 "use server";
 
 import { ZodIssue, z } from "zod";
+import { EmailPayload, sendEmail } from "@/lib/email";
 
 const FieldName = {
     NAME: "name",
@@ -58,7 +59,39 @@ export const handleContactRequest = async (
         };
     }
 
-    // TODO: do something with the data
+    const email: EmailPayload = {
+        to: validationResult.data[FieldName.EMAIL]?.toString()!,
+        headers: {
+            "Reply-To": validationResult.data[FieldName.EMAIL]?.toString()!,
+        },
+        subject: "New contact request from Applica Corp.'s website",
+        html: `<div>
+                <h1>Received Data</h1>
+
+                <ul>
+                    <li>
+                        <strong>Name:</strong> ${validationResult.data[FieldName.NAME]}
+                    </li>
+                    <li>
+                        <strong>Email:</strong> ${validationResult.data[FieldName.EMAIL]}
+                    </li>
+                    <li>
+                        <strong>Phone:</strong> ${validationResult.data[FieldName.PHONE]}
+                    </li>
+                    <li>
+                        <strong>Referral:</strong> ${validationResult.data[FieldName.REFERRAL]}
+                    </li>
+                    <li>
+                        <strong>Message:</strong> ${validationResult.data[FieldName.MESSAGE]}
+                    </li>
+                    <li>
+                        <strong>Accepts to receive news & communications:</strong> ${validationResult.data[FieldName.SUBSCRIBE]}
+                    </li>
+                </ul>
+            </div>`,
+    };
+
+    // await sendEmail(email);
 
     return { success: true, message: "Data validated successfully!" };
 };
