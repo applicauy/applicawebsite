@@ -9,6 +9,7 @@ import Errors from "../_components/errors";
 import Button from "@/components/button";
 import { useEffect } from "react";
 import Checkbox from "../../../components/checkbox";
+import Script from "next/script";
 
 const REFERRALS_VALUES = [
     "Google search",
@@ -18,12 +19,13 @@ const REFERRALS_VALUES = [
     "Referral",
 ];
 
+// 
 const initialState: Response = {
     success: false,
 };
 
 export default function FormSection() {
-    const status = useFormStatus();
+    const formStatus = useFormStatus();
 
     const [state, formAction] = useFormState(
         handleContactRequest,
@@ -106,7 +108,7 @@ export default function FormSection() {
             <div className="mt-10 justify-between">
                 <Button
                     type="submit"
-                    disabled={status.pending}
+                    disabled={formStatus.pending}
                     arrowIconColor="var(--highlight-color)"
                 >
                     Submit
@@ -114,6 +116,10 @@ export default function FormSection() {
             </div>
 
             <p>{state.message}</p>
+
+            <Script
+                src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}&onload=test`}
+            />
         </form>
     );
 }

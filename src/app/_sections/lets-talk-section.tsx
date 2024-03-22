@@ -1,5 +1,6 @@
 import { avigeaFont } from "@/assets/fonts";
 import Button from "../../components/button";
+
 export default function LetsTalkSection() {
     return (
         <section className="flex justify-center items-center min-h-80 w-full gap-8 bg-gradient-to-br from-violet-900 from-15% via-fuchsia-700 to-[--background-color] to-85%">

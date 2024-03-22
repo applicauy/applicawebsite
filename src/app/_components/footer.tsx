@@ -8,6 +8,10 @@ import linkedinIcon from "@/assets/icons/linkedin.svg";
 import instagramIcon from "@/assets/icons/instagram.svg";
 import clutchIcon from "@/assets/icons/clutch.svg";
 
+/**
+ * Array of locations.
+ * @type {Array<{ country: string, location: string }>}
+ */
 const LOCATIONS = [
     {
         country: "USA",
@@ -35,6 +39,9 @@ const LOCATIONS = [
     },
 ];
 
+/**
+ * Navigation links for the footer component.
+ */
 const NAVIGATION_LINKS = [
     {
         text: "About us",

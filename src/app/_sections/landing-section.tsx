@@ -1,16 +1,15 @@
 "use client";
 
-import Image from "next/image";
-import localFont from "next/font/local";
 import { motion } from "framer-motion";
 import Section from "@/components/section";
-import arrowIcon from "@/assets/icons/arrow-right.svg";
 import Button from "@/components/button";
 import { avigeaFont } from "@/assets/fonts";
 
 export default function LandingSection() {
     return (
         <Section className="py-24">
+            {/* Example of how to utilize motion's animation upon the user's first view (it 
+                only triggers when the user sees it for the first time). */}
             <motion.div
                 className="max-w-[66%]"
                 initial={{ opacity: 0, x: "-20px" }}

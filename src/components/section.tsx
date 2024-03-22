@@ -1,5 +1,13 @@
 import { PropsWithChildren } from "react";
 
+/**
+ * Renders a section component with optional custom class name.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} [props.className] - The optional class name for the section.
+ * @param {ReactNode} props.children - The content to be rendered inside the section.
+ * @returns {JSX.Element} The rendered section component.
+ */
 export default function Section({
     className,
     children,

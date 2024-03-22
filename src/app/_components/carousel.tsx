@@ -23,6 +23,9 @@ import rubionrailsLogo from "@/assets/technologies/rubionrails.png";
 import swiftLogo from "@/assets/technologies/swift.png";
 import vuejsLogo from "@/assets/technologies/vuejs.png";
 
+/**
+ * List of technology slides to be displayed in the carousel.
+ */
 const TECHNOLOGIES: Array<{ src: StaticImageData; alt: string }> = [
     {
         src: angularLogo,
@@ -94,6 +97,9 @@ const TECHNOLOGIES: Array<{ src: StaticImageData; alt: string }> = [
     },
 ];
 
+/**
+ * Settings for the carousel component.
+ */
 const CAROUSEL_SETTINGS: SliderSettings = {
     infinite: true,
     speed: 800,
@@ -104,6 +110,9 @@ const CAROUSEL_SETTINGS: SliderSettings = {
     responsive: [],
 };
 
+/**
+ * Renders a carousel component that displays a slider of technology slides.
+ */
 export default function Carousel() {
     return (
         <Slider {...CAROUSEL_SETTINGS}>

@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 
+// Component used to represent a process item's body. It should be used inside a ProcessItem component.
 export default function ProcessItemBody({
     title,
     children,

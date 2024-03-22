@@ -3,6 +3,11 @@ import Section from "@/components/section";
 import Button from "../../components/button";
 import GradientBall from "../_components/gradient-ball";
 
+/**
+ * Renders the About Us section.
+ *
+ * @returns The JSX element representing the About Us section.
+ */
 export default function AboutUsSection() {
     return (
         <Section className="flex">

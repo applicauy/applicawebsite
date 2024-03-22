@@ -1,6 +1,9 @@
 import nodemailer from "nodemailer";
 import { Headers } from "nodemailer/lib/mailer";
 
+/**
+ * Represents the payload for an email.
+ */
 export type EmailPayload = {
     to: string;
     subject: string;
@@ -9,6 +12,9 @@ export type EmailPayload = {
     headers?: Headers;
 };
 
+/**
+ * SMTP options for sending emails.
+ */
 const SMTP_OPTIONS = {
     host: process.env.SMTP_HOST,
     port: parseInt(process.env.SMTP_PORT || "2525"),
@@ -19,6 +25,11 @@ const SMTP_OPTIONS = {
     },
 };
 
+/**
+ * Sends an email using the provided data.
+ * @param data - The payload containing the email details.
+ * @returns A Promise that resolves to the result of sending the email.
+ */
 export const sendEmail = async (data: EmailPayload) => {
     const transporter = nodemailer.createTransport({
         ...SMTP_OPTIONS,

@@ -3,6 +3,9 @@
 import { ZodIssue, z } from "zod";
 import { EmailPayload, sendEmail } from "@/lib/email";
 
+/**
+ * Field names used in the contact form.
+ */
 const FieldName = {
     NAME: "name",
     EMAIL: "email",
@@ -12,6 +15,9 @@ const FieldName = {
     SUBSCRIBE: "subscribe",
 };
 
+/**
+ * Schema for validating the contact form data.
+ */
 const Schema = z.object({
     [FieldName.NAME]: z.string(),
     [FieldName.EMAIL]: z.string().email(),
@@ -24,21 +30,43 @@ const Schema = z.object({
     [FieldName.SUBSCRIBE]: z.coerce.boolean(),
 });
 
+/**
+ * Errors that can occur in the contact form data.
+ */
 export type FormDataErrors = z.inferFlattenedErrors<
     typeof Schema,
     { message: string; errorCode: string }
 >;
 
+/**
+ * Response type for the contact form submission.
+ */
 export type Response = {
+    /**
+     * Indicates if the request was successful or not.
+     */
     success: boolean;
+    /**
+     * A message to be displayed to the user.
+     */
     message?: string;
+    /**
+     * Data related to the errors if the request was not successful.
+     */
     errors?: FormDataErrors;
 };
 
+/**
+ * Handler to process the contact request.
+ * @param prevState The previous state.
+ * @param formData The form data.
+ * @returns A promise that resolves to the response of the contact request.
+ */
 export const handleContactRequest = async (
     prevState: any,
     formData: FormData,
 ): Promise<Response> => {
+    // Parse the form data using the schema defined using Zod
     const validationResult = Schema.safeParse({
         [FieldName.NAME]: formData.get(FieldName.NAME),
         [FieldName.EMAIL]: formData.get(FieldName.EMAIL),
@@ -48,6 +76,7 @@ export const handleContactRequest = async (
         [FieldName.SUBSCRIBE]: formData.get(FieldName.SUBSCRIBE),
     });
 
+    // If the form data is not valid, return the errors
     if (!validationResult.success) {
         return {
             errors: validationResult.error.flatten((issue: ZodIssue) => ({
@@ -59,6 +88,7 @@ export const handleContactRequest = async (
         };
     }
 
+    // Prepare the email payload
     const email: EmailPayload = {
         to: validationResult.data[FieldName.EMAIL]?.toString()!,
         headers: {
@@ -91,6 +121,7 @@ export const handleContactRequest = async (
             </div>`,
     };
 
+    // TODO Send the email
     // await sendEmail(email);
 
     return { success: true, message: "Data validated successfully!" };

@@ -1,5 +1,13 @@
 import { avigeaFont } from "@/assets/fonts";
 
+/**
+ * Renders a gradient ball component with a title and subtitle.
+ *
+ * @param props - The component props.
+ * @param props.title - The title of the gradient ball.
+ * @param props.subtitle - The subtitle of the gradient ball.
+ * @returns The rendered gradient ball component.
+ */
 export default function GradientBall({
     title,
     subtitle,

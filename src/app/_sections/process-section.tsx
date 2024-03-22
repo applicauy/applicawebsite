@@ -46,6 +46,8 @@ export default function ProcessSection() {
                     contentPosition={ContentPosition.Right}
                     className="gap-10"
                 >
+                    {/* We had to make a custom body because the one that we already builded (ProcessItemBody)
+                        doesn't meet our requirements for this situation. */}
                     <div>
                         <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full w-fit py-4 px-6 mb-4">
                             <h3 className="translate-y-[2px] font-normal">

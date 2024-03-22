@@ -1,3 +1,12 @@
+/**
+ * Renders a list of errors.
+ *
+ * @component
+ * @param {Object[]} errors - An array of error objects.
+ * @param {string} errors[].message - The error message.
+ * @param {string} errors[].errorCode - The error code.
+ * @returns {JSX.Element} The rendered component.
+ */
 export default function Errors({
     errors,
 }: {

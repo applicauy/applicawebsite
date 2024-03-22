@@ -2,6 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import { MouseEventHandler, PropsWithChildren } from "react";
 import arrowIcon from "@/assets/icons/arrow-right.svg";
 
+// Component used to represent a post card.
 export default function PostCard({
     imageSrc,
     imageAlt,

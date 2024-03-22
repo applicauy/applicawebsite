@@ -3,11 +3,13 @@ import logo from "@/assets/logo/logo-menu.svg";
 import Link from "next/link";
 import { apexFont } from "@/assets/fonts";
 
+// Navbar used across the website.
 export default function NavBar() {
     return (
         <nav className={`sticky flex justify-center ${apexFont.className}`}>
             <div className="flex justify-between content-center container px-5 md:px-0 py-8">
                 <div className="logo">
+                    {/* If somoeone clicks the logo, then redirect him to the home view. */}
                     <Link href="/">
                         <Image
                             alt="Applica's logo"
@@ -19,7 +21,7 @@ export default function NavBar() {
                 </div>
 
                 <ul className="flex gap-11 h-fit max-h-fit self-center">
-                    <li className="">
+                    <li>
                         <Link href="#">about us</Link>
                     </li>
 
@@ -36,6 +38,8 @@ export default function NavBar() {
                     </li>
 
                     <li>
+                        {/* `--highlight-color` is a CSS variable. We use it with Tailwind by using arbitrary values 
+                        (https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values) */}
                         <Link
                             href="/contact"
                             className="text-[--highlight-color]"

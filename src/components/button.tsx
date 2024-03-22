@@ -2,6 +2,18 @@ import { MouseEventHandler, PropsWithChildren } from "react";
 import Image from "next/image";
 import arrowIcon from "@/assets/icons/arrow-right.svg";
 
+/**
+ * Button component.
+ *
+ * @component
+ * @param {object} props - The component props.
+ * @param {string} [props.arrowIconColor="white"] - The color of the arrow icon.
+ * @param {function} [props.onClick] - The click event handler.
+ * @param {ReactNode} props.children - The content of the button.
+ * @param {("button" | "submit" | "reset")} [props.type] - The type of the button.
+ * @param {boolean} [props.disabled=false] - Whether the button is disabled.
+ * @returns {JSX.Element} The rendered Button component.
+ */
 export default function Button({
     arrowIconColor = "white",
     onClick,

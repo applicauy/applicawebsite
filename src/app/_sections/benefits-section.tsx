@@ -4,6 +4,7 @@ import placeholderImg from "@/assets/placeholder-img-2.png";
 import Benefit from "../_components/benefit";
 import Carousel from "../_components/carousel";
 
+// Benefits to be displayed in the section.
 const BENEFITS = [
     {
         image: placeholderImg,

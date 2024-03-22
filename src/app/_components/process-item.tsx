@@ -5,6 +5,20 @@ export enum ContentPosition {
     Right,
 }
 
+
+/**
+ * Renders a process item component.
+ *
+ * @param children - The content of the process item.
+ * @param customIcon - An optional custom icon to display.
+ * @param colored - A boolean indicating whether the process item should be colored.
+ * @param contentPosition - The position of the content within the process item.
+ * @param customLineHeight - An optional custom line height for the central line.
+ * @param dashedEndOfLine - A boolean indicating whether the end of the line should be dashed.
+ * @param dashedEndOfLineHeight - The height of the dashed end of the line.
+ * @param className - An optional class name for the process item.
+ * @returns The rendered process item component.
+ */
 export default function ProcessItem({
     children,
     customIcon,
