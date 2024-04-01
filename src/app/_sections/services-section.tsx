@@ -17,25 +17,37 @@ export default function ServicesSection() {
     return (
         <Section className="flex flex-col gap-20">
             <motion.div
-                className="flex gap-8"
+                className="flex flex-col md:flex-row gap-8"
                 initial={{ opacity: 0, x: "-20px" }}
                 whileInView={{ opacity: 1, x: "0px" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
             >
-                <div className="relative w-2/4">
+                <div className="relative md:w-2/4">
+                    {/* 
+                        Because of lazy loading, the images that are not shown will not be 
+                        loaded.
+                    */}
+
+                    {/* The image is hidden on mobile devices. */}
                     <Image
                         src={placeholderImg}
-                        className="image"
+                        className="image hidden md:block"
                         height={300}
                         width={600}
                         alt=""
                     />
 
-                    <div className="absolute inset-12 top-20 bottom-12 border border-white rounded-tl-[60px] rounded-br-[150px] -z-10"></div>
+                    {/* The image is hidden on desktop devices. */}
+                    <Image
+                        src={placeholderImg}
+                        className="image mx-auto md:hidden"
+                        width={400}
+                        alt=""
+                    />
                 </div>
 
-                <div className="flex flex-col gap-8 md:w-2/4 text-end">
+                <div className="flex flex-col gap-8 md:w-2/4 text-center md:text-end">
                     <H3>
                         We specialize in IT staff augmentation services, using
                         an agile model to deliver talent in only 72 hours.
@@ -61,7 +73,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, x: "0px" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex gap-6"
+                className="flex flex-col md:flex-row gap-6"
             >
                 <Attribute icon={searchIcon}>
                     Pre-vetted & tailor match nearshore IT talent you can count

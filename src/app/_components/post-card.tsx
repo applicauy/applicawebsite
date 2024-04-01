@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { MouseEventHandler, PropsWithChildren } from "react";
 import arrowIcon from "@/assets/icons/arrow-right.svg";
+import H4 from "@/components/h4";
 
 // Component used to represent a post card.
 export default function PostCard({
@@ -13,7 +14,7 @@ export default function PostCard({
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }>) {
     return (
-        <div className="rounded-tr-[80px] rounded-bl-[35px] h-[456px] w-[465px] flex flex-col overflow-hidden border border-[--background-color-86]">
+        <div className="rounded-tr-[80px] rounded-bl-[35px] h-[456px] w-[465px] flex flex-col overflow-hidden border border-secondary-bg">
             {/* Image container */}
             <div className="max-h-[75%]">
                 <Image
@@ -24,7 +25,7 @@ export default function PostCard({
             </div>
 
             {/* Lower section container */}
-            <div className="grow flex bg-[--background-color-86] px-6 py-4 items-center gap-9">
+            <div className="grow flex bg-secondary-bg px-6 py-4 items-center gap-9">
                 {/* Text container */}
                 <div>
                     <H4 className="line-clamp-2 leading-tight">{children}</H4>
@@ -32,7 +33,7 @@ export default function PostCard({
 
                 {/* Button container */}
                 <div className="shrink-0">
-                    <button className="rounded-full size-fit p-2.5 bg-[--highlight-color]">
+                    <button className="rounded-full size-fit p-2.5 bg-highlight">
                         <Image
                             src={arrowIcon}
                             height={40}

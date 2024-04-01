@@ -10,7 +10,7 @@ import LetsTalkSection from "./_sections/lets-talk-section";
 export default function Home() {
     return (
         <main
-            className={`${apexFont.className} flex min-h-screen flex-col items-center justify-between gap-36`}
+            className={`${apexFont.className} flex min-h-screen flex-col items-center justify-between gap-20 md:gap-36`}
         >
             <LandingSection />
 

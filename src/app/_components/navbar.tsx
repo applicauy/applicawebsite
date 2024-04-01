@@ -14,13 +14,13 @@ export default function NavBar() {
                         <Image
                             alt="Applica's logo"
                             src={logo}
-                            height={80}
+                            className="h-14 md:h-20 w-auto"
                             priority
                         />
                     </Link>
                 </div>
 
-                <ul className="flex gap-11 h-fit max-h-fit self-center">
+                <ul className="hidden md:flex gap-11 h-fit max-h-fit self-center">
                     <li>
                         <Link href="#">about us</Link>
                     </li>
@@ -38,12 +38,7 @@ export default function NavBar() {
                     </li>
 
                     <li>
-                        {/* `--highlight-color` is a CSS variable. We use it with Tailwind by using arbitrary values 
-                        (https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values) */}
-                        <Link
-                            href="/contact"
-                            className="text-[--highlight-color]"
-                        >
+                        <Link href="/contact" className="text-highlight">
                             contact
                         </Link>
                     </li>

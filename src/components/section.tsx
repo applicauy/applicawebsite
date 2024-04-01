@@ -16,7 +16,7 @@ export default function Section({
 }>) {
     return (
         <section
-            className={"container mx-auto" + (className ? " " + className : "")}
+            className={"container mx-auto px-5 md:px-0" + (className ? " " + className : "")}
         >
             {children}
         </section>

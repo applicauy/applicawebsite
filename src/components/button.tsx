@@ -29,21 +29,20 @@ export default function Button({
     return (
         <button
             onClick={onClick}
-            className="flex content-center pe-4 ps-9 py-4 items-center border border-white rounded-full font-medium w-fit text-4xl leading-none"
+            className="flex content-center pe-2.5 md:pe-4 ps-6 md:ps-9 py-2 items-center border border-white rounded-full font-medium w-fit text-xl md:text-4xl leading-none"
             type={type}
             disabled={disabled}
         >
             <span className="relative translate-y-[2px]">{children}</span>
 
             <div
-                className={`rounded-full w-fit p-3 ms-9 ${
+                className={`rounded-full w-fit p-1.5 md:p-3 ms-4 md:ms-9 ${
                     highlightedArrow ? "bg-highlight" : "bg-white"
                 }`}
             >
                 <Image
                     src={arrowIcon}
-                    height={40}
-                    width={40}
+                    className="h-7 w-7 md:h-10 md:w-10"
                     alt=""
                     color="transparent"
                 />

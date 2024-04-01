@@ -9,11 +9,11 @@ import H1 from "@/components/h1";
 
 export default function LandingSection() {
     return (
-        <Section className="py-24">
+        <Section className="py-10 md:py-24">
             {/* Example of how to utilize motion's animation upon the user's first view (it 
                 only triggers when the user sees it for the first time). */}
             <motion.div
-                className="max-w-[66%]"
+                className="md:max-w-[66%]"
                 initial={{ opacity: 0, x: "-20px" }}
                 whileInView={{ opacity: 1, x: "0px" }}
                 viewport={{ once: true }}
@@ -26,7 +26,7 @@ export default function LandingSection() {
                 <H2 className="mb-16">
                     We are a software company focused on{" "}
                     <strong
-                        className={`text-[--highlight-color] ${avigeaFont.className} font-normal`}
+                        className={`text-highlight ${avigeaFont.className} font-normal`}
                     >
                         saving your time
                     </strong>{" "}

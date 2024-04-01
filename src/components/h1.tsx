@@ -7,7 +7,7 @@ const H1 = ({
     return (
         <h1
             className={
-                "text-xl md:text-3xl" +
+                "text-lg md:text-3xl" +
                 (className ? " " + className : "")
             }
         >

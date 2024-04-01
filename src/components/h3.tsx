@@ -5,7 +5,7 @@ const H3 = ({
     className,
 }: PropsWithChildren<{ className?: string }>) => {
     return (
-        <h3 className={"text-4xl leading-tight" + (className ? " " + className : "")}>
+        <h3 className={"text-xl md:text-4xl leading-tight" + (className ? " " + className : "")}>
             {children}
         </h3>
     );
