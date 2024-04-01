@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --background-color: #1b1b1b;
-    --background-color-86: #252525;
-    --highlight-color: #e5a818;
-    --muted-text-color: #848483;
-}
-
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -16,7 +9,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: var(--background-color-86);
+    background: theme("colors.secondary-bg");
 }
 
 /* Handle */
@@ -36,7 +29,7 @@ textarea::-webkit-scrollbar-track {
 
 body {
     color: white;
-    background-color: var(--background-color);
+    background-color: theme("colors.primary-bg");
 }
 
 @layer utilities {
@@ -47,32 +40,11 @@ body {
 
 h1 {
     color: #b69fe2;
-    font-size: 1.9375rem; /* 31px */
-}
-
-h2 {
-    font-size: 3.75rem; /* 60px */
-    line-height: 1;
 }
 
 h2 strong,
 h3 strong {
     letter-spacing: 0.1rem;
-}
-
-h3 {
-    font-size: 2.25rem; /* 36px */
-    line-height: 1.2;
-}
-
-h4 {
-    font-size: 1.9rem;
-    line-height: 1;
-}
-
-h5 {
-    font-size: 1.1rem;
-    line-height: 1;
 }
 
 button {
@@ -123,12 +95,12 @@ button {
 }
 
 .dot {
-    --diameter: 25px;
-    min-width: var(--diameter);
-    min-height: var(--diameter);
+    $diameter: 25px;
+    min-width: $diameter;
+    min-height: $diameter;
     border-radius: 50%;
 }
 
 .text-muted {
-    color: var(--muted-text-color);
+    color: theme("colors.secondary-muted");
 }
