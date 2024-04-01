@@ -4,18 +4,21 @@ import ProcessItem, { ContentPosition } from "../_components/process-item";
 import ProcessItemBody from "../_components/process-item-body";
 import icon72Hours from "@/assets/icons/72-hours.svg";
 import Image from "next/image";
+import H2 from "@/components/h2";
+import H3 from "@/components/h3";
+import H5 from "@/components/h5";
 
 export default function ProcessSection() {
     return (
         <Section className="flex flex-col items-center w-full">
-            <h2 className="mb-12 text-center">
+            <H2 className="mb-12 text-center">
                 Hiring{" "}
                 <strong className={`font-normal ${avigeaFont.className}`}>
                     process
                 </strong>
-            </h2>
+            </H2>
 
-            <div className="flex flex-col w-4/5">
+            <div className="hidden md:flex flex-col w-4/5">
                 <ProcessItem contentPosition={ContentPosition.Left}>
                     <ProcessItemBody title="Requirements analysis">
                         Let us know your requirements: role / skills / languages
@@ -50,15 +53,15 @@ export default function ProcessSection() {
                         doesn't meet our requirements for this situation. */}
                     <div>
                         <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full w-fit py-4 px-6 mb-4">
-                            <h3 className="translate-y-[2px] font-normal">
+                            <H3 className="translate-y-[2px] font-normal">
                                 Candidates deliver
-                            </h3>
+                            </H3>
                         </div>
 
-                        <h5>
+                        <H5>
                             Meet a tailor-made group of applicants who are in
                             line with the initial requirements.
-                        </h5>
+                        </H5>
                     </div>
                 </ProcessItem>
 

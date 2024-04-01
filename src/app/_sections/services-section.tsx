@@ -10,6 +10,8 @@ import searchIcon from "@/assets/icons/seach-icon.svg";
 import lampIcon from "@/assets/icons/lamp-icon.svg";
 import Attribute from "../_components/attribute";
 import Button from "../../components/button";
+import H3 from "@/components/h3";
+import H2 from "@/components/h2";
 
 export default function ServicesSection() {
     return (
@@ -33,24 +35,24 @@ export default function ServicesSection() {
                     <div className="absolute inset-12 top-20 bottom-12 border border-white rounded-tl-[60px] rounded-br-[150px] -z-10"></div>
                 </div>
 
-                <div className="flex flex-col gap-8 w-2/4 text-end">
-                    <h3>
+                <div className="flex flex-col gap-8 md:w-2/4 text-end">
+                    <H3>
                         We specialize in IT staff augmentation services, using
                         an agile model to deliver talent in only 72 hours.
-                    </h3>
+                    </H3>
 
-                    <h2>
+                    <H2>
                         Ready to{" "}
                         <strong
                             className={`font-normal ${avigeaFont.className}`}
                         >
                             speed up your project?
                         </strong>
-                    </h2>
+                    </H2>
 
-                    <h3 className="text-[--highlight-color]">
+                    <H3 className="text-highlight">
                         We make it happen
-                    </h3>
+                    </H3>
                 </div>
             </motion.div>
 
@@ -84,19 +86,19 @@ export default function ServicesSection() {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="flex flex-col gap-6 px-36 pt-16 pb-9 rounded-full border text-center items-center service-gradient"
             >
-                <h2 className="font-medium">
+                <H2 className="font-medium">
                     Find the{" "}
                     <strong className={`font-normal ${avigeaFont.className}`}>
                         perfect fit
                     </strong>{" "}
                     for your venture
-                </h2>
+                </H2>
 
-                <h3>
+                <H3>
                     Whether you need a specialized skillset, a temporary highly
                     qualified developer, a Senior team lead, or just more hands
                     on deck, Our IT talents are here to help.
-                </h3>
+                </H3>
 
                 <Button>Meet our process</Button>
             </motion.div>

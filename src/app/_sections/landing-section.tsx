@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Section from "@/components/section";
 import Button from "@/components/button";
 import { avigeaFont } from "@/assets/fonts";
+import H2 from '../../components/h2';
+import H1 from "@/components/h1";
 
 export default function LandingSection() {
     return (
@@ -17,11 +19,11 @@ export default function LandingSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                <h1 className="mb-5">
+                <H1 className="mb-5">
                     Build your dream team with top nearshore IT talent
-                </h1>
+                </H1>
 
-                <h2 className="mb-16">
+                <H2 className="mb-16">
                     We are a software company focused on{" "}
                     <strong
                         className={`text-[--highlight-color] ${avigeaFont.className} font-normal`}
@@ -29,7 +31,7 @@ export default function LandingSection() {
                         saving your time
                     </strong>{" "}
                     and delivering peace of mind
-                </h2>
+                </H2>
 
                 <Button arrowIconColor="var(--highlight-color)">
                     Start now!

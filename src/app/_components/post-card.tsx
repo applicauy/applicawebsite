@@ -27,7 +27,7 @@ export default function PostCard({
             <div className="grow flex bg-[--background-color-86] px-6 py-4 items-center gap-9">
                 {/* Text container */}
                 <div>
-                    <h4 className="line-clamp-2 leading-tight">{children}</h4>
+                    <H4 className="line-clamp-2 leading-tight">{children}</H4>
                 </div>
 
                 {/* Button container */}

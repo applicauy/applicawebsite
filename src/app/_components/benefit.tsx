@@ -1,3 +1,4 @@
+import H5 from "@/components/h5";
 import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
 
@@ -11,7 +12,7 @@ export default function Benefit({
     return (
         <div className="flex flex-col text-center">
             <Image src={imageSrc} alt={imageAlt} />
-            <h5>Improved cost-effectiveness</h5>
+            <H5>Improved cost-effectiveness</H5>
         </div>
     );
 }
