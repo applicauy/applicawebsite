@@ -33,7 +33,7 @@ export default function LandingSection() {
                     and delivering peace of mind
                 </H2>
 
-                <Button arrowIconColor="var(--highlight-color)">
+                <Button highlightedArrow>
                     Start now!
                 </Button>
             </motion.div>

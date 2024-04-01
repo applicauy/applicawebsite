@@ -15,13 +15,13 @@ import arrowIcon from "@/assets/icons/arrow-right.svg";
  * @returns {JSX.Element} The rendered Button component.
  */
 export default function Button({
-    arrowIconColor = "white",
+    highlightedArrow = false,
     onClick,
     children,
     type,
     disabled = false,
 }: PropsWithChildren<{
-    arrowIconColor?: string;
+    highlightedArrow?: boolean;
     onClick?: MouseEventHandler<HTMLButtonElement>;
     type?: "button" | "submit" | "reset";
     disabled?: boolean;
@@ -36,10 +36,9 @@ export default function Button({
             <span className="relative translate-y-[2px]">{children}</span>
 
             <div
-                className="rounded-full w-fit p-3 ms-9"
-                style={{
-                    backgroundColor: arrowIconColor,
-                }}
+                className={`rounded-full w-fit p-3 ms-9 ${
+                    highlightedArrow ? "bg-highlight" : "bg-white"
+                }`}
             >
                 <Image
                     src={arrowIcon}
