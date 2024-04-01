@@ -29,7 +29,7 @@ export default function Button({
     return (
         <button
             onClick={onClick}
-            className="flex content-center pe-4 ps-9 py-4 items-center border border-white rounded-full font-medium w-fit"
+            className="flex content-center pe-4 ps-9 py-4 items-center border border-white rounded-full font-medium w-fit text-4xl leading-none"
             type={type}
             disabled={disabled}
         >
