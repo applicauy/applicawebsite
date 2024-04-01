@@ -13,6 +13,13 @@ const config: Config = {
                 "gradient-conic":
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
             },
+            colors: {
+                "primary-bg": "#1b1b1b",
+                "secondary-bg": "#252525",
+                highlight: "#e5a818",
+                // "secondary" because tailwind already adds a "muted" color.
+                "secondary-muted": "#848483",
+            },
         },
     },
     plugins: [require("@tailwindcss/forms")],
