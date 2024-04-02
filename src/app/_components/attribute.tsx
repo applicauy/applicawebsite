@@ -15,8 +15,7 @@ export default function Attribute({
 }: PropsWithChildren<{ icon: any }>) {
     return (
         <div className="flex items-center">
-            {/* TODO Finish this implementation */}
-            <div className="w-14 h-14 ">
+            <div className="min-w-10 md:min-w-20 min-h-10 md:min-h-20 size-10 md:size-20">
                 <Image src={icon} alt="" />
             </div>
             <H5>{children}</H5>
