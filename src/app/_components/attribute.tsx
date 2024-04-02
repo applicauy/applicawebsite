@@ -17,7 +17,7 @@ export default function Attribute({
         <div className="flex items-center">
             {/* TODO Finish this implementation */}
             <div className="w-14 h-14 ">
-                <Image src={icon} alt="" layout="responsive" />
+                <Image src={icon} alt="" />
             </div>
             <H5>{children}</H5>
         </div>
