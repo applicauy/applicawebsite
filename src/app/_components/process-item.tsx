@@ -5,7 +5,6 @@ export enum ContentPosition {
     Right,
 }
 
-
 /**
  * Renders a process item component.
  *
@@ -39,7 +38,7 @@ export default function ProcessItem({
 }>) {
     return (
         <div
-            className={`flex gap-20 w-full min-h-36${
+            className={`flex gap-5 md:gap-20 w-full min-h-36${
                 className ? " " + className : ""
             }`}
         >
@@ -50,10 +49,16 @@ export default function ProcessItem({
 
             {/* Central line box */}
             <div className="min-h-full w-fit flex flex-col items-center">
-                {customIcon ? customIcon : <div className="dot bg-white"></div>}
+                {customIcon ? (
+                    customIcon
+                ) : (
+                    <div
+                        className={`dot ${colored ? "bg-highlight" : "bg-white"}`}
+                    ></div>
+                )}
 
                 <div
-                    className="w-[1px] bg-white min-h-20"
+                    className={`w-[1px] min-h-20 ${colored ? "bg-highlight" : "bg-white"}`}
                     style={{
                         height: customLineHeight ?? "100%",
                     }}
@@ -61,7 +66,7 @@ export default function ProcessItem({
 
                 {dashedEndOfLine && (
                     <div
-                        className="border-r border-white border-dashed"
+                        className={`border-r border-dashed ${colored ? "border-highlight" : "border-white"}`}
                         style={{ minHeight: dashedEndOfLineHeight }}
                     ></div>
                 )}

@@ -11,22 +11,22 @@ import H5 from "@/components/h5";
 export default function ProcessSection() {
     return (
         <Section className="flex flex-col items-center w-full">
-            <H2 className="mb-12 text-center">
+            <H2 className="mb-9 md:mb-12 text-center">
                 Hiring{" "}
                 <strong className={`font-normal ${avigeaFont.className}`}>
                     process
                 </strong>
             </H2>
 
-            <div className="hidden md:flex flex-col w-4/5">
-                <ProcessItem contentPosition={ContentPosition.Left}>
+            <div className="flex flex-col md:w-4/5">
+                <ProcessItem contentPosition={ContentPosition.Left} colored>
                     <ProcessItemBody title="Requirements analysis">
                         Let us know your requirements: role / skills / languages
                         & timezone.
                     </ProcessItemBody>
                 </ProcessItem>
 
-                <ProcessItem contentPosition={ContentPosition.Right}>
+                <ProcessItem contentPosition={ContentPosition.Right} colored>
                     <ProcessItemBody title="Screening">
                         +4,000 pre-vetted profiles in the Talent Pool are
                         reviewed by our team of recruiters.
@@ -37,6 +37,7 @@ export default function ProcessSection() {
                     contentPosition={ContentPosition.Left}
                     customLineHeight="5rem"
                     className="min-h-[5rem]"
+                    colored
                 >
                     <ProcessItemBody title="Profiles selection">
                         Best fitted to your requirements, ensuring their
@@ -47,21 +48,21 @@ export default function ProcessSection() {
                 <ProcessItem
                     customIcon={<Image src={icon72Hours} alt="" width={250} />}
                     contentPosition={ContentPosition.Right}
-                    className="gap-10"
+                    className="gap-3 md:gap-10"
                 >
                     {/* We had to make a custom body because the one that we already builded (ProcessItemBody)
                         doesn't meet our requirements for this situation. */}
                     <div>
-                        <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full w-fit py-4 px-6 mb-4">
-                            <H3 className="translate-y-[2px] font-normal">
+                        <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full w-fit py-1 md:py-4 px-4 md:px-6 mb-4">
+                            <H3 className="translate-y-[2px] font-normal text-center md:text-left">
                                 Candidates deliver
                             </H3>
                         </div>
 
-                        <H5>
+                        <p className="text-sm md:text-lg leading-tight">
                             Meet a tailor-made group of applicants who are in
                             line with the initial requirements.
-                        </H5>
+                        </p>
                     </div>
                 </ProcessItem>
 

@@ -10,7 +10,7 @@ export default function ProcessItemBody({
     return (
         <>
             <H3 className="font-medium mb-2">{title}</H3>
-            <H5>{children}</H5>
+            <p className="text-sm md:text-lg leading-tight">{children}</p>
         </>
     );
 }
