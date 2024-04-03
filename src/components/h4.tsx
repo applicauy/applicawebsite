@@ -7,7 +7,8 @@ const H4 = ({
     return (
         <h4
             className={
-                "text-3xl leading-none" + (className ? " " + className : "")
+                "text-2xl md:text-3xl leading-none" +
+                (className ? " " + className : "")
             }
         >
             {children}
