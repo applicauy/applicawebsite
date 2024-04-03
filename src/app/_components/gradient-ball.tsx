@@ -18,9 +18,9 @@ export default function GradientBall({
     subtitle: string;
 }) {
     return (
-        <div className="rounded-full min-w-36 min-h-36 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 flex flex-col justify-center items-center">
+        <div className="rounded-full size-28 md:size-36 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 flex flex-col justify-center items-center">
             <H4 className={`${avigeaFont.className} font-normal`}>{title}</H4>
-            <H5>{subtitle}</H5>
+            <H5 className="">{subtitle}</H5>
         </div>
     );
 }
