@@ -7,7 +7,7 @@ const H5 = ({
     return (
         <h5
             className={
-                "text-md md:text-lg leading-tight" +
+                "text-sm md:text-lg leading-tight" +
                 (className ? " " + className : "")
             }
         >
