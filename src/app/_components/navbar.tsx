@@ -4,8 +4,10 @@ import Link from "next/link";
 import { apexFont } from "@/assets/fonts";
 
 // Navbar used across the website.
-export default function NavBar() {
-    return (
+export default function NavBar({ isMobile }: any) {
+    return isMobile ? (
+        <></>
+    ) : (
         <nav className={`sticky flex justify-center ${apexFont.className}`}>
             <div className="flex justify-between content-center container px-5 md:px-0 py-8">
                 <div className="logo">

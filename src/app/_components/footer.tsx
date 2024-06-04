@@ -69,10 +69,12 @@ const NAVIGATION_LINKS = [
     },
 ];
 
-export default function Footer() {
+export default function Footer({ isMobile }: any) {
     const currentYear = new Date().getFullYear();
 
-    return (
+    return isMobile ? (
+        <></>
+    ) : (
         <footer
             className={`${apexFont.className} py-28 bg-secondary-bg text-xl flex flex-col gap-8`}
         >
