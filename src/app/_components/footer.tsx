@@ -12,7 +12,10 @@ import clutchIcon from "@/assets/icons/clutch.svg";
  * Array of locations.
  * @type {Array<{ country: string, location: string }>}
  */
-const LOCATIONS = [
+export const LOCATIONS: {
+    country: string;
+    location: string;
+}[] = [
     {
         country: "USA",
         location: "1900 N Bayshore Drive 1A/1B, Miami.",
@@ -35,14 +38,14 @@ const LOCATIONS = [
     },
     {
         country: "Colombia",
-        location: "Carrera 14 # 93-68, Bogotá",
+        location: "Carrera 14 # 93-68, Bogotá.",
     },
 ];
 
 /**
  * Navigation links for the footer component.
  */
-const NAVIGATION_LINKS = [
+export const NAVIGATION_LINKS = [
     {
         text: "About us",
         href: "#",
