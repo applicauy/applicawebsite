@@ -1,6 +1,5 @@
 import { PropsWithChildren } from "react";
 import { avigeaFont } from "@/assets/fonts";
-import H3 from "@/components/h3";
 
 export default function MobileProcessItemBody({
     title,
