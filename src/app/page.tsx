@@ -7,7 +7,7 @@ import ProcessSection from "./_sections/process-section";
 import AboutUsSection from "./_sections/about-us-section";
 import BlogSection from "./_sections/blog-section";
 import LetsTalkSection from "./_sections/lets-talk-section";
-import MobileHome from "./mobile/mobile-home";
+import MobileHome from "./(mobile)/mobile-home";
 
 export default function Home() {
     const cookieStore = cookies();
