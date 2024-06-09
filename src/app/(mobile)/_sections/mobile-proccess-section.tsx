@@ -8,7 +8,7 @@ import H2 from "@/components/h2";
 import H3 from "@/components/h3";
 import H5 from "@/components/h5";
 
-export default function ProcessSection() {
+export default function MobileProcessSection() {
     return (
         <Section className={`flex flex-col items-center w-full`}>
             <H2 className="mb-9 md:mb-12 text-center">
