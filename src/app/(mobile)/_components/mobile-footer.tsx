@@ -57,7 +57,7 @@ const MobileFooter = () => {
                             <li
                                 key={index}
                                 className="my-1"
-                                style={{ fontSize: 10.5 }}
+                                style={{ fontSize: "2.6vw" }}
                             >
                                 <strong className="pr-1">{l.country}</strong>
                                 <span className="font-regular">
@@ -73,7 +73,7 @@ const MobileFooter = () => {
                             <li
                                 key={index}
                                 className="my-1 flex justify-end"
-                                style={{ fontSize: 10.5 }}
+                                style={{ fontSize: "2.6vw" }}
                             >
                                 <Link href={nl.href} className="font-bold">
                                     {nl.text}
@@ -94,7 +94,7 @@ const MobileFooter = () => {
                 <div className="w-2/5">
                     <p
                         className="mx-auto text-muted text-base flex justify-end"
-                        style={{ fontSize: 9 }}
+                        style={{ fontSize: "2.2vw", whiteSpace: "nowrap" }}
                     >
                         &copy; {currentYear} Applica Corp. All rights reserved.
                     </p>
