@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import Section from "@/components/section";
 import { avigeaFont } from "@/assets/fonts";
-import MobileH2 from "./mobile-h2";
-import MobileButton from "./mobile-button";
+import MobileH2 from "../_components/mobile-h2";
+import MobileButton from "../_components/mobile-button";
 
 export default function MobileLandingSection() {
     return (

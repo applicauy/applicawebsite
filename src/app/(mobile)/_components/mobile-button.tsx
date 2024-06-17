@@ -21,7 +21,7 @@ export default function MobileButton({
             type={type}
             disabled={disabled}
         >
-            <span className="relative top-0.1 pl-2 pr-1">{children}</span>
+            <span className="relative top-0.5 pl-2 pr-1">{children}</span>
 
             <div
                 className={`rounded-full w-${highlightedArrow ? "8" : "6"} md:w-${highlightedArrow ? "10" : "7"} p-1.5 md:p-2.5 ms-2 md:ms-3 ${highlightedArrow ? "bg-highlight" : "bg-white"}`}
