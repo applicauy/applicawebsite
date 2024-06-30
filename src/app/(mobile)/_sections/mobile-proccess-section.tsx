@@ -4,19 +4,17 @@ import ProcessItem, { ContentPosition } from "@/app/_components/process-item";
 import MobileProcessItemBody from "../_components/mobile-proccess-item-body";
 import icon72Hours from "@/assets/icons/72-hours.svg";
 import Image from "next/image";
-import H2 from "@/components/h2";
-import H3 from "@/components/h3";
-import H5 from "@/components/h5";
+import MobileH2 from "../_components/mobile-h2";
 
 export default function MobileProcessSection() {
     return (
         <Section className={`flex flex-col items-center w-full`}>
-            <H2 className="mb-9 md:mb-12 text-center">
+            <MobileH2 className="mb-9 md:mb-12 text-center">
                 Hiring{" "}
                 <strong className={`font-normal ${avigeaFont.className}`}>
                     process
                 </strong>
-            </H2>
+            </MobileH2>
 
             <div className="flex flex-col md:w-4/5">
                 <ProcessItem contentPosition={ContentPosition.Left} colored>

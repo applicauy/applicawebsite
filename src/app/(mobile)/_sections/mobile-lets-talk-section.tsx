@@ -4,8 +4,8 @@ import MobileH2 from "../_components/mobile-h2";
 
 export default function MobileLetsTalkSection() {
     return (
-        <section className="flex justify-center items-center min-h-80 w-full gap-8 bg-gradient-to-br from-violet-900 from-15% via-fuchsia-700 to-[--background-color] to-85% px-0 mx-0">
-            <div className="flex flex-col gap-6 py-8 md:py-16 text-center items-center w-full">
+        <section className="flex justify-center items-center w-full bg-gradient-to-br from-violet-900 from-15% via-fuchsia-700 to-[--background-color] to-85% px-0 mx-0 gap-6 pt-8 md:pt-16">
+            <div className="flex flex-col text-center items-center w-full">
                 <div className="w-full bg-gradient-to-br from-indigo-700 via-purple-600 to-pink-600 flex flex-col justify-center items-center py-8 md:py-16 px-4 md:px-36">
                     <MobileH2 className={`font-normal ${apexFont.className}`}>
                         Got a{" "}

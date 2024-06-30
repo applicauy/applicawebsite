@@ -15,11 +15,9 @@ export default function MobileHome() {
 
             <br />
             <br />
-            <br />
 
             <MobileBenefitsSection />
 
-            <br />
             <br />
             <br />
 
@@ -27,11 +25,9 @@ export default function MobileHome() {
 
             <br />
             <br />
-            <br />
 
             <MobileAboutUsSection />
 
-            <br />
             <br />
             <br />
 
