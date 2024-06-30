@@ -6,11 +6,13 @@ import MobileH2 from "../_components/mobile-h2";
 import MobileH3 from "../_components/mobile-h3";
 
 /**
- * Renders the About Us section.
+ * MobileAboutUsSection - A section component that showcases the "About Us" information
+ * for mobile and desktop views, including a title, subtitle, some key metrics,
+ * and a call-to-action button.
  *
- * @returns The JSX element representing the About Us section.
+ * @returns {JSX.Element} The JSX element representing the About Us section for mobile.
  */
-export default function MobileAboutUsSection() {
+export default function MobileAboutUsSection(): JSX.Element {
     return (
         <Section className="flex">
             <div className="flex flex-col items-center md:items-start md:w-[60%]">

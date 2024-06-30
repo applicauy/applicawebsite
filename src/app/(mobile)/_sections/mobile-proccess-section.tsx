@@ -6,9 +6,14 @@ import icon72Hours from "@/assets/icons/72-hours.svg";
 import Image from "next/image";
 import MobileH2 from "../_components/mobile-h2";
 
-export default function MobileProcessSection() {
+/**
+ * Component defining the mobile view of the hiring process section.
+ * @returns {JSX.Element} React element representing the mobile process section.
+ */
+export default function MobileProcessSection(): JSX.Element {
     return (
         <Section className={`flex flex-col items-center w-full`}>
+            {/* Customized heading for "Hiring process" */}
             <MobileH2 className="mb-9 md:mb-12 text-center">
                 Hiring{" "}
                 <strong className={`font-normal ${avigeaFont.className}`}>
@@ -17,6 +22,7 @@ export default function MobileProcessSection() {
             </MobileH2>
 
             <div className="flex flex-col md:w-4/5">
+                {/* ProcessItem displaying requirements analysis */}
                 <ProcessItem contentPosition={ContentPosition.Left} colored>
                     <MobileProcessItemBody title="Requirements analysis">
                         Let us know your requirements: role / skills / languages
@@ -48,8 +54,6 @@ export default function MobileProcessSection() {
                     contentPosition={ContentPosition.Right}
                     className="gap-3 md:gap-10"
                 >
-                    {/* We had to make a custom body because the one that we already builded (MobileProcessItemBody)
-                        doesn't meet our requirements for this situation. */}
                     <div>
                         <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full w-fit py-1 md:py-2 px-2 md:px-4 mb-4">
                             <h3

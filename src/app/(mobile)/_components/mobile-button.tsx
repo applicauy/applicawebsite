@@ -2,6 +2,16 @@ import { MouseEventHandler, PropsWithChildren } from "react";
 import Image from "next/image";
 import arrowIcon from "@/assets/icons/arrow-right.svg";
 
+/**
+ * MobileButton component for rendering a customized button in mobile view.
+ * @param {PropsWithChildren<{
+ * highlightedArrow?: boolean;
+ * onClick?: MouseEventHandler<HTMLButtonElement>;
+ * type?: "button" | "submit" | "reset";
+ * disabled?: boolean;
+ * }>} Props for the MobileButton component
+ * @returns {JSX.Element} Returns a React element of the MobileButton component
+ */
 export default function MobileButton({
     highlightedArrow = false,
     onClick,

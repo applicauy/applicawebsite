@@ -2,7 +2,14 @@ import Image, { StaticImageData } from "next/image";
 import { MouseEventHandler, PropsWithChildren } from "react";
 import arrowIcon from "@/assets/icons/arrow-right.svg";
 
-// Component used to represent a post card.
+/**
+ * Component used to represent a post card.
+ *
+ * @param imageSrc - The source of the image for the post card.
+ * @param imageAlt - The alt text for the image.
+ * @param onClick - Event handler for the card click.
+ * @returns The rendered post card component.
+ */
 export default function MobilePostCard({
     imageSrc,
     imageAlt,

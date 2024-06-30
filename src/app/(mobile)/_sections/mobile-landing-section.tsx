@@ -6,11 +6,17 @@ import { avigeaFont } from "@/assets/fonts";
 import MobileH2 from "../_components/mobile-h2";
 import MobileButton from "../_components/mobile-button";
 
-export default function MobileLandingSection() {
+/**
+ * MobileLandingSection - A landing section component that introduces the company,
+ * utilizing motion animations for an engaging user experience. The section includes
+ * a title, a brief description, and a call-to-action button.
+ *
+ * @returns {JSX.Element} The JSX element representing the Landing section for mobile.
+ */
+export default function MobileLandingSection(): JSX.Element {
     return (
         <Section className="py-10 md:py-24">
-            {/* Example of how to utilize motion's animation upon the user's first view (it 
-                only triggers when the user sees it for the first time). */}
+            {/* Motion animation example - triggers animation when the user's viewport first sees it */}
             <motion.div
                 className="md:max-w-[66%]"
                 initial={{ opacity: 0, x: "-20px" }}

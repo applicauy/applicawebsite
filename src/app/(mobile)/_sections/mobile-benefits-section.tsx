@@ -6,7 +6,10 @@ import MobileCarousel from "../_components/mobile-carousel";
 import MobileH2 from "../_components/mobile-h2";
 import MobileH3 from "../_components/mobile-h3";
 
-// Benefits to be displayed in the section.
+/**
+ * Array of benefit objects to be displayed in the section.
+ * Each benefit includes an image, description, and alt text.
+ */
 const BENEFITS = [
     {
         image: placeholderImg,
@@ -30,7 +33,14 @@ const BENEFITS = [
     },
 ];
 
-export default function MobileBenefitsSection() {
+/**
+ * MobileBenefitsSection - A section component that showcases the benefits of the service,
+ * including a title, description, benefit items, and a carousel. The section is
+ * designed for both mobile and desktop views.
+ *
+ * @returns {JSX.Element} The JSX element representing the Benefits section for mobile.
+ */
+export default function MobileBenefitsSection(): JSX.Element {
     return (
         <Section className="flex flex-col gap-12 md:gap-36">
             <div className="flex flex-col md:flex-row gap-8 items-center">

@@ -1,5 +1,12 @@
 import { PropsWithChildren } from "react";
 
+/**
+ * Displays an H6 heading component for mobile devices.
+ *
+ * @param children - The content within the H6 heading.
+ * @param className - Additional classes to apply to the H6 element.
+ * @returns The rendered H6 heading component.
+ */
 const MobileH6 = ({
     children,
     className,

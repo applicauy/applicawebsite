@@ -9,7 +9,12 @@ import clutchRecognitionImg from "@/assets/clutch/clutch-recognition.png";
 import clutchStarsImg from "@/assets/clutch/clutch-stars.svg";
 import { LOCATIONS, NAVIGATION_LINKS } from "@/app/_components/footer";
 
-const MobileFooter = () => {
+/**
+ * Component for the mobile footer section of the website.
+ * Displays links to social media platforms, company information, and recognition badges.
+ * @returns {JSX.Element} Returns a React element representing the MobileFooter component
+ */
+const MobileFooter = (): JSX.Element => {
     const currentYear = new Date().getFullYear();
 
     return (

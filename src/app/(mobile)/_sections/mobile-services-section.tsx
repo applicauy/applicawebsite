@@ -13,9 +13,14 @@ import MobileButton from "../_components/mobile-button";
 import MobileH3 from "../_components/mobile-h3";
 import MobileH2 from "../_components/mobile-h2";
 
-export default function MobileServicesSection() {
+/**
+ * Component defining the mobile services section detailing IT staff augmentation services.
+ * @returns {JSX.Element} React element representing the mobile services section.
+ */
+export default function MobileServicesSection(): JSX.Element {
     return (
         <Section className="flex flex-col md:gap-20">
+            {/* First motion div for animated content display */}
             <motion.div
                 className="flex flex-col md:flex-row gap-8"
                 initial={{ opacity: 0, x: "-20px" }}
@@ -23,6 +28,7 @@ export default function MobileServicesSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
             >
+                {/* Image container with animation */}
                 <div className="relative md:w-2/4">
                     <Image
                         src={placeholderImg}
@@ -32,6 +38,7 @@ export default function MobileServicesSection() {
                     />
                 </div>
 
+                {/* Text content container */}
                 <div className="flex flex-col md:gap-8 md:w-2/4 text-center md:text-end my-8 md:my-0">
                     <MobileH3 className="mb-14 md:mb-0">
                         We specialize in IT staff augmentation services, using
@@ -53,6 +60,7 @@ export default function MobileServicesSection() {
                 </div>
             </motion.div>
 
+            {/* Second motion div for animated attributes */}
             <motion.div
                 initial={{ opacity: 0, x: "-20px" }}
                 whileInView={{ opacity: 1, x: "0px" }}
@@ -76,6 +84,7 @@ export default function MobileServicesSection() {
                 </Attribute>
             </motion.div>
 
+            {/* Third motion div for animated content display */}
             <motion.div
                 initial={{ opacity: 0, x: "-20px" }}
                 whileInView={{ opacity: 1, x: "0px" }}
