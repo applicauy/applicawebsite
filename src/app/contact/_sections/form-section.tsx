@@ -109,7 +109,8 @@ export default function FormSection() {
                 <Button
                     type="submit"
                     disabled={formStatus.pending}
-                    arrowIconColor="var(--highlight-color)"
+                    //TODO: Typescript no identifica arrowIconColor como una propiedad válida en Button
+                    // arrowIconColor="var(--highlight-color)"
                 >
                     Submit
                 </Button>

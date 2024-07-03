@@ -50,9 +50,9 @@ export default function MobileBlogSection() {
             </MobileH2>
 
             <MobileBlogCarousel>
-                {cards.map((card) => {
+                {cards.map((card, index) => {
                     return (
-                        <div>
+                        <div key={index}>
                             <MobilePostCard
                                 imageSrc={card.imageSrc}
                                 imageAlt={card.imageAlt}
