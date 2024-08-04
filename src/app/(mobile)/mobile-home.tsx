@@ -3,8 +3,7 @@ import MobileLandingSection from "./_sections/mobile-landing-section";
 import MobileProcessSection from "./_sections/mobile-proccess-section";
 import MobileServicesSection from "./_sections/mobile-services-section";
 import MobileBenefitsSection from "./_sections/mobile-benefits-section";
-import MobileAboutUsSection from "./_sections/mobile-about-us-section";
-import MobileBlogSection from "./_sections/mobile-blog-section";
+import MobileTalenOnDemand from "./_sections/mobile-talen-on-demand";
 import MobileLetsTalkSection from "./_sections/mobile-lets-talk-section";
 
 export default function MobileHome() {
@@ -26,12 +25,12 @@ export default function MobileHome() {
             <br />
             <br />
 
-            <MobileAboutUsSection />
+            <MobileTalenOnDemand />
 
             <br />
             <br />
-
-            <MobileBlogSection />
+            
+            {/*<MobileBlogSection />*/}
 
             <MobileLetsTalkSection />
         </main>

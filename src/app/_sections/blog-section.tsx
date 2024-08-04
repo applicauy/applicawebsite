@@ -6,7 +6,8 @@ import H2 from "@/components/h2";
 
 export default function BlogSection() {
     return (
-        <Section className="flex flex-col">
+        <Section className="flex flex-col" >
+          <div id="blog-section"/>
             <H2 className="mb-12">
                 Check out our{" "}
                 <strong className={`font-normal ${avigeaFont.className} block`}>

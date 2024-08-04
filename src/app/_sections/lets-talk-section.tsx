@@ -1,8 +1,12 @@
+"use client";
 import { avigeaFont } from "@/assets/fonts";
-import Button from "../../components/button";
+import Button from "@/components/button";
 import H3 from "@/components/h3";
 
 export default function LetsTalkSection() {
+    const onLetsTalkClick = () => {
+        window.location.href = "/contact";
+    };
     return (
         <section className="flex justify-center items-center min-h-80 w-full gap-8 bg-gradient-to-br from-violet-900 from-15% via-fuchsia-700 to-[--background-color] to-85%">
             <H3>
@@ -12,7 +16,7 @@ export default function LetsTalkSection() {
                 </strong>
                 ?
             </H3>
-            <Button>Let&apos;s talk!</Button>
+            <Button onClick={onLetsTalkClick}>Let&apos;s talk!</Button>
         </section>
     );
 }

@@ -22,6 +22,7 @@ export default function MobileServicesSection() {
                 whileInView={{ opacity: 1, x: "0px" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
+                id="about-us"
             >
                 <div className="relative md:w-2/4">
                     <Image

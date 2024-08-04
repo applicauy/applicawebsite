@@ -1,10 +1,10 @@
 import { cookies } from "next/headers";
 import LandingSection from "./_sections/landing-section";
-import ServicesSection from "./_sections/services-section";
+import AboutUs from "./_sections/about-us";
 import BenefitsSection from "./_sections/benefits-section";
 import { apexFont } from "@/assets/fonts";
 import ProcessSection from "./_sections/process-section";
-import AboutUsSection from "./_sections/about-us-section";
+import TalentOnDemand from "./_sections/talent-on-demand";
 import BlogSection from "./_sections/blog-section";
 import LetsTalkSection from "./_sections/lets-talk-section";
 import MobileHome from "./(mobile)/mobile-home";
@@ -22,15 +22,13 @@ export default function Home() {
         >
             <LandingSection />
 
-            <ServicesSection />
+            <AboutUs />
 
             <BenefitsSection />
 
             <ProcessSection />
 
-            <AboutUsSection />
-
-            <BlogSection />
+            <TalentOnDemand />
 
             <LetsTalkSection />
         </main>

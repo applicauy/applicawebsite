@@ -7,6 +7,9 @@ import MobileH2 from "../_components/mobile-h2";
 import MobileButton from "../_components/mobile-button";
 
 export default function MobileLandingSection() {
+    const onStartNowClick = () => {
+        window.location.href = "/contact";
+    };
     return (
         <Section className="py-10 md:py-24">
             {/* Example of how to utilize motion's animation upon the user's first view (it 
@@ -32,7 +35,9 @@ export default function MobileLandingSection() {
                     Let’s build your IT dream team together
                 </p>
 
-                <MobileButton highlightedArrow>Start now!</MobileButton>
+                <MobileButton highlightedArrow onClick={onStartNowClick}>
+                    Start now!
+                </MobileButton>
             </motion.div>
         </Section>
     );

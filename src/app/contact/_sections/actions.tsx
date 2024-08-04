@@ -1,7 +1,7 @@
-"use server";
+"use client";
 
 import { ZodIssue, z } from "zod";
-import { EmailPayload, sendEmail } from "@/lib/email";
+import { EmailPayload } from "@/lib/email";
 
 /**
  * Field names used in the contact form.
@@ -90,11 +90,7 @@ export const handleContactRequest = async (
 
     // Prepare the email payload
     const email: EmailPayload = {
-        to: validationResult.data[FieldName.EMAIL]?.toString()!,
-        headers: {
-            "Reply-To": validationResult.data[FieldName.EMAIL]?.toString()!,
-        },
-        subject: "New contact request from Applica Corp.'s website",
+        email: validationResult.data[FieldName.EMAIL]?.toString()!,
         html: `<div>
                 <h1>Received Data</h1>
 
@@ -121,8 +117,29 @@ export const handleContactRequest = async (
             </div>`,
     };
 
-    // TODO Send the email
-    // await sendEmail(email);
+    try {
+        const headers = new Headers({
+            "Content-Type": "application/json",
+        } as HeadersInit);
+        
+        const response = await fetch("/api/contact", {
+            method: "post",
+            body: JSON.stringify(email),
+            headers,
+        });
 
-    return { success: true, message: "Data validated successfully!" };
+        if (!response.ok) {
+            console.error("falling over");
+            return Promise.reject(
+                new Error(`response status: ${response.status}`),
+            );
+        }
+        const responseData = await response.json();
+        console.log(responseData["message"]);
+        return { success: true, message: "Email sent!" };
+        
+    } catch (err) {
+        console.error(err);
+        return { success: false, message: "Server error." };
+    }
 };

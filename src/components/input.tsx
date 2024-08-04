@@ -43,7 +43,7 @@ export default function Input({
             {datalistValues && (
                 <datalist id={`${name}-datalist`}>
                     {datalistValues.map((dlv, index) => (
-                        <option key={index} value={dlv} />
+                      <option key={index} value={dlv}>{dlv}</option>
                     ))}
                 </datalist>
             )}
