@@ -9,6 +9,7 @@ import MobileH2 from "../_components/mobile-h2";
 export default function MobileProcessSection() {
     return (
         <Section className={`flex flex-col items-center w-full`}>
+            <div id="hiring-process"/>
             <MobileH2 className="mb-9 md:mb-12 text-center">
                 Hiring{" "}
                 <strong className={`font-normal ${avigeaFont.className}`}>

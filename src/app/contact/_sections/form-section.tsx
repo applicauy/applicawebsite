@@ -7,8 +7,7 @@ import { useFormState, useFormStatus } from "react-dom";
 import { handleContactRequest, Response } from "./actions";
 import Errors from "../_components/errors";
 import Button from "@/components/button";
-import { useEffect } from "react";
-import Checkbox from "../../../components/checkbox";
+import { useEffect, useRef } from "react";
 import Script from "next/script";
 
 const REFERRALS_VALUES = [
@@ -19,14 +18,24 @@ const REFERRALS_VALUES = [
     "Referral",
 ];
 
-// 
+//
 const initialState: Response = {
     success: false,
 };
 
-export default function FormSection() {
-    const formStatus = useFormStatus();
+function Submit() {
+    const { pending } = useFormStatus();
+    return (
+        <div className="mt-10 justify-between">
+            <Button type="submit" highlightedArrow={!pending}>
+                Submit
+            </Button>
+        </div>
+    );
+}
 
+export default function FormSection() {
+    const formRef = useRef<HTMLFormElement>(null);
     const [state, formAction] = useFormState(
         handleContactRequest,
         initialState,
@@ -36,12 +45,15 @@ export default function FormSection() {
         if (!state.success) {
             return;
         }
-
-        // TODO Show banner
+        formRef.current?.reset()
     }, [state.success]);
 
     return (
-        <form action={formAction} className="grid grid-cols-1 gap-8">
+        <form
+            action={formAction}
+            className="grid grid-cols-1 gap-8"
+            ref={formRef}
+        >
             <div>
                 <Label title="Name" required>
                     <Input name="name" type="text" required />
@@ -98,23 +110,14 @@ export default function FormSection() {
             </div>
 
             <label className="flex items-center gap-2">
-                <Checkbox name="subscribe" />
+                <input name="subscribe" type="checkbox" />
 
                 <span>
                     I accept to receive news & communications from Applica Corp.
                 </span>
             </label>
 
-            <div className="mt-10 justify-between">
-                <Button
-                    type="submit"
-                    disabled={formStatus.pending}
-                    //TODO: Typescript no identifica arrowIconColor como una propiedad válida en Button
-                    // arrowIconColor="var(--highlight-color)"
-                >
-                    Submit
-                </Button>
-            </div>
+            <Submit />
 
             <p>{state.message}</p>
 
