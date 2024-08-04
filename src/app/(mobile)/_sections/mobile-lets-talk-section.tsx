@@ -1,6 +1,8 @@
+"use client";
 import { apexFont, avigeaFont } from "@/assets/fonts";
 import MobileButton from "../_components/mobile-button";
 import MobileH2 from "../_components/mobile-h2";
+import { onLetsTalkClick } from "@/lib/helpers";
 
 export default function MobileLetsTalkSection() {
     return (
@@ -19,7 +21,9 @@ export default function MobileLetsTalkSection() {
 
                     <br />
 
-                    <MobileButton>Let&apos;s talk!</MobileButton>
+                    <MobileButton onClick={onLetsTalkClick}>
+                        Let&apos;s talk!
+                    </MobileButton>
                 </div>
             </div>
         </section>

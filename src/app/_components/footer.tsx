@@ -48,15 +48,15 @@ export const LOCATIONS: {
 export const NAVIGATION_LINKS = [
     {
         text: "About us",
-        href: "#about-us",
+        href: "/#about-us",
     },
     {
         text: "Benefits",
-        href: "#benefits",
+        href: "/#benefits",
     },
     {
         text: "Hiring process",
-        href: "#hiring-process",
+        href: "/#hiring-process",
     },
     {
         text: "Contact",

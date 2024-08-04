@@ -1,9 +1,11 @@
+"use client"
 import { avigeaFont } from "@/assets/fonts";
 import Section from "@/components/section";
 import MobileButton from "../_components/mobile-button";
 import MobileGradientBall from "../_components/mobile-gradient-ball";
 import MobileH2 from "../_components/mobile-h2";
 import MobileH3 from "../_components/mobile-h3";
+import { onStartNowClick } from "@/lib/helpers";
 
 /**
  * Renders the About Us section.
@@ -35,7 +37,9 @@ export default function MobileTalenOnDemand() {
                     <MobileGradientBall title="+60" subtitle="Technologies" />
                 </div>
 
-                <MobileButton>Schedule a call</MobileButton>
+                <MobileButton onClick={onStartNowClick}>
+                    Schedule a call
+                </MobileButton>
             </div>
 
             <div>{/* TODO Interactive map */}</div>

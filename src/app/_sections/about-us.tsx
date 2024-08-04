@@ -12,13 +12,9 @@ import Attribute from "../_components/attribute";
 import Button from "../../components/button";
 import H3 from "@/components/h3";
 import H2 from "@/components/h2";
+import {onMeetOurProcessClick} from "@/lib/helpers";
 
 export default function AboutUs() {
-    const onMeetOurProcessClick = () => {
-        const {protocol, hostname, port} = window.location;
-        window.location.href = `${protocol}//${hostname}:${port}/#hiring-process`
-    };
-
     return (
         <Section className="flex flex-col md:gap-20">
             <motion.div
@@ -96,7 +92,7 @@ export default function AboutUs() {
             </motion.div>
 
             <motion.div
-                id="services-section"
+                id="services"
                 initial={{ opacity: 0, x: "-20px" }}
                 whileInView={{ opacity: 1, x: "0px" }}
                 viewport={{ once: true }}

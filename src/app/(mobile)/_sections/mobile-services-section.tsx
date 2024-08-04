@@ -12,6 +12,7 @@ import Attribute from "@/app/_components/attribute";
 import MobileButton from "../_components/mobile-button";
 import MobileH3 from "../_components/mobile-h3";
 import MobileH2 from "../_components/mobile-h2";
+import {onMeetOurProcessClick} from "@/lib/helpers";
 
 export default function MobileServicesSection() {
     return (
@@ -98,7 +99,9 @@ export default function MobileServicesSection() {
                     on deck, Our IT talents are here to help.
                 </MobileH3>
 
-                <MobileButton>Meet our process</MobileButton>
+                <MobileButton onClick={onMeetOurProcessClick}>
+                    Meet our process
+                </MobileButton>
             </motion.div>
         </Section>
     );
