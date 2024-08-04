@@ -28,7 +28,7 @@ export default function NavBar() {
                     </li>
 
                     <li>
-                        <Link href="/#services-section">services</Link>
+                        <Link href="#services">services</Link>
                     </li>
 
                     <li>

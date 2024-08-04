@@ -5,6 +5,7 @@ import Button from "@/components/button";
 import GradientBall from "../_components/gradient-ball";
 import H2 from "@/components/h2";
 import H3 from "@/components/h3";
+import {onStartNowClick} from "@/lib/helpers";
 
 /**
  * Renders the Talent on demand.
@@ -12,9 +13,6 @@ import H3 from "@/components/h3";
  * @returns The JSX element representing the About Us section.
  */
 export default function TalentOnDemand() {
-    const onStartNowClick = () => {
-        window.location.href = "/contact";
-    };
     
     return (
         <Section className="flex">
