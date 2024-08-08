@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import { avigeaFont } from "@/assets/fonts";
 import Section from "@/components/section";
 import MobileButton from "../_components/mobile-button";
@@ -6,6 +7,7 @@ import MobileGradientBall from "../_components/mobile-gradient-ball";
 import MobileH2 from "../_components/mobile-h2";
 import MobileH3 from "../_components/mobile-h3";
 import { onStartNowClick } from "@/lib/helpers";
+import mapImg from "@/assets/mapa.png";
 
 /**
  * Renders the About Us section.
@@ -14,7 +16,7 @@ import { onStartNowClick } from "@/lib/helpers";
  */
 export default function MobileTalenOnDemand() {
     return (
-        <Section className="flex">
+        <Section className="flex flex-col-reverse gap-10">
             <div className="flex flex-col items-center md:items-start md:w-[60%]">
                 <MobileH2 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
                     Talent on demand{" "}
@@ -42,7 +44,13 @@ export default function MobileTalenOnDemand() {
                 </MobileButton>
             </div>
 
-            <div>{/* TODO Interactive map */}</div>
+            <div>
+                <Image
+                    src={mapImg}
+                    width={400}
+                    alt="Applica offices across the world"
+                />
+            </div>
         </Section>
     );
 }

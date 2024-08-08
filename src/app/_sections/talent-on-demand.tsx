@@ -1,11 +1,13 @@
-"use client"
+"use client";
+import Image from "next/image";
 import { avigeaFont } from "@/assets/fonts";
 import Section from "@/components/section";
 import Button from "@/components/button";
 import GradientBall from "../_components/gradient-ball";
 import H2 from "@/components/h2";
 import H3 from "@/components/h3";
-import {onStartNowClick} from "@/lib/helpers";
+import { onStartNowClick } from "@/lib/helpers";
+import mapImg from "@/assets/mapa.png";
 
 /**
  * Renders the Talent on demand.
@@ -13,10 +15,9 @@ import {onStartNowClick} from "@/lib/helpers";
  * @returns The JSX element representing the About Us section.
  */
 export default function TalentOnDemand() {
-    
     return (
-        <Section className="flex">
-            <div className="flex flex-col items-center md:items-start md:w-[60%]">
+        <Section className="flex flex-col md:flex-row gap-8">
+            <div className="flex flex-col items-center md:items-start md:w-[60%] my-auto">
                 <H2 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
                     Talent on demand{" "}
                     <strong
@@ -41,7 +42,13 @@ export default function TalentOnDemand() {
                 <Button onClick={onStartNowClick}>Schedule a call</Button>
             </div>
 
-            <div>{/* TODO Interactive map */}</div>
+            <div>
+                <Image
+                    src={mapImg}
+                    width={800}
+                    alt="Applica offices across the world"
+                />
+            </div>
         </Section>
     );
 }
