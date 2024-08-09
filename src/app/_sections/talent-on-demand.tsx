@@ -6,7 +6,7 @@ import Button from "@/components/button";
 import GradientBall from "../_components/gradient-ball";
 import H2 from "@/components/h2";
 import H3 from "@/components/h3";
-import { onStartNowClick } from "@/lib/helpers";
+import { /*onStartNowClick,*/ useNavigationHandlers } from "@/lib/helpers";
 import mapImg from "@/assets/mapa.png";
 
 /**
@@ -15,6 +15,8 @@ import mapImg from "@/assets/mapa.png";
  * @returns The JSX element representing the About Us section.
  */
 export default function TalentOnDemand() {
+    const { onStartNowClick } = useNavigationHandlers();
+
     return (
         <Section className="flex flex-col md:flex-row gap-8">
             <div className="flex flex-col items-center md:items-start md:w-[60%] my-auto">

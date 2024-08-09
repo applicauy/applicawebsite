@@ -12,9 +12,13 @@ import Attribute from "@/app/_components/attribute";
 import MobileButton from "../_components/mobile-button";
 import MobileH3 from "../_components/mobile-h3";
 import MobileH2 from "../_components/mobile-h2";
-import {onMeetOurProcessClick} from "@/lib/helpers";
+import {
+    /*onMeetOurProcessClick,*/ useNavigationHandlers,
+} from "@/lib/helpers";
 
 export default function MobileServicesSection() {
+    const { onMeetOurProcessClick } = useNavigationHandlers();
+
     return (
         <Section className="flex flex-col md:gap-20">
             <motion.div

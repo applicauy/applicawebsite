@@ -6,7 +6,7 @@ import MobileButton from "../_components/mobile-button";
 import MobileGradientBall from "../_components/mobile-gradient-ball";
 import MobileH2 from "../_components/mobile-h2";
 import MobileH3 from "../_components/mobile-h3";
-import { onStartNowClick } from "@/lib/helpers";
+import { /*onStartNowClick,*/ useNavigationHandlers } from "@/lib/helpers";
 import mapImg from "@/assets/mapa.png";
 
 /**
@@ -15,6 +15,8 @@ import mapImg from "@/assets/mapa.png";
  * @returns The JSX element representing the About Us section.
  */
 export default function MobileTalenOnDemand() {
+    const { onStartNowClick } = useNavigationHandlers();
+
     return (
         <Section className="flex flex-col-reverse gap-10">
             <div className="flex flex-col items-center md:items-start md:w-[60%]">

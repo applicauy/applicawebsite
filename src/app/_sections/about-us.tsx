@@ -12,9 +12,13 @@ import Attribute from "../_components/attribute";
 import Button from "../../components/button";
 import H3 from "@/components/h3";
 import H2 from "@/components/h2";
-import {onMeetOurProcessClick} from "@/lib/helpers";
+import {
+    /*onMeetOurProcessClick,*/ useNavigationHandlers,
+} from "@/lib/helpers";
 
 export default function AboutUs() {
+    const { onMeetOurProcessClick } = useNavigationHandlers();
+
     return (
         <Section className="flex flex-col md:gap-20">
             <motion.div
