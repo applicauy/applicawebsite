@@ -119,8 +119,6 @@ export const handleContactRequest = async (
             </div>`,
     };
 
-    console.log("Contact request to send:", email)
-
     try {
         await sendEmail(email)
 
