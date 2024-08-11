@@ -1,7 +1,7 @@
-"use client";
+"use server";
 
 import { ZodIssue, z } from "zod";
-import { EmailPayload } from "@/lib/email";
+import { EmailPayload, sendEmail } from "@/lib/email";
 
 /**
  * Field names used in the contact form.
@@ -75,7 +75,6 @@ export const handleContactRequest = async (
         [FieldName.MESSAGE]: formData.get(FieldName.MESSAGE),
         [FieldName.SUBSCRIBE]: formData.get(FieldName.SUBSCRIBE),
     });
-
     // If the form data is not valid, return the errors
     if (!validationResult.success) {
         return {
@@ -90,9 +89,12 @@ export const handleContactRequest = async (
 
     // Prepare the email payload
     const email: EmailPayload = {
-        email: validationResult.data[FieldName.EMAIL]?.toString()!,
+        headers: {
+            "Reply-To": validationResult.data[FieldName.EMAIL]?.toString()!,
+        },
+        subject: "New contact request from Applica Corp.'s website",
         html: `<div>
-                <h1>Received Data</h1>
+                <h1>Contact Request</h1>
 
                 <ul>
                     <li>
@@ -117,29 +119,14 @@ export const handleContactRequest = async (
             </div>`,
     };
 
-    try {
-        const headers = new Headers({
-            "Content-Type": "application/json",
-        } as HeadersInit);
-        
-        const response = await fetch("/api/contact", {
-            method: "post",
-            body: JSON.stringify(email),
-            headers,
-        });
+    console.log("Contact request to send:", email)
 
-        if (!response.ok) {
-            console.error("falling over");
-            return Promise.reject(
-                new Error(`response status: ${response.status}`),
-            );
-        }
-        const responseData = await response.json();
-        console.log(responseData["message"]);
-        return { success: true, message: "Email sent!" };
-        
+    try {
+        await sendEmail(email)
+
+        return { success: true, message: "Contact request sent!" };
     } catch (err) {
         console.error(err);
-        return { success: false, message: "Server error." };
+        return { success: false, message: "Unable to send contact request." };
     }
 };
