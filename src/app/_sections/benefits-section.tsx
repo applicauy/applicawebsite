@@ -1,6 +1,9 @@
 import { avigeaFont } from "@/assets/fonts";
 import Section from "@/components/section";
-import placeholderImg from "@/assets/placeholder-img-2.png";
+import costEffectiveness from "@/assets/cost-efectiveness.png";
+import timeSaving from "@/assets/timesaving.png";
+import flexibility from "@/assets/flexibility.png";
+import focused from "@/assets/focused.png";
 import Benefit from "../_components/benefit";
 import Carousel from "../_components/carousel";
 import H2 from "@/components/h2";
@@ -9,22 +12,22 @@ import H3 from "@/components/h3";
 // Benefits to be displayed in the section.
 const BENEFITS = [
     {
-        image: placeholderImg,
+        image: costEffectiveness,
         description: "Improved cost-effectiveness",
         alt: "",
     },
     {
-        image: placeholderImg,
+        image: timeSaving,
         description: "Time saving",
         alt: "",
     },
     {
-        image: placeholderImg,
+        image: focused,
         description: "Focused strategy",
         alt: "",
     },
     {
-        image: placeholderImg,
+        image: flexibility,
         description: "Flexibility & fast replacement",
         alt: "",
     },
@@ -33,7 +36,10 @@ const BENEFITS = [
 export default function BenefitsSection() {
     return (
         <Section className="flex flex-col gap-12 md:gap-36">
-            <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div
+                className="flex flex-col md:flex-row gap-8 items-center"
+                id="benefits"
+            >
                 <div className="flex flex-col md:w-2/4 gap-12 text-center md:text-left">
                     <H2 className="md:max-w-[80%]">
                         Let&apos;s find your next{" "}
@@ -52,7 +58,7 @@ export default function BenefitsSection() {
                     </H3>
                 </div>
 
-                <div className="md:w-2/4 grid grid-cols-2">
+                <div className="md:w-2/4 grid grid-cols-2 gap-4">
                     {BENEFITS.map((b, index) => (
                         <Benefit
                             key={index}

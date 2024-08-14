@@ -4,99 +4,119 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: theme("colors.secondary-bg");
+  background: theme("colors.secondary-bg");
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #3d3d3d;
-    border-radius: 20px;
+  background: #3d3d3d;
+  border-radius: 20px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(114, 114, 114);
+  background: rgb(114, 114, 114);
 }
 
 textarea::-webkit-scrollbar-track {
-    margin-bottom: 45px;
+  margin-bottom: 45px;
 }
 
 body {
-    color: white;
-    background-color: theme("colors.primary-bg");
+  color: white;
+  background-color: theme("colors.primary-bg");
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 h1 {
-    color: #b69fe2;
+  color: #b69fe2;
 }
 
 h2 strong,
 h3 strong {
-    letter-spacing: 0.1rem;
+  letter-spacing: 0.1rem;
 }
 
 .image {
-    transform: scale(-1, 1);
+  transform: scale(-1, 1);
 }
 
 .service-gradient {
-    border-radius: 500px;
-    opacity: 0.9;
-    background-image: radial-gradient(
-            41.39% 101.88% at 77.03% 94.27%,
-            rgba(0, 0, 0, 0) 100%
-        ),
-        radial-gradient(
-            45.88% 94.27% at 62.95% 94.72%,
-            #0543c5 0%,
-            rgba(88, 125, 203, 0) 100%
-        ),
-        radial-gradient(
-            210.81% 103.54% at 76.2% 2.7%,
-            #600064 0%,
-            rgba(0, 0, 0, 0) 100%
-        ),
-        radial-gradient(
-            138.01% 71.11% at 17.5% 12.81%,
-            #350093 0%,
-            rgba(0, 0, 0, 0) 100%
-        ),
-        radial-gradient(
-            62.61% 80.12% at 56.65% 105.39%,
-            #37cfe4 0%,
-            rgba(0, 0, 0, 0) 100%
-        ),
-        radial-gradient(
-            179.56% 78.03% at 10.31% 88.31%,
-            #d32072 0%,
-            rgba(0, 0, 0, 0) 100%
-        ),
-        #0b0b0b;
-    background-blend-mode: normal, plus-lighter, plus-lighter, plus-lighter,
-        plus-lighter, plus-lighter, normal;
-    background-size: 50% 50%;
-    background-repeat: no-repeat;
+  border-radius: 500px;
+  opacity: 0.9;
+  background-image: radial-gradient(
+                  41.39% 101.88% at 77.03% 94.27%,
+                  rgba(0, 0, 0, 0) 100%
+  ),
+  radial-gradient(
+                  45.88% 94.27% at 62.95% 94.72%,
+                  #0543c5 0%,
+                  rgba(88, 125, 203, 0) 100%
+  ),
+  radial-gradient(
+                  210.81% 103.54% at 76.2% 2.7%,
+                  #600064 0%,
+                  rgba(0, 0, 0, 0) 100%
+  ),
+  radial-gradient(
+                  138.01% 71.11% at 17.5% 12.81%,
+                  #350093 0%,
+                  rgba(0, 0, 0, 0) 100%
+  ),
+  radial-gradient(
+                  62.61% 80.12% at 56.65% 105.39%,
+                  #37cfe4 0%,
+                  rgba(0, 0, 0, 0) 100%
+  ),
+  radial-gradient(
+                  179.56% 78.03% at 10.31% 88.31%,
+                  #d32072 0%,
+                  rgba(0, 0, 0, 0) 100%
+  ),
+  #0b0b0b;
+  background-blend-mode: normal, plus-lighter, plus-lighter, plus-lighter,
+  plus-lighter, plus-lighter, normal;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
 }
 
 .dot {
-    $diameter: 25px;
-    min-width: $diameter;
-    min-height: $diameter;
-    border-radius: 50%;
+  $diameter: 25px;
+  min-width: $diameter;
+  min-height: $diameter;
+  border-radius: 50%;
 }
 
 .text-muted {
-    color: theme("colors.secondary-muted");
+  color: theme("colors.secondary-muted");
+}
+
+.transform-image {
+  transform: scaleX(-1);
+}
+
+.benefit-images {
+  border-radius: 10px;
+}
+
+.contact-section {
+  padding: 0 8px;
+}
+
+.mobile-drawer-content {
+  background-color: #1b1b1b;
+  li {
+    margin-bottom: 8px
+  }
 }

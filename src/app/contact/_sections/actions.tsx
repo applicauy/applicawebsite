@@ -75,7 +75,6 @@ export const handleContactRequest = async (
         [FieldName.MESSAGE]: formData.get(FieldName.MESSAGE),
         [FieldName.SUBSCRIBE]: formData.get(FieldName.SUBSCRIBE),
     });
-
     // If the form data is not valid, return the errors
     if (!validationResult.success) {
         return {
@@ -90,13 +89,12 @@ export const handleContactRequest = async (
 
     // Prepare the email payload
     const email: EmailPayload = {
-        to: validationResult.data[FieldName.EMAIL]?.toString()!,
         headers: {
             "Reply-To": validationResult.data[FieldName.EMAIL]?.toString()!,
         },
         subject: "New contact request from Applica Corp.'s website",
         html: `<div>
-                <h1>Received Data</h1>
+                <h1>Contact Request</h1>
 
                 <ul>
                     <li>
@@ -121,8 +119,12 @@ export const handleContactRequest = async (
             </div>`,
     };
 
-    // TODO Send the email
-    // await sendEmail(email);
+    try {
+        await sendEmail(email)
 
-    return { success: true, message: "Data validated successfully!" };
+        return { success: true, message: "Contact request sent!" };
+    } catch (err) {
+        console.error(err);
+        return { success: false, message: "Unable to send contact request." };
+    }
 };

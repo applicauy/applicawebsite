@@ -12,7 +12,10 @@ import clutchIcon from "@/assets/icons/clutch.svg";
  * Array of locations.
  * @type {Array<{ country: string, location: string }>}
  */
-const LOCATIONS = [
+export const LOCATIONS: {
+    country: string;
+    location: string;
+}[] = [
     {
         country: "USA",
         location: "1900 N Bayshore Drive 1A/1B, Miami.",
@@ -35,37 +38,29 @@ const LOCATIONS = [
     },
     {
         country: "Colombia",
-        location: "Carrera 14 # 93-68, Bogotá",
+        location: "Carrera 14 # 93-68, Bogotá.",
     },
 ];
 
 /**
  * Navigation links for the footer component.
  */
-const NAVIGATION_LINKS = [
+export const NAVIGATION_LINKS = [
     {
         text: "About us",
-        href: "#",
-    },
-    {
-        text: "Why us",
-        href: "#",
+        href: "/#about-us",
     },
     {
         text: "Benefits",
-        href: "#",
+        href: "/#benefits",
     },
     {
         text: "Hiring process",
-        href: "#",
-    },
-    {
-        text: "Blog",
-        href: "#",
+        href: "/#hiring-process",
     },
     {
         text: "Contact",
-        href: "#",
+        href: "/contact",
     },
 ];
 
@@ -77,12 +72,14 @@ export default function Footer() {
             className={`${apexFont.className} py-28 bg-secondary-bg text-xl flex flex-col gap-8`}
         >
             <div className="container mx-auto flex flex-col md:flex-row gap-16 justify-between">
-                <Image
-                    src={logo}
-                    alt="Applica Corp's logo"
-                    width={250}
-                    height={220}
-                />
+                <Link href="/">
+                    <Image
+                        src={logo}
+                        alt="Applica Corp's logo"
+                        width={250}
+                        height={220}
+                    />
+                </Link>
 
                 <div>
                     <ul>
@@ -133,9 +130,26 @@ export default function Footer() {
                         </Link>
                     </div>
 
-                    <div className="flex gap-8">
-                        <Image src={clutchStarsImg} alt="" />
-                        <Image src={clutchRecognitionImg} alt="" height={150} />
+                    <div className="flex gap-8" role="link">
+                        <Link
+                            href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
+                            target="_blank"
+                        >
+                            <Image
+                                src={clutchStarsImg}
+                                alt="AplicaCorp at Clutch"
+                            />
+                        </Link>
+                        <Link
+                            href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
+                            target="_blank"
+                        >
+                            <Image
+                                src={clutchRecognitionImg}
+                                alt="Clutch recognition for ApplicaCorp"
+                                height={150}
+                            />
+                        </Link>
                     </div>
                 </div>
             </div>
