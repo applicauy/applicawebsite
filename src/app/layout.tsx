@@ -9,8 +9,8 @@ import MobileLayout from "./(mobile)/layout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Applica Corp",
-    description: "Applica Corp's website.",
+    title: "Applica Corp: IT Staff augmentation services",
+    description: "We are a software company focused on saving your time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs.",
 };
 
 export default function RootLayout({
