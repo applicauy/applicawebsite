@@ -31,7 +31,7 @@ export default function LandingSection() {
                     <strong
                         className={`text-highlight ${avigeaFont.className} font-normal`}
                     >
-                        saving your time
+                        saving you time
                     </strong>{" "}
                     and delivering peace of mind
                 </H2>

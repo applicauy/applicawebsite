@@ -27,7 +27,7 @@ export default function MobileProcessSection() {
 
                 <ProcessItem contentPosition={ContentPosition.Right} colored>
                     <MobileProcessItemBody title="Screening">
-                        +4,000 pre-vetted profiles in the Talent Pool are
+                        +4,000 pre-vetted profiles in our talent pool are
                         reviewed by our team of recruiters.
                     </MobileProcessItemBody>
                 </ProcessItem>
@@ -56,13 +56,13 @@ export default function MobileProcessSection() {
                             <h3
                                 className={`mb-0 px-0 leading-4 text-sm text-center ${avigeaFont.className}`}
                             >
-                                Candidates deliver
+                                Candidates presentation
                             </h3>
                         </div>
 
                         <p className="text-xs md:text-sm leading-tight">
                             Meet a tailor-made group of applicants who are in
-                            line with the initial requirements.
+                            line your initial requirements.
                         </p>
                     </div>
                 </ProcessItem>
@@ -75,7 +75,7 @@ export default function MobileProcessSection() {
                 </ProcessItem>
 
                 <ProcessItem contentPosition={ContentPosition.Right}>
-                    <MobileProcessItemBody title="On boarding">
+                    <MobileProcessItemBody title="Onboarding">
                         Support and guidance during induction into the role,
                         project and company culture.
                     </MobileProcessItemBody>
@@ -88,7 +88,7 @@ export default function MobileProcessSection() {
                     dashedEndOfLineHeight="3rem"
                 >
                     <MobileProcessItemBody title="EX & monitoring">
-                        Performance and sactisfaction tracking of stakeholders.
+                    Tracking of stakeholders performance and satisfaction.
                     </MobileProcessItemBody>
                 </ProcessItem>
             </div>
