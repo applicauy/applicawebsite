@@ -5,12 +5,14 @@ import "./globals.scss";
 import NavBar from "./_components/navbar";
 import Footer from "./_components/footer";
 import MobileLayout from "./(mobile)/layout";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Applica Corp: IT Staff augmentation services",
-    description: "We are a software company focused on saving your time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs.",
+    description:
+        "We are a software company focused on saving your time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs.",
 };
 
 export default function RootLayout({
@@ -27,6 +29,7 @@ export default function RootLayout({
 
     return (
         <html lang="en">
+            <GoogleTagManager gtmId={"G-689YV97H3W"} />
             <body className={`${inter.className}`}>
                 <NavBar />
 
