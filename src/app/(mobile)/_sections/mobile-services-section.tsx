@@ -49,7 +49,7 @@ export default function MobileServicesSection() {
                         <strong
                             className={`font-normal ${avigeaFont.className}`}
                         >
-                            speed up your project?
+                            ramp up your project?
                         </strong>
                     </MobileH2>
 
@@ -67,12 +67,12 @@ export default function MobileServicesSection() {
                 className="flex flex-col md:flex-row gap-6 max-w-[80%] md:max-w-full mx-auto md:mx-0 mb-14 md:mb-0"
             >
                 <Attribute icon={searchIcon}>
-                    Pre-vetted & tailor match nearshore IT talent you can count
+                    Pre-vetted & tailor matched nearshore IT talent you can count
                     on.
                 </Attribute>
 
                 <Attribute icon={lampIcon}>
-                    Deeper understanding of your needs giving you even better
+                    Deeper understanding of your needs, giving you even better
                     solutions.
                 </Attribute>
 
@@ -100,7 +100,7 @@ export default function MobileServicesSection() {
                 <MobileH3 className="text-md">
                     Whether you need a specialized skillset, a temporary highly
                     qualified developer, a Senior team lead, or just more hands
-                    on deck, Our IT talents are here to help.
+                    on deck, our IT talents are here to help.
                 </MobileH3>
 
                 <MobileButton onClick={onMeetOurProcessClick}>

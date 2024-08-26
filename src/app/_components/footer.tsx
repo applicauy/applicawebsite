@@ -30,7 +30,7 @@ export const LOCATIONS: {
     },
     {
         country: "Panamá",
-        location: "Av. Centenario, Torre de las Américas p12.",
+        location: "Av. Centenario - Torre de las Américas p12, Ciudad de Panamá.",
     },
     {
         country: "Chile",

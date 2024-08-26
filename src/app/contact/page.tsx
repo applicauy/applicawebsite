@@ -12,7 +12,7 @@ export default function Contact() {
                 <div className="relative md:w-2/3">
                     <H2 className="mb-4">
                         Looking for help to{" "}
-                        <StrongText content="speed up your development" />
+                        <StrongText content="ramp up your development" />
                     </H2>
                     <H4 className="mb-16">Let&apos;s #MakeIThappen</H4>
                 </div>
@@ -20,10 +20,12 @@ export default function Contact() {
                     <p className="md:text-2xl">
                         First, we need some information from you. <br />
                         Please, fill the form or just send us an email to{" "}
-                        <StrongText
-                            content="info@applicacorp.com"
-                            highLight
-                        />{" "}
+                        <a
+                            href="mailto:info@applicacorp.com"
+                            className="font-bold text-highlight"
+                        >
+                            info@applicacorp.com
+                        </a>{" "}
                         and we will contact you shortly!
                     </p>
                 </div>
@@ -31,7 +33,14 @@ export default function Contact() {
                     <p className="inline">
                         Looking for <StrongText content="career?" />{" "}
                     </p>
-                    <p className="underline inline">View all jobs opening</p>
+                    <a
+                        href="https://recruitcrm.io/jobs/applica_corp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline inline"
+                    >
+                        View all jobs opening
+                    </a>
                 </div>
                 <div>
                     <Image
