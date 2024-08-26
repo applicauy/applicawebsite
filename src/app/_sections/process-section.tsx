@@ -28,7 +28,7 @@ export default function ProcessSection() {
 
                 <ProcessItem contentPosition={ContentPosition.Right} colored>
                     <ProcessItemBody title="Screening">
-                        +4,000 pre-vetted profiles in the Talent Pool are
+                        +4,000 pre-vetted profiles in our talent pool are
                         reviewed by our team of recruiters.
                     </ProcessItemBody>
                 </ProcessItem>
@@ -55,13 +55,13 @@ export default function ProcessSection() {
                     <div>
                         <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full w-fit py-1 md:py-4 px-4 md:px-6 mb-4">
                             <H3 className="translate-y-[2px] font-normal text-center md:text-left">
-                                Candidates deliver
+                                Candidates presentation
                             </H3>
                         </div>
 
                         <p className="text-sm md:text-lg leading-tight">
                             Meet a tailor-made group of applicants who are in
-                            line with the initial requirements.
+                            line your initial requirements.
                         </p>
                     </div>
                 </ProcessItem>
@@ -74,7 +74,7 @@ export default function ProcessSection() {
                 </ProcessItem>
 
                 <ProcessItem contentPosition={ContentPosition.Right}>
-                    <ProcessItemBody title="On boarding">
+                    <ProcessItemBody title="Onboarding">
                         Support and guidance during induction into the role,
                         project and company culture.
                     </ProcessItemBody>
@@ -87,7 +87,7 @@ export default function ProcessSection() {
                     dashedEndOfLineHeight="3rem"
                 >
                     <ProcessItemBody title="EX & monitoring">
-                        Performance and sactisfaction tracking of stakeholders.
+                    Tracking of stakeholders performance and satisfaction.
                     </ProcessItemBody>
                 </ProcessItem>
             </div>

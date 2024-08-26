@@ -52,7 +52,7 @@ export default function BenefitsSection() {
 
                     <H3>
                         Long-term partnership requires flexible service. Since
-                        2015, Applica Corp&apos;s has been dedicated to helping
+                        2015, Applica Corp. has been dedicated to helping
                         companies scale their business and take it to the next
                         level.
                     </H3>

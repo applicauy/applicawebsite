@@ -53,7 +53,7 @@ export default function MobileBenefitsSection() {
                     <div className="w-full flex justify-center">
                         <MobileH3 className="max-w-[80%]">
                             Long-term partnership requires flexible service.
-                            Since 2015, Applica Corp&apos;s has been dedicated
+                            Since 2015, Applica Corp. has been dedicated
                             to helping companies scale their business and take
                             it to the next level.
                         </MobileH3>
