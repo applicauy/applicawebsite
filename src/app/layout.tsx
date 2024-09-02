@@ -1,11 +1,11 @@
+import "./globals.scss";
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { Inter } from "next/font/google";
-import "./globals.scss";
 import NavBar from "./_components/navbar";
 import Footer from "./_components/footer";
 import MobileLayout from "./(mobile)/layout";
-import { GoogleTagManager } from '@next/third-parties/google'
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +29,22 @@ export default function RootLayout({
 
     return (
         <html lang="en">
-            <GoogleTagManager gtmId={"G-689YV97H3W"} />
+            <head>
+                <Script 
+                id="gtm-script"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                __html: `
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','G-689YV97H3W');
+                `,
+                }}
+                />
+            </head>
+            
             <body className={`${inter.className}`}>
                 <NavBar />
 
