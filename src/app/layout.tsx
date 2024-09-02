@@ -5,7 +5,6 @@ import "./globals.scss";
 import NavBar from "./_components/navbar";
 import Footer from "./_components/footer";
 import MobileLayout from "./(mobile)/layout";
-import { GoogleTagManager } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +28,20 @@ export default function RootLayout({
 
     return (
         <html lang="en">
-            <GoogleTagManager gtmId={"G-689YV97H3W"} />
+            <head>
+            {/* Google tag (gtag.js) */}
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-689YV97H3W"></script>
+                <script>
+                    window.dataLayer: object[] = window.dataLayer || [];
+                    function gtag(){
+                    // @ts-ignore
+                    dataLayer.push(arguments)}
+                    {/* eslint-disable-next-line react/no-unescaped-entities */}
+                    gtag('js', new Date());
+                        {/* eslint-disable-next-line react/no-unescaped-entities */}
+                    gtag('config', 'G-689YV97H3W');
+                </script>
+            </head>
             <body className={`${inter.className}`}>
                 <NavBar />
 
