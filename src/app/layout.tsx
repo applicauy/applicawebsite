@@ -30,7 +30,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <Script 
+                {/* <Script 
                 id="gtm-script"
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
@@ -42,9 +42,13 @@ export default function RootLayout({
                     })(window,document,'script','dataLayer','G-689YV97H3W');
                 `,
                 }}
+                /> */}
+                <Script
+                    src="https://www.googletagmanager.com/gtm.js?id=GTM-PQ3DNDZ" /* G-689YV97H3W */
+                    strategy="afterInteractive"
                 />
             </head>
-            
+
             <body className={`${inter.className}`}>
                 <NavBar />
 
