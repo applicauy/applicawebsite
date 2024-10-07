@@ -43,7 +43,7 @@ export default function ProcessItem({
             }`}
         >
             {/* Content box */}
-            <div className="w-full text-right py-2">
+            <div className="w-full text-right pb-2 mt-[-10px]">
                 {contentPosition === ContentPosition.Left && children}
             </div>
 
@@ -73,7 +73,7 @@ export default function ProcessItem({
             </div>
 
             {/* Content box */}
-            <div className="w-full text-left py-2">
+            <div className="w-full text-left pb-2 mt-[-4px]">
                 {contentPosition === ContentPosition.Right && children}
             </div>
         </div>

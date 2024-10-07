@@ -29,7 +29,7 @@ export default function Button({
     return (
         <button
             onClick={onClick}
-            className="flex content-center pe-2.5 md:pe-4 ps-6 md:ps-9 py-2 items-center border border-white rounded-full font-medium w-fit text-xl md:text-4xl leading-none"
+            className={`flex content-center pe-2.5 md:pe-4 ps-6 md:ps-9 py-2 items-center border ${ highlightedArrow ? 'border-highlight' : 'border-white' } rounded-full font-medium w-fit text-xl md:text-4xl leading-none transition-all duration-300 ${ highlightedArrow ? 'hover:bg-highlight' : 'hover:bg-white' } hover:text-black`}
             type={type}
             disabled={disabled}
         >
@@ -38,7 +38,7 @@ export default function Button({
             <div
                 className={`rounded-full w-fit p-1.5 md:p-3 ms-4 md:ms-9 ${
                     highlightedArrow ? "bg-highlight" : "bg-white"
-                }`}
+                } image-arrow`}
             >
                 <Image
                     src={arrowIcon}

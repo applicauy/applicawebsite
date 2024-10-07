@@ -6,6 +6,7 @@ import icon72Hours from "@/assets/icons/72-hours.svg";
 import Image from "next/image";
 import H2 from "@/components/h2";
 import H3 from "@/components/h3";
+import H4 from "@/components/h4";
 
 export default function ProcessSection() {
     return (
@@ -53,9 +54,9 @@ export default function ProcessSection() {
                     {/* We had to make a custom body because the one that we already builded (ProcessItemBody)
                         doesn't meet our requirements for this situation. */}
                     <div>
-                        <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full w-fit py-1 md:py-4 px-4 md:px-6 mb-4">
-                            <H3 className="translate-y-[2px] font-normal text-center md:text-left">
-                                Candidates presentation
+                        <div className="rounded-full py-1 md:py-4 px-4 md:px-6 mb-4 candidates-background">
+                            <H3 className="translate-y-[2px] text-center font-medium">
+                                Candidates deliver
                             </H3>
                         </div>
 

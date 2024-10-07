@@ -1,21 +1,16 @@
-import H5 from "@/components/h5";
 import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
-import BenefitImage from "./benefit-image";
 import boxImg from '@/assets/shapes/box-benefits.svg';
 
-
-export default function Benefit({
+export default function BenefitImage({
     imageSrc,
     imageAlt = "",
-    children,
 }: PropsWithChildren<{
     imageSrc: string | StaticImageData;
     imageAlt?: string;
 }>) {
     return (
-        <div className="flex flex-col text-center mb-5">
-            <div className="image-container">
+        <div className="image-container">
             <Image
                 src={ imageSrc }
                 alt={ imageAlt }
@@ -26,8 +21,6 @@ export default function Benefit({
                 alt="Border" 
                 className="absolute inset-16 pointer-events-none image-border-benefit"
             />
-        </div>
-            <H5>{children}</H5>
         </div>
     );
 }

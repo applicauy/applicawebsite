@@ -28,9 +28,14 @@ export const useNavigationHandlers = () => {
         router.push("/#hiring-process");
     };
 
+    const onGoToPost = ( id: number ) => {
+        router.push(`/news/${ id }`);
+    } 
+
     return {
         onStartNowClick,
         onLetsTalkClick,
         onMeetOurProcessClick,
+        onGoToPost
     };
 };

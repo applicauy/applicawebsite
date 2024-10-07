@@ -18,7 +18,7 @@ export default function Attribute({
             <div className="min-w-10 md:min-w-20 min-h-10 md:min-h-20 size-10 md:size-20">
                 <Image src={icon} alt="" />
             </div>
-            <H5>{children}</H5>
+            <h5 className = "text-2xl">{children}</h5>
         </div>
     );
 }
