@@ -5,9 +5,8 @@ import BenefitsSection from "./_sections/benefits-section";
 import { apexFont } from "@/assets/fonts";
 import ProcessSection from "./_sections/process-section";
 import TalentOnDemand from "./_sections/talent-on-demand";
-import BlogSection from "./_sections/blog-section";
-import LetsTalkSection from "./_sections/lets-talk-section";
 import MobileHome from "./(mobile)/mobile-home";
+import LatestPosts from "./_sections/latest-posts";
 
 export default function Home() {
     const cookieStore = cookies();
@@ -17,20 +16,21 @@ export default function Home() {
         return <MobileHome />;
     }
     return (
-        <main
-            className={`${apexFont.className} flex min-h-screen flex-col items-center justify-between gap-20 md:gap-36`}
-        >
-            <LandingSection />
+            <main
+                className={`${apexFont.className} flex min-h-screen flex-col items-center justify-between gap-20 md:gap-36 px-24`}
+            >
+                <LandingSection />
 
-            <AboutUs />
+                <AboutUs />
 
-            <BenefitsSection />
+                <BenefitsSection />
 
-            <ProcessSection />
+                <ProcessSection />
 
-            <TalentOnDemand />
+                <TalentOnDemand />
 
-            <LetsTalkSection />
-        </main>
+                <LatestPosts />
+                
+            </main>
     );
 }

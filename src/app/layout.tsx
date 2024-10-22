@@ -6,13 +6,16 @@ import NavBar from "./_components/navbar";
 import Footer from "./_components/footer";
 import MobileLayout from "./(mobile)/layout";
 import Script from 'next/script';
+import Image from "next/image";
+
+import backgroundImg from '@/assets/background/gradient.svg';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Applica Corp: IT Staff augmentation services",
     description:
-        "We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs.",
+        "We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs."
 };
 
 export default function RootLayout({
@@ -45,12 +48,24 @@ export default function RootLayout({
                 />
             </head>
             
-            <body className={`${inter.className}`}>
+            <body className={`${inter.className} overflow-x-hidden`}>
+
+                <div className="absolute top-0 right-0 w-[60%] z-[-1]">
+                    <Image
+                        src={backgroundImg}
+                        alt = "Background Image"
+                        className="w-full object-cover"
+                    />
+                </div>
+                
                 <NavBar />
 
                 {children}
 
                 <Footer />
+
+                
+
             </body>
         </html>
     );

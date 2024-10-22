@@ -19,7 +19,7 @@ export default function TalentOnDemand() {
 
     return (
         <Section className="flex flex-col md:flex-row gap-8">
-            <div className="flex flex-col items-center md:items-start md:w-[60%] my-auto">
+            <div className="flex flex-col items-center md:items-start md:w-[70%] my-auto">
                 <H2 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
                     Talent on demand{" "}
                     <strong
@@ -34,7 +34,7 @@ export default function TalentOnDemand() {
                     it is.
                 </H3>
 
-                <div className="flex flex-wrap mt-8 md:mt-12 mb-12 md:mb-16 gap-6 justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-8 md:mt-12 mb-12 md:mb-16 gap-10 justify-center">
                     <GradientBall title="+5.000" subtitle="IT Talents" />
                     <GradientBall title="80%" subtitle="Senior level" />
                     <GradientBall title="<13%" subtitle="Turnover rate" />

@@ -41,7 +41,7 @@ export default function BenefitsSection() {
                 id="benefits"
             >
                 <div className="flex flex-col md:w-2/4 gap-12 text-center md:text-left">
-                    <H2 className="md:max-w-[80%]">
+                    <H2 className="md:max-w-[70%]">
                         Let&apos;s find your next{" "}
                         <strong
                             className={`font-normal ${avigeaFont.className}`}
@@ -50,7 +50,7 @@ export default function BenefitsSection() {
                         </strong>
                     </H2>
 
-                    <H3>
+                    <H3 className="md:max-w-[80%]">
                         Long-term partnership requires flexible service. Since
                         2015, Applica Corp. has been dedicated to helping
                         companies scale their business and take it to the next
