@@ -15,9 +15,7 @@ import H2 from "@/components/h2";
 import {
     /*onMeetOurProcessClick,*/ useNavigationHandlers,
 } from "@/lib/helpers";
-import boxImg from '@/assets/shapes/box.svg';
-import leftLineImg from '@/assets/shapes/left-line.svg';
-import rightLineImg from '@/assets/shapes/right-line.svg';
+import DecoratedImage from "../_components/decorated-image";
 
 export default function AboutUs() {
     const { onMeetOurProcessClick } = useNavigationHandlers();
@@ -34,66 +32,11 @@ export default function AboutUs() {
             >
                 <div className="gradient-ball-about-us absolute"></div>
                 <div className="relative md:w-2/4">
-                    {/* 
-                        Because of lazy loading, the images that are not shown will not be 
-                        loaded.
-                    */}
-
-                    
-
-                    {/* The image is hidden on mobile devices. */}
-                    {/* <Image
-                        src={placeholderImg}
-                        className="image hidden md:block"
-                        height={300}
-                        width={600}
-                        alt=""
-                    />
-
-                    <Image
-                        src={placeholderImg}
-                        className="image mx-auto md:hidden"
-                        width={400}
-                        alt=""
-                    />
-                    <Image
-                        src={ box } 
-                        alt="Border" 
-                        className="absolute inset-16 pointer-events-none image-box"
-                    />  */}
-
                     <div className="image-container">
                        
-                        <Image
-                            src={placeholderImg}
-                            className="image hidden md:block"
-                            layout="responsive"
-                            height={300}
-                            width={600}
-                            alt=""
-                        />
-                        
-                        <Image
-                            src={placeholderImg}
-                            className="image mx-auto md:hidden"
-                            layout="responsive"
-                            alt=""
-                        />
-                        <Image
-                            src={ boxImg } 
-                            alt="Border" 
-                            className="absolute inset-16 pointer-events-none image-border"
-                        /> 
-
-                        <Image
-                            src={ leftLineImg }
-                            alt="Line"
-                            className="left-line"
-                        />
-                        <Image
-                            src={ rightLineImg }
-                            alt="Line"
-                            className="right-line"
+                        <DecoratedImage 
+                            image = {placeholderImg}
+                            alt = "About Us Image"
                         />
                            
                     </div>

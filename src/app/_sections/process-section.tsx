@@ -1,3 +1,4 @@
+'use client'
 import Section from "@/components/section";
 import { avigeaFont } from "@/assets/fonts";
 import ProcessItem, { ContentPosition } from "../_components/process-item";

@@ -7,6 +7,7 @@ import ProcessSection from "./_sections/process-section";
 import TalentOnDemand from "./_sections/talent-on-demand";
 import MobileHome from "./(mobile)/mobile-home";
 import LatestPosts from "./_sections/latest-posts";
+import BlogSection from "./_sections/blog-section";
 
 export default function Home() {
     const cookieStore = cookies();

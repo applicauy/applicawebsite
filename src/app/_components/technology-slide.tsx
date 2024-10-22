@@ -20,8 +20,8 @@ export default function TechnologySlide({
             <Image
                 src={src}
                 alt={alt}
-                width={100}
-                height={100}
+                width={150}
+                height={150}
                 className="grayscale hover:filter-none"
             />
         </div>

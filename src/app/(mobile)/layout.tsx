@@ -11,7 +11,7 @@ const MobileLayout = ({ children }: { children: ReactNode }) => {
 
     return (
         <html lang="en">
-            <body className={`mobile-layout ${inter.className}`}>
+            <body className={`mobile-layout ${inter.className}`}>                
                 <MobileNavbar />
                 {children}
                 <MobileFooter />

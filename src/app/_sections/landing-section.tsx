@@ -34,7 +34,7 @@ export default function LandingSection() {
                         and delivering peace of mind
                     </H2>
                     <H3 className="mb-16">
-                        Let's build your IT dream team together
+                        Let&apos;s build your IT dream team together
                     </H3>
                     <Button highlightedArrow onClick={onStartNowClick}>
                         Start now!

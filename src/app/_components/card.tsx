@@ -8,15 +8,14 @@ import { useNavigationHandlers } from '@/lib/helpers';
 
 interface Props {
     title: string;
-    id: number;
+    objectID: number;
     image: JSX.Element
 }
 
 export default function Card(
-    { title, id, image } : Props
-) {
-    
-    const { onGoToPost } = useNavigationHandlers();
+    { title, objectID, image } : Props
+) {  
+  const { onGoToPost } = useNavigationHandlers();
   return (
     <div className="relative flex flex-col overflow-hidden card-border bg-clip-border hover:shadow-lg max-w-sm hover:cursor-pointer">
        <div className="relative min-h-[250px] m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
@@ -26,7 +25,7 @@ export default function Card(
            <h3 className="text-xl text-left w-[80%] flex-col">{ title }</h3>
            <div className='w-[20%] flex flex-col items-end justify-center'>
             <div className="rounded-full w-fit md:p-2 bg-highlight hover:bg-white hover:cursor-pointer transition-all duration-300"
-                onClick={ () => onGoToPost( id ) }>
+                onClick={ () => onGoToPost( objectID ) }>
                     <Image
                         src={arrowIcon}
                         width={25}

@@ -1,7 +1,6 @@
 import H5 from "@/components/h5";
 import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
-import BenefitImage from "./benefit-image";
 import boxImg from '@/assets/shapes/box-benefits.svg';
 
 

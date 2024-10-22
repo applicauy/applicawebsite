@@ -18,13 +18,13 @@ export default function MobileGradientBall({
     subtitle: string;
 }) {
     return (
-        <div className="rounded-full w-16 h-16 md:w-24 md:h-24 lg:w-36 lg:h-36 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 flex flex-col justify-center items-center">
+        <div className="rounded-full w-40 h-40 md:w-24 md:h-24 lg:w-36 lg:h-36 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 flex flex-col justify-center items-center">
             <MobileH4
-                className={`${avigeaFont.className} font-normal text-xs lg:text-base`}
+                className={`${avigeaFont.className} font-normal text-3xl lg:text-base`}
             >
                 {title}
             </MobileH4>
-            <MobileH6 className="text-xs">{subtitle}</MobileH6>
+            <span className="text-lg">{subtitle}</span>
         </div>
     );
 }

@@ -14,11 +14,11 @@ export default function Attribute({
     children,
 }: PropsWithChildren<{ icon: any }>) {
     return (
-        <div className="flex items-center">
-            <div className="min-w-10 md:min-w-20 min-h-10 md:min-h-20 size-10 md:size-20">
-                <Image src={icon} alt="" />
+        <div className="flex items-center md:flex-row flex-col">
+            <div className="min-w-24 md:min-w-20 min-h-24 md:min-h-20 size-24 md:size-20">
+                <Image src={icon} alt=""/>
             </div>
-            <h5 className = "text-2xl">{children}</h5>
+            <h5 className = "text-xl text-center md:text-start">{children}</h5>
         </div>
     );
 }

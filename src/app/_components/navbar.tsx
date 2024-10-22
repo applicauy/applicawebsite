@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import logo from "@/assets/logo/logo-menu.svg";
+import logo2 from "@/assets/email.png";
 import Link from "next/link";
 import { apexFont } from "@/assets/fonts";
 import classnames from "classnames";
+import { menuItems } from "@/utils/menu/menu-items";
 
 // Navbar used across the website.
 export default function NavBar() {
@@ -22,36 +24,25 @@ export default function NavBar() {
                     </Link>
                 </div>
 
-                <ul className="hidden md:flex gap-10 h-fit max-h-fit self-center">
-                    <li>
-                        <Link href="/#about-us" className="text-xl hover:text-highlight transition-all duration-300">about us</Link>
-                    </li>
-
-                    <li>
-                        <Link href="#services" className="text-xl hover:text-highlight transition-all duration-300">services</Link>
-                    </li>
-
-                    <li>
-                        <Link
-                            href="https://recruitcrm.io/jobs/applica_corp"
-                            target="_blank"
-                            className="text-xl hover:text-highlight transition-all duration-300"
-                        >
-                            careers
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link href="/news" className="text-xl hover:text-highlight transition-all duration-300">
-                            news
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link href="/contact" className="text-xl hover:text-highlight transition-all duration-300">
-                            contact
-                        </Link>
-                    </li>
+                <ul className="hidden md:flex flex-row gap-10 h-fit max-h-fit self-center">
+                    {
+                        menuItems.map(
+                            (item, index) => (
+                                <li key = { index }>
+                                    <Link
+                                        href = { item.url }
+                                        className="text-xl hover:text-highlight transition-all duration-300 flexitems-center justify-center"
+                                        target = { item.target ?? '' }
+                                    >
+                                        {/* <div className="w-full flex justify-center text-3xl mb-1">
+                                            { item.icon }   
+                                        </div> */}
+                                        { item.name }
+                                    </Link>
+                                </li>
+                            ) 
+                        )
+                    }
                 </ul>
             </div>
         </nav>

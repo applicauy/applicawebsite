@@ -1,6 +1,6 @@
 import "./globals.scss";
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { Inter } from "next/font/google";
 import NavBar from "./_components/navbar";
 import Footer from "./_components/footer";
@@ -9,6 +9,12 @@ import Script from 'next/script';
 import Image from "next/image";
 
 import backgroundImg from '@/assets/background/gradient.svg';
+
+import MobileNavBar from "./(mobile)/_components/mobile-navbar";
+import MobileFooter from "./(mobile)/_components/mobile-footer";
+import MobileDetect from 'mobile-detect';
+import ClientWrapper from "./client-wrapper";
+import isMobile from 'react-device-detect';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,17 +25,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-    children,
+    children
 }: Readonly<{
-    children: React.ReactNode;
+    children: React.ReactNode
 }>) {
-    const cookieStore = cookies();
-    const isMobile = cookieStore.get("isMobile")?.value === "true";
-
-    if (isMobile) {
-        return <MobileLayout>{children}</MobileLayout>;
-    }
-
+    const userAgent = headers().get('user-agent') || '';
+    const md = new MobileDetect(userAgent);
+    const isMobile = !!md.mobile();
     return (
         <html lang="en">
             <head>
@@ -48,25 +50,7 @@ export default function RootLayout({
                 />
             </head>
             
-            <body className={`${inter.className} overflow-x-hidden`}>
-
-                <div className="absolute top-0 right-0 w-[60%] z-[-1]">
-                    <Image
-                        src={backgroundImg}
-                        alt = "Background Image"
-                        className="w-full object-cover"
-                    />
-                </div>
-                
-                <NavBar />
-
-                {children}
-
-                <Footer />
-
-                
-
-            </body>
+            <ClientWrapper initialIsMobile={isMobile}>{ children }</ClientWrapper>
         </html>
     );
 }

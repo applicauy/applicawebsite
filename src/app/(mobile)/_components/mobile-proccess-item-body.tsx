@@ -7,10 +7,10 @@ export default function MobileProcessItemBody({
 }: PropsWithChildren<{ title: string }>) {
     return (
         <>
-            <h3 className={`mb-2 text-md leading-4 ${avigeaFont.className}`}>
+            <h3 className={`mb-2 text-xl flex leading-4 ${avigeaFont.className}`}>
                 {title}
             </h3>
-            <p className="text-xs md:text-sm leading-tight">{children}</p>
+            <p className="text-md md:text-sm flex leading-tight">{children}</p>
         </>
     );
 }

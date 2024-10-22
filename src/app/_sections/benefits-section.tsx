@@ -1,37 +1,10 @@
 import { avigeaFont } from "@/assets/fonts";
 import Section from "@/components/section";
-import costEffectiveness from "@/assets/cost-efectiveness.png";
-import timeSaving from "@/assets/timesaving.png";
-import flexibility from "@/assets/flexibility.png";
-import focused from "@/assets/focused.png";
 import Benefit from "../_components/benefit";
 import Carousel from "../_components/carousel";
 import H2 from "@/components/h2";
 import H3 from "@/components/h3";
-
-// Benefits to be displayed in the section.
-const BENEFITS = [
-    {
-        image: costEffectiveness,
-        description: "Improved cost-effectiveness",
-        alt: "",
-    },
-    {
-        image: timeSaving,
-        description: "Time saving",
-        alt: "",
-    },
-    {
-        image: focused,
-        description: "Focused strategy",
-        alt: "",
-    },
-    {
-        image: flexibility,
-        description: "Flexibility & fast replacement",
-        alt: "",
-    },
-];
+import { benefits } from "@/utils/models/Benefits";
 
 export default function BenefitsSection() {
     return (
@@ -59,7 +32,7 @@ export default function BenefitsSection() {
                 </div>
 
                 <div className="md:w-2/4 grid grid-cols-2 gap-4">
-                    {BENEFITS.map((b, index) => (
+                    {benefits.map((b, index) => (
                         <Benefit
                             key={index}
                             imageSrc={b.image}
