@@ -3,7 +3,7 @@ import MobileDetect from "mobile-detect";
 import { useEffect, useState } from "react";
 import MobileNavBar from "./(mobile)/_components/mobile-navbar";
 import NavBar from "./_components/navbar";
-import MobileLayout from "./(mobile)/layout";
+import MobileLayout from "./(mobile)/layout2";
 import MobileFooter from "./(mobile)/_components/mobile-footer";
 import Footer from "./_components/footer";
 import Image from "next/image";
@@ -14,7 +14,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 
-export default function ClientWrapper({ children, initialIsMobile }: { children: React.ReactNode, initialIsMobile: boolean }) {
+export default function LayoutClientWrapper({ children, initialIsMobile }: { children: React.ReactNode, initialIsMobile: boolean }) {
     const [isMobile, setIsMobile] = useState(initialIsMobile);
 
     // Solo ejecutamos la detección en el cliente si no fue determinada en el servidor
@@ -26,9 +26,7 @@ export default function ClientWrapper({ children, initialIsMobile }: { children:
     }, [initialIsMobile]);
     
     return (
-        isMobile ? 
-        <MobileLayout>{children}</MobileLayout> :
-        <body className={`${inter.className} overflow-x-hidden`}>
+        <body className={`${inter.className} overflow-x-hidden ${ isMobile && 'mobile-layout' }`}>
 
             {
                 !isMobile &&
@@ -41,11 +39,12 @@ export default function ClientWrapper({ children, initialIsMobile }: { children:
                 </div>
             }
 
-            {!isMobile && <NavBar />}
+            { isMobile ? <MobileNavBar /> : <NavBar /> }
             
-            <div>{children}</div>
+            {children}
             
-            {!isMobile && <Footer />}
+            { isMobile ? <MobileFooter /> : <Footer /> }
+
         </body>
     );
 }

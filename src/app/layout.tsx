@@ -1,20 +1,10 @@
 import "./globals.scss";
 import type { Metadata } from "next";
-import { cookies, headers } from "next/headers";
+import { headers } from "next/headers";
 import { Inter } from "next/font/google";
-import NavBar from "./_components/navbar";
-import Footer from "./_components/footer";
-import MobileLayout from "./(mobile)/layout";
 import Script from 'next/script';
-import Image from "next/image";
-
-import backgroundImg from '@/assets/background/gradient.svg';
-
-import MobileNavBar from "./(mobile)/_components/mobile-navbar";
-import MobileFooter from "./(mobile)/_components/mobile-footer";
 import MobileDetect from 'mobile-detect';
-import ClientWrapper from "./client-wrapper";
-import isMobile from 'react-device-detect';
+import LayoutClientWrapper from "./layout-client-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,7 +40,7 @@ export default function RootLayout({
                 />
             </head>
             
-            <ClientWrapper initialIsMobile={isMobile}>{ children }</ClientWrapper>
+            <LayoutClientWrapper initialIsMobile={isMobile}>{ children }</LayoutClientWrapper>
         </html>
     );
 }
