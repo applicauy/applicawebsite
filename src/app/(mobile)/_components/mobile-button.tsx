@@ -17,7 +17,7 @@ export default function MobileButton({
     return (
         <button
             onClick={onClick}
-            className={`flex z-20 justify-center px-3 md:px-3 py-2 items-center border rounded-full font-medium w-fit text-sm md:text-base leading-none ${ highlightedArrow ? "border-highlight" : "border-white" }`}
+            className={`flex z-20 justify-center px-3 md:px-3 py-2 items-center border rounded-full font-medium w-fit text-sm md:text-base leading-none transition-all duration-300 ${ highlightedArrow ? "border-highlight active:bg-highlight active:text-black" : "border-white active:bg-white active:text-black" }`}
             type={type}
             disabled={disabled}
         >
