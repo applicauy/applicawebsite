@@ -28,7 +28,13 @@ export const useNavigationHandlers = () => {
         router.push("/#hiring-process");
     };
 
+    const onGoToNews = ( tag?: string ) => {
+        router.push(`/news${ tag && `?tag=${ tag }` }`);
+    }
+
     const onGoToPost = ( id: number ) => {
+        console.log("click!");
+        
         router.push(`/news/${ id }`);
     } 
 
@@ -36,6 +42,7 @@ export const useNavigationHandlers = () => {
         onStartNowClick,
         onLetsTalkClick,
         onMeetOurProcessClick,
+        onGoToNews,
         onGoToPost
     };
 };

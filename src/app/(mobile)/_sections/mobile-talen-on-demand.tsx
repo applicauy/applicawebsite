@@ -8,6 +8,8 @@ import MobileH2 from "../_components/mobile-h2";
 import MobileH3 from "../_components/mobile-h3";
 import { /*onStartNowClick,*/ useNavigationHandlers } from "@/lib/helpers";
 import mapImg from "@/assets/mapa.png";
+import MobileH1 from "../_components/mobile-h1";
+import { motion } from 'framer-motion';
 
 /**
  * Renders the About Us section.
@@ -19,22 +21,28 @@ export default function MobileTalenOnDemand() {
 
     return (
         <Section className="flex flex-col-reverse gap-10">
-            <div className="flex flex-col items-center md:items-start md:w-[60%]">
-                <MobileH2 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
+            <motion.div
+                className="flex flex-col items-center md:items-start md:w-[60%] w-full z-20"
+                initial={{ opacity: 0, x: "-20px" }}
+                whileInView={{ opacity: 1, x: "0px" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+            >
+                <MobileH1 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
                     Talent on demand{" "}
                     <strong
                         className={`font-normal ${avigeaFont.className} block`}
                     >
                         ready to be hired.
                     </strong>
-                </MobileH2>
+                </MobileH1>
 
-                <MobileH3 className="w-4/5 md:w-full text-center md:text-left">
+                <MobileH2 className="w-4/5 md:w-full text-center md:text-left">
                     Just tell us your requirements and we will find it wherever
                     it is.
-                </MobileH3>
+                </MobileH2>
 
-                <div className="flex flex-wrap mt-8 md:mt-12 mb-12 md:mb-16 gap-2 md:gap-6 justify-center">
+                <div className="flex flex-wrap flex-row mt-12 md:mt-12 mb-12 md:mb-16 gap-6 justify-center">
                     <MobileGradientBall title="+5.000" subtitle="IT Talents" />
                     <MobileGradientBall title="80%" subtitle="Senior level" />
                     <MobileGradientBall title="<13%" subtitle="Turnover rate" />
@@ -43,16 +51,22 @@ export default function MobileTalenOnDemand() {
 
                 <MobileButton onClick={onStartNowClick}>
                     Schedule a call
-                </MobileButton>
-            </div>
+                </MobileButton>      
+            </motion.div>
 
-            <div>
+            <motion.div
+                className="flex flex-col md:flex-row gap-8"
+                initial={{ opacity: 0, x: "-20px" }}
+                whileInView={{ opacity: 1, x: "0px" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+            >
                 <Image
                     src={mapImg}
-                    width={400}
+                    width={1000}
                     alt="Applica offices across the world"
                 />
-            </div>
+            </motion.div>
         </Section>
     );
 }

@@ -16,11 +16,11 @@ import ShareButtons from "@/app/_components/share-buttons";
 const page = () => {
 
   const content = 
-  `In today’s competitive job market, attracting and retaining top talent is more challenging than ever. Companies are not just looking for employees to fill current vacancies; they are seeking to build a sustainable workforce for the future. This is where **talent pools** come into play. But what exactly are talent pools, and why should organizations prioritize them? Let’s explore their role and the benefits they bring to the modern business landscape.
+  `In today&apos;s competitive job market, attracting and retaining top talent is more challenging than ever. Companies are not just looking for employees to fill current vacancies; they are seeking to build a sustainable workforce for the future. This is where **talent pools** come into play. But what exactly are talent pools, and why should organizations prioritize them? Let&apos;s explore their role and the benefits they bring to the modern business landscape.
 
 ## What Is a Talent Pool?
 
-A **talent pool** is a database or group of potential candidates that an organization keeps track of, regardless of whether there are immediate openings. These individuals could include past applicants, professionals who have shown interest in your company, referrals, or even passive candidates who aren’t actively looking but would consider a new opportunity if the right one came along.
+A **talent pool** is a database or group of potential candidates that an organization keeps track of, regardless of whether there are immediate openings. These individuals could include past applicants, professionals who have shown interest in your company, referrals, or even passive candidates who aren&apos;t actively looking but would consider a new opportunity if the right one came along.
 
 Talent pools allow HR teams and recruiters to stay connected with highly skilled professionals and to nurture relationships with them over time. When a job position opens up, rather than starting the recruitment process from scratch, companies can tap into their talent pool to find qualified candidates who are already familiar with the organization.
 
@@ -40,7 +40,7 @@ Talent pools allow HR teams and recruiters to stay connected with highly skilled
 
 #### Conclusion
 
-In an era where top talent is highly sought after, building and maintaining a talent pool is no longer optional—it’s essential. Talent pools provide a strategic advantage by reducing hiring times, improving candidate quality, and cutting recruitment costs, all while strengthening employer branding and promoting diversity. By investing in a robust talent pool, companies position themselves to not only meet their current hiring needs but to build a workforce for the future.
+In an era where top talent is highly sought after, building and maintaining a talent pool is no longer optional—it&apos;s essential. Talent pools provide a strategic advantage by reducing hiring times, improving candidate quality, and cutting recruitment costs, all while strengthening employer branding and promoting diversity. By investing in a robust talent pool, companies position themselves to not only meet their current hiring needs but to build a workforce for the future.
 
 By implementing these practices, organizations can ensure that they have a competitive edge in attracting and retaining top talent, even in the most challenging job markets.`;
 
@@ -52,7 +52,7 @@ By implementing these practices, organizations can ensure that they have a compe
             <Badge category = "Talent Pool"/>
           </div>
           <H2 className="font-medium text-highlight">The role of Talent Pools: what are the benefits</H2>
-          <span className="mt-10 text-xl text-[#b69fe2]">Published at 2024-10-03</span>
+          <span className="mt-10 text-xl text-secondary-text">Published at 2024-10-03</span>
           <div className="image-container-blog flex items-center justify-center w-full relative mt-24">
             <Image
                 src={ placeholder }

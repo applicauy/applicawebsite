@@ -1,4 +1,7 @@
-import { PropsWithChildren, ReactNode } from "react";
+'use client'
+
+import { PropsWithChildren, ReactNode, useEffect, useRef, useState } from "react";
+import { motion } from 'framer-motion';
 
 export enum ContentPosition {
     Left,
@@ -36,11 +39,48 @@ export default function ProcessItem({
     dashedEndOfLineHeight?: string;
     className?: string;
 }>) {
+
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+
+    // Uso de IntersectionObserver para detectar cuándo el elemento está en la vista
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+            }
+        },
+        {
+            threshold: 0.7, // Activar cuando el 50% del elemento esté en la vista
+        }
+        );
+
+        if (ref.current) {
+        observer.observe(ref.current);
+        }
+
+        return () => {
+        if (ref.current) {
+            observer.disconnect();
+        }
+        };
+    }, []);
+
+    const itemVariants = {
+        hidden: { opacity: 0, x: contentPosition === ContentPosition.Left ? -100 : 100 },
+        visible: { opacity: 1, x: 0 },
+    };
+
     return (
-        <div
-            className={`flex gap-5 md:gap-20 w-full min-h-36${
-                className ? " " + className : ""
-            }`}
+        <motion.div
+            ref={ref}
+            className={`flex gap-5 md:gap-20 w-full min-h-36${className ? " " + className : ""}`}
+            initial="hidden"
+            animate={isVisible ? 'visible' : 'hidden'}
+            variants={itemVariants}
+            transition={{ duration: 1, ease: "easeInOut" }}
         >
             {/* Content box */}
             <div className="w-full text-right pb-2 mt-[-10px]">
@@ -76,6 +116,6 @@ export default function ProcessItem({
             <div className="w-full text-left pb-2 mt-[-4px]">
                 {contentPosition === ContentPosition.Right && children}
             </div>
-        </div>
+        </motion.div>
     );
 }

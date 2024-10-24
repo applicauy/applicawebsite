@@ -1,4 +1,4 @@
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import LandingSection from "./_sections/landing-section";
 import AboutUs from "./_sections/about-us";
 import BenefitsSection from "./_sections/benefits-section";
@@ -7,30 +7,17 @@ import ProcessSection from "./_sections/process-section";
 import TalentOnDemand from "./_sections/talent-on-demand";
 import MobileHome from "./(mobile)/mobile-home";
 import LatestPosts from "./_sections/latest-posts";
+import BlogSection from "./_sections/blog-section";
+import MobileDetect from "mobile-detect";
+import PageClientWrapper from "./page-client-wrapper";
 
 export default function Home() {
-    const cookieStore = cookies();
-    const isMobile = cookieStore.get("isMobile")?.value === "true";
 
-    if (isMobile) {
-        return <MobileHome />;
-    }
+    const userAgent = headers().get('user-agent') || '';
+    const md = new MobileDetect(userAgent);
+    const isMobile = !!md.mobile();
+
     return (
-            <main
-                className={`${apexFont.className} flex min-h-screen flex-col items-center justify-between gap-20 md:gap-36 px-24`}
-            >
-                <LandingSection />
-
-                <AboutUs />
-
-                <BenefitsSection />
-
-                <ProcessSection />
-
-                <TalentOnDemand />
-
-                <LatestPosts />
-                
-            </main>
+        <PageClientWrapper initialIsMobile = { isMobile }></PageClientWrapper>
     );
 }
