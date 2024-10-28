@@ -3,7 +3,6 @@ import MobileDetect from "mobile-detect";
 import { useEffect, useState } from "react";
 import MobileNavBar from "./(mobile)/_components/mobile-navbar";
 import NavBar from "./_components/navbar";
-import MobileLayout from "./(mobile)/layout2";
 import MobileFooter from "./(mobile)/_components/mobile-footer";
 import Footer from "./_components/footer";
 import Image from "next/image";

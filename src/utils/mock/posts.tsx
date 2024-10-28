@@ -20,8 +20,6 @@ import avatar8Image from "@/assets/mock/avatar8.jpg";
 import avatar9Image from "@/assets/mock/avatar9.jpg";
 import avatar10Image from "@/assets/mock/avatar10.jpg";
 
-
-
 export const posts: Post[] = [
   {
     objectID: 1,
