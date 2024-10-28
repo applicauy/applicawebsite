@@ -6,7 +6,7 @@ export const menuItems: MenuIitem[] = [
     {
         name: 'about us',
         icon: <IoPeopleOutline />,
-        url: '/#about-us'
+        url: '#about-us'
     },
     {
         name: 'services',

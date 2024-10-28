@@ -49,24 +49,35 @@ export const LOCATIONS: {
 export const NAVIGATION_LINKS = [
     {
         text: "About us",
-        href: "/#about-us",
+        href: "#about-us",
     },
     {
         text: "Benefits",
-        href: "/#benefits",
+        href: "#benefits",
     },
     {
         text: "Hiring process",
-        href: "/#hiring-process",
+        href: "#hiring-process",
+    },
+    {
+        text: "News",
+        href: "news",
     },
     {
         text: "Contact",
-        href: "/contact",
+        href: "contact",
     },
 ];
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
+
+    const handleScroll = (id: any) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
 
     return (
         <>
@@ -102,8 +113,15 @@ export default function Footer() {
                     <div>
                         <ul>
                             {NAVIGATION_LINKS.map((nl, index) => (
+                                nl.href.startsWith('#') ? 
+                                <button
+                                    onClick={() => handleScroll(nl.href.slice(1))}
+                                    className="text-xl hover:text-highlight transition-all duration-300 flex items-start text-left justify-start font-bold"
+                                >
+                                    {nl.text}
+                                </button> :
                                 <li key={index} className="my-1">
-                                    <Link href={nl.href} className="font-bold">
+                                    <Link href={nl.href} className="font-bold hover:text-highlight">
                                         {nl.text}
                                     </Link>
                                 </li>

@@ -42,6 +42,13 @@ const MobileMenu = () => {
     }),
   };
 
+  const handleScroll = (id: any) => {
+      const element = document.getElementById(id);
+      if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+  };
+
   return (
     <div className={`menu-container ${apexFont.className}`}>
       <MobileMenuButton onClick={toggleMenu} isOpen={isOpen} />
@@ -71,15 +78,28 @@ const MobileMenu = () => {
                   exit="exit"
                   className="flex items-center justify-center"
                 >
-                  <Link
-                    href={item.url}
-                    target={item.target ?? ''}
-                    className="flex flex-row gap-5 items-center justify-center hover:text-highlight"
-                    onClick={toggleMenu}
-                  >
-                    <div className="text-3xl">{item.icon}</div>
-                    {item.name}
-                  </Link>
+                    {item.url.startsWith('#') ? (
+                        <button
+                            onClick={() => {
+                                handleScroll(item.url.slice(1));
+                                toggleMenu(); // Cierra el menú después de hacer clic
+                            }}
+                            className="flex flex-row gap-5 items-center justify-center hover:text-highlight"
+                        >
+                            <div className="text-3xl">{item.icon}</div>
+                            {item.name}
+                        </button>
+                    ) : (
+                        <Link
+                            href={item.url}
+                            target={item.target ?? ''}
+                            className="flex flex-row gap-5 items-center justify-center hover:text-highlight"
+                            onClick={toggleMenu} // Cierra el menú después de hacer clic
+                        >
+                            <div className="text-3xl">{item.icon}</div>
+                            {item.name}
+                        </Link>
+                    )}
                 </motion.li>
               ))}
             </motion.ul>

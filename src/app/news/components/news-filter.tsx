@@ -1,14 +1,14 @@
 'use client'
 
 import Section from "@/components/section";
-import NewsCard from '../_components/news-card';
+import NewsCard from '../../_components/news-card';
 import { Post } from "@/utils/models/Post";
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, connectRefinementList, connectHits, RefinementList } from 'react-instantsearch-dom';
-import SearchPosts from "./search-posts";
 import H4 from "@/components/h4";
 import H5 from "@/components/h5";
 import { useSearchParams } from "next/navigation";
+import SearchPosts from "./search-posts";
 
 const searchClient = algoliasearch('H2ZWF2VKS3', 'aebfbfe4b81b38ac79feaade2d358ff7');
 
@@ -30,7 +30,7 @@ export default function NewsFilter() {
                 indexName="posts"
             >
                 <div className="flex w-full">
-                    <div className="hidden md:block md:w-1/5 mt-5">
+                    <div className="hidden md:block md:w-1/5">
                         <H4 className="text-highlight">Filters</H4>
                         <H5 className="mt-5 mb-4 text-secondary-text">Tags</H5>
                         <CustomRefinementList 

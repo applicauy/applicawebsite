@@ -5,12 +5,17 @@ import Carousel from "../_components/carousel";
 import H2 from "@/components/h2";
 import H3 from "@/components/h3";
 import { benefits } from "@/utils/models/Benefits";
+import { motion } from 'framer-motion';
 
 export default function BenefitsSection() {
     return (
         <Section className="flex flex-col gap-12 md:gap-36">
-            <div
+            <motion.div
                 className="flex flex-col md:flex-row gap-8 items-center"
+                initial={{ opacity: 0, x: "-20px" }}
+                whileInView={{ opacity: 1, x: "0px" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
                 id="benefits"
             >
                 <div className="flex flex-col md:w-2/4 gap-12 text-center md:text-left">
@@ -42,8 +47,7 @@ export default function BenefitsSection() {
                         </Benefit>
                     ))}
                 </div>
-            </div>
-
+            </motion.div>
             <Carousel />
         </Section>
     );

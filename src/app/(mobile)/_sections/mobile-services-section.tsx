@@ -33,7 +33,7 @@ export default function MobileServicesSection() {
                 whileInView={{ opacity: 1, x: "0px" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                id="services"
+                id="about-us"
             >
                 <div className="gradient-ball-about-us-mobile md:gradient-ball-about-us absolute"></div>
                 <div className="relative md:w-2/4">
@@ -94,6 +94,7 @@ export default function MobileServicesSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="flex flex-col gap-6 px-6 mt-12 mb-6 md:px-36 pt-8 md:pt-16 pb-7 md:pb-9 rounded-3xl md:rounded-full text-center items-center fit-background"
+                id="services"
             >
                 <MobileH1 className="font-medium">
                     Find the{" "}

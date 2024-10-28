@@ -9,7 +9,7 @@ export default function MobileLetsTalkSection() {
     const { onLetsTalkClick } = useNavigationHandlers();
 
     return (
-        <section className="flex justify-center items-center w-full">
+        <section className={`${ apexFont.className } flex justify-center items-center w-full`}>
             <div className="flex flex-col text-center items-center w-full">
                 <div className="w-full flex flex-col justify-center items-center py-8 px-4 lets-talk-background">
                     <MobileH1 className={`font-normal ${apexFont.className}`}>

@@ -12,6 +12,13 @@ import { LOCATIONS, NAVIGATION_LINKS } from "@/app/_components/footer";
 const MobileFooter = () => {
     const currentYear = new Date().getFullYear();
 
+    const handleScroll = (id: any) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
         <footer
             className={`${apexFont.className} px-4 sm:px-6 md:px-8 py-8 sm:py-16 md:py-24 shadow-md`}
@@ -70,12 +77,15 @@ const MobileFooter = () => {
                 <div className="w-2/5">
                     <ul>
                         {NAVIGATION_LINKS.map((nl, index) => (
-                            <li
-                                key={index}
-                                className="my-1 flex justify-end"
-                                style={{ fontSize: "2.6vw" }}
+                            nl.href.startsWith('#') ? 
+                            <button
+                                onClick={() => handleScroll(nl.href.slice(1))}
+                                className="text-sm hover:text-highlight transition-all duration-300 flex justify-end font-bold text-end w-full mb-1"
                             >
-                                <Link href={nl.href} className="font-bold">
+                                {nl.text}
+                            </button> :
+                            <li key={index} className="my-1 flex justify-end mb-1">
+                                <Link href={nl.href} className="text-sm font-bold hover:text-highlight">
                                     {nl.text}
                                 </Link>
                             </li>

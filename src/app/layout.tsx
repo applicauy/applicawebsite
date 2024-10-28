@@ -38,6 +38,8 @@ export default function RootLayout({
                 `,
                 }}
                 />
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </head>
             
             <LayoutClientWrapper initialIsMobile={isMobile}>{ children }</LayoutClientWrapper>
