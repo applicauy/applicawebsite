@@ -93,9 +93,6 @@ export default function ProcessSection() {
 
                     <ProcessItem
                         contentPosition={ContentPosition.Left}
-                        customLineHeight="3rem"
-                        dashedEndOfLine={true}
-                        dashedEndOfLineHeight="3rem"
                     >
                         <ProcessItemBody title="EX & monitoring">
                         Tracking of stakeholders performance and satisfaction.
