@@ -40,6 +40,7 @@ export default function RootLayout({
                 />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+                <link rel="apple-touch-icon" href="/icon_apple_touch.png" sizes="180x180" />
             </head>
             
             <LayoutClientWrapper initialIsMobile={isMobile}>{ children }</LayoutClientWrapper>

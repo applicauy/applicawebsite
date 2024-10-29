@@ -4,16 +4,20 @@ import logo from "@/assets/logo/logo-menu.svg";
 import Link from "next/link";
 import { apexFont } from "@/assets/fonts";
 import { menuItems } from "@/utils/menu/menu-items";
+import { useRouter } from "next/router";
 
 // Navbar used across the website.
-export default function NavBar() {
+export default function NavBar(
+    {
+        onMenuClick,
+        handleScroll
+    } :
+    {
+        onMenuClick: any,
+        handleScroll: any
+    }
+) {
     
-    const handleScroll = (id: any) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    };
 
     return (
         <nav className={`sticky flex justify-center ${apexFont.className} px-24`}>
@@ -47,6 +51,7 @@ export default function NavBar() {
                                             href={item.url}
                                             className="text-xl hover:text-highlight transition-all duration-300 flex items-center justify-center"
                                             target={item.target ?? ''}
+                                            onClick={ (event) => onMenuClick( event ) }
                                         >
                                             {item.name}
                                         </Link>

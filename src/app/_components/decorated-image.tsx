@@ -24,6 +24,8 @@ export default function DecoratedImage({
                     <Image
                         src={ image }
                         alt={ alt }
+                        height={150}
+                        width={500}
                         className="rounded-lg img-blog"
                     /> :
                     <Image

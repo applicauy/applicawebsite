@@ -57,7 +57,7 @@ export default function ProcessSection() {
                     </ProcessItem>
 
                     <ProcessItem
-                        customIcon={<Image src={icon72Hours} alt="" width={250} />}
+                        customIcon={<Image src={icon72Hours} alt="72 hours Icon" width={250} />}
                         contentPosition={ContentPosition.Right}
                         className="gap-3 md:gap-10"
                     >

@@ -51,7 +51,7 @@ export default function MobileTalenOnDemand() {
                 <div ref={ref} className="flex flex-wrap flex-row mt-12 md:mt-12 mb-12 md:mb-16 gap-6 justify-center">
                     { inView && 
                         <MobileGradientBall 
-                            title = {5000} 
+                            title = {15000} 
                             startSymbol = "+"
                             duration = { 5 }
                             subtitle = "IT Talents" 

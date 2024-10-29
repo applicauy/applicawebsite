@@ -32,10 +32,8 @@ export const useNavigationHandlers = () => {
         router.push(`/news${ tag && `?tag=${ tag }` }`);
     }
 
-    const onGoToPost = ( id: number ) => {
-        console.log("click!");
-        
-        router.push(`/news/${ id }`);
+    const onGoToPost = ( title: string ) => {       
+        router.push(`/news/${ title }`);
     } 
 
     return {

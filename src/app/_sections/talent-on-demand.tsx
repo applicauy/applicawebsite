@@ -49,7 +49,7 @@ export default function TalentOnDemand() {
                 <div ref = { ref } className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-8 md:mt-12 mb-12 md:mb-16 gap-10 justify-center">
                 { inView && 
                         <GradientBall 
-                            title = {5000} 
+                            title = {15000} 
                             startSymbol = "+"
                             duration = { 5 }
                             subtitle = "IT Talents" 

@@ -69,15 +69,15 @@ export const NAVIGATION_LINKS = [
     },
 ];
 
-export default function Footer() {
+export default function Footer(
+    {
+        handleScroll
+    } :
+    {
+        handleScroll: any
+    }
+) {
     const currentYear = new Date().getFullYear();
-
-    const handleScroll = (id: any) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    };
 
     return (
         <>
@@ -101,7 +101,7 @@ export default function Footer() {
                         <ul>
                             {LOCATIONS.map((l, index) => (
                                 <li key={index} className="my-1">
-                                    <strong>{l.country}</strong>
+                                    <span className="font-medium">{l.country}</span>
                                     <span className="font-regular ms-3">
                                         {l.location}
                                     </span>
@@ -116,12 +116,13 @@ export default function Footer() {
                                 nl.href.startsWith('#') ? 
                                 <button
                                     onClick={() => handleScroll(nl.href.slice(1))}
-                                    className="text-xl hover:text-highlight transition-all duration-300 flex items-start text-left justify-start font-bold"
+                                    className="text-xl hover:text-highlight transition-all duration-300 flex items-start text-left justify-start font-medium"
+                                    key={index}
                                 >
                                     {nl.text}
                                 </button> :
                                 <li key={index} className="my-1">
-                                    <Link href={nl.href} className="font-bold hover:text-highlight">
+                                    <Link href={nl.href} className="font-medium hover:text-highlight">
                                         {nl.text}
                                     </Link>
                                 </li>
@@ -135,21 +136,21 @@ export default function Footer() {
                                 href="https://www.linkedin.com/company/applica-corp/"
                                 target="_blank"
                             >
-                                <Image src={linkedinIcon} alt="" width={48} />
+                                <Image src={linkedinIcon} alt="LinkedIn" width={48} />
                             </Link>
 
                             <Link
                                 href="https://www.instagram.com/applica.corp/"
                                 target="_blank"
                             >
-                                <Image src={instagramIcon} alt="" width={48} />
+                                <Image src={instagramIcon} alt="Instagram" width={48} />
                             </Link>
 
                             <Link
                                 href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay"
                                 target="_blank"
                             >
-                                <Image src={clutchIcon} alt="" width={48} />
+                                <Image src={clutchIcon} alt="Clutch" width={48} />
                             </Link>
                         </div>
 

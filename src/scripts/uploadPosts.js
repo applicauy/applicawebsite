@@ -4,96 +4,66 @@ const client = algoliasearch('H2ZWF2VKS3', 'aebfbfe4b81b38ac79feaade2d358ff7'); 
 const index = client.initIndex('posts');  // Nombre del índice
 
 const posts = [
-    {
-      objectID: 1,
-      title: "The Rise of AI in Modern Software",
-      summary: "An overview of how artificial intelligence is transforming software development and its future applications.",
-      tags: ["AI", "Software Development", "Machine Learning"],
-      publishedAt: "2024-10-08",
-      image: "/mock/post1.jpg",
-      author: "Jane Doe"
-    },
-    {
-      objectID: 2,
-      title: "Cloud Computing: The Backbone of the Future",
-      summary: "Exploring the growth of cloud infrastructure and how it powers today's businesses.",
-      tags: ["Cloud Computing", "Infrastructure", "Scalability"],
-      publishedAt: "2024-10-08",
-      image: "/mock/post2.jpg",
-      author: "John Smith"
-    },
-    {
-      objectID: 3,
-      title: "Cybersecurity in a Digital-First World",
-      summary: "How companies are staying ahead of the curve to protect their systems in an increasingly digital world.",
-      tags: ["Cybersecurity", "Data Protection", "Digital Transformation"],
-      publishedAt: "2024-10-07",
-      image: "/mock/post3.jpg",
-      author: "Emily Johnson"
-    },
-    {
-      objectID: 4,
-      title: "The Future of Remote Work",
-      summary: "Examining the technologies enabling remote work and its long-term impact on businesses.",
-      tags: ["Remote Work", "Collaboration Tools", "Future of Work"],
-      publishedAt: "2024-10-06",
-      image: "/mock/post4.jpg",
-      author: "Michael Brown"
-    },
-    {
-      objectID: 5,
-      title: "Exploring Blockchain Beyond Cryptocurrency",
-      summary: "Understanding blockchain's use cases beyond the world of cryptocurrencies.",
-      tags: ["Blockchain", "Decentralization", "Smart Contracts"],
-      publishedAt: "2024-10-05",
-      image: "/mock/post5.jpg",
-      author: "Laura Davis"
-    },
-    {
-      objectID: 6,
-      title: "DevOps: Bridging the Gap Between Development and Operations",
-      summary: "How DevOps practices are changing the way software is built and deployed.",
-      tags: ["DevOps", "Automation", "CI/CD"],
-      publishedAt: "2024-10-04",
-      image: "/mock/post6.jpg",
-      author: "Daniel Lee"
-    },
-    {
-      objectID: 7,
-      title: "Quantum Computing: The Next Big Leap?",
-      summary: "A look at the advancements in quantum computing and what it could mean for the future of technology.",
-      tags: ["Quantum Computing", "Future Tech", "Innovation"],
-      publishedAt: "2024-10-03",
-      image: "/mock/post7.jpg",
-      author: "Sophia White"
-    },
-    {
-      objectID: 8,
-      title: "AI Ethics: Navigating the Moral Dilemmas of Technology",
-      summary: "The ethical considerations companies face when deploying AI solutions.",
-      tags: ["AI", "Ethics", "Technology Impact"],
-      publishedAt: "2024-10-02",
-      image: "/mock/post8.jpg",
-      author: "James Carter"
-    },
-    {
-      objectID: 9,
-      title: "SaaS Solutions: Driving Efficiency in the Modern Enterprise",
-      summary: "How Software-as-a-Service is transforming how businesses manage operations.",
-      tags: ["SaaS", "Cloud Software", "Enterprise Solutions"],
-      publishedAt: "2024-10-01",
-      image: "/mock/post9.jpg",
-      author: "Olivia Martinez"
-    },
-    {
-      objectID: 10,
-      title: "5G and Its Role in the Internet of Things (IoT)",
-      summary: "Exploring how 5G networks are enabling the next generation of IoT devices.",
-      tags: ["5G", "IoT", "Connectivity"],
-      publishedAt: "2024-10-01",
-      image: "/mock/post10.jpg",
-      author: "William Green"
-    }
+  {
+    objectID: 1,
+    title: "Technical debts: tips for effective management",
+    urlTitle: "technical-debts",
+    summary: "Imagine that you are cooking a meal and you decide not to clean any of the dishes while you are doing it. This decision gets the job done much faster, but it piles up work for later. Also, the more time you spend not doing the washing up, the harder it will be to do it later.",
+    tags: ["Management", "Tips"],
+    image: '/posts/post1.png',
+    publishedAt: "2024-01-11",
+    author: "Raúl López",
+  },
+  {
+    objectID: 2,
+    title: "5 tips for remote IT teams in 2024",
+    urlTitle: "remote-it-teams-tips",
+    summary: "Remote IT teams encourage the learning of new skills and perspectives by allowing for diversity among their members. They can also exchange ideas, feedback and solutions productively using efficient communication tools and methods.",
+    tags: ["Remote", "Management", "Tips"],
+    image: '/posts/post2.jpg',
+    publishedAt: "2024-01-31",
+    author: "Raúl López",
+  },
+  {
+    objectID: 3,
+    title: "Incorporating AI for agility and efficiency",
+    urlTitle: "ai-for-agility-and-efficiency",
+    summary: "At the end of the year, I attended a CUTI event and one of the workshops presented the impact of AI in the business world and how it is changing the rules of the game, mainly in terms of agility and efficiency.",
+    tags: ["Startups", "AI", "Tools"],
+    image: '/posts/post3.jpg',
+    publishedAt: "2024-02-11",
+    author: "Raúl López",
+  },
+  {
+    objectID: 4,
+    title: "New vision, new opportunities: Francisco Ravecca joins Applica Corp.",
+    urlTitle: "francisco-ravecca",
+    summary: "We are pleased to announce the appointment of Francisco Ravecca as the new Director of Applica Corp. Francisco brings over 30 years of experience in business development across a wide range of industries, including free trade zones, real estate, technology, retail, and finance.",
+    tags: ["Industry", "Team", "Future"],
+    image: '/posts/post4.jpg',
+    publishedAt: "2024-08-29",
+    author: "Santiago Fraga",
+  },
+  {
+    objectID: 5,
+    title: "Digital transformation in talent management",
+    urlTitle: "digital-transformation",
+    summary: "In today's fast-paced business environment, where time is one of the most valuable resources, efficiency and agility in talent acquisition are essential for project success.",
+    tags: ["Digital", "Management", "Staff Aurgmentation"],
+    image: '/posts/post5.jpg',
+    publishedAt: "2024-10-12",
+    author: "Santiago Fraga",
+  },
+  {
+    objectID: 6,
+    title: "Highlights from IT Builders Live: Networking and knowledge",
+    urlTitle: "it-builders",
+    summary: "The IT Builders Live event gathers the entire tech ecosystem of Uruguay, creating an enriching synergy space for the Information and Communication Technologies (ICT) industry.",
+    tags: ["Events", "Marketing"],
+    image: '/posts/post6.png',
+    publishedAt: "2024-06-03",
+    author: "Ana Solórzano",
+  }
 ];
 
 const uploadPostsToAlgolia = async () => {

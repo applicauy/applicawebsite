@@ -65,7 +65,7 @@ export default function Button({
                 <Image
                     src={arrowIcon}
                     className="h-7 w-7 md:h-10 md:w-10"
-                    alt=""
+                    alt="Arrow Icon"
                     color="transparent"
                 />
             </div>

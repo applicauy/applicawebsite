@@ -11,7 +11,7 @@ interface Props {
 
 const page = ( { params } : Props ) => {
 
-  const post: Post | undefined = posts.find( post => post.objectID === Number( params.id ) );
+  const post: Post | undefined = posts.find( post => post.urlTitle === params.id );
 
   if (!post) {
     throw new Error("Post not found");

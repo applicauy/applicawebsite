@@ -12,6 +12,9 @@ import MobilePostFooter from "@/app/(mobile)/_components/mobile-post-footer";
 import PostFooter from "@/app/_components/post-footer";
 import MobileLatestPostsSection from "@/app/(mobile)/_sections/mobile-latest-posts-section";
 import LatestPosts from "@/app/_sections/latest-posts";
+import ImagesSlide from "./image-slide";
+import { LightGallery } from "lightgallery/lightgallery";
+import ImageCarousel from "./lightgallery";
 
 export default function PostSection( 
     {
@@ -25,13 +28,13 @@ export default function PostSection(
 ) {
 
     return (
-        <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 md:mt-10 mt-24 mb-16 overflow-hidden`}>
+        <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 md:mt-10 mt-24 overflow-hidden ${ isMobile && 'mb-16' }`}>
           <Section className="relative flex flex-col mb-4">
             <div className="flex flex-wrap gap-2 mb-5">
               {
                 post.tags.map(
                   tag => (
-                    <Badge key = { tag } category = { tag } className="md:font-medium text-sm"/>
+                    <Badge key = { tag } category = { tag } className="md:font-medium text-sm md:text-lg"/>
                   )
                 )
               }
@@ -54,6 +57,10 @@ export default function PostSection(
               }
             </div> 
             <Markdown className={`${ isMobile ? 'post-content-mobile' : 'post-content' } md:mt-20 mt-10`}>{ post.content }</Markdown>
+            {
+              post.slide &&
+              <ImageCarousel images={ post.slide } />
+            }
             
             {
               isMobile ?

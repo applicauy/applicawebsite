@@ -7,7 +7,16 @@ import { apexFont } from '@/assets/fonts';
 import Link from 'next/link';
 import { menuItems } from '@/utils/menu/menu-items';
 
-const MobileMenu = () => {
+const MobileMenu = (
+  {
+      onMenuClick,
+      handleScroll
+  } :
+  {
+      onMenuClick: any,
+      handleScroll: any
+  }
+) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -40,13 +49,6 @@ const MobileMenu = () => {
         duration: 0.9,
       },
     }),
-  };
-
-  const handleScroll = (id: any) => {
-      const element = document.getElementById(id);
-      if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
   };
 
   return (
@@ -82,22 +84,26 @@ const MobileMenu = () => {
                         <button
                             onClick={() => {
                                 handleScroll(item.url.slice(1));
-                                toggleMenu(); // Cierra el menú después de hacer clic
+                                toggleMenu();
                             }}
                             className="flex flex-row gap-5 items-center justify-center hover:text-highlight"
                         >
                             <div className="text-3xl">{item.icon}</div>
-                            {item.name}
+                            <span className="text-3xl">{item.name}</span>
                         </button>
                     ) : (
                         <Link
                             href={item.url}
                             target={item.target ?? ''}
-                            className="flex flex-row gap-5 items-center justify-center hover:text-highlight"
-                            onClick={toggleMenu} // Cierra el menú después de hacer clic
+                            className="flex flex-row gap-5 items-center justify-center hover:text-highlight text-3xl"
+                            onClick={( event ) => {
+                                if( item.name !== 'careers' )
+                                  onMenuClick( event );
+                                toggleMenu();
+                            }}
                         >
                             <div className="text-3xl">{item.icon}</div>
-                            {item.name}
+                            <span className="text-3xl">{item.name}</span>
                         </Link>
                     )}
                 </motion.li>

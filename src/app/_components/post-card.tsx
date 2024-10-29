@@ -38,7 +38,7 @@ export default function PostCard({
                             src={arrowIcon}
                             height={40}
                             width={40}
-                            alt=""
+                            alt="Arrow Icon"
                             color="transparent"
                         />
                     </button>

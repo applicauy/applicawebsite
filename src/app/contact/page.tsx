@@ -1,11 +1,5 @@
 import FormSection from "./_sections/form-section";
-import H2 from "@/components/h2";
-import H4 from "@/components/h4";
-import StrongText from "@/app/_components/strong-text";
-import placeholderImg from "@/assets/placeholder-img-2.png";
 import { apexFont } from "@/assets/fonts";
-import DecoratedImage from "../_components/decorated-image";
-import Button from "@/components/button";
 import ContactSection from "./_sections/contact-section";
 import { headers } from "next/headers";
 import MobileDetect from "mobile-detect";
@@ -19,15 +13,15 @@ export default function Page() {
 
     return (
         <>
-            <main className={`${apexFont.className} container mx-auto min-h-screen flex flex-col gap-8 contact-section md:px-24 md:mt-12 overflow-x-hidden mt-24 ${ isMobile && 'mb-12' }`}>
+            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 md:mt-10 mt-24 overflow-hidden ${ isMobile && 'mb-16' }`}>
 
                 <ContactSection isMobile = { isMobile } />
 
-                <div className="flex flex-row px-2 py-0 md:px-24 md:py-11">
+                <div className="flex flex-row py-0 md:py-11 px-2 md:px-24 w-full">
                     <FormSection isMobile = { isMobile } />
-                </div>
-            </main>
-            
+                </div>       
+
+            </div>     
 
             {
                 isMobile && <MobileLetsTalkSection></MobileLetsTalkSection>

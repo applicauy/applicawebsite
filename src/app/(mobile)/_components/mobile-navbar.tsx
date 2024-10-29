@@ -9,7 +9,16 @@ import { useEffect, useState } from "react";
 import MobileMenu from "./mobile-menu";
 import { motion } from 'framer-motion';
 
-const MobileNavBar = () => {
+const MobileNavBar = (
+    {
+        onMenuClick,
+        handleScrollFromClick
+    } :
+    {
+        onMenuClick: React.MouseEventHandler<HTMLDivElement>,
+        handleScrollFromClick: any
+    }
+) => {
     
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -53,7 +62,7 @@ const MobileNavBar = () => {
                     <Image alt="Applica's logo" src={logo} />
                 </Link>
             </div>
-            <MobileMenu />
+            <MobileMenu onMenuClick = { (event: any) => onMenuClick( event ) } handleScroll = { handleScrollFromClick } />
         </motion.header>
     );
 };

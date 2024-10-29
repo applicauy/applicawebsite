@@ -46,7 +46,7 @@ export default function MobileButton({
                 <Image
                     src={arrowIcon}
                     className="h-7 w-7 md:h-7 md:w-7"
-                    alt=""
+                    alt="Arrow Icon"
                     color="transparent"
                 />
             </div>
