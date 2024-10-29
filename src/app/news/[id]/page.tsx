@@ -1,9 +1,9 @@
 import { Post } from "@/utils/models/Post";
-import { posts } from "@/utils/mock/posts";
 import { headers } from "next/headers";
 import MobileDetect from "mobile-detect";
 import MobileLetsTalkSection from "@/app/(mobile)/_sections/mobile-lets-talk-section";
 import PostSection from "../components/post-section";
+import { posts } from "@/utils/mock/posts";
 
 interface Props {
   params: { id: string }
@@ -11,7 +11,7 @@ interface Props {
 
 const page = ( { params } : Props ) => {
 
-  const post: Post | undefined = posts.find( post => post.urlTitle === params.id );
+  const post: Post | undefined = posts.find( (post: Post) => post.urlTitle === params.id );
 
   if (!post) {
     throw new Error("Post not found");
