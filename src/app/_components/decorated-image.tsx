@@ -9,11 +9,13 @@ export default function DecoratedImage({
     image,
     alt = "",
     fromPost = false,
+    onlyBox = false
 }: PropsWithChildren<{
     className?: string;
     image: any;
     alt?: string;
-    fromPost?: boolean
+    fromPost?: boolean,
+    onlyBox?: boolean
 }>) {
     return (
         <>
@@ -22,6 +24,8 @@ export default function DecoratedImage({
                     <Image
                         src={ image }
                         alt={ alt }
+                        height={150}
+                        width={500}
                         className="rounded-lg img-blog"
                     /> :
                     <Image
@@ -40,16 +44,24 @@ export default function DecoratedImage({
                 className={ `absolute inset-16 pointer-events-none ${ fromPost ? 'image-border-blog' : 'image-border' }` }
             /> 
 
-            <Image
-                src={ fromPost ? rightLineImg : leftLineImg }
-                alt="Line"
-                className={`${ fromPost ? 'left-line-blog' : 'left-line' }`}
-            />
-            <Image
-                src={ rightLineImg }
-                alt="Line"
-                className={`${ fromPost ? 'right-line-blog' : 'right-line' }`}
-            />
+            {
+                !onlyBox &&
+                    <Image
+                        src={ fromPost ? rightLineImg : leftLineImg }
+                        alt="Line"
+                        className={`${ fromPost ? 'left-line-blog' : 'left-line' }`}
+                    />
+            }
+
+            {
+                !onlyBox &&
+                    <Image
+                        src={ rightLineImg }
+                        alt="Line"
+                        className={`${ fromPost ? 'right-line-blog' : 'right-line' }`}
+                    />
+            }
+           
         </>
     );
 }

@@ -49,7 +49,7 @@ export default function MobileProcessSection() {
                 </ProcessItem>
 
                 <MobileProcessItem
-                    customIcon={<Image src={icon72Hours} alt="" width={100} />}
+                    customIcon={<Image src={icon72Hours} alt="72 hours Icon" width={100} />}
                     contentPosition={ContentPosition.Right}
                     className="gap-3 md:gap-10"
                 >

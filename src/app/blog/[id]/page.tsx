@@ -56,7 +56,7 @@ By implementing these practices, organizations can ensure that they have a compe
           <div className="image-container-blog flex items-center justify-center w-full relative mt-24">
             <Image
                 src={ placeholder }
-                alt=""
+                alt="Image"
                 className="rounded-lg img-blog"
             />
             <Image

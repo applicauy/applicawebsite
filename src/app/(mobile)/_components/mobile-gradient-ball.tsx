@@ -1,6 +1,7 @@
 import { avigeaFont } from "@/assets/fonts";
 import MobileH4 from "./mobile-h4";
 import MobileH6 from "./mobile-h6";
+import CountUp from 'react-countup';
 
 /**
  * Renders a gradient ball component with a title and subtitle.
@@ -12,9 +13,15 @@ import MobileH6 from "./mobile-h6";
  */
 export default function MobileGradientBall({
     title,
+    startSymbol,
+    endSymbol,
+    duration,
     subtitle,
 }: {
-    title: string;
+    title: number;
+    startSymbol?: string;
+    endSymbol?: string;
+    duration: number;
     subtitle: string;
 }) {
     return (
@@ -22,7 +29,13 @@ export default function MobileGradientBall({
             <MobileH4
                 className={`${avigeaFont.className} font-normal text-3xl lg:text-base`}
             >
-                {title}
+                {
+                    startSymbol && startSymbol
+                }
+                <CountUp end = { title } duration = { duration } separator="."></CountUp>
+                {
+                    endSymbol && endSymbol
+                }
             </MobileH4>
             <span className="text-lg">{subtitle}</span>
         </div>

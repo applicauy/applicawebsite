@@ -5,25 +5,31 @@ import arrowIcon from "@/assets/icons/arrow-right.svg";
 import { useNavigationHandlers } from "@/lib/helpers";
 import { Post } from "@/utils/models/Post";
 import Badge from "./badge";
+import isMobile from 'react-device-detect';
 
 
 const NewsCard = (
     { objectID,
       title,
+      urlTitle,
       summary,
       tags,
       image,
       publishedAt,
-      fromNews = true
+      fromNews = true,
+      handleClick,
+      isMobile
     } : 
     Post & 
-    { fromNews?: boolean }
+    { fromNews?: boolean } &
+    { handleClick: any } &
+    { isMobile: boolean }
 ) => {
     const { onGoToPost } = useNavigationHandlers();
 
     return (
         <div className="relative flex flex-col overflow-hidden card-border bg-clip-border hover:shadow-lg hover:cursor-pointer bg-secondary-bg group md:z-[1] z-[10]"
-            onClick={ () => onGoToPost( objectID ) }>
+            onClick={ () => onGoToPost( urlTitle ) }>
            <div className="relative h-[200px] md:h-[250px] m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border transition-transform duration-300 ease-in-out transform group-hover:scale-110">
                 <Image 
                     src={image}
@@ -57,12 +63,16 @@ const NewsCard = (
                     </p>
                     <div className='flex items-end'>
                          <button className="rounded-full p-2 md:p-2 bg-highlight hover:bg-white hover:cursor-pointer transition-all duration-300"
-                             onClick={ () => onGoToPost( objectID ) }>
+                             onClick={ () => {
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                isMobile && handleClick();
+                                onGoToPost( urlTitle );
+                             }}>
                              <Image
                                 src={arrowIcon}
                                 width={25}
                                 height={25}
-                                alt=""
+                                alt="Arrow Icon"
                                 color="transparent"
                                 className="w-8 md:w-6 h-8 md:h-6"
                              />

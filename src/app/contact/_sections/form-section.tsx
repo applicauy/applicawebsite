@@ -9,6 +9,9 @@ import Errors from "../_components/errors";
 import Button from "@/components/button";
 import { useEffect, useRef } from "react";
 import { Toaster, toast } from "react-hot-toast";
+import { apexFont } from "@/assets/fonts";
+import isMobile from 'react-device-detect';
+import MobileButton from "@/app/(mobile)/_components/mobile-button";
 
 const REFERRALS_VALUES = [
     "Google search",
@@ -21,23 +24,48 @@ const REFERRALS_VALUES = [
 const initialState: Response = {
     success: false,
 };
-
-function Submit() {
+2
+function Submit(  
+    {
+        isMobile
+    } :
+    {
+        isMobile : boolean
+    }
+) {
     const { pending } = useFormStatus();
     return (
-        <div className="mt-10 justify-between">
-            <Button
-                type="submit"
-                highlightedArrow={!pending}
-                disabled={pending}
-            >
-                Submit
-            </Button>
+        <div className={`${ isMobile ? 'mt-4' : 'mt-10' } justify-between`}>
+            {
+                isMobile ?
+                    <MobileButton 
+                        type="submit"
+                        highlightedArrow={!pending}
+                        disabled={pending}>
+                        Submit
+                    </MobileButton>
+                    :
+                    <Button
+                        type="submit"
+                        highlightedArrow={!pending}
+                        disabled={pending}
+                    >
+                        Submit
+                    </Button>
+            }
+            
         </div>
     );
 }
 
-export default function FormSection() {
+export default function FormSection(
+    {
+        isMobile
+    } :
+    {
+        isMobile : boolean
+    }
+) {
     const formRef = useRef<HTMLFormElement>(null);
     const [state, formAction] = useFormState(
         handleContactRequest,
@@ -62,10 +90,79 @@ export default function FormSection() {
 
             <form
                 action={formAction}
-                className="grid grid-cols-1 gap-8"
+                className={`w-full flex flex-col gap-5 ${ apexFont.className }`}
                 ref={formRef}
             >
-                <div>
+                <div className="flex flex-col md:flex-row w-full gap-5">
+                    <div className="w-full md:w-1/2 mt-2 md:mt-0">
+                        <span className="text-xl">Name <span className="text-red-500">*</span></span>
+                        <input 
+                            type="text" 
+                            name="name"
+                            placeholder="Your name" 
+                            className="py-2 px-4 bg-transparent text-white rounded-md focus:ring-1 focus:ring-highlight focus:border-highlight w-full text-xl mt-2" 
+                            required 
+                        />
+                    </div>
+                    <div className="w-full md:w-1/2 mt-2 md:mt-0">
+                        <span className="text-xl">Work e-mail <span className="text-red-500">*</span></span>
+                        <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Your work e-mail" 
+                            className="py-2 px-4 bg-transparent text-white rounded-md focus:ring-1 focus:ring-highlight focus:border-highlight w-full text-xl mt-2" 
+                            required 
+                        />
+                    </div>
+                </div>
+                <div className="flex flex-col md:flex-row gap-5 w-full">
+                    <div className="w-full md:w-1/2 mt-2 md:mt-0">
+                        <span className="text-xl">Phone</span>
+                        <input 
+                            type="tel" 
+                            name="phone"
+                            placeholder="Your phone" 
+                            className="py-2 px-4 bg-transparent text-white rounded-md focus:ring-1 focus:ring-highlight focus:border-highlight w-full text-xl mt-2" 
+                        />
+                    </div>
+                    <div className="w-full md:w-1/2 mt-2 md:mt-0">
+                        <span className="text-xl">How did yu heart about us? <span className="text-red-500">*</span></span>
+                        <select 
+                            name="referral" 
+                            className="py-2 px-4 bg-primary-bg text-white rounded-md focus:ring-1 focus:ring-highlight focus:border-highlight w-full text-xl mt-2" 
+                            required
+                        >
+                            <option value="" disabled selected hidden>Select an option</option>
+                            {
+                                REFERRALS_VALUES.map(
+                                    referral => <option value={ referral } key = { referral }>{ referral }</option>
+                                )
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div className="w-full mt-2 md:mt-0">
+                    <span className="text-xl">Tell us abut your needs <span className="text-red-500">*</span></span>
+                    <textarea 
+                        name="message" 
+                        placeholder="Your answer" 
+                        className="py-2 px-4 bg-transparent text-xl min-h-[50px] h-[150px] text-white rounded-md focus:ring-1 focus:ring-highlight focus:border-highlight mb-4 resize-y w-full mt-2" required />
+                </div>
+                <div className="w-full">
+                    <input 
+                        type="checkbox" 
+                        name="subscribe" 
+                        id="subscribe" 
+                        className="w-5 h-5 text-highlight bg-white border-gray-600 rounded focus:ring-0 mb-2 mr-2" 
+                    />
+                    <label htmlFor="subscribe" className="text-xl text-white">
+                        I accept to receive news & communications from Applica Corp.
+                    </label>
+                </div>
+                <div className="flex w-full items-center justify-center">   
+                    <Submit isMobile = { isMobile } />                   
+                </div>
+                {/* <div>
                     <Label title="Name" required>
                         <Input name="name" type="text" required />
                     </Label>
@@ -127,9 +224,7 @@ export default function FormSection() {
                         I accept to receive news & communications from Applica
                         Corp.
                     </span>
-                </label>
-
-                <Submit />
+                </label> */}
 
                 {/* <p>{state.message}</p> */}
 

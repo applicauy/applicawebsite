@@ -23,6 +23,8 @@ export default function MobileDecoratedImage({
                         src={ image }
                         alt={ alt }
                         className="rounded-lg img-blog-mobile"
+                        width={450}
+                        height={150}
                         priority
                     /> :
                     <Image

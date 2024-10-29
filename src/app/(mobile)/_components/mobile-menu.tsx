@@ -7,7 +7,16 @@ import { apexFont } from '@/assets/fonts';
 import Link from 'next/link';
 import { menuItems } from '@/utils/menu/menu-items';
 
-const MobileMenu = () => {
+const MobileMenu = (
+  {
+      onMenuClick,
+      handleScroll
+  } :
+  {
+      onMenuClick: any,
+      handleScroll: any
+  }
+) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -71,15 +80,32 @@ const MobileMenu = () => {
                   exit="exit"
                   className="flex items-center justify-center"
                 >
-                  <Link
-                    href={item.url}
-                    target={item.target ?? ''}
-                    className="flex flex-row gap-5 items-center justify-center hover:text-highlight"
-                    onClick={toggleMenu}
-                  >
-                    <div className="text-3xl">{item.icon}</div>
-                    {item.name}
-                  </Link>
+                    {item.url.startsWith('#') ? (
+                        <button
+                            onClick={() => {
+                                handleScroll(item.url.slice(1));
+                                toggleMenu();
+                            }}
+                            className="flex flex-row gap-5 items-center justify-center hover:text-highlight"
+                        >
+                            <div className="text-3xl">{item.icon}</div>
+                            <span className="text-3xl">{item.name}</span>
+                        </button>
+                    ) : (
+                        <Link
+                            href={item.url}
+                            target={item.target ?? ''}
+                            className="flex flex-row gap-5 items-center justify-center hover:text-highlight text-3xl"
+                            onClick={( event ) => {
+                                if( item.name !== 'careers' )
+                                  onMenuClick( event );
+                                toggleMenu();
+                            }}
+                        >
+                            <div className="text-3xl">{item.icon}</div>
+                            <span className="text-3xl">{item.name}</span>
+                        </Link>
+                    )}
                 </motion.li>
               ))}
             </motion.ul>

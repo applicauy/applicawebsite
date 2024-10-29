@@ -8,12 +8,13 @@ import { useNavigationHandlers } from '@/lib/helpers';
 
 interface Props {
     title: string;
+    urlTitle: string;
     objectID: number;
     image: JSX.Element
 }
 
 export default function Card(
-    { title, objectID, image } : Props
+    { title, urlTitle, image } : Props
 ) {  
   const { onGoToPost } = useNavigationHandlers();
   return (
@@ -25,12 +26,12 @@ export default function Card(
            <h3 className="text-xl text-left w-[80%] flex-col">{ title }</h3>
            <div className='w-[20%] flex flex-col items-end justify-center'>
             <div className="rounded-full w-fit md:p-2 bg-highlight hover:bg-white hover:cursor-pointer transition-all duration-300"
-                onClick={ () => onGoToPost( objectID ) }>
+                onClick={ () => onGoToPost( urlTitle ) }>
                     <Image
                         src={arrowIcon}
                         width={25}
                         height={25}
-                        alt=""
+                        alt="Arrow Icon"
                         color="transparent"
                     />
             </div>

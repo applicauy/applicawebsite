@@ -5,7 +5,8 @@ const nextConfig = {
     // output: "export"
     // Teóricamente esto es requerido para publicarlo en Azure, ya que se hace uso del archivo
     // server.js que produce para tenerlo como punto de inicio con nodejs.
-    output: "standalone"
+    output: "standalone",
+    poweredByHeader: false
 };
 
 export default nextConfig;

@@ -10,6 +10,8 @@ import { /*onStartNowClick,*/ useNavigationHandlers } from "@/lib/helpers";
 import mapImg from "@/assets/mapa.png";
 import MobileH1 from "../_components/mobile-h1";
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 
 /**
  * Renders the About Us section.
@@ -18,6 +20,10 @@ import { motion } from 'framer-motion';
  */
 export default function MobileTalenOnDemand() {
     const { onStartNowClick } = useNavigationHandlers();
+    const { ref, inView } = useInView({
+      triggerOnce: true,
+      threshold: 0.9,
+    });
 
     return (
         <Section className="flex flex-col-reverse gap-10">
@@ -42,11 +48,40 @@ export default function MobileTalenOnDemand() {
                     it is.
                 </MobileH2>
 
-                <div className="flex flex-wrap flex-row mt-12 md:mt-12 mb-12 md:mb-16 gap-6 justify-center">
-                    <MobileGradientBall title="+5.000" subtitle="IT Talents" />
-                    <MobileGradientBall title="80%" subtitle="Senior level" />
-                    <MobileGradientBall title="<13%" subtitle="Turnover rate" />
-                    <MobileGradientBall title="+60" subtitle="Technologies" />
+                <div ref={ref} className="flex flex-wrap flex-row mt-12 md:mt-12 mb-12 md:mb-16 gap-6 justify-center">
+                    { inView && 
+                        <MobileGradientBall 
+                            title = {15000} 
+                            startSymbol = "+"
+                            duration = { 5 }
+                            subtitle = "IT Talents" 
+                        />
+                    }
+                    { inView && 
+                        <MobileGradientBall 
+                            title = { 80 }
+                            endSymbol = "%"
+                            duration = { 5 }
+                            subtitle = "Senior level" 
+                        />
+                    }
+                    { inView && 
+                        <MobileGradientBall 
+                            title = { 13 }
+                            startSymbol = "<"
+                            endSymbol = "%"
+                            duration = { 5 } 
+                            subtitle = "Turnover rate" 
+                        />
+                    }
+                    { inView && 
+                        <MobileGradientBall 
+                            title = { 60 } 
+                            startSymbol = "+"
+                            duration = { 5 }
+                            subtitle = "Technologies" 
+                        />
+                    }
                 </div>
 
                 <MobileButton onClick={onStartNowClick}>
