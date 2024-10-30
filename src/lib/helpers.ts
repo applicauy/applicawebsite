@@ -28,9 +28,19 @@ export const useNavigationHandlers = () => {
         router.push("/#hiring-process");
     };
 
+    const onGoToNews = ( tag?: string ) => {
+        router.push(`/news${ tag && `?tag=${ tag }` }`);
+    }
+
+    const onGoToPost = ( title: string ) => {       
+        router.push(`/news/${ title }`);
+    } 
+
     return {
         onStartNowClick,
         onLetsTalkClick,
         onMeetOurProcessClick,
+        onGoToNews,
+        onGoToPost
     };
 };

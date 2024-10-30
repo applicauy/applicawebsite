@@ -42,7 +42,7 @@ export default function MobilePostCard({
                             src={arrowIcon}
                             height={10}
                             width={10}
-                            alt=""
+                            alt="Arrow Icon"
                             className="fill-current text-white"
                         />
                     </button>

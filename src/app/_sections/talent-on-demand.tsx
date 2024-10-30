@@ -8,6 +8,8 @@ import H2 from "@/components/h2";
 import H3 from "@/components/h3";
 import { /*onStartNowClick,*/ useNavigationHandlers } from "@/lib/helpers";
 import mapImg from "@/assets/mapa.png";
+import { useInView } from "react-intersection-observer";
+import { motion } from 'framer-motion';
 
 /**
  * Renders the Talent on demand.
@@ -16,10 +18,20 @@ import mapImg from "@/assets/mapa.png";
  */
 export default function TalentOnDemand() {
     const { onStartNowClick } = useNavigationHandlers();
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.9,
+      });
 
     return (
         <Section className="flex flex-col md:flex-row gap-8">
-            <div className="flex flex-col items-center md:items-start md:w-[60%] my-auto">
+            <motion.div
+                className="flex flex-col items-center md:items-start md:w-full my-auto"
+                initial={{ opacity: 0, x: "-20px" }}
+                whileInView={{ opacity: 1, x: "0px" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+            >
                 <H2 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
                     Talent on demand{" "}
                     <strong
@@ -34,23 +46,63 @@ export default function TalentOnDemand() {
                     it is.
                 </H3>
 
-                <div className="flex flex-wrap mt-8 md:mt-12 mb-12 md:mb-16 gap-6 justify-center">
-                    <GradientBall title="+5.000" subtitle="IT Talents" />
-                    <GradientBall title="80%" subtitle="Senior level" />
-                    <GradientBall title="<13%" subtitle="Turnover rate" />
-                    <GradientBall title="+60" subtitle="Technologies" />
+                <div ref = { ref } className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-8 md:mt-12 mb-12 md:mb-16 gap-10 justify-center">
+                { inView && 
+                        <GradientBall 
+                            title = {15000} 
+                            startSymbol = "+"
+                            duration = { 5 }
+                            subtitle = "IT Talents" 
+                        />
+                    }
+                    { inView && 
+                        <GradientBall 
+                            title = { 80 }
+                            endSymbol = "%"
+                            duration = { 5 }
+                            subtitle = "Senior level" 
+                        />
+                    }
+                    { inView && 
+                        <GradientBall 
+                            title = { 13 }
+                            startSymbol = "<"
+                            endSymbol = "%"
+                            duration = { 5 } 
+                            subtitle = "Turnover rate" 
+                        />
+                    }
+                    { inView && 
+                        <GradientBall 
+                            title = { 60 } 
+                            startSymbol = "+"
+                            duration = { 5 }
+                            subtitle = "Technologies" 
+                        />
+                    }
                 </div>
 
                 <Button onClick={onStartNowClick}>Schedule a call</Button>
-            </div>
+                
+            </motion.div>
 
-            <div>
-                <Image
-                    src={mapImg}
-                    width={800}
-                    alt="Applica offices across the world"
-                />
-            </div>
+            <motion.div
+                className="flex flex-col items-center md:items-start md:w-full my-auto"
+                initial={{ opacity: 0, x: "-20px" }}
+                whileInView={{ opacity: 1, x: "0px" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+            >
+                <div>
+                    <Image
+                        src={mapImg}
+                        width={800}
+                        alt="Applica offices across the world"
+                    />
+                </div>
+            </motion.div>
+
+
         </Section>
     );
 }

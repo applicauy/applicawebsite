@@ -7,6 +7,7 @@ import clutchStarsImg from "@/assets/clutch/clutch-stars.svg";
 import linkedinIcon from "@/assets/icons/linkedin.svg";
 import instagramIcon from "@/assets/icons/instagram.svg";
 import clutchIcon from "@/assets/icons/clutch.svg";
+import LetsTalkSection from "../_sections/lets-talk-section";
 
 /**
  * Array of locations.
@@ -48,115 +49,139 @@ export const LOCATIONS: {
 export const NAVIGATION_LINKS = [
     {
         text: "About us",
-        href: "/#about-us",
+        href: "#about-us",
     },
     {
         text: "Benefits",
-        href: "/#benefits",
+        href: "#benefits",
     },
     {
         text: "Hiring process",
-        href: "/#hiring-process",
+        href: "#hiring-process",
+    },
+    {
+        text: "News",
+        href: "news",
     },
     {
         text: "Contact",
-        href: "/contact",
+        href: "contact",
     },
 ];
 
-export default function Footer() {
+export default function Footer(
+    {
+        handleScroll
+    } :
+    {
+        handleScroll: any
+    }
+) {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer
-            className={`${apexFont.className} py-28 bg-secondary-bg text-xl flex flex-col gap-8`}
-        >
-            <div className="container mx-auto flex flex-col md:flex-row gap-16 justify-between">
-                <Link href="/">
-                    <Image
-                        src={logo}
-                        alt="Applica Corp's logo"
-                        width={250}
-                        height={220}
-                    />
-                </Link>
+        <>
+            <LetsTalkSection />
 
-                <div>
-                    <ul>
-                        {LOCATIONS.map((l, index) => (
-                            <li key={index} className="my-1">
-                                <strong>{l.country}</strong>
-                                <span className="font-regular ms-3">
-                                    {l.location}
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+            <footer
+                className={`${apexFont.className} py-16 bg-secondary-bg text-xl flex flex-col gap-8`}
+                style = {{ paddingLeft: '6rem', paddingRight: '6rem' }}
+            >
+                <div className="container mx-25 flex flex-col md:flex-row gap-16 justify-between">
+                    <Link href="/">
+                        <Image
+                            src={logo}
+                            alt="Applica Corp's logo"
+                            width={250}
+                            height={220}
+                        />
+                    </Link>
 
-                <div>
-                    <ul>
-                        {NAVIGATION_LINKS.map((nl, index) => (
-                            <li key={index} className="my-1">
-                                <Link href={nl.href} className="font-bold">
+                    <div>
+                        <ul>
+                            {LOCATIONS.map((l, index) => (
+                                <li key={index} className="my-1">
+                                    <span className="font-medium">{l.country}</span>
+                                    <span className="font-regular ms-3">
+                                        {l.location}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul>
+                            {NAVIGATION_LINKS.map((nl, index) => (
+                                nl.href.startsWith('#') ? 
+                                <button
+                                    onClick={() => handleScroll(nl.href.slice(1))}
+                                    className="text-xl hover:text-highlight transition-all duration-300 flex items-start text-left justify-start font-medium"
+                                    key={index}
+                                >
                                     {nl.text}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div className="flex flex-col items-end justify-between">
-                    <div className="flex gap-2">
-                        <Link
-                            href="https://www.linkedin.com/company/applica-corp/"
-                            target="_blank"
-                        >
-                            <Image src={linkedinIcon} alt="" width={48} />
-                        </Link>
-
-                        <Link
-                            href="https://www.instagram.com/applica.corp/"
-                            target="_blank"
-                        >
-                            <Image src={instagramIcon} alt="" width={48} />
-                        </Link>
-
-                        <Link
-                            href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay"
-                            target="_blank"
-                        >
-                            <Image src={clutchIcon} alt="" width={48} />
-                        </Link>
+                                </button> :
+                                <li key={index} className="my-1">
+                                    <Link href={nl.href} className="font-medium hover:text-highlight">
+                                        {nl.text}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
-                    <div className="flex gap-8" role="link">
-                        <Link
-                            href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
-                            target="_blank"
-                        >
-                            <Image
-                                src={clutchStarsImg}
-                                alt="AplicaCorp at Clutch"
-                            />
-                        </Link>
-                        <Link
-                            href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
-                            target="_blank"
-                        >
-                            <Image
-                                src={clutchRecognitionImg}
-                                alt="Clutch recognition for ApplicaCorp"
-                                height={150}
-                            />
-                        </Link>
+                    <div className="flex flex-col items-end justify-between">
+                        <div className="flex gap-2">
+                            <Link
+                                href="https://www.linkedin.com/company/applica-corp/"
+                                target="_blank"
+                            >
+                                <Image src={linkedinIcon} alt="LinkedIn" width={48} />
+                            </Link>
+
+                            <Link
+                                href="https://www.instagram.com/applica.corp/"
+                                target="_blank"
+                            >
+                                <Image src={instagramIcon} alt="Instagram" width={48} />
+                            </Link>
+
+                            <Link
+                                href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay"
+                                target="_blank"
+                            >
+                                <Image src={clutchIcon} alt="Clutch" width={48} />
+                            </Link>
+                        </div>
+
+                        <div className="flex gap-8" role="link">
+                            <Link
+                                href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
+                                target="_blank"
+                            >
+                                <Image
+                                    src={clutchStarsImg}
+                                    alt="AplicaCorp at Clutch"
+                                />
+                            </Link>
+                            <Link
+                                href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
+                                target="_blank"
+                            >
+                                <Image
+                                    src={clutchRecognitionImg}
+                                    alt="Clutch recognition for ApplicaCorp"
+                                    height={150}
+                                />
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <p className="mx-auto text-muted text-base">
-                &copy; {currentYear} Applica Corp. All rights reserved.
-            </p>
-        </footer>
+                <p className="mx-auto text-muted text-base">
+                    &copy; {currentYear} Applica Corp. All rights reserved.
+                </p>
+            </footer>
+        </>
     );
 }

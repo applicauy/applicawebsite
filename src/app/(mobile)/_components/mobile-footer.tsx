@@ -9,7 +9,14 @@ import clutchRecognitionImg from "@/assets/clutch/clutch-recognition.png";
 import clutchStarsImg from "@/assets/clutch/clutch-stars.svg";
 import { LOCATIONS, NAVIGATION_LINKS } from "@/app/_components/footer";
 
-const MobileFooter = () => {
+const MobileFooter = (
+    {
+        handleScroll
+    } :
+    {
+        handleScroll: any
+    }
+) => {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -30,21 +37,21 @@ const MobileFooter = () => {
                             href="https://www.linkedin.com/company/applica-corp/"
                             target="_blank"
                         >
-                            <Image src={linkedinIcon} alt="" width={32} />
+                            <Image src={linkedinIcon} alt="LinkedIn" width={32} />
                         </Link>
 
                         <Link
                             href="https://www.instagram.com/applica.corp/"
                             target="_blank"
                         >
-                            <Image src={instagramIcon} alt="" width={32} />
+                            <Image src={instagramIcon} alt="Instagram" width={32} />
                         </Link>
 
                         <Link
                             href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay"
                             target="_blank"
                         >
-                            <Image src={clutchIcon} alt="" width={32} />
+                            <Image src={clutchIcon} alt="Clutch" width={32} />
                         </Link>
                     </div>
                 </div>
@@ -59,7 +66,7 @@ const MobileFooter = () => {
                                 className="my-1"
                                 style={{ fontSize: "2.6vw" }}
                             >
-                                <strong className="pr-1">{l.country}</strong>
+                                <strong className="pr-1 font-medium">{l.country}</strong>
                                 <span className="font-regular">
                                     {l.location}
                                 </span>
@@ -70,12 +77,16 @@ const MobileFooter = () => {
                 <div className="w-2/5">
                     <ul>
                         {NAVIGATION_LINKS.map((nl, index) => (
-                            <li
+                            nl.href.startsWith('#') ? 
+                            <button
+                                onClick={() => handleScroll(nl.href.slice(1))}
                                 key={index}
-                                className="my-1 flex justify-end"
-                                style={{ fontSize: "2.6vw" }}
+                                className="text-sm hover:text-highlight transition-all duration-300 flex justify-end font-medium text-end w-full mb-1"
                             >
-                                <Link href={nl.href} className="font-bold">
+                                {nl.text}
+                            </button> :
+                            <li key={index} className="my-1 flex justify-end mb-1">
+                                <Link href={nl.href} className="text-sm font-medium hover:text-highlight">
                                     {nl.text}
                                 </Link>
                             </li>
@@ -87,8 +98,8 @@ const MobileFooter = () => {
             <div className="flex justify-between items-center py-2 sm:py-4 md:py-8">
                 <div className="w-3/5">
                     <div className="flex gap-4">
-                        <Image src={clutchStarsImg} alt="" height={60} />
-                        <Image src={clutchRecognitionImg} alt="" height={60} />
+                        <Image src={clutchStarsImg} alt="Clutch Stars" height={60} />
+                        <Image src={clutchRecognitionImg} alt="Clutch Recognition" height={60} />
                     </div>
                 </div>
                 <div className="w-2/5">

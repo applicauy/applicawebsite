@@ -1,47 +1,25 @@
 import { avigeaFont } from "@/assets/fonts";
 import Section from "@/components/section";
-import costEffectiveness from "@/assets/cost-efectiveness.png";
-import timeSaving from "@/assets/timesaving.png";
-import flexibility from "@/assets/flexibility.png";
-import focused from "@/assets/focused.png";
 import Benefit from "../_components/benefit";
 import Carousel from "../_components/carousel";
 import H2 from "@/components/h2";
 import H3 from "@/components/h3";
-
-// Benefits to be displayed in the section.
-const BENEFITS = [
-    {
-        image: costEffectiveness,
-        description: "Improved cost-effectiveness",
-        alt: "",
-    },
-    {
-        image: timeSaving,
-        description: "Time saving",
-        alt: "",
-    },
-    {
-        image: focused,
-        description: "Focused strategy",
-        alt: "",
-    },
-    {
-        image: flexibility,
-        description: "Flexibility & fast replacement",
-        alt: "",
-    },
-];
+import { benefits } from "@/utils/models/Benefits";
+import { motion } from 'framer-motion';
 
 export default function BenefitsSection() {
     return (
         <Section className="flex flex-col gap-12 md:gap-36">
-            <div
+            <motion.div
                 className="flex flex-col md:flex-row gap-8 items-center"
+                initial={{ opacity: 0, x: "-20px" }}
+                whileInView={{ opacity: 1, x: "0px" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
                 id="benefits"
             >
                 <div className="flex flex-col md:w-2/4 gap-12 text-center md:text-left">
-                    <H2 className="md:max-w-[80%]">
+                    <H2 className="md:max-w-[70%]">
                         Let&apos;s find your next{" "}
                         <strong
                             className={`font-normal ${avigeaFont.className}`}
@@ -50,7 +28,7 @@ export default function BenefitsSection() {
                         </strong>
                     </H2>
 
-                    <H3>
+                    <H3 className="md:max-w-[80%]">
                         Long-term partnership requires flexible service. Since
                         2015, Applica Corp. has been dedicated to helping
                         companies scale their business and take it to the next
@@ -59,7 +37,7 @@ export default function BenefitsSection() {
                 </div>
 
                 <div className="md:w-2/4 grid grid-cols-2 gap-4">
-                    {BENEFITS.map((b, index) => (
+                    {benefits.map((b, index) => (
                         <Benefit
                             key={index}
                             imageSrc={b.image}
@@ -69,8 +47,7 @@ export default function BenefitsSection() {
                         </Benefit>
                     ))}
                 </div>
-            </div>
-
+            </motion.div>
             <Carousel />
         </Section>
     );

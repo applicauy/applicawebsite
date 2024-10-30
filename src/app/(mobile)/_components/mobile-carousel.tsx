@@ -103,7 +103,7 @@ const TECHNOLOGIES: Array<{ src: StaticImageData; alt: string }> = [
 const CAROUSEL_SETTINGS: SliderSettings = {
     infinite: true,
     speed: 800,
-    slidesToShow: 6,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     arrows: false,
@@ -117,13 +117,13 @@ const CAROUSEL_SETTINGS: SliderSettings = {
         {
             breakpoint: 768,
             settings: {
-                slidesToShow: 5,
+                slidesToShow: 4,
             },
         },
         {
             breakpoint: 640,
             settings: {
-                slidesToShow: 5,
+                slidesToShow: 4,
             },
         },
     ],

@@ -16,6 +16,12 @@ import {
     /*onMeetOurProcessClick,*/ useNavigationHandlers,
 } from "@/lib/helpers";
 
+import boxImg from '@/assets/shapes/box.svg';
+import leftLineImg from '@/assets/shapes/left-line.svg';
+import rightLineImg from '@/assets/shapes/right-line.svg';
+import MobileH1 from "../_components/mobile-h1";
+import MobileDecoratedImage from "../_components/mobile-decorated-image";
+
 export default function MobileServicesSection() {
     const { onMeetOurProcessClick } = useNavigationHandlers();
 
@@ -29,33 +35,33 @@ export default function MobileServicesSection() {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 id="about-us"
             >
+                <div className="gradient-ball-about-us-mobile md:gradient-ball-about-us absolute"></div>
                 <div className="relative md:w-2/4">
-                    <Image
-                        src={placeholderImg}
-                        className="image mx-auto md:hidden"
-                        width={400}
-                        alt=""
-                    />
+                    <div className="image-container">
+                       
+                       <MobileDecoratedImage image={ placeholderImg } alt = "About Us Image" />
+                          
+                   </div>
                 </div>
 
-                <div className="flex flex-col md:gap-8 md:w-2/4 text-center md:text-end my-8 md:my-0">
-                    <MobileH3 className="mb-14 md:mb-0">
+                <div className="flex flex-col md:gap-8 md:w-2/4 text-center md:text-end my-4 md:my-0">
+                    <MobileH3 className="mb-8 md:mb-0">
                         We specialize in IT staff augmentation services, using
                         an agile model to deliver talent in only 72 hours.
                     </MobileH3>
 
-                    <MobileH2 className="max-w-[70%] md:max-w-full mx-auto md:mx-0 mb-3 mb:md-0">
+                    <MobileH1 className="max-w-full md:max-w-full mx-auto md:mx-0 mb-8 mb:md-0">
                         Ready to{" "}
                         <strong
                             className={`font-normal ${avigeaFont.className}`}
                         >
                             ramp up your project?
                         </strong>
-                    </MobileH2>
+                    </MobileH1>
 
-                    <MobileH3 className="text-highlight">
+                    <span className="text-2xl text-highlight">
                         We make it happen
-                    </MobileH3>
+                    </span>
                 </div>
             </motion.div>
 
@@ -64,7 +70,7 @@ export default function MobileServicesSection() {
                 whileInView={{ opacity: 1, x: "0px" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex flex-col md:flex-row gap-6 max-w-[80%] md:max-w-full mx-auto md:mx-0 mb-14 md:mb-0"
+                className="flex flex-col md:flex-row gap-6 max-w-full mx-auto md:mx-0 mb-14 md:mb-0 md:my-0 my-12"
             >
                 <Attribute icon={searchIcon}>
                     Pre-vetted & tailor matched nearshore IT talent you can count
@@ -87,17 +93,18 @@ export default function MobileServicesSection() {
                 whileInView={{ opacity: 1, x: "0px" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex flex-col gap-6 px-10 md:px-36 pt-8 md:pt-16 pb-7 md:pb-9 rounded-3xl md:rounded-full border text-center items-center bg-gradient-to-br from-indigo-700 via-purple-600 to-pink-600"
+                className="flex flex-col gap-6 px-6 mt-12 mb-6 md:px-36 pt-8 md:pt-16 pb-7 md:pb-9 rounded-3xl md:rounded-full text-center items-center fit-background"
+                id="services"
             >
-                <MobileH2 className="font-medium">
+                <MobileH1 className="font-medium">
                     Find the{" "}
                     <strong className={`font-normal ${avigeaFont.className}`}>
                         perfect fit
                     </strong>{" "}
                     for your venture
-                </MobileH2>
+                </MobileH1>
 
-                <MobileH3 className="text-md">
+                <MobileH3>
                     Whether you need a specialized skillset, a temporary highly
                     qualified developer, a Senior team lead, or just more hands
                     on deck, our IT talents are here to help.

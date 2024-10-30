@@ -1,3 +1,5 @@
+'use client'
+
 import Section from "@/components/section";
 import { avigeaFont } from "@/assets/fonts";
 import ProcessItem, { ContentPosition } from "@/app/_components/process-item";
@@ -5,17 +7,19 @@ import MobileProcessItemBody from "../_components/mobile-proccess-item-body";
 import icon72Hours from "@/assets/icons/72-hours.svg";
 import Image from "next/image";
 import MobileH2 from "../_components/mobile-h2";
+import MobileH1 from "../_components/mobile-h1";
+import MobileProcessItem from "../_components/mobile-process-item";
 
 export default function MobileProcessSection() {
     return (
         <Section className={`flex flex-col items-center w-full`}>
             <div id="hiring-process"/>
-            <MobileH2 className="mb-9 md:mb-12 text-center">
+            <MobileH1 className="mb-16 md:mb-12 text-center">
                 Hiring{" "}
                 <strong className={`font-normal ${avigeaFont.className}`}>
                     process
                 </strong>
-            </MobileH2>
+            </MobileH1>
 
             <div className="flex flex-col md:w-4/5">
                 <ProcessItem contentPosition={ContentPosition.Left} colored>
@@ -44,28 +48,26 @@ export default function MobileProcessSection() {
                     </MobileProcessItemBody>
                 </ProcessItem>
 
-                <ProcessItem
-                    customIcon={<Image src={icon72Hours} alt="" width={250} />}
+                <MobileProcessItem
+                    customIcon={<Image src={icon72Hours} alt="72 hours Icon" width={100} />}
                     contentPosition={ContentPosition.Right}
                     className="gap-3 md:gap-10"
                 >
                     {/* We had to make a custom body because the one that we already builded (MobileProcessItemBody)
                         doesn't meet our requirements for this situation. */}
                     <div>
-                        <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full w-fit py-1 md:py-2 px-2 md:px-4 mb-4">
-                            <h3
-                                className={`mb-0 px-0 leading-4 text-sm text-center ${avigeaFont.className}`}
-                            >
-                                Candidates presentation
-                            </h3>
+                        <div className="rounded-full py-4 md:py-4 px-4 md:px-6 mb-4 candidates-background">
+                            <MobileH2 className={`translate-y-[2px] text-center font-medium ${avigeaFont.className}`}>
+                                Candidates deliver
+                            </MobileH2>
                         </div>
 
-                        <p className="text-xs md:text-sm leading-tight">
+                        <p className="text-lg leading-tight text-center mb-5">
                             Meet a tailor-made group of applicants who are in
                             line your initial requirements.
                         </p>
                     </div>
-                </ProcessItem>
+                </MobileProcessItem>
 
                 <ProcessItem contentPosition={ContentPosition.Left}>
                     <MobileProcessItemBody title="Interview & confirmation">
@@ -83,12 +85,9 @@ export default function MobileProcessSection() {
 
                 <ProcessItem
                     contentPosition={ContentPosition.Left}
-                    customLineHeight="3rem"
-                    dashedEndOfLine={true}
-                    dashedEndOfLineHeight="3rem"
                 >
                     <MobileProcessItemBody title="EX & monitoring">
-                    Tracking of stakeholders performance and satisfaction.
+                        Tracking of stakeholders performance and satisfaction.
                     </MobileProcessItemBody>
                 </ProcessItem>
             </div>

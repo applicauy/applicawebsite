@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image";
  *
  * @param {Object} props - The component props.
  * @param {string | StaticImageData} props.src - The source of the image to be displayed.
- * @param {string} [props.alt=""] - The alternative text for the image.
+ * @param {string} [props.alt="Technology Logo"] - The alternative text for the image.
  * @returns {JSX.Element} The rendered technology slide component.
  */
 export default function TechnologySlide({
@@ -20,8 +20,8 @@ export default function TechnologySlide({
             <Image
                 src={src}
                 alt={alt}
-                width={100}
-                height={100}
+                width={150}
+                height={150}
                 className="grayscale hover:filter-none"
             />
         </div>

@@ -15,10 +15,12 @@ const config: Config = {
             },
             colors: {
                 "primary-bg": "#1b1b1b",
-                "secondary-bg": "#252525",
+                "secondary-bg": "#262626",
                 highlight: "#e5a818",
                 // "secondary" because tailwind already adds a "muted" color.
                 "secondary-muted": "#848483",
+                "secondary-text": "#B69FE2",
+                "violet-background": "#6233CE"
             },
         },
     },

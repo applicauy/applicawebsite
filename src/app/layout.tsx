@@ -1,45 +1,49 @@
 import "./globals.scss";
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
+import { headers } from "next/headers";
 import { Inter } from "next/font/google";
-import NavBar from "./_components/navbar";
-import Footer from "./_components/footer";
-import MobileLayout from "./(mobile)/layout";
-import { GoogleTagManager } from "@next/third-parties/google";
-import TrackPageView from "../components/track-page-view";
-
-const GTM_ID = "GTM-PQ3DNDZ";
+import Script from 'next/script';
+import MobileDetect from 'mobile-detect';
+import LayoutClientWrapper from "./layout-client-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Applica Corp: IT Staff augmentation services",
     description:
-        "We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs.",
+        "We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs."
 };
 
 export default function RootLayout({
-    children,
+    children
 }: Readonly<{
-    children: React.ReactNode;
+    children: React.ReactNode
 }>) {
-    const cookieStore = cookies();
-    const isMobile = cookieStore.get("isMobile")?.value === "true";
-
-    if (isMobile) {
-        return <MobileLayout>{children}</MobileLayout>;
-    }
-
+    const userAgent = headers().get('user-agent') || '';
+    const md = new MobileDetect(userAgent);
+    const isMobile = !!md.mobile();
     return (
         <html lang="en">
-            <body className={`${inter.className}`}>
-                <NavBar />
-                {children}
-                <Footer />
-
-                <GoogleTagManager gtmId={GTM_ID} />
-                <TrackPageView />
-            </body>
+            <head>
+                <Script 
+                id="gtm-script"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                __html: `
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','G-689YV97H3W');
+                `,
+                }}
+                />
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+                <link rel="apple-touch-icon" href="/icon_apple_touch.png" sizes="180x180" />
+            </head>
+            
+            <LayoutClientWrapper initialIsMobile={isMobile}>{ children }</LayoutClientWrapper>
         </html>
     );
 }

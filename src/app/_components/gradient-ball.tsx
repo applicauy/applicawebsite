@@ -1,6 +1,7 @@
 import { avigeaFont } from "@/assets/fonts";
 import H4 from "@/components/h4";
 import H5 from "@/components/h5";
+import CountUp from "react-countup";
 
 /**
  * Renders a gradient ball component with a title and subtitle.
@@ -12,14 +13,28 @@ import H5 from "@/components/h5";
  */
 export default function GradientBall({
     title,
+    startSymbol,
+    endSymbol,
+    duration,
     subtitle,
 }: {
-    title: string;
+    title: number;
+    startSymbol?: string;
+    endSymbol?: string;
+    duration: number;
     subtitle: string;
 }) {
     return (
         <div className="rounded-full size-28 md:size-36 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 flex flex-col justify-center items-center">
-            <H4 className={`${avigeaFont.className} font-normal`}>{title}</H4>
+            <H4 className={`${avigeaFont.className} font-normal`}>
+            {
+                    startSymbol && startSymbol
+                }
+                <CountUp end = { title } duration = { duration } separator="."></CountUp>
+                {
+                    endSymbol && endSymbol
+                }
+            </H4>
             <H5 className="">{subtitle}</H5>
         </div>
     );

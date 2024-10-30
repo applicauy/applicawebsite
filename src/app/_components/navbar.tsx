@@ -3,13 +3,25 @@ import Image from "next/image";
 import logo from "@/assets/logo/logo-menu.svg";
 import Link from "next/link";
 import { apexFont } from "@/assets/fonts";
-import classnames from "classnames";
+import { menuItems } from "@/utils/menu/menu-items";
+import { useRouter } from "next/router";
 
 // Navbar used across the website.
-export default function NavBar() {
+export default function NavBar(
+    {
+        onMenuClick,
+        handleScroll
+    } :
+    {
+        onMenuClick: any,
+        handleScroll: any
+    }
+) {
+    
+
     return (
-        <nav className={`sticky flex justify-center ${apexFont.className}`}>
-            <div className="flex justify-between content-center container px-5 md:px-0 py-8">
+        <nav className={`sticky flex justify-center ${apexFont.className} px-24`}>
+            <div className="flex justify-between content-center container md:px-0 py-8">
                 <div className="logo">
                     {/* If someone clicks the logo, then redirect him to the home view. */}
                     <Link href="/">
@@ -22,29 +34,32 @@ export default function NavBar() {
                     </Link>
                 </div>
 
-                <ul className="hidden md:flex gap-11 h-fit max-h-fit self-center">
-                    <li>
-                        <Link href="/#about-us">about us</Link>
-                    </li>
-
-                    <li>
-                        <Link href="#services">services</Link>
-                    </li>
-
-                    <li>
-                        <Link
-                            href="https://recruitcrm.io/jobs/applica_corp"
-                            target="_blank"
-                        >
-                            careers
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link href="/contact">
-                            contact
-                        </Link>
-                    </li>
+                <ul className="hidden md:flex flex-row gap-10 h-fit max-h-fit self-center">
+                    {
+                        menuItems.map(
+                            (item, index) => (
+                                <li key={index}>
+                                    {item.url.startsWith('#') ? (
+                                        <button
+                                            onClick={() => handleScroll(item.url.slice(1))}
+                                            className="text-xl hover:text-highlight transition-all duration-300 flex items-center justify-center"
+                                        >
+                                            {item.name}
+                                        </button>
+                                    ) : (
+                                        <Link
+                                            href={item.url}
+                                            className="text-xl hover:text-highlight transition-all duration-300 flex items-center justify-center"
+                                            target={item.target ?? ''}
+                                            onClick={ (event) => onMenuClick( event ) }
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    )}
+                                </li>
+                            ) 
+                        )
+                    }
                 </ul>
             </div>
         </nav>

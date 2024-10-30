@@ -16,15 +16,15 @@ export default function BlogSection() {
             </H2>
 
             <div className="flex md:justify-between flex-wrap md:flex-nowrap">
-                <PostCard imageSrc={placeholderImg} imageAlt="">
+                <PostCard imageSrc={placeholderImg} imageAlt="Header Image">
                     The role of Talent Pools: what are the benefits
                 </PostCard>
 
-                <PostCard imageSrc={placeholderImg} imageAlt="">
+                <PostCard imageSrc={placeholderImg} imageAlt="Header Image">
                     The role of Talent Pools: what are the benefits
                 </PostCard>
 
-                <PostCard imageSrc={placeholderImg} imageAlt="">
+                <PostCard imageSrc={placeholderImg} imageAlt="Header Image">
                     The role of Talent Pools: what are the benefits
                 </PostCard>
             </div>
