@@ -7,21 +7,21 @@ export const benefits = [
     {
         image: costEffectiveness,
         description: "Improved cost-effectiveness",
-        alt: "",
+        alt: "Improved cost-effectiveness",
     },
     {
         image: timeSaving,
         description: "Time saving",
-        alt: "",
+        alt: "Time saving",
     },
     {
         image: focused,
         description: "Focused strategy",
-        alt: "",
+        alt: "Focused strategy",
     },
     {
         image: flexibility,
         description: "Flexibility & fast replacement",
-        alt: "",
+        alt: "Flexibility & fast replacement",
     },
 ];

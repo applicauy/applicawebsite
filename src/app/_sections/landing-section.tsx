@@ -24,7 +24,8 @@ export default function LandingSection() {
                 transition={{ duration: 0.6 }}
             >
                 <div className="w-[80%]">
-                    <H2 className="mb-8">
+                    <H1 className="mb-5">Build your dream team with top nearshore IT talent</H1>
+                    <H2 className="mb-12">
                         We are a software company focused on{" "}
                         <strong
                             className={`text-highlight ${avigeaFont.className} font-normal`}
@@ -33,9 +34,6 @@ export default function LandingSection() {
                         </strong>{" "}
                         and delivering peace of mind
                     </H2>
-                    <H3 className="mb-16">
-                        Let&apos;s build your IT dream team together
-                    </H3>
                     <Button highlightedArrow onClick={onStartNowClick}>
                         Start now!
                     </Button>
