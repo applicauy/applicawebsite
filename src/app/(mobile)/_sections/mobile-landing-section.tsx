@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import Section from "@/components/section";
 import { avigeaFont } from "@/assets/fonts";
-import MobileH2 from "../_components/mobile-h2";
 import MobileButton from "../_components/mobile-button";
 import MobileH1 from "../_components/mobile-h1";
+import H1 from "@/components/h1";
 
 export default function MobileLandingSection() {
     const onStartNowClick = () => {
@@ -20,7 +20,10 @@ export default function MobileLandingSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                <MobileH1 className="mb-6 text-center">
+                <H1 className="mb-4 text-center">
+                    Build your dream team with top nearshore IT talent
+                </H1>
+                <MobileH1 className="mb-12 text-center">
                     We are a software company focused on{" "} 
                     <strong
                         className={`text-highlight ${avigeaFont.className} font-normal`}
@@ -29,10 +32,6 @@ export default function MobileLandingSection() {
                     </strong>{" "}
                     and delivering peace of mind
                 </MobileH1>
-
-                <p className={`text-xl md:text-3xs leading-none mb-12 text-center`}>
-                    Let&apos;s build your IT dream team together
-                </p>
 
                 <div className="flex flex-row items-center justify-center">
                     <MobileButton highlightedArrow onClick={onStartNowClick} >
