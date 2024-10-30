@@ -1,8 +1,5 @@
 "use client";
 
-import Input from "@/components/input";
-import Label from "@/components/label";
-import TextArea from "@/components/textarea";
 import { useFormState, useFormStatus } from "react-dom";
 import { handleContactRequest, Response } from "./actions";
 import Errors from "../_components/errors";
@@ -10,15 +7,15 @@ import Button from "@/components/button";
 import { useEffect, useRef } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { apexFont } from "@/assets/fonts";
-import isMobile from 'react-device-detect';
 import MobileButton from "@/app/(mobile)/_components/mobile-button";
 
 const REFERRALS_VALUES = [
     "Google search",
-    "Linkedin",
+    "LinkedIn",
     "Instagram",
     "Clutch",
     "Referral",
+    "Other"
 ];
 
 const initialState: Response = {
@@ -131,8 +128,9 @@ export default function FormSection(
                             name="referral" 
                             className="py-2 px-4 bg-primary-bg text-white rounded-md focus:ring-1 focus:ring-highlight focus:border-highlight w-full text-xl mt-2" 
                             required
+                            defaultValue=""
                         >
-                            <option value="" disabled selected hidden>Select an option</option>
+                            <option value="" disabled hidden>Select an option</option>
                             {
                                 REFERRALS_VALUES.map(
                                     referral => <option value={ referral } key = { referral }>{ referral }</option>

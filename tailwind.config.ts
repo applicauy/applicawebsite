@@ -21,7 +21,7 @@ const config: Config = {
                 "secondary-muted": "#848483",
                 "secondary-text": "#B69FE2",
                 "violet-background": "#6233CE"
-            },
+            }
         },
     },
     plugins: [require("@tailwindcss/forms")],
