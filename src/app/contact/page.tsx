@@ -13,11 +13,11 @@ export default function Page() {
 
     return (
         <>
-            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 md:mt-10 mt-24 overflow-hidden ${ isMobile && 'mb-16' }`}>
+            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 px-48-lg md:mt-10 mt-24 overflow-hidden ${ isMobile && 'mb-16' }`}>
 
                 <ContactSection isMobile = { isMobile } />
 
-                <div className="flex flex-row py-0 md:py-11 px-2 md:px-24 w-full">
+                <div className="flex flex-row py-0 md:py-11 px-2 md:px-24 px-48-lg w-full">
                     <FormSection isMobile = { isMobile } />
                 </div>       
 

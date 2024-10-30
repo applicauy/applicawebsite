@@ -49,7 +49,7 @@ const posts = [
     title: "Digital transformation in talent management",
     urlTitle: "digital-transformation",
     summary: "In today's fast-paced business environment, where time is one of the most valuable resources, efficiency and agility in talent acquisition are essential for project success.",
-    tags: ["Digital", "Management", "Staff Aurgmentation"],
+    tags: ["Digital", "Management", "Staff Augmentation"],
     image: '/posts/post5.jpg',
     publishedAt: "2024-10-12",
     author: "Santiago Fraga",
