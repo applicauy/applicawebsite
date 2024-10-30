@@ -8,6 +8,11 @@ import Footer from "./_components/footer";
 import Image from "next/image";
 import backgroundImg from '@/assets/background/gradient.svg';
 
+import { GoogleTagManager } from "@next/third-parties/google";
+import TrackPageView from "../components/track-page-view";
+
+const GTM_ID = "GTM-PQ3DNDZ";
+
 
 import { Inter } from "next/font/google";
 import Loading from "@/components/loading";
@@ -123,6 +128,8 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
                     <MobileFooter handleScroll = { handleScroll }/> : 
                     <Footer handleScroll = { handleScroll }/> 
             }
+            <GoogleTagManager gtmId={GTM_ID} />
+            <TrackPageView />
         </body>   
     );
 }
