@@ -31,7 +31,7 @@ export default function MobileProcessSection() {
 
                 <ProcessItem contentPosition={ContentPosition.Right} colored>
                     <MobileProcessItemBody title="Screening">
-                        +4,000 pre-vetted profiles in our talent pool are
+                        +15,000 pre-vetted profiles in our talent pool are
                         reviewed by our team of recruiters.
                     </MobileProcessItemBody>
                 </ProcessItem>
