@@ -39,7 +39,7 @@ export default function ProcessSection() {
 
                     <ProcessItem contentPosition={ContentPosition.Right} colored>
                         <ProcessItemBody title="Screening">
-                            +4,000 pre-vetted profiles in our talent pool are
+                            +15,000 pre-vetted profiles in our talent pool are
                             reviewed by our team of recruiters.
                         </ProcessItemBody>
                     </ProcessItem>
