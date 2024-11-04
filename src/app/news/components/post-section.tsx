@@ -48,7 +48,7 @@ export default function PostSection(
                   { post.title }
                 </H2>
             }
-            <span className={`md:mt-10 mt-6 text-secondary-text ${isMobile ? 'text-md' : 'text-xl'}`}>Published at { post.publishedAt }</span>
+            <span className={`md:mt-10 mt-6 text-secondary-text ${isMobile ? 'text-lg' : 'text-xl'}`}>Published at { post.publishedAt }</span>
             <div className="image-container-blog flex items-center justify-center w-full relative mt-10 md:mt-24">
               {
                 isMobile ? 

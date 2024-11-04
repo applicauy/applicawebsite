@@ -63,6 +63,16 @@ const posts = [
     image: '/posts/post6.png',
     publishedAt: "2024-06-03",
     author: "Ana Solórzano",
+  },
+  {
+    objectID: 7,
+    title: "Applica at the ORT Job Fair: innovation, trivia, and prizes connecting us to the future",
+    urlTitle: "ort-job-fair",
+    summary: "On October 31st, we had the pleasure of participating in the Job Fair at the Faculty of Engineering at ORT University, Uruguay. With a booth full of energy, interaction, and above all, technology, we made sure our presence didn’t go unnoticed.",
+    tags: ["Events", "Development", "Job Fair"],
+    image: '/posts/post7.png',
+    publishedAt: "2024-11-04",
+    author: "Antonio Gannello"
   }
 ];
 

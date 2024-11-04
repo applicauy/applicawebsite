@@ -265,4 +265,53 @@ See you at the next edition!
       }
     ]
   },
+  {
+    objectID: 7,
+    title: "Applica at the ORT Job Fair: innovation, trivia, and prizes connecting us to the future",
+    urlTitle: "ort-job-fair",
+    summary: "On October 31st, we had the pleasure of participating in the Job Fair at the Faculty of Engineering at ORT University, Uruguay. With a booth full of energy, interaction, and above all, technology, we made sure our presence didn’t go unnoticed.",
+    tags: ["Events", "Development", "Job Fair"],
+    image: '/posts/post7.png',
+    publishedAt: "2024-11-04",
+    author: "Antonio Gannello",
+    position: "Marketing Assistant",
+    avatar: '/posts/AntonioGannello.jpg',
+    content: `
+On October 31st, we had the pleasure of participating in the Job Fair at the Faculty of Engineering at ORT University, Uruguay. With a booth full of energy, interaction, and above all, technology, we made sure our presence didn't go unnoticed. The event brought together the brightest and most ambitious minds in the IT world, making it a true celebration of talent and opportunity. At Applica, we weren't just there to participate - we were there to be remembered.
+
+### One-on-One Talks: opening doors to the IT world
+
+One of the highlights of our participation was the pop-up interviews. These weren't just about reviewing resumes, but about making real connections. During these 15-minute one-on-one conversations, our recruiters sat down with students who weren't just looking for a job, but also seeking guidance on how to take their first steps in the tech industry. The questions ranged from “How can I improve my professional profile?” to “What skills are companies really looking for?”. The result was an authentic exchange where we built bridges to the future careers of many young professionals.
+
+### More than just a booth
+
+Our booth wasn't just an information hub - it was a center of constant activity. Did you know we handed out over 500 prizes throughout the day? From the moment people approached, the atmosphere was full of excitement and competition. The games and trivia organized covered three key topics that defined the event: Artificial Intelligence and Modern Technologies, Agile Methodologies, and Software Development.
+
+### A special mention
+
+The effort and dedication of our team didn't go unnoticed. The Faculty of Engineering's dean awarded us a special mention as the event's main sponsors. This recognition not only filled us with pride but also reinforced our mission to do things differently: with innovation, a personal touch, and a strong connection between people and technology.
+
+### Applica and the talent of tomorrow
+
+Our participation in the ORT Job Fair was much more than just an opportunity to showcase what we do at Applica. It was an experience that allowed us to connect, learn, and most importantly, inspire. To all the students who visited our booth, thank you for letting us be part of your day! We're confident great things are ahead, and we hope to see many of you become part of the Applica family in the future.
+    `,
+    slide: [
+      {
+        image: '/posts/post7.1.jpg',
+        alt: 'Applica Corp. merchandise'
+      },
+      {
+        image: '/posts/post7.2.jpg',
+        alt: 'Santiago Fraga receiving recognition as an Official Sponsor."'
+      },
+      {
+        image: '/posts/post7.3.jpg',
+        alt: 'Rodrigo Trujillo in a "express interview"'
+      },
+      {
+        image: '/posts/post7.4.jpg',
+        alt: 'Juan Ricciardi and Noel Fernández'
+      }
+    ]
+  }
 ];
