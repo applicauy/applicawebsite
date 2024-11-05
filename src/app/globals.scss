@@ -490,25 +490,25 @@ h3 strong {
   line-height: 1.6;
   text-align: justify;
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 1.2;
     font-weight: 600;
   }
   
   h2 {
-    font-size: 1.2rem; 
+    font-size: 1.4rem; 
     line-height: 1.3;
     font-weight: 600;
   }
   
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.4;
     font-weight: 600;
   }
   
   h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     font-weight: 600;
   }
@@ -521,7 +521,7 @@ h3 strong {
 .post-content-mobile p {
   margin-top: 0; 
   margin-bottom: 1rem;
-  font-size: .9rem;
+  font-size: 1.1rem;
 }
 
 .post-content-mobile ul, .post-content-mobile ol {
@@ -530,7 +530,18 @@ h3 strong {
 
 .post-content-mobile li {
   margin-bottom: 0.5rem;
-  font-size: .9rem;
+  font-size: 1.1rem;
+}
+
+.post-content ul, .post-content ol, .post-content-mobile ul, .post-content-mobile ol  {
+  margin: 0 0 1rem 1.25rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.post-content li, .post-content-mobile li {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .text-content {
@@ -700,7 +711,7 @@ input[type="checkbox"]:focus {
 }
 
 .no-scroll {
-  overflow: hidden; /* Desactiva el scroll vertical */
+  overflow: hidden;
 }
 
 .applica-navbar {
