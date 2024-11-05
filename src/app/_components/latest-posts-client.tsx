@@ -4,6 +4,8 @@ import algoliasearch from "algoliasearch/lite";
 import { Configure, connectHits, InstantSearch } from "react-instantsearch-dom";
 import NewsCard from "./news-card";
 import { usePathname } from "next/navigation";
+import { posts } from "@/utils/mock/posts";
+import { Post } from "@/utils/models/Post";
 
 const searchClient = algoliasearch('H2ZWF2VKS3', 'aebfbfe4b81b38ac79feaade2d358ff7');
 
@@ -25,8 +27,9 @@ const Hits = connectHits(({ hits, currentPostId }: { hits: any[], currentPostId:
 
 export default function LatestPostsClient() {
     const path = usePathname();
-    const postId = path.split('/').pop() ?? '';
+    const postName = path.split('/').pop() ?? '';
     
+    const postId: number | undefined = posts.find( (post: Post) => post.urlTitle === postName )?.objectID;    
     
     return (
         <InstantSearch
@@ -34,7 +37,7 @@ export default function LatestPostsClient() {
           indexName="posts"
         >
           <Configure hitsPerPage = { 4 } />
-          <Hits currentPostId = { postId }/>
+          <Hits currentPostId = { postId ? postId.toString() : '' }/>
         </InstantSearch>
     );
 }
