@@ -302,11 +302,11 @@ Our participation in the ORT Job Fair was much more than just an opportunity to 
       },
       {
         image: '/posts/post7.2.jpg',
-        alt: 'Santiago Fraga receiving recognition as an Official Sponsor."'
+        alt: 'Santiago Fraga receiving recognition as an Official Sponsor.'
       },
       {
         image: '/posts/post7.3.jpg',
-        alt: 'Rodrigo Trujillo in a "express interview"'
+        alt: 'Rodrigo Trujillo in an "express interview"'
       },
       {
         image: '/posts/post7.4.jpg',

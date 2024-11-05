@@ -12,8 +12,6 @@ import MobilePostFooter from "@/app/(mobile)/_components/mobile-post-footer";
 import PostFooter from "@/app/_components/post-footer";
 import MobileLatestPostsSection from "@/app/(mobile)/_sections/mobile-latest-posts-section";
 import LatestPosts from "@/app/_sections/latest-posts";
-import ImagesSlide from "./image-slide";
-import { LightGallery } from "lightgallery/lightgallery";
 import ImageCarousel from "./lightgallery";
 
 export default function PostSection( 
