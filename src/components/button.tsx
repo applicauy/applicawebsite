@@ -3,6 +3,7 @@
 import { MouseEventHandler, PropsWithChildren } from "react";
 import Image from "next/image";
 import arrowIcon from "@/assets/icons/arrow-right.svg";
+import H4 from "./h4";
 
 /**
  * Button component.
@@ -55,7 +56,9 @@ export default function Button({
             type={type}
             disabled={disabled}
         >
-            <span className={`relative ${ largeText && 'translate-y-[2px]' }`}>{children}</span>
+            <div className="flex flex-col justify-center pb-1">
+                <H4 className={`relative ${ largeText && 'translate-y-[2px]' }`}>{children}</H4>
+            </div>
 
             <div
                 className={`rounded-full w-fit p-1.5 md:p-3 ms-4 md:ms-9 ${

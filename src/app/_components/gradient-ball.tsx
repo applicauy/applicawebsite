@@ -35,7 +35,7 @@ export default function GradientBall({
                     endSymbol && endSymbol
                 }
             </H4>
-            <H5 className="">{subtitle}</H5>
+            <span className="text-sm md:text-lg leading-tight">{subtitle}</span>
         </div>
     );
 }

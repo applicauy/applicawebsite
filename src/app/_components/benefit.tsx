@@ -26,7 +26,7 @@ export default function Benefit({
                 className="absolute inset-16 pointer-events-none image-border-benefit"
             />
         </div>
-            <H5>{children}</H5>
+            <span className="text-sm md:text-lg leading-tight">{children}</span>
         </div>
     );
 }
