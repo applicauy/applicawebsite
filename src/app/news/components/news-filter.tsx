@@ -74,7 +74,9 @@ export default function NewsFilter(
                 <div className="flex w-full">
                     <div className="hidden md:block md:w-1/5">
                         <H4 className="text-highlight">Filters</H4>
-                        <H5 className="mt-5 mb-4 text-secondary-text">Tags</H5>
+                        <div className="mt-5 mb-4">
+                            <span className="text-sm md:text-lg leading-tight text-secondary-text">Tags</span>
+                        </div>
                         <CustomRefinementList 
                             attribute="tags" 
                             defaultRefinement={tag ? [tag] : []}
