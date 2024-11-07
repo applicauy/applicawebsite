@@ -313,5 +313,38 @@ Our participation in the ORT Job Fair was much more than just an opportunity to 
         alt: 'Juan Ricciardi and Noel Fernández'
       }
     ]
+  },
+  {
+    objectID: 8,
+    title: "We Have Been Chosen as FinTech Digital Transformation Partner of the Year",
+    urlTitle: "pan-finance",
+    summary: "We are honored to have been awarded the prestigious title of FinTech Digital Transformation Partner of the Year - LATAM 2024 by PAN Finance.",
+    tags: ["Award", "FinTech"],
+    image: '/posts/post8.png',
+    publishedAt: "2024-11-07",
+    author: "Ana Solórzano",
+    position: "Marketing Specialist",
+    avatar: '/posts/AnaSolorzano.png',
+    content: `
+We are honored to have been awarded the prestigious title of **FinTech Digital Transformation Partner of the Year - LATAM 2024** by PAN Finance. This recognition is much more than just an award; it confirms that our dedication, innovation, and commitment are making a true impact in the tech industry across Latin America.
+
+This achievement reinforces our mission to be the ideal digital transformation partner for companies throughout the region, providing access to top talent and the essential tools needed to tackle the challenges of an ever-evolving technological landscape.
+
+### A Specialized Path in FinTech
+
+With a strong track record and several clients in the financial sector across the region, at Applica we have developed projects specifically focused on digital transformation for fintech companies. We are proud to support financial companies in overcoming technological challenges, helping them build innovative, tailored solutions to compete in an ever-changing environment.
+
+### Gratitude and Looking to the Future
+
+Receiving this award from PAN Finance is not only a reason to celebrate, but also an incentive to continue innovating and raising industry standards. We are deeply grateful to our clients, who trust us as allies in their growth, and to our team, whose dedication and daily effort make these achievements possible.
+
+At Applica Corp, excellence and innovation guide us. We will continue working to establish Latin America as a leading region in technology and talent, driving projects that transform companies and enable every professional to reach their fullest potential.
+    `,
+    slide: [
+      {
+        image: '/posts/post8.1.png',
+        alt: 'PAN Finance Award Winner 2024'
+      }
+    ]
   }
 ];

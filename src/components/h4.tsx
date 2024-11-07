@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 
 const H4 = ({
     children,
-    className,
+    className
 }: PropsWithChildren<{ className?: string }>) => {
     return (
         <h4

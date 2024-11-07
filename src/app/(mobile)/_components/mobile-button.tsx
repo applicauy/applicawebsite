@@ -1,6 +1,7 @@
 import { MouseEventHandler, PropsWithChildren } from "react";
 import Image from "next/image";
 import arrowIcon from "@/assets/icons/arrow-right.svg";
+import MobileH4 from "./mobile-h4";
 
 export default function MobileButton({
     highlightedArrow = false,
@@ -38,7 +39,7 @@ export default function MobileButton({
             type={type}
             disabled={disabled}
         >
-            <span className="relative top-0.5 pl-2 pr-2 text-2xl pb-1">{children}</span>
+            <MobileH4 className="relative top-0.5 pl-2 pr-2 text-2xl pb-1">{children}</MobileH4>
 
             <div
                 className={`rounded-full w-10 h-10 md:w-${highlightedArrow ? "10" : "8"} p-1.5 md:p-2.5 ms-2 md:ms-3 ${highlightedArrow ? "bg-highlight" : "bg-white"}`}

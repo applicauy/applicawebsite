@@ -73,6 +73,16 @@ const posts = [
     image: '/posts/post7.png',
     publishedAt: "2024-11-04",
     author: "Antonio Gannello"
+  },
+  {
+    objectID: 8,
+    title: "We Have Been Chosen as FinTech Digital Transformation Partner of the Year",
+    urlTitle: "pan-finance",
+    summary: "We are honored to have been awarded the prestigious title of FinTech Digital Transformation Partner of the Year - LATAM 2024 by PAN Finance.",
+    tags: ["Award", "FinTech"],
+    image: '/posts/post8.png',
+    publishedAt: "2024-11-07",
+    author: "Ana Solórzano"
   }
 ];
 
