@@ -1,19 +1,15 @@
 'use client'
 
-import algoliasearch from "algoliasearch/lite";
 import { Configure, connectHits, InstantSearch } from "react-instantsearch-dom";
 import NewsCard from "./news-card";
 import { usePathname } from "next/navigation";
-import { posts } from "@/utils/mock/posts";
-import { Post } from "@/utils/models/Post";
-
-const searchClient = algoliasearch('H2ZWF2VKS3', 'aebfbfe4b81b38ac79feaade2d358ff7');
+import { indexPosts, searchClient } from "@/utils/config/algolia-config";
 
 const Hits = connectHits(({ hits, currentPostId }: { hits: any[], currentPostId: string }) => {
     const filteredHits = hits.filter( hit => hit.objectID !== currentPostId );
     const hitsToShow = filteredHits.slice(0, 3);
     return (
-        <div className="grid w-full sm:grid-cols-2 md:grid-cols-3 md:my-10 gap-10 items-stretch justify-center">
+        <div className="grid w-full sm:grid-cols-2 md:grid-cols-3 md:my-10 gap-10 items-stretch">
             {
                 hitsToShow
                     .map(( hit: any ) => (
@@ -25,19 +21,21 @@ const Hits = connectHits(({ hits, currentPostId }: { hits: any[], currentPostId:
 });
 
 
-export default function LatestPostsClient() {
+export default async function LatestPostsClient() {
     const path = usePathname();
     const postName = path.split('/').pop() ?? '';
+
+    const { hits: posts } = await indexPosts.search('', { hitsPerPage: 1000 })
     
-    const postId: number | undefined = posts.find( (post: Post) => post.urlTitle === postName )?.objectID;    
+    const postId: string | undefined = posts.find( (post: any) => post.slug === postName )?.objectID;    
     
     return (
         <InstantSearch
           searchClient={searchClient}
-          indexName="posts"
+          indexName="production_posts-from-strapi"
         >
           <Configure hitsPerPage = { 4 } />
-          <Hits currentPostId = { postId ? postId.toString() : '' }/>
+          <Hits currentPostId = { postId ? postId : '' }/>
         </InstantSearch>
     );
 }

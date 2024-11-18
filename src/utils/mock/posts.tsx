@@ -4,11 +4,12 @@ export const posts: Post[] = [
   {
     objectID: 1,
     title: "Technical debts: tips for effective management",
-    urlTitle: "technical-debts",
+    slug: "technical-debts",
     summary: "Imagine that you are cooking a meal and you decide not to clean any of the dishes while you are doing it. This decision gets the job done much faster, but it piles up work for later. Also, the more time you spend not doing the washing up, the harder it will be to do it later.",
     tags: ["Management", "Tips"],
     image: '/posts/post1.png',
     publishedAt: "2024-01-11",
+    publishedDate: "2024-01-11",
     author: "Raúl López",
     position: "Chief Technology Officer",
     avatar: '/posts/RaulLopez.png',
@@ -38,11 +39,12 @@ In conclusion, technical debt is not just a challenge for developers. It affects
   {
     objectID: 2,
     title: "5 tips for remote IT teams in 2024",
-    urlTitle: "remote-it-teams-tips",
+    slug: "remote-it-teams-tips",
     summary: "Remote IT teams encourage the learning of new skills and perspectives by allowing for diversity among their members. They can also exchange ideas, feedback and solutions productively using efficient communication tools and methods.",
     tags: ["Remote", "Management", "Tips"],
     image: '/posts/post2.jpg',
     publishedAt: "2024-01-31",
+    publishedDate: "2024-01-11",
     author: "Raúl López",
     position: "Chief Technology Officer",
     avatar: '/posts/RaulLopez.png',
@@ -74,11 +76,12 @@ Here are 5 tips to help ensure the success of your remote IT team:
   {
     objectID: 3,
     title: "Incorporating AI for agility and efficiency",
-    urlTitle: "ai-for-agility-and-efficiency",
+    slug: "ai-for-agility-and-efficiency",
     summary: "At the end of the year, I attended a CUTI event and one of the workshops presented the impact of AI in the business world and how it is changing the rules of the game, mainly in terms of agility and efficiency.",
     tags: ["Startups", "AI", "Tools"],
     image: '/posts/post3.jpg',
     publishedAt: "2024-02-11",
+    publishedDate: "2024-01-11",
     author: "Raúl López",
     position: "Chief Technology Officer",
     avatar: '/posts/RaulLopez.png',
@@ -117,11 +120,12 @@ With all this in mind, it can be easier to see where and how AI can help, from i
   {
     objectID: 4,
     title: "New vision, new opportunities: Francisco Ravecca joins Applica Corp.",
-    urlTitle: "francisco-ravecca",
+    slug: "francisco-ravecca",
     summary: "We are pleased to announce the appointment of Francisco Ravecca as the new Director of Applica Corp. Francisco brings over 30 years of experience in business development across a wide range of industries.",
     tags: ["Industry", "Team", "Future"],
     image: '/posts/post4.jpg',
     publishedAt: "2024-08-29",
+    publishedDate: "2024-01-11",
     author: "Santiago Fraga",
     position: "CEO",
     avatar: '/posts/SantiagoFraga.jpg',
@@ -174,11 +178,12 @@ We are excited about the future and confident that, under his leadership, we wil
   {
     objectID: 5,
     title: "Digital transformation in talent management",
-    urlTitle: "digital-transformation",
+    slug: "digital-transformation",
     summary: "In today's fast-paced business environment, where time is one of the most valuable resources, efficiency and agility in talent acquisition are essential for project success.",
     tags: ["Digital", "Management", "Staff Augmentation"],
     image: '/posts/post5.jpg',
     publishedAt: "2024-10-12",
+    publishedDate: "2024-01-11",
     author: "Santiago Fraga",
     position: "CEO",
     avatar: '/posts/SantiagoFraga.jpg',
@@ -219,11 +224,12 @@ Applica's commitment to excellence is reflected in its comprehensive approach, w
   {
     objectID: 6,
     title: "Highlights from IT Builders Live: Networking and knowledge",
-    urlTitle: "it-builders",
+    slug: "it-builders",
     summary: "The IT Builders Live event gathers the entire tech ecosystem of Uruguay, creating an enriching synergy space for the Information and Communication Technologies (ICT) industry.",
     tags: ["Events", "Marketing"],
     image: '/posts/post6.png',
     publishedAt: "2024-06-03",
+    publishedDate: "2024-01-11",
     author: "Ana Solórzano",
     position: "Marketing Specialist",
     avatar: '/posts/AnaSolorzano.png',
@@ -246,7 +252,7 @@ Undoubtedly, it was a weekend full of learning, with fascinating talks on the la
 
 See you at the next edition!
     `,
-    slide: [
+    medias: [
       {
         image: '/posts/post6.1.png',
         alt: 'Applica Corp. stand'
@@ -268,11 +274,12 @@ See you at the next edition!
   {
     objectID: 7,
     title: "Applica at the ORT Job Fair: innovation, trivia, and prizes connecting us to the future",
-    urlTitle: "ort-job-fair",
+    slug: "ort-job-fair",
     summary: "On October 31st, we had the pleasure of participating in the Job Fair at the Faculty of Engineering at ORT University, Uruguay. With a booth full of energy, interaction, and above all, technology, we made sure our presence didn't go unnoticed.",
     tags: ["Events", "Development", "Job Fair"],
     image: '/posts/post7.png',
     publishedAt: "2024-11-04",
+    publishedDate: "2024-01-11",
     author: "Antonio Gannello",
     position: "Marketing Assistant",
     avatar: '/posts/AntonioGannello.jpg',
@@ -295,7 +302,7 @@ The effort and dedication of our team didn't go unnoticed. The Faculty of Engine
 
 Our participation in the ORT Job Fair was much more than just an opportunity to showcase what we do at Applica. It was an experience that allowed us to connect, learn, and most importantly, inspire. To all the students who visited our booth, thank you for letting us be part of your day! We're confident great things are ahead, and we hope to see many of you become part of the Applica family in the future.
     `,
-    slide: [
+    medias: [
       {
         image: '/posts/post7.1.jpg',
         alt: 'Applica Corp. merchandise'
@@ -317,11 +324,12 @@ Our participation in the ORT Job Fair was much more than just an opportunity to 
   {
     objectID: 8,
     title: "We Have Been Chosen as FinTech Digital Transformation Partner of the Year",
-    urlTitle: "pan-finance",
+    slug: "pan-finance",
     summary: "We are honored to have been awarded the prestigious title of FinTech Digital Transformation Partner of the Year - LATAM 2024 by PAN Finance.",
     tags: ["Award", "FinTech"],
     image: '/posts/post8.png',
     publishedAt: "2024-11-07",
+    publishedDate: "2024-01-11",
     author: "Ana Solórzano",
     position: "Marketing Specialist",
     avatar: '/posts/AnaSolorzano.png',
@@ -340,7 +348,7 @@ Receiving this award from PAN Finance is not only a reason to celebrate, but als
 
 At Applica Corp, excellence and innovation guide us. We will continue working to establish Latin America as a leading region in technology and talent, driving projects that transform companies and enable every professional to reach their fullest potential.
     `,
-    slide: [
+    medias: [
       {
         image: '/posts/post8.1.png',
         alt: 'PAN Finance Award Winner 2024'

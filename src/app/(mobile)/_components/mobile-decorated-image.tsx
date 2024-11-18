@@ -20,7 +20,7 @@ export default function MobileDecoratedImage({
             {
                 fromPost ?
                     <Image
-                        src={ image }
+                        src={ image.url }
                         alt={ alt }
                         className="rounded-lg img-blog-mobile"
                         width={450}
