@@ -6,14 +6,12 @@ import { Post } from "@/utils/models/Post";
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, connectRefinementList, connectHits, RefinementList } from 'react-instantsearch-dom';
 import H4 from "@/components/h4";
-import H5 from "@/components/h5";
 import { useSearchParams } from "next/navigation";
 import SearchPosts from "./search-posts";
 import { useEffect, useState } from "react";
 import Loading from "@/components/loading";
-import isMobile from 'react-device-detect';
+import { indexPosts, searchClient } from "@/utils/config/algolia-config";
 
-const searchClient = algoliasearch('H2ZWF2VKS3', 'aebfbfe4b81b38ac79feaade2d358ff7');
 
 const CustomRefinementList = connectRefinementList(RefinementList);
 
@@ -69,7 +67,7 @@ export default function NewsFilter(
         <Section className="pb-20">    
             <InstantSearch
                 searchClient={searchClient}
-                indexName="posts"
+                indexName="production_posts-from-strapi"
             >
                 <div className="flex w-full">
                     <div className="hidden md:block md:w-1/5">
@@ -78,10 +76,10 @@ export default function NewsFilter(
                             <span className="text-sm md:text-lg leading-tight text-secondary-text">Tags</span>
                         </div>
                         <CustomRefinementList 
-                            attribute="tags" 
+                            attribute="tags.name" 
                             defaultRefinement={tag ? [tag] : []}
                             limit={100}
-                            transformItems={(items: any) => 
+                            transformItems={(items) => 
                                 items.sort((a: any, b: any) => a.label.localeCompare(b.label))
                             }
                         />

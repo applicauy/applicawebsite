@@ -6,7 +6,10 @@ const nextConfig = {
     // Teóricamente esto es requerido para publicarlo en Azure, ya que se hace uso del archivo
     // server.js que produce para tenerlo como punto de inicio con nodejs.
     output: "standalone",
-    poweredByHeader: false
+    poweredByHeader: false,
+    images: {
+        domains: ['localhost', 'fantastic-paradise-ff2101feee.media.strapiapp.com']
+    }
 };
 
 export default nextConfig;

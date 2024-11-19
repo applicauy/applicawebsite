@@ -3,15 +3,21 @@ import { headers } from "next/headers";
 import MobileDetect from "mobile-detect";
 import MobileLetsTalkSection from "@/app/(mobile)/_sections/mobile-lets-talk-section";
 import PostSection from "../components/post-section";
-import { posts } from "@/utils/mock/posts";
+import { indexPosts, searchClient } from "@/utils/config/algolia-config";
 
 interface Props {
   params: { id: string }
 }
 
-const page = ( { params } : Props ) => {
-
-  const post: Post | undefined = posts.find( (post: Post) => post.urlTitle === params.id );
+const page = async ( { params } : Props ) => {
+  
+  const { hits } = await indexPosts.search<Post>( params.id,
+    {
+      filters: `slug:"${ params.id }"`
+    }
+  );
+  
+  const post: Post | undefined = hits[0];
 
   if (!post) {
     throw new Error("Post not found");

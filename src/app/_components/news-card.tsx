@@ -6,16 +6,18 @@ import { useNavigationHandlers } from "@/lib/helpers";
 import { Post } from "@/utils/models/Post";
 import Badge from "./badge";
 import isMobile from 'react-device-detect';
+import { BASE_URL } from "@/utils/config/algolia-config";
 
 
 const NewsCard = (
     { objectID,
       title,
-      urlTitle,
+      slug,
       summary,
       tags,
       image,
-      publishedAt,
+      author,
+      publishedDate,
       fromNews = true,
       handleClick,
       isMobile
@@ -25,14 +27,20 @@ const NewsCard = (
     { handleClick: any } &
     { isMobile: boolean }
 ) => {
-    const { onGoToPost } = useNavigationHandlers();
+
+    const { onGoToPost } = useNavigationHandlers();    
+
+    const formatDate = (dateString : string) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-CA');
+    };
 
     return (
-        <div className="relative flex flex-col overflow-hidden card-border bg-clip-border hover:shadow-lg hover:cursor-pointer bg-secondary-bg group md:z-[1] z-[10]"
-            onClick={ () => onGoToPost( urlTitle ) }>
+        <div className="relative flex flex-col overflow-hidden card-border bg-clip-border hover:shadow-lg hover:cursor-pointer bg-secondary-bg group md:z-[1] z-[10] w-full"
+            onClick={ () => onGoToPost( slug ) }>
            <div className="relative h-[200px] md:h-[250px] m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border transition-transform duration-300 ease-in-out transform group-hover:scale-110">
                 <Image 
-                    src={image}
+                    src={ image.url }
                     layout="fill"
                     objectFit="cover"
                     alt={title}
@@ -45,8 +53,8 @@ const NewsCard = (
                         tags.map(
                             ( tag: any ) => (
                                 <Badge 
-                                    key={tag} 
-                                    category={tag}
+                                    key={tag.id} 
+                                    category={tag.name}
                                 />
                             )
                         )
@@ -59,14 +67,14 @@ const NewsCard = (
                }
                <div className="flex flex-row flex-wrap my-3 mb-1 w-full h-full items-center justify-between self-end">
                     <p className="text-md flex items-center text-secondary-text">
-                        { publishedAt }
+                        { publishedDate }
                     </p>
                     <div className='flex items-end'>
                          <button className="rounded-full p-2 md:p-2 bg-highlight hover:bg-white hover:cursor-pointer transition-all duration-300"
                              onClick={ () => {
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
                                 isMobile && handleClick();
-                                onGoToPost( urlTitle );
+                                onGoToPost( slug );
                              }}>
                              <Image
                                 src={arrowIcon}

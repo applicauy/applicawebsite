@@ -3,15 +3,16 @@ import { Slide } from "./Slide";
 
 export interface Post {
     objectID: number;
-    urlTitle: string;
+    slug: string;
     title: string;
     summary: string;
-    tags: string[];
-    image: string | StaticImport;
+    tags: any[];
+    image: any | string | StaticImport;
     publishedAt: string;
-    author: string;
-    position: string;
-    avatar: string | StaticImport;
+    publishedDate: string;
+    author: any;
+    position?: string;
+    avatar?: string | StaticImport;
     content: string;
-    slide?: Slide[];
+    medias?: any[] | Slide[];
 }
