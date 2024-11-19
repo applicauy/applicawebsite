@@ -3,7 +3,6 @@ import { headers } from "next/headers";
 import MobileDetect from "mobile-detect";
 import MobileLetsTalkSection from "@/app/(mobile)/_sections/mobile-lets-talk-section";
 import PostSection from "../components/post-section";
-import { posts } from "@/utils/mock/posts";
 import { indexPosts, searchClient } from "@/utils/config/algolia-config";
 
 interface Props {
