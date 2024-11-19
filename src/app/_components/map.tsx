@@ -13,7 +13,6 @@ export default function Map() {
                 <Geographies geography={GEO_URL}>
                     {({ geographies }) =>
                         geographies.map((geo) => {
-                            console.log(geo);
 
                             return (
                                 <Geography key={geo.rsmKey} geography={geo} />

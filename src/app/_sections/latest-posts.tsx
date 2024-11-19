@@ -1,3 +1,4 @@
+'use client'
 import { avigeaFont } from '@/assets/fonts'
 import H2 from '@/components/h2'
 import Section from '@/components/section'

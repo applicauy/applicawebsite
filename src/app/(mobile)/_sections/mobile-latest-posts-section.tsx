@@ -8,9 +8,6 @@ import { avigeaFont } from '@/assets/fonts';
 import LatestPostsClient from '@/app/_components/latest-posts-client';
 import backgroundImg from '@/assets/background/gradient.svg';
 import Image from 'next/image';
-import { headers } from 'next/headers';
-import MobileDetect from 'mobile-detect';
-import isMobile from 'react-device-detect';
 
 export default function MobileLatestPostsSection(
     { 

@@ -3,6 +3,7 @@ import Image from "next/image";
 import boxImg from '@/assets/shapes/box.svg';
 import leftLineImg from '@/assets/shapes/left-line.svg';
 import rightLineImg from '@/assets/shapes/right-line.svg';
+import { BASE_URL } from "@/utils/config/algolia-config";
 
 export default function DecoratedImage({
     className,
@@ -22,7 +23,7 @@ export default function DecoratedImage({
             {
                 fromPost ?
                     <Image
-                        src={ image }
+                        src={ image.url }
                         alt={ alt }
                         height={150}
                         width={500}
