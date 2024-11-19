@@ -38,6 +38,33 @@ export default function RootLayout({
                 `,
                 }}
                 />
+
+                {/* Metricool Tracking Script */}
+                <Script 
+                    id="metricool-script"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            function loadScript(callback) {
+                                const head = document.getElementsByTagName('head')[0];
+                                const script = document.createElement('script');
+                                script.type = 'text/javascript';
+                                script.src = 'https://tracker.metricool.com/resources/be.js';
+                                script.onreadystatechange = callback;
+                                script.onload = callback;
+                                head.appendChild(script);
+                            }
+                            loadScript(function () {
+                                if (window.beTracker) {
+                                    window.beTracker.t({
+                                        hash: "1290ec9204a13f1d44c1fae9bed96d16"
+                                    });
+                                }
+                            });
+                        `,
+                    }}
+                />
+
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
                 <link rel="apple-touch-icon" href="/icon_apple_touch.png" sizes="180x180" />
