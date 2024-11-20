@@ -30,11 +30,11 @@ export default function LatestPosts() {
           <div className='w-[60%]'>
             <H2 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
                 Check out our{" "}
-                <strong
-                    className={`font-normal ${avigeaFont.className} block`}
+                <span
+                    className={`font-medium ${avigeaFont.className} block`}
                 >
                     latest posts
-                </strong>
+                </span>
             </H2>
           </div>
         </div>

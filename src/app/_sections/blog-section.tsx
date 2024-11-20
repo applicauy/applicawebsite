@@ -10,9 +10,9 @@ export default function BlogSection() {
           <div id="blog-section"/>
             <H2 className="mb-12">
                 Check out our{" "}
-                <strong className={`font-normal ${avigeaFont.className} block`}>
+                <span className={`font-medium ${avigeaFont.className} block`}>
                     latest posts
-                </strong>
+                </span>
             </H2>
 
             <div className="flex md:justify-between flex-wrap md:flex-nowrap">

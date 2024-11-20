@@ -24,9 +24,9 @@ export default function ProcessSection() {
             >
                 <H2 className="mb-9 md:mb-12 text-center">
                     Hiring{" "}
-                    <strong className={`font-normal ${avigeaFont.className}`}>
+                    <span className={`font-medium ${avigeaFont.className}`}>
                         process
-                    </strong>
+                    </span>
                 </H2>
 
                 <div className="flex flex-col w-full">

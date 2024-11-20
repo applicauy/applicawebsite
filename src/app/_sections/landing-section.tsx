@@ -27,11 +27,11 @@ export default function LandingSection() {
                     <H1 className="mb-5">Build your dream team with top nearshore IT talent</H1>
                     <H2 className="mb-12">
                         We are a software company focused on{" "}
-                        <strong
-                            className={`text-highlight ${avigeaFont.className} font-normal`}
+                        <span
+                            className={`text-highlight ${avigeaFont.className} font-medium`}
                         >
                             saving your time
-                        </strong>{" "}
+                        </span>{" "}
                         and delivering peace of mind
                     </H2>
                     <Button highlightedArrow onClick={onStartNowClick}>

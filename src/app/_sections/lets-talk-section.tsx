@@ -11,9 +11,9 @@ export default function LetsTalkSection() {
         <section className={ `${apexFont.className} flex justify-center items-center min-h-80 w-full gap-8 bg-gradient-to-br lets-talk-background px-0` }>
             <H3>
                 Got a{" "}
-                <strong className={`font-normal ${avigeaFont.className}`}>
+                <span className={`font-medium ${avigeaFont.className}`}>
                     project in mind
-                </strong>
+                </span>
                 ?
             </H3>
             <Button onClick={onLetsTalkClick}>Let&apos;s talk!</Button>

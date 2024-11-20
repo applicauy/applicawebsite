@@ -16,9 +16,9 @@ export default function MobileProcessSection() {
             <div id="hiring-process"/>
             <MobileH1 className="mb-16 md:mb-12 text-center">
                 Hiring{" "}
-                <strong className={`font-normal ${avigeaFont.className}`}>
+                <span className={`font-medium ${avigeaFont.className}`}>
                     process
-                </strong>
+                </span>
             </MobileH1>
 
             <div className="flex flex-col md:w-4/5">
