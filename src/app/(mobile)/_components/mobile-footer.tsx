@@ -66,7 +66,7 @@ const MobileFooter = (
                                 className="my-1"
                                 style={{ fontSize: "2.6vw" }}
                             >
-                                <strong className="pr-1 font-medium">{l.country}</strong>
+                                <span className="pr-1 font-medium">{l.country}</span>
                                 <span className="font-regular">
                                     {l.location}
                                 </span>

@@ -52,11 +52,11 @@ export default function MobileServicesSection() {
 
                     <MobileH1 className="max-w-full md:max-w-full mx-auto md:mx-0 mb-8 mb:md-0">
                         Ready to{" "}
-                        <strong
-                            className={`font-normal ${avigeaFont.className}`}
+                        <span
+                            className={`font-medium ${avigeaFont.className}`}
                         >
                             ramp up your project?
-                        </strong>
+                        </span>
                     </MobileH1>
 
                     <span className="text-2xl text-highlight">
@@ -98,9 +98,9 @@ export default function MobileServicesSection() {
             >
                 <MobileH1 className="font-medium">
                     Find the{" "}
-                    <strong className={`font-normal ${avigeaFont.className}`}>
+                    <span className={`font-medium ${avigeaFont.className}`}>
                         perfect fit
-                    </strong>{" "}
+                    </span>{" "}
                     for your venture
                 </MobileH1>
 

@@ -21,11 +21,11 @@ export default function BenefitsSection() {
                 <div className="flex flex-col md:w-2/4 gap-12 text-center md:text-left">
                     <H2 className="md:max-w-[70%]">
                         Let&apos;s find your next{" "}
-                        <strong
-                            className={`font-normal ${avigeaFont.className}`}
+                        <span
+                            className={`font-medium ${avigeaFont.className}`}
                         >
                             most valuable player.
-                        </strong>
+                        </span>
                     </H2>
 
                     <H3 className="md:max-w-[80%]">

@@ -20,7 +20,8 @@ export default function PostFooter (
                 width={60}
                 height={60}
                 alt = { author.name }
-                className="rounded-full"
+                className="rounded-full object-cover w-16 h-16"
+                
               />
               <div className="author flex flex-row justify-center h-full items-center">
                 <span className="font-bold text-xl mr-2">{ author.name }</span>

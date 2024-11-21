@@ -25,11 +25,11 @@ export default function MobileLandingSection() {
                 </H1>
                 <MobileH1 className="mb-12 text-center">
                     We are a software company focused on{" "} 
-                    <strong
-                        className={`text-highlight ${avigeaFont.className} font-normal`}
+                    <span
+                        className={`text-highlight ${avigeaFont.className} font-medium`}
                     >
                         saving you time
-                    </strong>{" "}
+                    </span>{" "}
                     and delivering peace of mind
                 </MobileH1>
 

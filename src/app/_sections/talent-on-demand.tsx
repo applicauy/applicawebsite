@@ -34,11 +34,11 @@ export default function TalentOnDemand() {
             >
                 <H2 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
                     Talent on demand{" "}
-                    <strong
-                        className={`font-normal ${avigeaFont.className} block`}
+                    <span
+                        className={`font-medium ${avigeaFont.className} block`}
                     >
                         ready to be hired.
-                    </strong>
+                    </span>
                 </H2>
 
                 <H3 className="w-4/5 md:w-full text-center md:text-left">

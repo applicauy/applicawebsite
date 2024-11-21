@@ -44,9 +44,9 @@ export default function MobileBlogSection() {
         <Section className="flex flex-col items-center">
             <MobileH2 className="mb-6 text-center">
                 Check out our{" "}
-                <strong className={`font-normal ${avigeaFont.className}`}>
+                <span className={`font-medium ${avigeaFont.className}`}>
                     latest posts
-                </strong>
+                </span>
             </MobileH2>
 
             <MobileBlogCarousel>

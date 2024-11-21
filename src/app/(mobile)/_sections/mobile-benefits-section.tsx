@@ -55,11 +55,11 @@ export default function MobileBenefitsSection() {
                         <div className="w-full flex justify-center">
                             <MobileH1>
                                 Let&apos;s find your next{" "}
-                                <strong
-                                    className={`font-normal ${avigeaFont.className}`}
+                                <span
+                                    className={`font-medium ${avigeaFont.className}`}
                                 >
                                     most valuable player.
-                                </strong>
+                                </span>
                             </MobileH1>
                         </div>
 
