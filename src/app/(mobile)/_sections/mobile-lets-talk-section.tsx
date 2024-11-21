@@ -14,11 +14,11 @@ export default function MobileLetsTalkSection() {
                 <div className="w-full flex flex-col justify-center items-center py-8 px-4 lets-talk-background">
                     <MobileH1 className={`font-normal ${apexFont.className}`}>
                         Got a{" "}
-                        <strong
-                            className={`font-normal ${avigeaFont.className}`}
+                        <span
+                            className={`font-medium ${avigeaFont.className}`}
                         >
                             project in mind
-                        </strong>
+                        </span>
                         ?
                     </MobileH1>
 

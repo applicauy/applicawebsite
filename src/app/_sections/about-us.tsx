@@ -50,11 +50,11 @@ export default function AboutUs() {
 
                     <H2 className="w-[80%] text-end md:max-w-full mx-auto md:mx-0 mb-3 mb:md-0">
                         Ready to{" "}
-                        <strong
-                            className={`font-normal ${avigeaFont.className}`}
+                        <span
+                            className={`font-medium ${avigeaFont.className}`}
                         >
                             ramp up your project?
-                        </strong>
+                        </span>
                     </H2>
 
                     <H3 className="text-highlight">We make it happen</H3>
@@ -94,9 +94,9 @@ export default function AboutUs() {
             >
                 <H2 className="font-medium">
                     Find the{" "}
-                    <strong className={`font-normal ${avigeaFont.className}`}>
+                    <span className={`font-medium ${avigeaFont.className}`}>
                         perfect fit
-                    </strong>{" "}
+                    </span>{" "}
                     for your venture
                 </H2>
 

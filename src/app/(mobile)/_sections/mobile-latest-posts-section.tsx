@@ -41,9 +41,9 @@ export default function MobileLatestPostsSection(
             }
             <MobileH1 className="text-center">
                 Check out our{" "}
-                <strong className={`font-normal ${avigeaFont.className}`}>
+                <span className={`font-medium ${avigeaFont.className}`}>
                     latest posts
-                </strong>
+                </span>
             </MobileH1>
             <div className="flex flex-col">
                 <LatestPostsClient></LatestPostsClient>
