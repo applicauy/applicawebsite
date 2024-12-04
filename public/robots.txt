@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://applicacorp.com
+
+# Sitemaps
+Sitemap: https://applicacorp.com/sitemap.xml
