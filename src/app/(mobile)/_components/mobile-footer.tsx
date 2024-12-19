@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { apexFont } from "@/assets/fonts";
 import logo from "@/assets/logo/logo-menu.svg";
@@ -26,33 +25,33 @@ const MobileFooter = (
             <div className="flex justify-between items-center py-2 sm:py-4 md:py-8">
                 <div className="w-3/5">
                     <div className="max-w-40">
-                        <Link href="/">
+                        <a href="/">
                             <Image alt="Applica's logo" src={logo} />
-                        </Link>
+                        </a>
                     </div>
                 </div>
                 <div className="w-2/5">
                     <div className="flex justify-end gap-1">
-                        <Link
+                        <a
                             href="https://www.linkedin.com/company/applica-corp/"
                             target="_blank"
                         >
                             <Image src={linkedinIcon} alt="LinkedIn" width={32} />
-                        </Link>
+                        </a>
 
-                        <Link
+                        <a
                             href="https://www.instagram.com/applica.corp/"
                             target="_blank"
                         >
                             <Image src={instagramIcon} alt="Instagram" width={32} />
-                        </Link>
+                        </a>
 
-                        <Link
+                        <a
                             href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay"
                             target="_blank"
                         >
                             <Image src={clutchIcon} alt="Clutch" width={32} />
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -78,17 +77,22 @@ const MobileFooter = (
                     <ul>
                         {NAVIGATION_LINKS.map((nl, index) => (
                             nl.href.startsWith('#') ? 
-                            <button
-                                onClick={() => handleScroll(nl.href.slice(1))}
+                            <a
+                                href={ nl.href }
+                                onClick={(e) => {
+                                        e.preventDefault();
+                                        handleScroll(nl.href.slice(1));
+                                    }
+                                }
                                 key={index}
                                 className="text-sm hover:text-highlight transition-all duration-300 flex justify-end font-medium text-end w-full mb-1"
                             >
                                 {nl.text}
-                            </button> :
+                            </a> :
                             <li key={index} className="my-1 flex justify-end mb-1">
-                                <Link href={nl.href} className="text-sm font-medium hover:text-highlight">
+                                <a href={nl.href} className="text-sm font-medium hover:text-highlight">
                                     {nl.text}
-                                </Link>
+                                </a>
                             </li>
                         ))}
                     </ul>
