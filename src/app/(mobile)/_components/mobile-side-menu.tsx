@@ -55,41 +55,41 @@ export default function MobileSideMenu({
                             <div className="flex h-full flex-col overflow-y-scroll mobile-drawer-content py-6 shadow-xl">
                                 <div className="px-4 sm:px-6">
                                     <DialogTitle className="text-base font-semibold leading-6 text-gray-900">
-                                        <Link href="/">
+                                        <a href="/">
                                             <Image
                                                 alt="Applica's logo"
                                                 src={logo}
                                                 className="h-14 md:h-20 w-auto"
                                                 priority
                                             />
-                                        </Link>
+                                        </a>
                                     </DialogTitle>
                                 </div>
                                 <div className="relative mt-6 flex-1 px-4 sm:px-6">
                                     <ul className="list-none pl-3" onClick={changeState}>
                                         <li>
-                                            <Link href="/#about-us">
+                                            <a href="/#about-us">
                                                 about us
-                                            </Link>
+                                            </a>
                                         </li>
 
                                         <li>
-                                            <Link href="/#services">
+                                            <a href="/#services">
                                                 services
-                                            </Link>
+                                            </a>
                                         </li>
 
                                         <li>
-                                            <Link
+                                            <a
                                                 href="https://recruitcrm.io/jobs/applica_corp"
                                                 target="_blank"
                                             >
                                                 careers
-                                            </Link>
+                                            </a>
                                         </li>
 
                                         <li>
-                                            <Link href="/contact">contact</Link>
+                                            <a href="/contact">contact</a>
                                         </li>
                                     </ul>
                                 </div>

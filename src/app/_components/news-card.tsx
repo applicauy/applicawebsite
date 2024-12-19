@@ -70,12 +70,12 @@ const NewsCard = (
                         { publishedDate }
                     </p>
                     <div className='flex items-end'>
-                         <button className="rounded-full p-2 md:p-2 bg-highlight hover:bg-white hover:cursor-pointer transition-all duration-300"
+                         <a className="rounded-full p-2 md:p-2 bg-highlight hover:bg-white hover:cursor-pointer transition-all duration-300"
                              onClick={ () => {
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
                                 isMobile && handleClick();
-                                onGoToPost( slug );
-                             }}>
+                             }}
+                             href={ `/news/${ slug }` }>
                              <Image
                                 src={arrowIcon}
                                 width={25}
@@ -84,7 +84,7 @@ const NewsCard = (
                                 color="transparent"
                                 className="w-8 md:w-6 h-8 md:h-6"
                              />
-                         </button>
+                         </a>
                     </div>
                </div>
                 

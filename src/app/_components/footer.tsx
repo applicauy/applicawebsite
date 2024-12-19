@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import logo from "@/assets/logo/logo-footer.svg";
 import { apexFont } from "@/assets/fonts";
 import clutchRecognitionImg from "@/assets/clutch/clutch-recognition.png";
@@ -88,14 +87,14 @@ export default function Footer(
                 style = {{ paddingLeft: '6rem', paddingRight: '6rem' }}
             >
                 <div className="container mx-25 flex flex-col md:flex-row gap-16 justify-between">
-                    <Link href="/">
+                    <a href="/">
                         <Image
                             src={logo}
                             alt="Applica Corp's logo"
                             width={250}
                             height={220}
                         />
-                    </Link>
+                    </a>
 
                     <div>
                         <ul>
@@ -114,17 +113,22 @@ export default function Footer(
                         <ul>
                             {NAVIGATION_LINKS.map((nl, index) => (
                                 nl.href.startsWith('#') ? 
-                                <button
-                                    onClick={() => handleScroll(nl.href.slice(1))}
+                                <a
+                                    href = { nl.href }
+                                    onClick={(e) => {
+                                            e.preventDefault();
+                                            handleScroll(nl.href.slice(1));
+                                        }
+                                    }
                                     className="text-xl hover:text-highlight transition-all duration-300 flex items-start text-left justify-start font-medium"
                                     key={index}
                                 >
                                     {nl.text}
-                                </button> :
+                                </a> :
                                 <li key={index} className="my-1">
-                                    <Link href={nl.href} className="font-medium hover:text-highlight">
+                                    <a href={nl.href} className="font-medium hover:text-highlight">
                                         {nl.text}
-                                    </Link>
+                                    </a>
                                 </li>
                             ))}
                         </ul>
@@ -132,30 +136,30 @@ export default function Footer(
 
                     <div className="flex flex-col items-end justify-between">
                         <div className="flex gap-2">
-                            <Link
+                            <a
                                 href="https://www.linkedin.com/company/applica-corp/"
                                 target="_blank"
                             >
                                 <Image src={linkedinIcon} alt="LinkedIn" width={48} />
-                            </Link>
+                            </a>
 
-                            <Link
+                            <a
                                 href="https://www.instagram.com/applica.corp/"
                                 target="_blank"
                             >
                                 <Image src={instagramIcon} alt="Instagram" width={48} />
-                            </Link>
+                            </a>
 
-                            <Link
+                            <a
                                 href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay"
                                 target="_blank"
                             >
                                 <Image src={clutchIcon} alt="Clutch" width={48} />
-                            </Link>
+                            </a>
                         </div>
 
                         <div className="flex gap-8" role="link">
-                            <Link
+                            <a
                                 href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
                                 target="_blank"
                             >
@@ -163,8 +167,8 @@ export default function Footer(
                                     src={clutchStarsImg}
                                     alt="AplicaCorp at Clutch"
                                 />
-                            </Link>
-                            <Link
+                            </a>
+                            <a
                                 href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
                                 target="_blank"
                             >
@@ -173,7 +177,7 @@ export default function Footer(
                                     alt="Clutch recognition for ApplicaCorp"
                                     height={150}
                                 />
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

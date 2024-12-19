@@ -58,9 +58,9 @@ const MobileNavBar = (
             transition={{ duration: 0.5, ease: 'easeInOut' }}
         >
             <div className="max-w-48 z-[1100]">
-                <Link href="/">
+                <a href="/">
                     <Image alt="Applica's logo" src={logo} />
-                </Link>
+                </a>
             </div>
             <MobileMenu onMenuClick = { (event: any) => onMenuClick( event ) } handleScroll = { handleScrollFromClick } />
         </motion.header>

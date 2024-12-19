@@ -81,8 +81,10 @@ const MobileMenu = (
                   className="flex items-center justify-center"
                 >
                     {item.url.startsWith('#') ? (
-                        <button
-                            onClick={() => {
+                        <a
+                            href={item.url}
+                            onClick={(e) => {
+                                e.preventDefault();
                                 handleScroll(item.url.slice(1));
                                 toggleMenu();
                             }}
@@ -90,9 +92,9 @@ const MobileMenu = (
                         >
                             <div className="text-3xl">{item.icon}</div>
                             <span className="text-3xl">{item.name}</span>
-                        </button>
+                        </a>
                     ) : (
-                        <Link
+                        <a
                             href={item.url}
                             target={item.target ?? ''}
                             className="flex flex-row gap-5 items-center justify-center hover:text-highlight text-3xl"
@@ -104,7 +106,7 @@ const MobileMenu = (
                         >
                             <div className="text-3xl">{item.icon}</div>
                             <span className="text-3xl">{item.name}</span>
-                        </Link>
+                        </a>
                     )}
                 </motion.li>
               ))}

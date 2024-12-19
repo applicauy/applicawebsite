@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import MobileDetect from "mobile-detect";
 import PageClientWrapper from "./page-client-wrapper";
+import isMobile from 'react-device-detect';
 
 export default function Home() {
 
