@@ -17,6 +17,7 @@ const GTM_ID = "GTM-PQ3DNDZ";
 import { Inter } from "next/font/google";
 import Loading from "@/components/loading";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 const inter = Inter({ subsets: ["latin"] });
 
 
@@ -36,26 +37,23 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
     };  
 
     const handleScroll = (id: any) => {
-        localStorage.setItem('scrollToId', id);
-        
-        
-        if( pathname != '/' ){
-            window.location.href = '/';
-        }
-        else {
-            const element = document.getElementById(id);
-            const headerOffset = 80;
-            
-            if (element) {
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
+        const element = document.getElementById(id);
+        setTimeout(
+            () => {
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    const newUrl = `/#${id}`;
+                    window.history.pushState(null, "", newUrl);
+                    localStorage.setItem('scrollToId', id);
+                }
+                else {
+                    window.location.href = `/#${id}`;
+                    localStorage.setItem('scrollToId', id);
+                }
+            },
+            100
+        )
     };
     
     useEffect(() => {
@@ -80,25 +78,33 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
     }, [initialIsMobile]);
 
     useEffect(() => {
-        
-        // Obtén el ID de localStorage
-        const scrollToId = localStorage.getItem('scrollToId');
-        
-        if (scrollToId) {
-            const element = document.getElementById(scrollToId);
-            const headerOffset = 80;
+
+        if( window.location.href.includes('/#') ) {
+
             
-            if (element) {
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-
-            localStorage.removeItem('scrollToId');
+            setTimeout(
+                () => {
+                    const scrollToId = localStorage.getItem('scrollToId');
+                    if (scrollToId) {
+                        const element = document.getElementById(scrollToId);
+                        const headerOffset = 80;
+                        
+                        if (element) {
+                            const elementPosition = element.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+            
+                        localStorage.removeItem('scrollToId');
+                    }
+                },
+                1000
+            )
+            
         }
     }, []); 
     
