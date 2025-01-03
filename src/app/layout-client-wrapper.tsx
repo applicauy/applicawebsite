@@ -40,16 +40,22 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
         const element = document.getElementById(id);
         setTimeout(
             () => {
+                const headerOffset = 50;
                 if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth',
+                    });
+
                     const newUrl = `/#${id}`;
                     window.history.pushState(null, "", newUrl);
-                    localStorage.setItem('scrollToId', id);
-                }
-                else {
+                    localStorage.setItem("scrollToId", id);
+                } else {
                     window.location.href = `/#${id}`;
-                    localStorage.setItem('scrollToId', id);
+                    localStorage.setItem("scrollToId", id);
                 }
             },
             100
@@ -87,7 +93,7 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
                     const scrollToId = localStorage.getItem('scrollToId');
                     if (scrollToId) {
                         const element = document.getElementById(scrollToId);
-                        const headerOffset = 80;
+                        const headerOffset = 200;
                         
                         if (element) {
                             const elementPosition = element.getBoundingClientRect().top;

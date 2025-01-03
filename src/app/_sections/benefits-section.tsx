@@ -28,12 +28,12 @@ export default function BenefitsSection() {
                         </span>
                     </H2>
 
-                    <H3 className="md:max-w-[80%]">
+                    <p className="md:max-w-[80%] text-xl md:text-4xl leading-tight">
                         Long-term partnership requires flexible service. Since
                         2015, Applica Corp. has been dedicated to helping
                         companies scale their business and take it to the next
                         level.
-                    </H3>
+                    </p>
                 </div>
 
                 <div className="md:w-2/4 grid grid-cols-2 gap-4">

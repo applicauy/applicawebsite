@@ -45,23 +45,23 @@ export default function MobileServicesSection() {
                 </div>
 
                 <div className="flex flex-col md:gap-8 md:w-2/4 text-center md:text-end my-4 md:my-0">
-                    <MobileH3 className="mb-8 md:mb-0">
+                    <p className="text-xl md:text-3sm leading-tight mb-8 md:mb-0">
                         We specialize in IT staff augmentation services, using
-                        an agile model to deliver talent in only 72 hours.
-                    </MobileH3>
+                        an agile model to deliver top talent in only 72 hours.
+                    </p>
 
-                    <MobileH1 className="max-w-full md:max-w-full mx-auto md:mx-0 mb-8 mb:md-0">
+                    <p className="text-3xl md:text-4xl leading-none max-w-full md:max-w-full mx-auto md:mx-0 mb-8 mb:md-0">
                         Ready to{" "}
                         <span
                             className={`font-medium ${avigeaFont.className}`}
                         >
                             ramp up your project?
                         </span>
-                    </MobileH1>
+                    </p>
 
-                    <span className="text-2xl text-highlight">
+                    <p className="text-2xl text-highlight">
                         We make it happen
-                    </span>
+                    </p>
                 </div>
             </motion.div>
 
@@ -107,7 +107,7 @@ export default function MobileServicesSection() {
                 <MobileH3>
                     Whether you need a specialized skillset, a temporary highly
                     qualified developer, a Senior team lead, or just more hands
-                    on deck, our IT talents are here to help.
+                    on deck, our nearshore IT talents are here to help.
                 </MobileH3>
 
                 <MobileButton onClick={onMeetOurProcessClick}>

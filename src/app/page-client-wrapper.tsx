@@ -31,7 +31,7 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
     }, []);
 
     return (
-        <main className={`${apexFont.className} flex flex-col items-center min-h-screen justify-between gap-20 md:gap-36 overflow-hidden mt-24 md:mt-0 md:px-24`}>
+        <main className={`${apexFont.className} flex flex-col items-center min-h-screen justify-between gap-20 md:gap-36 mt-24 md:mt-0 md:px-24 ${ isMobile && 'overflow-hidden' }`}>
             {
                 isMobile &&
                 <div className="absolute right-0 w-[100%] z-[-1]">

@@ -15,4 +15,5 @@ export interface Post {
     avatar?: string | StaticImport;
     content: string;
     medias?: any[] | Slide[];
+    meta_description?: string;
 }

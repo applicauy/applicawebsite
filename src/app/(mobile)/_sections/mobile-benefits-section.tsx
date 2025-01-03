@@ -64,12 +64,12 @@ export default function MobileBenefitsSection() {
                         </div>
 
                         <div className="w-full flex justify-center">
-                            <MobileH3>
+                            <p className="text-xl md:text-3sm leading-tight">
                                 Long-term partnership requires flexible service.
                                 Since 2015, Applica Corp. has been dedicated
                                 to helping companies scale their business and take
                                 it to the next level.
-                            </MobileH3>
+                            </p>
                         </div>
                     </div>
 
