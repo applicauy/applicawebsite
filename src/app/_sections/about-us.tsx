@@ -43,21 +43,21 @@ export default function AboutUs() {
                 </div>
 
                 <div className="flex flex-col md:gap-8 md:w-2/4 text-end items-end md:text-end my-8 md:my-0">
-                    <H3 className="mb-14 md:mb-0 w-[80%] text-end">
+                    <p className="text-xl md:text-4xl leading-tight mb-14 md:mb-0 w-[80%] text-end">
                         We specialize in IT staff augmentation services, using
-                        an agile model to deliver talent in only 72 hours.
-                    </H3>
+                        an agile model to deliver top talent in only 72 hours.
+                    </p>
 
-                    <H2 className="w-[80%] text-end md:max-w-full mx-auto md:mx-0 mb-3 mb:md-0">
+                    <p className="text-3xl md:text-6xl leading-none w-[80%] text-end md:max-w-full mx-auto md:mx-0 mb-3 mb:md-0">
                         Ready to{" "}
                         <span
                             className={`font-medium ${avigeaFont.className}`}
                         >
                             ramp up your project?
                         </span>
-                    </H2>
+                    </p>
 
-                    <H3 className="text-highlight">We make it happen</H3>
+                    <p className="text-xl md:text-4xl leading-tight text-highlight">We make it happen</p>
                 </div>
             </motion.div>
 
@@ -103,7 +103,7 @@ export default function AboutUs() {
                 <H3 className="text-md">
                     Whether you need a specialized skillset, a temporary highly
                     qualified developer, a Senior team lead, or just more hands
-                    on deck, our IT talents are here to help.
+                    on deck, our nearshore IT talents are here to help.
                 </H3>
 
                 <Button onClick={onMeetOurProcessClick}>

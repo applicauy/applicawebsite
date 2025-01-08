@@ -71,9 +71,11 @@ export default function ContactSection(
                         isMobile ? 
                         <MobileDecoratedImage
                             image = { placeholderImg }
+                            alt = "Contact us!"
                         /> :
                         <DecoratedImage 
                             image={placeholderImg}
+                            alt = "Contact us!"
                         />
                     }
                 </div>
