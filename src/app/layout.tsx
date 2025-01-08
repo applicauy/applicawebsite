@@ -11,7 +11,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "Applica Corp: IT Staff augmentation services",
     description:
-        "We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs."
+        "We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs.",
+    keywords: ['staff augmentation', 'software', 'company', 'team', 'talent']
 };
 
 export default function RootLayout({
