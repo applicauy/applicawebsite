@@ -30,11 +30,6 @@ const NewsCard = (
 
     const { onGoToPost } = useNavigationHandlers();    
 
-    const formatDate = (dateString : string) => {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-CA');
-    };
-
     return (
         <div className="relative flex flex-col overflow-hidden card-border bg-clip-border hover:shadow-lg hover:cursor-pointer bg-secondary-bg group md:z-[1] z-[10] w-full"
             onClick={ () => onGoToPost( slug ) }>
@@ -55,6 +50,7 @@ const NewsCard = (
                                 <Badge 
                                     key={tag.id} 
                                     category={tag.name}
+                                    url = { tag.url }
                                 />
                             )
                         )
