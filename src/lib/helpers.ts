@@ -1,18 +1,5 @@
 import { useRouter } from "next/navigation";
 
-// export const onMeetOurProcessClick = () => {
-//     const { protocol, hostname, port } = window.location;
-//     window.location.href = `${protocol}//${hostname}:${port}/#hiring-process`;
-// };
-
-// export const onStartNowClick = () => {
-//     window.location.href = "/contact";
-// };
-
-// export const onLetsTalkClick = () => {
-//     window.location.href = "/contact";
-// };
-
 export const useNavigationHandlers = () => {
     const router = useRouter();
 
@@ -36,11 +23,16 @@ export const useNavigationHandlers = () => {
         router.push(`/news/${ title }`);
     } 
 
+    const onGoToCategory = ( category: string ) => {
+        router.push(`/news/category/${ category }`);
+    }
+
     return {
         onStartNowClick,
         onLetsTalkClick,
         onMeetOurProcessClick,
         onGoToNews,
-        onGoToPost
+        onGoToPost,
+        onGoToCategory
     };
 };
