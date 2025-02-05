@@ -1,5 +1,7 @@
 import H4 from "@/components/h4";
-import { indexTags } from "@/utils/config/algolia-config";
+import { indexPosts, indexTags } from "@/utils/config/algolia-config";
+import { Cateogry } from "@/utils/models/Category";
+import { Post } from "@/utils/models/Post";
 import { useEffect, useState } from "react"
 
 type Tag = {
@@ -11,26 +13,34 @@ type Tag = {
 
 const CategoriesList = () => {
 
-    const [categories, setCategories] = useState<Tag[]>([]);
-    
-    useEffect(
-        () => {
-            const fetchCategories = async () => {
-                const { hits } = await indexTags.search<Tag>("");
-                setCategories( hits );
-            }
+    const [categories, setCategories] = useState<Cateogry[]>([]);
+    const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
 
-            fetchCategories();
-        },
-        []
-    )
+
+      useEffect(() => {
+      const fetchCategories = async () => {
+        const { hits } = await indexTags.search<Cateogry>("");
+        setCategories(hits); 
+      };
+
+      const fetchActiveTags = async () => {
+        const { hits } = await indexPosts.search<Post>("");
+        const usedTags = new Set(hits.flatMap((post) => post.tags.map((tag) => tag.name)));
+        setActiveTags(usedTags);
+      };
+
+      fetchCategories();
+      fetchActiveTags();
+    }, []);
+
+    const filteredCategories = categories.filter((category) => activeTags.has(category.name));
 
     return (
         <div className="hidden md:block md:w-1/5">
             <H4 className="text-highlight mb-5 font-medium">Categories</H4>
             <ul>
                 {
-                    categories.map(
+                    filteredCategories.map(
                         ( category ) => (
                             <li key = { category.objectID } className="mb-3">
                                 <a 
