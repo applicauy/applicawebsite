@@ -54,7 +54,6 @@ export default function NewsFilter(
             <NewsCard {...hit} handleClick = { handleClick } isMobile = { isMobile }></NewsCard>
         </div>
     );
-
     return (
         loading ?
         <Loading /> :
@@ -71,7 +70,7 @@ export default function NewsFilter(
                                 <span className={ `text-3xl text-secondary-text w-full flex justify-center mb-12 md:mb-20 items-stretch font-medium ${ isMobile && 'mt-5' }` } >
                                     {category.name}
                                 </span>
-                                <Configure filters={`tags.name:${category.name}`} />
+                                <Configure filters={`tags.id:${category.objectID}`} />
                             </>
                         ) : (
                             <div className="search-panel w-full flex mb-12 md:mb-20 items-stretch">

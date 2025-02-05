@@ -34,7 +34,7 @@ const CategoriesList = () => {
                         ( category ) => (
                             <li key = { category.objectID } className="mb-3">
                                 <a 
-                                    className="text-2xl hover:text-highlight transition-all duration-300" 
+                                    className="text-xl hover:text-highlight transition-all duration-300" 
                                     href = { `/news/category/${ category.url }` }>
                                         { category.name }
                                 </a>
