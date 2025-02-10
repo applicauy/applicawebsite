@@ -22,8 +22,6 @@ export default function NewsFilter(
     }
 ) {
     const [loading, setLoading] = useState( false );
-    const [tagsName, setTagsName] = useState( [] );
-
     useEffect(() => {
         if (loading) {
             document.body.style.overflow = 'hidden';
