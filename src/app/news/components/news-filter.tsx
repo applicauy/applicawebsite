@@ -1,34 +1,27 @@
 'use client'
 
 import Section from "@/components/section";
-import NewsCard from '../../_components/news-card';
-import { Post } from "@/utils/models/Post";
-import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits, connectRefinementList, connectHits, RefinementList } from 'react-instantsearch-dom';
-import H4 from "@/components/h4";
-import { useSearchParams } from "next/navigation";
-import SearchPosts from "./search-posts";
+import { InstantSearch, connectRefinementList, RefinementList, Hits, Index, Configure, SortBy } from "react-instantsearch-dom";
 import { useEffect, useState } from "react";
 import Loading from "@/components/loading";
-import { indexPosts, searchClient } from "@/utils/config/algolia-config";
-
-
-const CustomRefinementList = connectRefinementList(RefinementList);
-
+import { searchClient } from "@/utils/config/algolia-config";
+import SearchPosts from "./search-posts";
+import { Post } from "@/utils/models/Post";
+import NewsCard from "@/app/_components/news-card";
+import CategoriesList from "./categories-list";
+import { Cateogry } from "@/utils/models/Category";
 
 export default function NewsFilter(
     {
-        isMobile
+        isMobile,
+        category
     } :
     {
-        isMobile: boolean
+        isMobile: boolean;
+        category?: Cateogry | null
     }
 ) {
-    const searchParams = useSearchParams();
-    const tag = searchParams.get('tag');
-
     const [loading, setLoading] = useState( false );
-
     useEffect(() => {
         if (loading) {
             document.body.style.overflow = 'hidden';
@@ -40,6 +33,7 @@ export default function NewsFilter(
             document.body.style.overflow = '';
         };
     }, [loading]);
+
 
     const handleClick = () => {
         setLoading(true);
@@ -59,8 +53,7 @@ export default function NewsFilter(
         <div className="w-full flex items-stretch">
             <NewsCard {...hit} handleClick = { handleClick } isMobile = { isMobile }></NewsCard>
         </div>
-    );
-
+    );  
     return (
         loading ?
         <Loading /> :
@@ -70,24 +63,20 @@ export default function NewsFilter(
                 indexName="production_posts-from-strapi"
             >
                 <div className="flex w-full">
-                    <div className="hidden md:block md:w-1/5">
-                        <H4 className="text-highlight">Filters</H4>
-                        <div className="mt-5 mb-4">
-                            <span className="text-sm md:text-lg leading-tight text-secondary-text">Tags</span>
-                        </div>
-                        <CustomRefinementList 
-                            attribute="tags.name" 
-                            defaultRefinement={tag ? [tag] : []}
-                            limit={100}
-                            transformItems={(items) => 
-                                items.sort((a: any, b: any) => a.label.localeCompare(b.label))
-                            }
-                        />
-                    </div>    
-                    <div className="md:w-4/5 w-full">    
-                        <div className="search-panel w-full flex mb-12 md:mb-20 items-stretch">
-                            <SearchPosts />
-                        </div>
+                    <CategoriesList />
+                    <div className="md:w-4/5 w-full">   
+                        {category ? (
+                            <>
+                                <span className={ `text-3xl text-secondary-text w-full flex justify-center mb-12 md:mb-20 items-stretch font-medium ${ isMobile && 'mt-5' }` } >
+                                    {category.name}
+                                </span>
+                                <Configure filters={`tags.id:${category.objectID}`} />
+                            </>
+                        ) : (
+                            <div className="search-panel w-full flex mb-12 md:mb-20 items-stretch">
+                                <SearchPosts />
+                            </div>
+                        )}
                         <Hits hitComponent={Hit}/>
                     </div>
                 </div>   
