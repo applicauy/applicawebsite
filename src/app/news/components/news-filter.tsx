@@ -22,6 +22,7 @@ export default function NewsFilter(
     }
 ) {
     const [loading, setLoading] = useState( false );
+    const [tagsName, setTagsName] = useState( [] );
 
     useEffect(() => {
         if (loading) {
@@ -34,6 +35,7 @@ export default function NewsFilter(
             document.body.style.overflow = '';
         };
     }, [loading]);
+
 
     const handleClick = () => {
         setLoading(true);
@@ -53,7 +55,7 @@ export default function NewsFilter(
         <div className="w-full flex items-stretch">
             <NewsCard {...hit} handleClick = { handleClick } isMobile = { isMobile }></NewsCard>
         </div>
-    );
+    );  
     return (
         loading ?
         <Loading /> :
