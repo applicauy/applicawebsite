@@ -16,7 +16,7 @@ export default function Attribute({
     return (
         <div className="flex items-center md:flex-row flex-col">
             <div className="min-w-24 md:min-w-20 min-h-24 md:min-h-20 size-24 md:size-20">
-                <Image src={icon} alt="Image"/>
+                <Image src={icon} alt="Image" loading="lazy"/>
             </div>
             <span className = "text-xl md:text-2xl leading-tight text-center md:text-start">{children}</span>
         </div>

@@ -1,7 +1,7 @@
-import costEffectiveness from "@/assets/cost-efectiveness.png";
-import timeSaving from "@/assets/timesaving.png";
-import flexibility from "@/assets/flexibility.png";
-import focused from "@/assets/focused.png";
+import costEffectiveness from "@/assets/cost-efectiveness.webp";
+import timeSaving from "@/assets/timesaving.webp";
+import flexibility from "@/assets/flexibility.webp";
+import focused from "@/assets/focused.webp";
 
 export const benefits = [
     {

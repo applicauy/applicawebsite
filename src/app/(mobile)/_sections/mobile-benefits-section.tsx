@@ -1,19 +1,16 @@
 'use client'
 
 import { avigeaFont } from "@/assets/fonts";
-import Section from "@/components/section";
-import placeholderImg from "@/assets/placeholder-img-2.png";
-import costEffectiveness from "@/assets/cost-efectiveness.png";
-import timeSaving from "@/assets/timesaving.png";
-import focused from "@/assets/focused.png";
-import flexibility from "@/assets/flexibility.png";
+import costEffectiveness from "@/assets/cost-efectiveness.webp";
+import timeSaving from "@/assets/timesaving.webp";
+import focused from "@/assets/focused.webp";
+import flexibility from "@/assets/flexibility.webp";
 import MobileBenefit from "../_components/mobile-benefit";
 import MobileCarousel from "../_components/mobile-carousel";
-import MobileH2 from "../_components/mobile-h2";
-import MobileH3 from "../_components/mobile-h3";
 import MobileH1 from "../_components/mobile-h1";
 import { benefits } from "@/utils/models/Benefits";
 import { motion } from 'framer-motion';
+import dynamic from "next/dynamic";
 
 // Benefits to be displayed in the section.
 const BENEFITS = [
@@ -40,6 +37,7 @@ const BENEFITS = [
 ];
 
 export default function MobileBenefitsSection() {
+    const Section = dynamic(() => import('@/components/section'));
     return (
         <Section className="flex flex-col gap-12 md:gap-36  overflow-hidden">
             <motion.div

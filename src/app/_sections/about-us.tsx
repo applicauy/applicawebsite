@@ -1,13 +1,11 @@
 "use client";
 
-import Section from "@/components/section";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import placeholderImg from "@/assets/placeholder-img-2.png";
 import { avigeaFont } from "@/assets/fonts";
-import checkboxIcon from "@/assets/icons/checkbox-icon.svg";
-import searchIcon from "@/assets/icons/seach-icon.svg";
-import lampIcon from "@/assets/icons/lamp-icon.svg";
+import placeholderImg from "@/assets/placeholder-img-2.webp";
+import checkboxIcon from "@/assets/icons/checkbox-icon.webp";
+import searchIcon from "@/assets/icons/seach-icon.webp";
+import lampIcon from "@/assets/icons/lamp-icon.webp";
 import Attribute from "../_components/attribute";
 import Button from "../../components/button";
 import H3 from "@/components/h3";
@@ -16,9 +14,12 @@ import {
     /*onMeetOurProcessClick,*/ useNavigationHandlers,
 } from "@/lib/helpers";
 import DecoratedImage from "../_components/decorated-image";
+import dynamic from "next/dynamic";
 
 export default function AboutUs() {
     const { onMeetOurProcessClick } = useNavigationHandlers();
+
+    const Section = dynamic(() => import('@/components/section'));
 
     return (
         <Section className="flex flex-col md:gap-20">

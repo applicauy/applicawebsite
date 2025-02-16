@@ -1,12 +1,10 @@
 'use client'
 
 import Image from "next/image";
-import arrowIcon from "@/assets/icons/arrow-right.svg";
+import arrowIcon from "@/assets/icons/arrow-right.webp";
 import { useNavigationHandlers } from "@/lib/helpers";
 import { Post } from "@/utils/models/Post";
 import Badge from "./badge";
-import isMobile from 'react-device-detect';
-import { BASE_URL } from "@/utils/config/algolia-config";
 
 
 const NewsCard = (
@@ -36,10 +34,12 @@ const NewsCard = (
            <div className="relative h-[200px] md:h-[250px] m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border transition-transform duration-300 ease-in-out transform group-hover:scale-110">
                 <Image 
                     src={ image.url }
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: 'cover' }}
                     alt={title}
                     className="absolute inset-0"
+                    quality={70}
+                    loading="lazy"
                 />
            </div>
            <div className="p-6 text-white flex flex-col flex-grow">
@@ -79,6 +79,7 @@ const NewsCard = (
                                 alt="Arrow Icon"
                                 color="transparent"
                                 className="w-8 md:w-6 h-8 md:h-6"
+                                loading="lazy"
                              />
                          </a>
                     </div>

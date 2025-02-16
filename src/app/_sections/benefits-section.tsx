@@ -1,13 +1,15 @@
 import { avigeaFont } from "@/assets/fonts";
-import Section from "@/components/section";
 import Benefit from "../_components/benefit";
 import Carousel from "../_components/carousel";
 import H2 from "@/components/h2";
-import H3 from "@/components/h3";
 import { benefits } from "@/utils/models/Benefits";
 import { motion } from 'framer-motion';
+import dynamic from "next/dynamic";
 
 export default function BenefitsSection() {
+    
+    const Section = dynamic(() => import('@/components/section'));
+
     return (
         <Section className="flex flex-col gap-12 md:gap-36">
             <motion.div

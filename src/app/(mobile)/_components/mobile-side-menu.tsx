@@ -7,9 +7,8 @@ import {
     TransitionChild,
 } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
 import Image from "next/image";
-import logo from "@/assets/logo/logo-menu.svg";
+import logo from "@/assets/logo/logo-menu.webp";
 
 type TMobileSideMenuProps = {
     openMenu: boolean;
@@ -60,7 +59,7 @@ export default function MobileSideMenu({
                                                 alt="Applica's logo"
                                                 src={logo}
                                                 className="h-14 md:h-20 w-auto"
-                                                priority
+                                                loading="lazy"
                                             />
                                         </a>
                                     </DialogTitle>

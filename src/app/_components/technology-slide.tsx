@@ -23,6 +23,7 @@ export default function TechnologySlide({
                 width={150}
                 height={150}
                 className="grayscale hover:filter-none"
+                loading="lazy"
             />
         </div>
     );

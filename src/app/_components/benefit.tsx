@@ -1,7 +1,7 @@
 import H5 from "@/components/h5";
 import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
-import boxImg from '@/assets/shapes/box-benefits.svg';
+import boxImg from '@/assets/shapes/box-benefits.webp';
 
 
 export default function Benefit({
@@ -19,11 +19,13 @@ export default function Benefit({
                 src={ imageSrc }
                 alt={ imageAlt }
                 className="rounded-lg img-benefit"
+                loading="lazy"
             />
             <Image
                 src={ boxImg } 
                 alt="Border" 
                 className="absolute inset-16 pointer-events-none image-border-benefit"
+                loading="lazy"
             />
         </div>
             <span className="text-sm md:text-lg leading-tight">{children}</span>

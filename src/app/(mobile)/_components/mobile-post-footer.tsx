@@ -20,6 +20,7 @@ export default function MobilePostFooter (
                 height={60}
                 alt = { author.name }
                 className="rounded-full object-cover w-16 h-16"
+                loading="lazy"
               />
               <div className="author flex flex-col justify-center h-full items-center">
                 <span className="font-bold text-lg">{ author.name }</span>

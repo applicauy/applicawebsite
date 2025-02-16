@@ -3,21 +3,9 @@
 import { apexFont } from "@/assets/fonts";
 import MobileDetect from "mobile-detect";
 import { useEffect, useState } from "react";
-import backgroundImg from '@/assets/background/gradient.svg';
-import MobileLandingSection from "./(mobile)/_sections/mobile-landing-section";
-import MobileServicesSection from "./(mobile)/_sections/mobile-services-section";
-import MobileBenefitsSection from "./(mobile)/_sections/mobile-benefits-section";
-import MobileProcessSection from "./(mobile)/_sections/mobile-proccess-section";
-import MobileTalenOnDemand from "./(mobile)/_sections/mobile-talen-on-demand";
-import MobileLatestPostsSection from "./(mobile)/_sections/mobile-latest-posts-section";
-import MobileLetsTalkSection from "./(mobile)/_sections/mobile-lets-talk-section";
+import backgroundImg from '@/assets/background/gradient.webp';
 import Image from "next/image";
-import LandingSection from "./_sections/landing-section";
-import AboutUs from "./_sections/about-us";
-import BenefitsSection from "./_sections/benefits-section";
-import ProcessSection from "./_sections/process-section";
-import TalentOnDemand from "./_sections/talent-on-demand";
-import LatestPosts from "./_sections/latest-posts";
+import dynamic from "next/dynamic";
 
 
 export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile: boolean }) {
@@ -30,6 +18,21 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
         }
     }, []);
 
+    const MobileLandingSection = dynamic(() => import('@/(mobile)/_sections/mobile-landing-section'), { ssr: false });
+    const MobileServicesSection = dynamic(() => import('@/(mobile)/_sections/mobile-services-section'), { ssr: false });
+    const MobileBenefitsSection = dynamic(() => import('@/(mobile)/_sections/mobile-benefits-section'), { ssr: false });
+    const MobileProcessSection = dynamic(() => import('@/(mobile)/_sections/mobile-proccess-section'), { ssr: false });
+    const MobileTalenOnDemand = dynamic(() => import('@/(mobile)/_sections/mobile-talen-on-demand'), { ssr: false });
+    const MobileLatestPostsSection = dynamic(() => import('@/(mobile)/_sections/mobile-latest-posts-section'), { ssr: false });
+    const MobileLetsTalkSection = dynamic(() => import('@/(mobile)/_sections/mobile-lets-talk-section'), { ssr: false });
+
+    const LandingSection = dynamic(() => import('@/sections/landing-section'), { ssr: false });
+    const AboutUs = dynamic(() => import('@/sections/about-us'), { ssr: false });
+    const BenefitsSection = dynamic(() => import('@/sections/benefits-section'), { ssr: false });
+    const ProcessSection = dynamic(() => import('@/sections/process-section'), { ssr: false });
+    const TalentOnDemand = dynamic(() => import('@/sections/talent-on-demand'), { ssr: false });
+    const LatestPosts = dynamic(() => import('@/sections/latest-posts'), { ssr: false });
+
     return (
         <main className={`${apexFont.className} flex flex-col items-center min-h-screen justify-between gap-20 md:gap-36 mt-24 md:mt-0 md:px-24 ${ isMobile && 'overflow-hidden' }`}>
             {
@@ -39,6 +42,7 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
                         src={backgroundImg}
                         alt = "Background Image"
                         className="w-full object-cover"
+                        priority 
                     />
                 </div>
             }

@@ -1,12 +1,12 @@
 import Image from "next/image";
-import logo from "@/assets/logo/logo-footer.svg";
+import logo from "@/assets/logo/logo-footer.webp";
 import { apexFont } from "@/assets/fonts";
-import clutchRecognitionImg from "@/assets/clutch/clutch-recognition.png";
-import clutchStarsImg from "@/assets/clutch/clutch-stars.svg";
-import linkedinIcon from "@/assets/icons/linkedin.svg";
-import instagramIcon from "@/assets/icons/instagram.svg";
-import clutchIcon from "@/assets/icons/clutch.svg";
-import LetsTalkSection from "../_sections/lets-talk-section";
+import clutchRecognitionImg from "@/assets/clutch/clutch-recognition.webp";
+import clutchStarsImg from "@/assets/clutch/clutch-stars.webp";
+import linkedinIcon from "@/assets/icons/linkedin.webp";
+import instagramIcon from "@/assets/icons/instagram.webp";
+import clutchIcon from "@/assets/icons/clutch.webp";
+import dynamic from "next/dynamic";
 
 /**
  * Array of locations.
@@ -78,6 +78,8 @@ export default function Footer(
 ) {
     const currentYear = new Date().getFullYear();
 
+    const LetsTalkSection = dynamic(() => import('@/app/_sections/lets-talk-section'), { ssr: false });
+
     return (
         <>
             <LetsTalkSection />
@@ -91,8 +93,9 @@ export default function Footer(
                         <Image
                             src={logo}
                             alt="Applica Corp's logo"
-                            width={250}
+                            width={300}
                             height={220}
+                            loading="lazy"
                         />
                     </a>
 
@@ -140,21 +143,21 @@ export default function Footer(
                                 href="https://www.linkedin.com/company/applica-corp/"
                                 target="_blank"
                             >
-                                <Image src={linkedinIcon} alt="LinkedIn" width={48} />
+                                <Image src={linkedinIcon} alt="LinkedIn" width={48} loading="lazy" />
                             </a>
 
                             <a
                                 href="https://www.instagram.com/applica.corp/"
                                 target="_blank"
                             >
-                                <Image src={instagramIcon} alt="Instagram" width={48} />
+                                <Image src={instagramIcon} alt="Instagram" width={48} loading="lazy" />
                             </a>
 
                             <a
                                 href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay"
                                 target="_blank"
                             >
-                                <Image src={clutchIcon} alt="Clutch" width={48} />
+                                <Image src={clutchIcon} alt="Clutch" width={48} loading="lazy" />
                             </a>
                         </div>
 
@@ -166,6 +169,8 @@ export default function Footer(
                                 <Image
                                     src={clutchStarsImg}
                                     alt="AplicaCorp at Clutch"
+                                    width={250}
+                                    loading="lazy"
                                 />
                             </a>
                             <a
@@ -176,6 +181,8 @@ export default function Footer(
                                     src={clutchRecognitionImg}
                                     alt="Clutch recognition for ApplicaCorp"
                                     height={150}
+                                    width={150}
+                                    loading="lazy"
                                 />
                             </a>
                         </div>

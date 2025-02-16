@@ -42,6 +42,7 @@ export default function ImagesSlide(
                                     <Image
                                         src={ image }
                                         alt={ `${ title } - ${ index + 1 }` }
+                                        loading="lazy"
                                     />
                                 </div>
                             </SwiperSlide>
@@ -64,6 +65,7 @@ export default function ImagesSlide(
                                 <Image
                                     src={ image }
                                     alt={ `${ title } - ${ index + 1 }` }
+                                    loading="lazy"
                                 />
                             </SwiperSlide>
                         )

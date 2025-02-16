@@ -1,13 +1,12 @@
 "use client";
 
-import Section from '@/components/section'
 import React from 'react'
 import { motion } from 'framer-motion';
 import MobileH1 from '../_components/mobile-h1';
 import { avigeaFont } from '@/assets/fonts';
-import LatestPostsClient from '@/app/_components/latest-posts-client';
-import backgroundImg from '@/assets/background/gradient.svg';
+import backgroundImg from '@/assets/background/gradient.webp';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
 export default function MobileLatestPostsSection(
     { 
@@ -17,7 +16,9 @@ export default function MobileLatestPostsSection(
         fromPost?: boolean
     }
 ) {
-
+  const Section = dynamic(() => import('@/components/section'));
+  const LatestPostsClient = dynamic(() => import('@/app/_components/latest-posts-client'), { ssr: false });
+  
   return (
     <Section className="flex flex-col md:gap-20">
         <motion.div
@@ -33,9 +34,10 @@ export default function MobileLatestPostsSection(
                     <Image
                         src={backgroundImg}
                         alt="Background Image"
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+    	                style={{ objectFit: 'cover' }}
                         className="w-full h-full"
+                        loading="lazy"
                     />
                 </div>
             }

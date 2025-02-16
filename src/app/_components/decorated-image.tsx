@@ -1,9 +1,8 @@
 import { PropsWithChildren } from "react";
 import Image from "next/image";
-import boxImg from '@/assets/shapes/box.svg';
-import leftLineImg from '@/assets/shapes/left-line.svg';
-import rightLineImg from '@/assets/shapes/right-line.svg';
-import { BASE_URL } from "@/utils/config/algolia-config";
+import boxImg from '@/assets/shapes/box.webp';
+import leftLineImg from '@/assets/shapes/left-line.webp';
+import rightLineImg from '@/assets/shapes/right-line.webp';
 
 export default function DecoratedImage({
     className,
@@ -28,6 +27,8 @@ export default function DecoratedImage({
                         height={150}
                         width={500}
                         className="rounded-lg img-blog"
+                        quality={80}
+                        loading="lazy"
                     /> :
                     <Image
                         src={image}
@@ -36,6 +37,8 @@ export default function DecoratedImage({
                         height={300}
                         width={600}
                         alt={alt}
+                        quality={80}
+                        loading="lazy"
                     />
             }
                   
@@ -43,6 +46,7 @@ export default function DecoratedImage({
                 src={ boxImg } 
                 alt="Border" 
                 className={ `absolute inset-16 pointer-events-none ${ fromPost ? 'image-border-blog' : 'image-border' }` }
+                loading="lazy"
             /> 
 
             {
@@ -51,6 +55,7 @@ export default function DecoratedImage({
                         src={ fromPost ? rightLineImg : leftLineImg }
                         alt="Line"
                         className={`${ fromPost ? 'left-line-blog' : 'left-line' }`}
+                        loading="lazy"
                     />
             }
 
@@ -60,6 +65,7 @@ export default function DecoratedImage({
                         src={ rightLineImg }
                         alt="Line"
                         className={`${ fromPost ? 'right-line-blog' : 'right-line' }`}
+                        loading="lazy"
                     />
             }
            

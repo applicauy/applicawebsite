@@ -5,6 +5,7 @@ import { headers } from "next/headers";
 import MobileDetect from "mobile-detect";
 import MobileLetsTalkSection from "../(mobile)/_sections/mobile-lets-talk-section";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
     title: 'Contact',
@@ -17,6 +18,10 @@ export default function Page() {
     const userAgent = headers().get('user-agent') || '';
     const md = new MobileDetect(userAgent);
     const isMobile = !!md.mobile();  
+
+    const ContactSection = dynamic(() => import('@/app/contact/_sections/contact-section'), { ssr: false });
+    const FormSection = dynamic(() => import('@/app/contact/_sections/form-section'), { ssr: false });
+    const MobileLetsTalkSection = dynamic(() => import('@/(mobile)/_sections/mobile-lets-talk-section'), { ssr: false });
 
     return (
         <>

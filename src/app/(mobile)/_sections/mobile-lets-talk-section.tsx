@@ -1,7 +1,6 @@
 "use client";
 import { apexFont, avigeaFont } from "@/assets/fonts";
 import MobileButton from "../_components/mobile-button";
-import MobileH2 from "../_components/mobile-h2";
 import { /*onLetsTalkClick,*/ useNavigationHandlers } from "@/lib/helpers";
 import MobileH1 from "../_components/mobile-h1";
 

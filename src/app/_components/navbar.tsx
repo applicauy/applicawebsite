@@ -1,10 +1,8 @@
 "use client";
 import Image from "next/image";
-import logo from "@/assets/logo/logo-menu.svg";
-import Link from "next/link";
+import logo from "@/assets/logo/logo-menu.webp";
 import { apexFont } from "@/assets/fonts";
 import { menuItems } from "@/utils/menu/menu-items";
-import { useRouter } from "next/router";
 
 // Navbar used across the website.
 export default function NavBar(
@@ -29,7 +27,7 @@ export default function NavBar(
                             alt="Applica's logo"
                             src={logo}
                             className="h-14 md:h-20 w-auto"
-                            priority
+                            loading="lazy"
                         />
                     </a>
                 </div>

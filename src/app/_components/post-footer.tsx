@@ -1,7 +1,6 @@
 import { Post } from "@/utils/models/Post";
 import Image from "next/image";
 import ShareButtons from "./share-buttons";
-import { BASE_URL } from "@/utils/config/algolia-config";
 
 export default function PostFooter (
   { 
@@ -21,6 +20,7 @@ export default function PostFooter (
                 height={60}
                 alt = { author.name }
                 className="rounded-full object-cover w-16 h-16"
+                loading="lazy"
                 
               />
               <div className="author flex flex-row justify-center h-full items-center">

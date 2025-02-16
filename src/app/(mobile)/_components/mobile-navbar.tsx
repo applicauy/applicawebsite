@@ -1,13 +1,9 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
-import logo from "@/assets/logo/logo-menu.svg";
-import MenuIcon from "@mui/icons-material/Menu";
-import IconButton from "@mui/material/IconButton";
-import MobileSideMenu from "@/app/(mobile)/_components/mobile-side-menu";
+import logo from "@/assets/logo/logo-menu.webp";
 import { useEffect, useState } from "react";
-import MobileMenu from "./mobile-menu";
 import { motion } from 'framer-motion';
+import dynamic from "next/dynamic";
 
 const MobileNavBar = (
     {
@@ -48,6 +44,8 @@ const MobileNavBar = (
       hidden: { y: '-100%', opacity: 0 },
       visible: { y: '0%', opacity: 1 },
     };
+
+    const MobileMenu = dynamic(() => import('@/(mobile)/_components/mobile-menu'));
     
     return (
         <motion.header 
@@ -59,7 +57,7 @@ const MobileNavBar = (
         >
             <div className="max-w-48 z-[1100]">
                 <a href="/">
-                    <Image alt="Applica's logo" src={logo} />
+                    <Image alt="Applica's logo" src={logo} loading="lazy"/>
                 </a>
             </div>
             <MobileMenu onMenuClick = { (event: any) => onMenuClick( event ) } handleScroll = { handleScrollFromClick } />

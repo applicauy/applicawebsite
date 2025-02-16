@@ -1,29 +1,25 @@
 "use client";
 
-import Section from "@/components/section";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import placeholderImg from "@/assets/placeholder-img-2.png";
+import placeholderImg from "@/assets/placeholder-img-2.webp";
 import { avigeaFont } from "@/assets/fonts";
-import checkboxIcon from "@/assets/icons/checkbox-icon.svg";
-import searchIcon from "@/assets/icons/seach-icon.svg";
-import lampIcon from "@/assets/icons/lamp-icon.svg";
+import checkboxIcon from "@/assets/icons/checkbox-icon.webp";
+import searchIcon from "@/assets/icons/seach-icon.webp";
+import lampIcon from "@/assets/icons/lamp-icon.webp";
 import Attribute from "@/app/_components/attribute";
 import MobileButton from "../_components/mobile-button";
 import MobileH3 from "../_components/mobile-h3";
-import MobileH2 from "../_components/mobile-h2";
 import {
     /*onMeetOurProcessClick,*/ useNavigationHandlers,
 } from "@/lib/helpers";
 
-import boxImg from '@/assets/shapes/box.svg';
-import leftLineImg from '@/assets/shapes/left-line.svg';
-import rightLineImg from '@/assets/shapes/right-line.svg';
 import MobileH1 from "../_components/mobile-h1";
 import MobileDecoratedImage from "../_components/mobile-decorated-image";
+import dynamic from "next/dynamic";
 
 export default function MobileServicesSection() {
     const { onMeetOurProcessClick } = useNavigationHandlers();
+    const Section = dynamic(() => import('@/components/section'));
 
     return (
         <Section className="flex flex-col md:gap-20">

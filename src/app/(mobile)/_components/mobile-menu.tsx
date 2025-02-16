@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import MobileMenuButton from './mobile-menu-button';
 import { apexFont } from '@/assets/fonts';
-import Link from 'next/link';
 import { menuItems } from '@/utils/menu/menu-items';
+import dynamic from 'next/dynamic';
+import MobileMenuButton from './mobile-menu-button';
 
 const MobileMenu = (
   {
@@ -50,7 +50,7 @@ const MobileMenu = (
       },
     }),
   };
-
+  
   return (
     <div className={`menu-container ${apexFont.className}`}>
       <MobileMenuButton onClick={toggleMenu} isOpen={isOpen} />

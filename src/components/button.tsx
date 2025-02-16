@@ -2,7 +2,7 @@
 
 import { MouseEventHandler, PropsWithChildren } from "react";
 import Image from "next/image";
-import arrowIcon from "@/assets/icons/arrow-right.svg";
+import arrowIcon from "@/assets/icons/arrow-right.webp";
 import H4 from "./h4";
 
 /**
@@ -70,6 +70,7 @@ export default function Button({
                     className="h-7 w-7 md:h-10 md:w-10"
                     alt="Arrow Icon"
                     color="transparent"
+                    loading="lazy"
                 />
             </div>
         </button>

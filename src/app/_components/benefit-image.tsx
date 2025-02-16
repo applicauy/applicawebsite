@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
-import boxImg from '@/assets/shapes/box-benefits.svg';
+import boxImg from '@/assets/shapes/box-benefits.webp';
 
 export default function BenefitImage({
     imageSrc,
@@ -15,11 +15,13 @@ export default function BenefitImage({
                 src={ imageSrc }
                 alt={ imageAlt }
                 className="rounded-lg img-benefit"
+                loading="lazy"
             />
             <Image
                 src={ boxImg } 
                 alt="Border" 
                 className="absolute inset-16 pointer-events-none image-border-benefit"
+                loading="lazy"
             />
         </div>
     );

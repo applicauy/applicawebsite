@@ -1,6 +1,6 @@
 import { MouseEventHandler, PropsWithChildren } from "react";
 import Image from "next/image";
-import arrowIcon from "@/assets/icons/arrow-right.svg";
+import arrowIcon from "@/assets/icons/arrow-right.webp";
 import MobileH4 from "./mobile-h4";
 
 export default function MobileButton({
@@ -49,6 +49,7 @@ export default function MobileButton({
                     className="h-7 w-7 md:h-7 md:w-7"
                     alt="Arrow Icon"
                     color="transparent"
+                    loading="lazy"
                 />
             </div>
         </button>

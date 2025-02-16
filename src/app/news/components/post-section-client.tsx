@@ -1,19 +1,12 @@
 'use client'
-import MobileDecoratedImage from "@/app/(mobile)/_components/mobile-decorated-image";
+
 import MobileH1 from "@/app/(mobile)/_components/mobile-h1";
-import Badge from "@/app/_components/badge";
-import DecoratedImage from "@/app/_components/decorated-image";
 import { apexFont } from "@/assets/fonts";
 import H2 from "@/components/h2";
-import Section from "@/components/section";
-import { useNavigationHandlers } from "@/lib/helpers";
 import { Post } from "@/utils/models/Post";
 import Markdown from "markdown-to-jsx";
 import ImageCarousel from "./lightgallery";
-import MobilePostFooter from "@/app/(mobile)/_components/mobile-post-footer";
-import PostFooter from "@/app/_components/post-footer";
-import MobileLatestPostsSection from "@/app/(mobile)/_sections/mobile-latest-posts-section";
-import LatestPosts from "@/app/_sections/latest-posts";
+import dynamic from "next/dynamic";
 
 const PostSectionClient = (
     {
@@ -29,6 +22,15 @@ const PostSectionClient = (
         author: any | undefined
     }
 ) => {
+
+    const Section = dynamic(() => import('@/components/section'));
+    const Badge = dynamic(() => import('@/app/_components/badge'));
+    const DecoratedImage = dynamic(() => import('@/app/_components/decorated-image'));
+    const MobileDecoratedImage = dynamic(() => import('@/(mobile)/_components/mobile-decorated-image'));
+    const MobilePostFooter = dynamic(() => import('@/(mobile)/_components/mobile-post-footer'));
+    const PostFooter = dynamic(() => import('@/app/_components/post-footer'));
+    const MobileLatestPostsSection = dynamic(() => import('@/(mobile)/_sections/mobile-latest-posts-section'), { ssr: false });
+    const LatestPosts = dynamic(() => import('@/sections/latest-posts'), { ssr: false });
 
     return (
         <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 md:mt-10 mt-24 overflow-hidden ${ isMobile && 'mb-16' }`}>
