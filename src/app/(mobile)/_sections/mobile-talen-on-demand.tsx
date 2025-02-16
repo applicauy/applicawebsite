@@ -1,16 +1,16 @@
 "use client"
 import Image from "next/image";
 import { avigeaFont } from "@/assets/fonts";
-import Section from "@/components/section";
 import MobileButton from "../_components/mobile-button";
 import MobileGradientBall from "../_components/mobile-gradient-ball";
 import MobileH2 from "../_components/mobile-h2";
-import MobileH3 from "../_components/mobile-h3";
 import { /*onStartNowClick,*/ useNavigationHandlers } from "@/lib/helpers";
-import mapImg from "@/assets/mapa.png";
+import mapImg from "@/assets/mapa.webp";
 import MobileH1 from "../_components/mobile-h1";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import dynamic from "next/dynamic";
+import Section from "@/components/section";
 
 
 /**
@@ -100,6 +100,7 @@ export default function MobileTalenOnDemand() {
                     src={mapImg}
                     width={1000}
                     alt="Applica offices across the world"
+                    loading="lazy"
                 />
             </motion.div>
         </Section>

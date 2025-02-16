@@ -1,16 +1,17 @@
 'use client'
 
-import Section from "@/components/section";
 import { avigeaFont } from "@/assets/fonts";
 import ProcessItem, { ContentPosition } from "@/app/_components/process-item";
 import MobileProcessItemBody from "../_components/mobile-proccess-item-body";
-import icon72Hours from "@/assets/icons/72-hours.svg";
+import icon72Hours from "@/assets/icons/72-hours.webp";
 import Image from "next/image";
 import MobileH2 from "../_components/mobile-h2";
 import MobileH1 from "../_components/mobile-h1";
 import MobileProcessItem from "../_components/mobile-process-item";
+import dynamic from "next/dynamic";
 
 export default function MobileProcessSection() {
+    const Section = dynamic(() => import('@/components/section'));
     return (
         <Section className={`flex flex-col items-center w-full`}>
             <div id="hiring-process"/>
@@ -49,7 +50,7 @@ export default function MobileProcessSection() {
                 </ProcessItem>
 
                 <MobileProcessItem
-                    customIcon={<Image src={icon72Hours} alt="72 hours Icon" width={100} />}
+                    customIcon={<Image src={icon72Hours} alt="72 hours Icon" width={100} loading="lazy"/>}
                     contentPosition={ContentPosition.Right}
                     className="gap-3 md:gap-10"
                 >
