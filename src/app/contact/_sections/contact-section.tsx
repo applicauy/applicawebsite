@@ -5,8 +5,7 @@ import StrongText from "@/app/_components/strong-text";
 import Button from "@/components/button";
 import H2 from "@/components/h2";
 import H4 from "@/components/h4";
-import placeholderImg from '@/assets/placeholder-img-2.png';
-import isMobile from 'react-device-detect';
+import placeholderImg from '@/assets/placeholder-img-2.webp';
 import MobileButton from "@/app/(mobile)/_components/mobile-button";
 import MobileDecoratedImage from "@/app/(mobile)/_components/mobile-decorated-image";
 

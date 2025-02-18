@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
 import MobileH5 from "./mobile-h5";
-import boxImg from '@/assets/shapes/box-benefits.svg';
+import boxImg from '@/assets/shapes/box-benefits.webp';
 import MobileH2 from "./mobile-h2";
 
 export default function MobileBenefit({
@@ -19,11 +19,13 @@ export default function MobileBenefit({
                     src={ imageSrc }
                     alt={ imageAlt }
                     className="rounded-lg img-benefit-mobile"
+                    loading="lazy"
                 />
                 <Image
                     src={ boxImg } 
                     alt="Border" 
                     className="absolute inset-16 pointer-events-none image-border-benefit-mobile"
+                    loading="lazy"
                 />
             </div>
             <MobileH2>{children}</MobileH2>

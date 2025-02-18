@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react'
-import arrowIcon from '@/assets/icons/arrow-right.svg';
+import arrowIcon from '@/assets/icons/arrow-right.webp';
 
 import { useNavigationHandlers } from '@/lib/helpers';
 
@@ -33,6 +33,7 @@ export default function Card(
                         height={25}
                         alt="Arrow Icon"
                         color="transparent"
+                        loading="lazy"
                     />
             </div>
            </div>

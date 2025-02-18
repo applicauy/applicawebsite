@@ -1,13 +1,16 @@
 'use client'
 import { avigeaFont } from '@/assets/fonts'
 import H2 from '@/components/h2'
-import Section from '@/components/section'
 import Image from 'next/image';
-import backgroundImg from '@/assets/background/gradient.svg';
-import LatestPostsClient from '../_components/latest-posts-client';
+import backgroundImg from '@/assets/background/gradient.webp';
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 
 export default function LatestPosts() {
+  
+  const Section = dynamic(() => import('@/components/section'));
+  const LatestPostsClient = dynamic(() => import('@/app/_components/latest-posts-client'), { ssr: false });
+
   return (
     <Section className="relative flex flex-col gap-8 mb-20">
       <motion.div
@@ -21,9 +24,10 @@ export default function LatestPosts() {
           <Image
             src={backgroundImg}
             alt="Background Image"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
             className="w-full h-full"
+            loading="lazy"
           />
         </div>
         <div className="w-full z-[1] block">

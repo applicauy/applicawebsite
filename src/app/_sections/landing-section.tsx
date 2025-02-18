@@ -1,17 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Section from "@/components/section";
 import Button from "@/components/button";
 import { avigeaFont } from "@/assets/fonts";
 import H2 from "@/components/h2";
 import H1 from "@/components/h1";
-import H3 from "@/components/h3";
+import dynamic from "next/dynamic";
 
 export default function LandingSection() {
     const onStartNowClick = () => {
         window.location.href = "/contact";
     };
+
+    const Section = dynamic(() => import('@/components/section'));
+
     return (
         <Section className="py-10 md:py-24">
             {/* Example of how to utilize motion's animation upon the user's first view (it 

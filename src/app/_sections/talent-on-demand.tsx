@@ -1,15 +1,16 @@
 "use client";
 import Image from "next/image";
 import { avigeaFont } from "@/assets/fonts";
-import Section from "@/components/section";
 import Button from "@/components/button";
 import GradientBall from "../_components/gradient-ball";
 import H2 from "@/components/h2";
 import H3 from "@/components/h3";
 import { /*onStartNowClick,*/ useNavigationHandlers } from "@/lib/helpers";
-import mapImg from "@/assets/mapa.png";
+import mapImg from "@/assets/mapa.webp";
 import { useInView } from "react-intersection-observer";
 import { motion } from 'framer-motion';
+import dynamic from "next/dynamic";
+import Section from "@/components/section";
 
 /**
  * Renders the Talent on demand.
@@ -22,7 +23,7 @@ export default function TalentOnDemand() {
         triggerOnce: true,
         threshold: 0.9,
       });
-
+    
     return (
         <Section className="flex flex-col md:flex-row gap-8">
             <motion.div
@@ -98,6 +99,7 @@ export default function TalentOnDemand() {
                         src={mapImg}
                         width={800}
                         alt="Applica offices across the world"
+                        loading="lazy"
                     />
                 </div>
             </motion.div>

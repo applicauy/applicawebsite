@@ -33,6 +33,7 @@ export default function ImageCarousel(
                                 height={300}
                                 width={500}
                                 unoptimized
+                                loading="lazy"
                             />
                         </a>
                     ))}

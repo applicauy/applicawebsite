@@ -1,12 +1,8 @@
 'use client';
 import MobileDetect from "mobile-detect";
 import { useEffect, useState } from "react";
-import MobileNavBar from "./(mobile)/_components/mobile-navbar";
-import NavBar from "./_components/navbar";
-import MobileFooter from "./(mobile)/_components/mobile-footer";
-import Footer from "./_components/footer";
 import Image from "next/image";
-import backgroundImg from '@/assets/background/gradient.svg';
+import backgroundImg from '@/assets/background/gradient.webp';
 
 import { GoogleTagManager } from "@next/third-parties/google";
 import TrackPageView from "../components/track-page-view";
@@ -17,7 +13,7 @@ const GTM_ID = "GTM-PQ3DNDZ";
 import { Inter } from "next/font/google";
 import Loading from "@/components/loading";
 import { usePathname } from "next/navigation";
-import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 const inter = Inter({ subsets: ["latin"] });
 
 
@@ -113,6 +109,14 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
             
         }
     }, []); 
+
+    const MobileNavBar = dynamic(() => import('@/(mobile)/_components/mobile-navbar'), { ssr: false });
+    const MobileFooter = dynamic(() => import('@/(mobile)/_components/mobile-footer'));
+
+    
+    const NavBar = dynamic(() => import('@/app/_components/navbar'), { ssr: false });
+    const Footer = dynamic(() => import('@/app/_components/footer'));
+    
     
     return (
         <body className={`${inter.className} overflow-x-hidden ${ isMobile && 'mobile-layout' }`}>
@@ -124,6 +128,7 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
                         src={backgroundImg}
                         alt = "Background Image"
                         className="w-full object-cover"
+                        priority
                     />
                 </div>
             }

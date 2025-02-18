@@ -38,6 +38,8 @@ export const apexFont = localFont({
       style: "italic",
     },
   ],
+  display: 'swap',
+  preload: true
 });
 
 export const avigeaFont = localFont({
@@ -53,4 +55,6 @@ export const avigeaFont = localFont({
       weight: "400",
     },
   ],
+  display: 'swap',
+  preload: true
 });
