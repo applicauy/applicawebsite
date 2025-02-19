@@ -17,7 +17,7 @@ export default function MobileLatestPostsSection(
     }
 ) {
   const Section = dynamic(() => import('@/components/section'));
-  const LatestPostsClient = dynamic(() => import('@/app/_components/latest-posts-client'), { ssr: false });
+  const LatestPostsClient = dynamic(() => import('@/app/_components/latest-posts-client'));
   
   return (
     <Section className="flex flex-col md:gap-20">

@@ -9,7 +9,7 @@ import dynamic from 'next/dynamic';
 export default function LatestPosts() {
   
   const Section = dynamic(() => import('@/components/section'));
-  const LatestPostsClient = dynamic(() => import('@/app/_components/latest-posts-client'), { ssr: false });
+  const LatestPostsClient = dynamic(() => import('@/app/_components/latest-posts-client'));
 
   return (
     <Section className="relative flex flex-col gap-8 mb-20">
