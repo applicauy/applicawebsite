@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 export default function BlogSection() {
     
     const Section = dynamic(() => import('@/components/section'));
-    const PostCard = dynamic(() => import('@/app/_components/post-card'), { ssr: false });
+    const PostCard = dynamic(() => import('@/app/_components/post-card'));
 
     return (
         <Section className="flex flex-col" >
