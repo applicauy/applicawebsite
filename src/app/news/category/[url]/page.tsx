@@ -4,8 +4,7 @@ import { Cateogry } from "@/utils/models/Category";
 import MobileDetect from "mobile-detect";
 import { Metadata } from "next";
 import { headers } from "next/headers";
-import NewsFilter from "../../components/news-filter";
-import MobileLetsTalkSection from "@/app/(mobile)/_sections/mobile-lets-talk-section";
+import dynamic from "next/dynamic";
 
 interface Props {
   params: { url: string }
@@ -38,11 +37,12 @@ const page = async ( { params } : Props ) => {
 
     const category: Cateogry | undefined = await findCategory( params.url );
 
+    const NewsFilter = dynamic(() => import('@/app/news/components/news-filter'), { ssr: false });
+    const MobileLetsTalkSection = dynamic(() => import('@/(mobile)/_sections/mobile-lets-talk-section'), { ssr: false });
+
     return (
         <>
             <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 mt-20 md:mt-8`}>
-                {/* <span className="text-highlight text-3xl">Category:</span> <span className="text-secondary-text text-3xl">{ category!.name }</span>
-                <hr/> */}
                 <NewsFilter isMobile = { isMobile } category = { category }/>
             </div>
             {

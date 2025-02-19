@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import { MouseEventHandler, PropsWithChildren } from "react";
-import arrowIcon from "@/assets/icons/arrow-right.svg";
+import arrowIcon from "@/assets/icons/arrow-right.webp";
 import H4 from "@/components/h4";
 
 // Component used to represent a post card.
@@ -21,6 +21,7 @@ export default function PostCard({
                     src={imageSrc}
                     alt={imageAlt}
                     className="object-cover object-center"
+                    loading="lazy"
                 />
             </div>
 
@@ -40,6 +41,7 @@ export default function PostCard({
                             width={40}
                             alt="Arrow Icon"
                             color="transparent"
+                            loading="lazy"
                         />
                     </button>
                 </div>

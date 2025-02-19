@@ -1,16 +1,19 @@
 'use client'
-import Section from "@/components/section";
+
 import { avigeaFont } from "@/assets/fonts";
 import ProcessItem, { ContentPosition } from "../_components/process-item";
 import ProcessItemBody from "../_components/process-item-body";
-import icon72Hours from "@/assets/icons/72-hours.svg";
+import icon72Hours from "@/assets/icons/72-hours.webp";
 import Image from "next/image";
 import H2 from "@/components/h2";
 import H3 from "@/components/h3";
-import H4 from "@/components/h4";
 import { motion } from 'framer-motion';
+import dynamic from "next/dynamic";
 
 export default function ProcessSection() {
+    
+    const Section = dynamic(() => import('@/components/section'));
+
     return (
         <Section className="flex flex-col items-center w-full">
             
@@ -57,7 +60,7 @@ export default function ProcessSection() {
                     </ProcessItem>
 
                     <ProcessItem
-                        customIcon={<Image src={icon72Hours} alt="72 hours Icon" width={250} />}
+                        customIcon={<Image src={icon72Hours} alt="72 hours Icon" width={250} loading="lazy"/>}
                         contentPosition={ContentPosition.Right}
                         className="gap-3 md:gap-10"
                     >

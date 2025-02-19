@@ -9,18 +9,11 @@ import {
   TwitterShareButton,
   WhatsappShareButton,
 } from 'react-share';
-
-import {
-  FacebookIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  WhatsappIcon,
-} from 'react-share';
-import facebookLogoImg from '@/assets/facebook.png';
-import xLogoImg from '@/assets/x.png';
-import linkedinLogoImg from '@/assets/linkedin.png';
-import emailLogoImg from '@/assets/email.png';
-import whatsappLogoImg from '@/assets/whatsapp.png';
+import facebookLogoImg from '@/assets/facebook.webp';
+import xLogoImg from '@/assets/x.webp';
+import linkedinLogoImg from '@/assets/linkedin.webp';
+import emailLogoImg from '@/assets/email.webp';
+import whatsappLogoImg from '@/assets/whatsapp.webp';
 import Image from 'next/image';
 
 export default function ShareButtons(
@@ -54,6 +47,7 @@ export default function ShareButtons(
                     width={45}
                     height={45}
                     className='rounded-full'
+                    loading="lazy"
               />
             </div>
           </FacebookShareButton>
@@ -66,6 +60,7 @@ export default function ShareButtons(
                   width={45}
                   height={45}
                   className='rounded-full'
+                  loading="lazy"
               />
             </div>
           </TwitterShareButton>
@@ -79,6 +74,7 @@ export default function ShareButtons(
                   width={45}
                   height={45}
                   className='rounded-full'
+                  loading="lazy"
               />
             </div>
           </LinkedinShareButton>
@@ -92,6 +88,7 @@ export default function ShareButtons(
                   width={45}
                   height={45}
                   className='rounded-full'
+                  loading="lazy"
               />
             </div>
           </EmailShareButton>
@@ -104,6 +101,7 @@ export default function ShareButtons(
                   width={45}
                   height={45}
                   className='rounded-full'
+                  loading="lazy"
               />
             </div>
           </WhatsappShareButton>
