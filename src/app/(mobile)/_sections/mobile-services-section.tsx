@@ -16,6 +16,7 @@ import {
 import MobileH1 from "../_components/mobile-h1";
 import MobileDecoratedImage from "../_components/mobile-decorated-image";
 import dynamic from "next/dynamic";
+import MobileH2 from "../_components/mobile-h2";
 
 export default function MobileServicesSection() {
     const { onMeetOurProcessClick } = useNavigationHandlers();
@@ -100,11 +101,11 @@ export default function MobileServicesSection() {
                     for your venture
                 </MobileH1>
 
-                <MobileH3>
+                <MobileH2>
                     Whether you need a specialized skillset, a temporary highly
                     qualified developer, a Senior team lead, or just more hands
                     on deck, our nearshore IT talents are here to help.
-                </MobileH3>
+                </MobileH2>
 
                 <MobileButton onClick={onMeetOurProcessClick}>
                     Meet our process

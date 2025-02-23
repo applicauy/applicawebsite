@@ -26,7 +26,7 @@ const MobileFooter = (
                 <div className="w-3/5">
                     <div className="max-w-40">
                         <a href="/">
-                            <Image alt="Applica's logo" src={logo} loading="lazy"/>
+                            <Image alt="Applica's logo" src={logo} loading="lazy" width={200} height={35}/>
                         </a>
                     </div>
                 </div>
@@ -36,21 +36,21 @@ const MobileFooter = (
                             href="https://www.linkedin.com/company/applica-corp/"
                             target="_blank"
                         >
-                            <Image src={linkedinIcon} alt="LinkedIn" width={32} loading="lazy"/>
+                            <Image src={linkedinIcon} alt="LinkedIn" width={32} height={32} loading="lazy"/>
                         </a>
 
                         <a
                             href="https://www.instagram.com/applica.corp/"
                             target="_blank"
                         >
-                            <Image src={instagramIcon} alt="Instagram" width={32} loading="lazy"/>
+                            <Image src={instagramIcon} alt="Instagram" width={32} height={32} loading="lazy"/>
                         </a>
 
                         <a
                             href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay"
                             target="_blank"
                         >
-                            <Image src={clutchIcon} alt="Clutch" width={32} loading="lazy"/>
+                            <Image src={clutchIcon} alt="Clutch" width={32} height={32} loading="lazy"/>
                         </a>
                     </div>
                 </div>
@@ -102,8 +102,8 @@ const MobileFooter = (
             <div className="flex justify-between items-center py-2 sm:py-4 md:py-8">
                 <div className="w-3/5">
                     <div className="flex gap-4">
-                        <Image src={clutchStarsImg} alt="Clutch Stars" height={60} loading="lazy"/>
-                        <Image src={clutchRecognitionImg} alt="Clutch Recognition" height={60} loading="lazy"/>
+                        <Image src={clutchStarsImg} alt="Clutch Stars" height={60} width={100} loading="lazy"/>
+                        <Image src={clutchRecognitionImg} alt="Clutch Recognition" height={60} width={60}loading="lazy"/>
                     </div>
                 </div>
                 <div className="w-2/5">

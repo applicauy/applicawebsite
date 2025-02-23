@@ -1,13 +1,13 @@
 import { PropsWithChildren } from "react";
 
-const H1 = ({
+const H1Main = ({
     children,
     className,
 }: PropsWithChildren<{ className?: string }>) => {
     return (
         <h1
             className={
-                "text-3xl md:text-6xl" +
+                "text-lg md:text-3xl text-violet" +
                 (className ? " " + className : "")
             }
         >
@@ -16,4 +16,4 @@ const H1 = ({
     );
 };
 
-export default H1;
+export default H1Main;

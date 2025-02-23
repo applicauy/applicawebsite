@@ -39,6 +39,7 @@ export default function MobileSideMenu({
                                         type="button"
                                         onClick={changeState}
                                         className="relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+                                        aria-label="Close panel"
                                     >
                                         <span className="absolute -inset-2.5" />
                                         <span className="sr-only">
@@ -60,6 +61,8 @@ export default function MobileSideMenu({
                                                 src={logo}
                                                 className="h-14 md:h-20 w-auto"
                                                 loading="lazy"
+                                                height={100}
+                                                width={100}
                                             />
                                         </a>
                                     </DialogTitle>

@@ -5,6 +5,7 @@ import H2 from "@/components/h2";
 import { benefits } from "@/utils/models/Benefits";
 import { motion } from 'framer-motion';
 import dynamic from "next/dynamic";
+import H1 from "@/components/h1";
 
 export default function BenefitsSection() {
     

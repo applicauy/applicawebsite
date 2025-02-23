@@ -8,6 +8,8 @@ import H4 from "@/components/h4";
 import placeholderImg from '@/assets/placeholder-img-2.webp';
 import MobileButton from "@/app/(mobile)/_components/mobile-button";
 import MobileDecoratedImage from "@/app/(mobile)/_components/mobile-decorated-image";
+import H1 from "@/components/h1";
+import H3 from "@/components/h3";
 
 export default function ContactSection(
     {
@@ -25,7 +27,7 @@ export default function ContactSection(
                     Looking for help to{" "}
                     <StrongText content="ramp up your development" />
                 </H2>
-                <H4 className="mb-8 text-highlight text-center md:text-start">Let&apos;s #MakeIThappen</H4>
+                <H3 className="mb-8 text-highlight text-center md:text-start">Let&apos;s #MakeIThappen</H3>
                 <div className="mb-6">
                     <p className="text-xl md:text-3xl text-center md:text-start">
                         First, we need some information from you. <br />

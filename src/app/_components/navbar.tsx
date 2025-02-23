@@ -28,6 +28,8 @@ export default function NavBar(
                             src={logo}
                             className="h-14 md:h-20 w-auto"
                             loading="lazy"
+                            width={300}
+                            height={100}
                         />
                     </a>
                 </div>

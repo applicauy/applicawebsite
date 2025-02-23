@@ -5,14 +5,14 @@ const MobileH2 = ({
     className,
 }: PropsWithChildren<{ className?: string }>) => {
     return (
-        <h2
+        <h3
             className={
                 "text-xl md:text-3xl leading-none" +
                 (className ? " " + className : "")
             }
         >
             {children}
-        </h2>
+        </h3>
     );
 };
 

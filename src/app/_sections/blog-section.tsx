@@ -1,5 +1,6 @@
 import { avigeaFont } from "@/assets/fonts";
 import placeholderImg from "@/assets/placeholder-img-2.webp";
+import H1 from "@/components/h1";
 import H2 from "@/components/h2";
 import dynamic from "next/dynamic";
 

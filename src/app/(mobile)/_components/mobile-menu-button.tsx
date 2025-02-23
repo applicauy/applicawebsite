@@ -11,7 +11,7 @@ const MobileMenuButton = (
     }
 ) => {  
     return (
-      <button onClick={onClick} className={styles.menuButton}>
+      <button onClick={onClick} className={styles.menuButton} aria-label = "Hamburger menu">
         <div className={`${styles.burger} ${isOpen ? styles.open : ''}`}>
           <span></span>
           <span></span>

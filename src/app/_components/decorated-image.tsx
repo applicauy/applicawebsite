@@ -47,6 +47,8 @@ export default function DecoratedImage({
                 alt="Border" 
                 className={ `absolute inset-16 pointer-events-none ${ fromPost ? 'image-border-blog' : 'image-border' }` }
                 loading="lazy"
+                height={150}
+                width={300}
             /> 
 
             {
@@ -56,6 +58,8 @@ export default function DecoratedImage({
                         alt="Line"
                         className={`${ fromPost ? 'left-line-blog' : 'left-line' }`}
                         loading="lazy"
+                        height={fromPost ? 150 : 100 }
+                        width={ fromPost ? 300 : 200 }
                     />
             }
 
@@ -66,6 +70,8 @@ export default function DecoratedImage({
                         alt="Line"
                         className={`${ fromPost ? 'right-line-blog' : 'right-line' }`}
                         loading="lazy"
+                        height={fromPost ? 415 : 300}
+                        width={ fromPost ? 750 : 600}
                     />
             }
            

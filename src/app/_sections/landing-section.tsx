@@ -6,6 +6,7 @@ import { avigeaFont } from "@/assets/fonts";
 import H2 from "@/components/h2";
 import H1 from "@/components/h1";
 import dynamic from "next/dynamic";
+import H1Main from "@/components/h1-main";
 
 export default function LandingSection() {
     const onStartNowClick = () => {
@@ -26,7 +27,7 @@ export default function LandingSection() {
                 transition={{ duration: 0.6 }}
             >
                 <div className="w-[80%]">
-                    <H1 className="mb-5">Build your dream team with top nearshore IT talent</H1>
+                    <H1Main className="mb-5">Build your dream team with top nearshore IT talent</H1Main>
                     <H2 className="mb-12">
                         We are a software company focused on{" "}
                         <span
