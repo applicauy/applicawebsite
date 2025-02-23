@@ -14,7 +14,7 @@ export async function generateMetadata( { params }: Props ): Promise<Metadata> {
     
   const category: Cateogry | undefined = await findCategory( params.url );
   return {
-    title: `News category ${ category?.name }`,
+    title: `Category | ${ category?.name }`,
     description: `${ category ? category.meta_description : '' }`,
     keywords: []
   }
@@ -42,6 +42,7 @@ const page = async ( { params } : Props ) => {
 
     return (
         <>
+            <h1 className="sr-only">{ category?.name }</h1>
             <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 mt-20 md:mt-8`}>
                 <NewsFilter isMobile = { isMobile } category = { category }/>
             </div>

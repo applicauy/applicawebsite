@@ -76,7 +76,7 @@ export default function NewsFilter(
                         aria-label="Show more"
                     >
                         <div className="flex flex-col justify-center pb-1">
-                            <H4 className={`relative ${ !isMobile && 'translate-y-[2px]' }`}>Show more</H4>
+                            <span className={`text-2xl md:text-3xl leading-none relative ${ !isMobile && 'translate-y-[2px]' }`}>Show more</span>
                         </div>
 
                         <div
