@@ -14,8 +14,8 @@ export async function generateMetadata( { params }: Props ): Promise<Metadata> {
     
   const category: Cateogry | undefined = await findCategory( params.url );
   return {
-    title: `Category | ${ category?.name }`,
-    description: `${ category ? category.meta_description : '' }`,
+    title: `${ category?.meta_title } | Applica Corp.`,
+    description: `${ category?.meta_description }`,
     keywords: []
   }
 }

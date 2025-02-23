@@ -16,4 +16,5 @@ export interface Post {
     content: string;
     medias?: any[] | Slide[];
     meta_description?: string;
+    meta_title?: string;
 }

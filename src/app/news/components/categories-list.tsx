@@ -10,6 +10,7 @@ type Tag = {
     name: string;
     url: string;
     meta_description: string;
+    meta_title: string;
 };
 
 const CategoriesList = () => {

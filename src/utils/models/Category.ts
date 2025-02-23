@@ -3,4 +3,5 @@ export interface Cateogry {
     name: string;
     url: string;
     meta_description: string;
+    meta_title: string;
 }
