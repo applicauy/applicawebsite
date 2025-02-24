@@ -6,9 +6,11 @@ import { useEffect, useState } from "react";
 import backgroundImg from '@/assets/background/gradient-mobile.webp';
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 
 
 export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile: boolean }) {
+    const pathName = usePathname();
     const [isMobile, setIsMobile] = useState(initialIsMobile);
 
     useEffect(() => {
@@ -48,7 +50,10 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
                 </div>
             }
             
-            {/* <h1 className="sr-only">Applica Corp.</h1> */}
+            { 
+                ['/', '/#about-us', '/#services', '/#benefits', '/#hiring-process'].includes( pathName ) && 
+                    <h1 className="sr-only">Applica Corp.</h1> 
+            }
             { isMobile ?  <MobileLandingSection /> : <LandingSection /> }
             { isMobile ? <MobileServicesSection /> : <AboutUs /> }
             { isMobile ? <MobileBenefitsSection /> : <BenefitsSection /> }
