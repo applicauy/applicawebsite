@@ -1,14 +1,11 @@
-import FormSection from "./_sections/form-section";
 import { apexFont } from "@/assets/fonts";
-import ContactSection from "./_sections/contact-section";
 import { headers } from "next/headers";
 import MobileDetect from "mobile-detect";
-import MobileLetsTalkSection from "../(mobile)/_sections/mobile-lets-talk-section";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
-    title: 'Contact',
+    title: 'Contact | Applica Corp.',
     description: 'Looking for staff augmentation solutions? Contact Applica Corp to discover the perfect IT talent for your project and drive your success.',
     keywords: ['contact', 'staff augmentation', 'solutions', 'project', 'success', 'information']
 };

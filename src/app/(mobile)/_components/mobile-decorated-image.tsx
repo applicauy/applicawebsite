@@ -43,6 +43,8 @@ export default function MobileDecoratedImage({
                 alt="Border" 
                 className={`absolute inset-16 pointer-events-none ${ fromPost ? 'image-border-mobile-post' : 'image-border-mobile' }`}
                 loading="lazy"
+                height={300}
+                width={600}
             /> 
 
             <Image
@@ -50,12 +52,16 @@ export default function MobileDecoratedImage({
                 alt="Line"
                 className={ `md:left-line ${ fromPost ? 'left-line-blog-mobile' : 'left-line-mobile' }` }
                 loading="lazy"
+                height={150}
+                width={300}
             />
             <Image
                 src={ rightLineImg }
                 alt="Line"
                 className={ `md:right-line  ${ fromPost ? 'right-line-blog-mobile' : 'right-line-mobile' }` }
                 loading="lazy"
+                height={150}
+                width={300}
             />
         </>
     );

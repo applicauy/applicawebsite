@@ -3,7 +3,7 @@
 import { apexFont } from "@/assets/fonts";
 import MobileDetect from "mobile-detect";
 import { useEffect, useState } from "react";
-import backgroundImg from '@/assets/background/gradient.webp';
+import backgroundImg from '@/assets/background/gradient-mobile.webp';
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
@@ -34,19 +34,21 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
     const LatestPosts = dynamic(() => import('@/sections/latest-posts'));
 
     return (
-        <main className={`${apexFont.className} flex flex-col items-center min-h-screen justify-between gap-20 md:gap-36 mt-24 md:mt-0 md:px-24 ${ isMobile && 'overflow-hidden' }`}>
+        <main className={`${apexFont.className} flex flex-col items-center min-h-[600px] justify-between gap-20 md:gap-36 mt-24 md:mt-0 md:px-24 ${ isMobile && 'overflow-hidden' }`}>
             {
                 isMobile &&
                 <div className="absolute right-0 w-[100%] z-[-1]">
                     <Image
                         src={backgroundImg}
                         alt = "Background Image"
-                        className="w-full object-cover"
-                        priority 
+                        className="w-full h-auto object-contain"
+                        loading="lazy"
+                        quality={50}
                     />
                 </div>
             }
-            <h1 className="sr-only">Applica Corp.</h1>
+            
+            {/* <h1 className="sr-only">Applica Corp.</h1> */}
             { isMobile ?  <MobileLandingSection /> : <LandingSection /> }
             { isMobile ? <MobileServicesSection /> : <AboutUs /> }
             { isMobile ? <MobileBenefitsSection /> : <BenefitsSection /> }

@@ -38,8 +38,9 @@ export default function MobileButton({
             className={`flex z-20 justify-center px-3 md:px-3 py-2 items-center border rounded-full font-medium w-fit text-sm md:text-base leading-none transition-all duration-300 ${ highlightedArrow ? "border-highlight active:bg-highlight active:text-black" : "border-white active:bg-white active:text-black" }`}
             type={type}
             disabled={disabled}
+            aria-label={typeof children === "string" ? children : undefined}
         >
-            <MobileH4 className="relative top-0.5 pl-2 pr-2 text-2xl pb-1">{children}</MobileH4>
+            <span className="relative md:text-3xl leading-none top-0.5 pl-2 pr-2 text-2xl pb-1">{children}</span>
 
             <div
                 className={`rounded-full w-10 h-10 md:w-${highlightedArrow ? "10" : "8"} p-1.5 md:p-2.5 ms-2 md:ms-3 ${highlightedArrow ? "bg-highlight" : "bg-white"}`}
@@ -50,6 +51,8 @@ export default function MobileButton({
                     alt="Arrow Icon"
                     color="transparent"
                     loading="lazy"
+                    height={50}
+                    width={50}
                 />
             </div>
         </button>

@@ -21,6 +21,8 @@ export default function MobilePostCard({
                     alt={imageAlt}
                     className="object-cover object-center h-full w-full"
                     loading="lazy"
+                    width={100}
+                    height={75}
                 />
             </div>
 
@@ -38,7 +40,7 @@ export default function MobilePostCard({
 
                 {/* Button container */}
                 <div className="shrink-0">
-                    <button className="rounded-full p-2 bg-highlight flex items-center justify-center">
+                    <button className="rounded-full p-2 bg-highlight flex items-center justify-center" aria-label="Go to the post">
                         <Image
                             src={arrowIcon}
                             height={10}

@@ -9,6 +9,7 @@ import H2 from "@/components/h2";
 import H3 from "@/components/h3";
 import { motion } from 'framer-motion';
 import dynamic from "next/dynamic";
+import H1 from "@/components/h1";
 
 export default function ProcessSection() {
     
@@ -60,7 +61,7 @@ export default function ProcessSection() {
                     </ProcessItem>
 
                     <ProcessItem
-                        customIcon={<Image src={icon72Hours} alt="72 hours Icon" width={250} loading="lazy"/>}
+                        customIcon={<Image src={icon72Hours} alt="72 hours Icon" width={250} height={250} loading="lazy"/>}
                         contentPosition={ContentPosition.Right}
                         className="gap-3 md:gap-10"
                     >

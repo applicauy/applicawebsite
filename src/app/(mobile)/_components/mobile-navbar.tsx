@@ -57,7 +57,7 @@ const MobileNavBar = (
         >
             <div className="max-w-48 z-[1100]">
                 <a href="/">
-                    <Image alt="Applica's logo" src={logo} loading="lazy"/>
+                    <Image alt="Applica's logo" src={logo} loading="lazy" width={300} height={100}/>
                 </a>
             </div>
             <MobileMenu onMenuClick = { (event: any) => onMenuClick( event ) } handleScroll = { handleScrollFromClick } />

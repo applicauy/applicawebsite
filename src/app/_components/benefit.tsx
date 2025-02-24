@@ -20,12 +20,16 @@ export default function Benefit({
                 alt={ imageAlt }
                 className="rounded-lg img-benefit"
                 loading="lazy"
+                height={150}
+                width={300}
             />
             <Image
                 src={ boxImg } 
                 alt="Border" 
                 className="absolute inset-16 pointer-events-none image-border-benefit"
                 loading="lazy"
+                height={150}
+                width={300}
             />
         </div>
             <span className="text-sm md:text-lg leading-tight">{children}</span>

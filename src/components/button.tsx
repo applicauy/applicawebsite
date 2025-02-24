@@ -55,9 +55,10 @@ export default function Button({
             className={`flex content-center pe-2.5 md:pe-4 ps-6 md:ps-9 py-2 items-center border ${ highlightedArrow ? 'border-highlight' : 'border-white' } rounded-full font-medium w-fit ${ largeText ? 'text-4xl' : 'text-3xl' } leading-none transition-all duration-300 ${ highlightedArrow ? 'hover:bg-highlight' : 'hover:bg-white' } hover:text-black`}
             type={type}
             disabled={disabled}
+            aria-label={typeof children === "string" ? children : undefined}
         >
             <div className="flex flex-col justify-center pb-1">
-                <H4 className={`relative ${ largeText && 'translate-y-[2px]' }`}>{children}</H4>
+                <span className={`relative text-2xl md:text-3xl leading-none ${ largeText && 'translate-y-[2px]' }`}>{children}</span>
             </div>
 
             <div
@@ -71,6 +72,8 @@ export default function Button({
                     alt="Arrow Icon"
                     color="transparent"
                     loading="lazy"
+                    width={75}
+                    height={75}
                 />
             </div>
         </button>

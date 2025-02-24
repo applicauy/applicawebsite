@@ -8,6 +8,8 @@ import H4 from "@/components/h4";
 import placeholderImg from '@/assets/placeholder-img-2.webp';
 import MobileButton from "@/app/(mobile)/_components/mobile-button";
 import MobileDecoratedImage from "@/app/(mobile)/_components/mobile-decorated-image";
+import H1 from "@/components/h1";
+import H3 from "@/components/h3";
 
 export default function ContactSection(
     {
@@ -21,11 +23,11 @@ export default function ContactSection(
     return (
         <div className="flex flex-col md:flex-row px-2 md:px-0">
             <div className="flex flex-col w-full md:w-1/2">
-                <H2 className="mb-4 text-center md:text-start">
+                <H1 className="mb-4 text-center md:text-start">
                     Looking for help to{" "}
                     <StrongText content="ramp up your development" />
-                </H2>
-                <H4 className="mb-8 text-highlight text-center md:text-start">Let&apos;s #MakeIThappen</H4>
+                </H1>
+                <H2 className="mb-8 text-highlight text-center md:text-start" subtitle = { true }>Let&apos;s #MakeIThappen</H2>
                 <div className="mb-6">
                     <p className="text-xl md:text-3xl text-center md:text-start">
                         First, we need some information from you. <br />

@@ -16,12 +16,16 @@ export default function BenefitImage({
                 alt={ imageAlt }
                 className="rounded-lg img-benefit"
                 loading="lazy"
+                width={500}
+                height={350}
             />
             <Image
                 src={ boxImg } 
                 alt="Border" 
                 className="absolute inset-16 pointer-events-none image-border-benefit"
                 loading="lazy"
+                width={500}
+                height={350}
             />
         </div>
     );

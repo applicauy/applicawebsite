@@ -22,6 +22,8 @@ export default function PostCard({
                     alt={imageAlt}
                     className="object-cover object-center"
                     loading="lazy"
+                    width={500}
+                    height={400}
                 />
             </div>
 
@@ -34,7 +36,7 @@ export default function PostCard({
 
                 {/* Button container */}
                 <div className="shrink-0">
-                    <button className="rounded-full size-fit p-2.5 bg-highlight">
+                    <button className="rounded-full size-fit p-2.5 bg-highlight" aria-label="Go to the post">
                         <Image
                             src={arrowIcon}
                             height={40}

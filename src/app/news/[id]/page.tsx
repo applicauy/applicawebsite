@@ -15,7 +15,7 @@ export async function generateMetadata( { params }: Props ): Promise<Metadata> {
     
   const post: Post | undefined = await findPost( params.id );
   return {
-    title: `${ post ? post?.title : '' }`,
+    title: `${ post ? post?.meta_title + ' | Applica Corp.' : '' }`,
     description: `${ post ? post?.meta_description : '' }`,
     keywords: []
   }

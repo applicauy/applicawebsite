@@ -20,12 +20,16 @@ export default function MobileBenefit({
                     alt={ imageAlt }
                     className="rounded-lg img-benefit-mobile"
                     loading="lazy"
+                    height={150}
+                    width={300}
                 />
                 <Image
                     src={ boxImg } 
                     alt="Border" 
                     className="absolute inset-16 pointer-events-none image-border-benefit-mobile"
                     loading="lazy"
+                    height={150}
+                    width={300}
                 />
             </div>
             <MobileH2>{children}</MobileH2>
