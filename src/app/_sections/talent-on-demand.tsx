@@ -11,6 +11,7 @@ import { useInView } from "react-intersection-observer";
 import { motion } from 'framer-motion';
 import dynamic from "next/dynamic";
 import Section from "@/components/section";
+import H1 from "@/components/h1";
 
 /**
  * Renders the Talent on demand.
@@ -98,6 +99,7 @@ export default function TalentOnDemand() {
                     <Image
                         src={mapImg}
                         width={800}
+                        height={800}
                         alt="Applica offices across the world"
                         loading="lazy"
                     />

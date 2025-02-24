@@ -2,7 +2,7 @@
 import MobileDetect from "mobile-detect";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import backgroundImg from '@/assets/background/gradient.webp';
+import backgroundImg from '@/assets/background/gradient-desktop.webp';
 
 import { GoogleTagManager } from "@next/third-parties/google";
 import TrackPageView from "../components/track-page-view";
@@ -121,17 +121,19 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
     return (
         <body className={`${inter.className} overflow-x-hidden ${ isMobile && 'mobile-layout' }`}>
             { loading && <Loading /> }
-            {
-                !isMobile &&
-                <div className="absolute top-0 right-0 w-[60%] z-[-1]">
+            {!isMobile && (
+                <div className="absolute top-0 right-0 max-w-[800px] w-[50vw] z-[-1]">
                     <Image
-                        src={backgroundImg}
-                        alt = "Background Image"
-                        className="w-full object-cover"
-                        priority
+                    src={backgroundImg}
+                    alt="Background Image"
+                    className="w-full h-auto object-contain mt-16"
+                    width={1280} 
+                    height={760} 
+                    loading="lazy"
+                    quality={80} 
                     />
                 </div>
-            }
+            )}
             { 
                 isMobile ? 
                     <MobileNavBar onMenuClick={handleMenuClick} handleScrollFromClick = { handleScroll } /> : 

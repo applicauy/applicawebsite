@@ -35,6 +35,7 @@ const PostSectionClient = (
     return (
         <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 md:mt-10 mt-24 overflow-hidden ${ isMobile && 'mb-16' }`}>
           <Section className="relative flex flex-col mb-4">
+            <h1 className="sr-only">{ post.title }</h1>
             <div className="flex flex-wrap gap-2 mb-5">
               {
                 post.tags.map(

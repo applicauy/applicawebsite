@@ -143,21 +143,21 @@ export default function Footer(
                                 href="https://www.linkedin.com/company/applica-corp/"
                                 target="_blank"
                             >
-                                <Image src={linkedinIcon} alt="LinkedIn" width={48} loading="lazy" />
+                                <Image src={linkedinIcon} alt="LinkedIn" width={48} height={48} loading="lazy" />
                             </a>
 
                             <a
                                 href="https://www.instagram.com/applica.corp/"
                                 target="_blank"
                             >
-                                <Image src={instagramIcon} alt="Instagram" width={48} loading="lazy" />
+                                <Image src={instagramIcon} alt="Instagram" width={48} height={48} loading="lazy" />
                             </a>
 
                             <a
                                 href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay"
                                 target="_blank"
                             >
-                                <Image src={clutchIcon} alt="Clutch" width={48} loading="lazy" />
+                                <Image src={clutchIcon} alt="Clutch" width={48} height={48} loading="lazy" />
                             </a>
                         </div>
 
@@ -170,6 +170,7 @@ export default function Footer(
                                     src={clutchStarsImg}
                                     alt="AplicaCorp at Clutch"
                                     width={250}
+                                    height={100}
                                     loading="lazy"
                                 />
                             </a>

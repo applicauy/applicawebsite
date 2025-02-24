@@ -99,6 +99,7 @@ export default function MobileTalenOnDemand() {
                 <Image
                     src={mapImg}
                     width={1000}
+                    height={100}
                     alt="Applica offices across the world"
                     loading="lazy"
                 />

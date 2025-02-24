@@ -20,7 +20,8 @@ const config: Config = {
                 // "secondary" because tailwind already adds a "muted" color.
                 "secondary-muted": "#848483",
                 "secondary-text": "#B69FE2",
-                "violet-background": "#6233CE"
+                "violet-background": "#6233CE",
+                "violet": "#b69fe2"
             }
         },
     },

@@ -1,3 +1,4 @@
+import H3 from "@/components/h3";
 import H4 from "@/components/h4";
 import { indexPosts, indexTags } from "@/utils/config/algolia-config";
 import { Cateogry } from "@/utils/models/Category";
@@ -9,6 +10,7 @@ type Tag = {
     name: string;
     url: string;
     meta_description: string;
+    meta_title: string;
 };
 
 const CategoriesList = () => {
@@ -37,7 +39,7 @@ const CategoriesList = () => {
 
     return (
         <div className="hidden md:block md:w-1/5">
-            <H4 className="text-highlight mb-5 font-medium">Categories</H4>
+            <h3 className="text-2xl md:text-3xl leading-none text-highlight mb-5 font-medium">Categories</h3>
             <ul>
                 {
                     filteredCategories.map(

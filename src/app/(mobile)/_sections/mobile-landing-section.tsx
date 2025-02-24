@@ -6,6 +6,10 @@ import MobileButton from "../_components/mobile-button";
 import MobileH1 from "../_components/mobile-h1";
 import H1 from "@/components/h1";
 import dynamic from "next/dynamic";
+import H2 from "@/components/h2";
+import MobileH3 from "../_components/mobile-h3";
+import H1Main from "@/components/h1-main";
+import MobileH2 from "../_components/mobile-h2";
 
 export default function MobileLandingSection() {
     const onStartNowClick = () => {
@@ -21,10 +25,10 @@ export default function MobileLandingSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                <H1 className="mb-4 text-center">
+                <H1Main className="mb-4 text-center text-violet">
                     Build your dream team with top nearshore IT talent
-                </H1>
-                <MobileH1 className="mb-12 text-center">
+                </H1Main>
+                <H2 className="mb-12 text-center">
                     We are a software company focused on{" "} 
                     <span
                         className={`text-highlight ${avigeaFont.className} font-medium`}
@@ -32,7 +36,7 @@ export default function MobileLandingSection() {
                         saving you time
                     </span>{" "}
                     and delivering peace of mind
-                </MobileH1>
+                </H2>
 
                 <div className="flex flex-row items-center justify-center">
                     <MobileButton highlightedArrow onClick={onStartNowClick} >

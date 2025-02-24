@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import MobileH1 from '../_components/mobile-h1';
 import { avigeaFont } from '@/assets/fonts';
-import backgroundImg from '@/assets/background/gradient.webp';
+import backgroundImg from '@/assets/background/gradient-mobile.webp';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
@@ -38,6 +38,7 @@ export default function MobileLatestPostsSection(
     	                style={{ objectFit: 'cover' }}
                         className="w-full h-full"
                         loading="lazy"
+                        quality={70}
                     />
                 </div>
             }
