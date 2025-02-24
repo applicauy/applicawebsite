@@ -42,7 +42,7 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
                         src={backgroundImg}
                         alt = "Background Image"
                         className="w-full h-auto object-contain"
-                        loading="lazy"
+                        priority
                         quality={50}
                     />
                 </div>
