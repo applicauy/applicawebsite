@@ -129,7 +129,7 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
                     className="w-full h-auto object-contain mt-16"
                     width={1280} 
                     height={760} 
-                    loading="lazy"
+                    priority
                     quality={80} 
                     />
                 </div>
