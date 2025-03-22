@@ -7,7 +7,10 @@ import dynamic from "next/dynamic";
 export const metadata: Metadata = {
     title: 'Contact | Applica Corp.',
     description: 'Looking for staff augmentation solutions? Contact Applica Corp to discover the perfect IT talent for your project and drive your success.',
-    keywords: ['contact', 'staff augmentation', 'solutions', 'project', 'success', 'information']
+    keywords: ['contact', 'staff augmentation', 'solutions', 'project', 'success', 'information'],
+    alternates: {
+        canonical: `https://applicacorp.com/contact`,
+    }
 };
 
 export default function Page() {

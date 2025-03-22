@@ -16,7 +16,10 @@ export async function generateMetadata( { params }: Props ): Promise<Metadata> {
   return {
     title: `${ category?.meta_title } | Applica Corp.`,
     description: `${ category?.meta_description }`,
-    keywords: []
+    keywords: [],
+    alternates: {
+      canonical: `https://applicacorp.com/news/category/${ params.url }`,
+    }
   }
 }
 

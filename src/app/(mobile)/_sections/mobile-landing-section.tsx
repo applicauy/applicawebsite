@@ -25,9 +25,9 @@ export default function MobileLandingSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                <H1Main className="mb-4 text-center text-violet">
+                <div className="text-lg md:text-3xl w-full mb-4 text-center text-violet">
                     Build your dream team with top nearshore IT talent
-                </H1Main>
+                </div>
                 <H2 className="mb-12 text-center">
                     We are a software company focused on{" "} 
                     <span

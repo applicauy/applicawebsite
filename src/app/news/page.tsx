@@ -7,7 +7,10 @@ import dynamic from "next/dynamic";
 export const metadata: Metadata = {
     title: 'News | Applica Corp.',
     description: 'Stay updated with the latest news and insights from Applica Corp. Discover trends, success stories, and expert advice in IT staff augmentation.',
-    keywords: ['blog', 'news', 'posts', 'stories', 'tips', 'articles']
+    keywords: ['blog', 'news', 'posts', 'stories', 'tips', 'articles'],
+    alternates: {
+        canonical: `https://applicacorp.com/news`,
+    }
 };
 
 export default function Page() {
