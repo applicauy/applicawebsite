@@ -28,7 +28,10 @@ export async function GET() {
 
   const staticUrls = [
     '/news',
-    '/contact',
+    '/contact'
+  ];
+
+  const blockUrls = [
     '/#about-us',
     '/#services',
     '/#benefits'
@@ -49,12 +52,20 @@ export async function GET() {
         <priority>0.8</priority>
       </url>
     `),
+    ...blockUrls.map(path => `
+      <url>
+        <loc>${baseUrl}${path}</loc>
+        <lastmod>2024-12-04</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+      </url>
+    `),
     ...posts.map(post => `
       <url>
         <loc>${baseUrl}/news/${post.slug}</loc>
         <lastmod>2024-12-04</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.6</priority>
       </url>
     `),
     ...categories.map(cat => `
@@ -62,7 +73,7 @@ export async function GET() {
         <loc>${baseUrl}/news/category/${cat.url}</loc>
         <lastmod>2024-12-04</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.5</priority>
       </url>
     `)
   ];
