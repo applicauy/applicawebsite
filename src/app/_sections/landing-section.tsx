@@ -27,7 +27,7 @@ export default function LandingSection() {
                 transition={{ duration: 0.6 }}
             >
                 <div className="w-[80%]">
-                    <H1Main className="mb-5">Build your dream team with top nearshore IT talent</H1Main>
+                    <div className="text-lg md:text-3xl text-violet mb-5">Build your dream team with top nearshore IT talent</div>
                     <H2 className="mb-12">
                         We are a software company focused on{" "}
                         <span
