@@ -12,7 +12,10 @@ export const metadata: Metadata = {
     title: "Applica Corp: IT Staff augmentation services",
     description:
         "We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs.",
-    keywords: ['staff augmentation', 'software', 'company', 'team', 'talent']
+    keywords: ['staff augmentation', 'software', 'company', 'team', 'talent'],
+    alternates: {
+        canonical: `https://applicacorp.com/`,
+    }
 };
 
 export default function RootLayout({
@@ -70,7 +73,6 @@ export default function RootLayout({
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
                 <link rel="apple-touch-icon" href="/icon_apple_touch.png" sizes="180x180" />
-                <link rel="canonical" href="https://applicacorp.com/" />
             </head>
             
             <LayoutClientWrapper initialIsMobile={isMobile}>{ children }</LayoutClientWrapper>
