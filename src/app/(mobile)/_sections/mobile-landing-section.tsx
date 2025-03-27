@@ -3,13 +3,8 @@
 import { motion } from "framer-motion";
 import { avigeaFont } from "@/assets/fonts";
 import MobileButton from "../_components/mobile-button";
-import MobileH1 from "../_components/mobile-h1";
-import H1 from "@/components/h1";
 import dynamic from "next/dynamic";
 import H2 from "@/components/h2";
-import MobileH3 from "../_components/mobile-h3";
-import H1Main from "@/components/h1-main";
-import MobileH2 from "../_components/mobile-h2";
 
 export default function MobileLandingSection() {
     const onStartNowClick = () => {

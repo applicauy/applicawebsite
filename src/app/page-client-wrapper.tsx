@@ -3,7 +3,6 @@
 import { apexFont } from "@/assets/fonts";
 import MobileDetect from "mobile-detect";
 import { useEffect, useState } from "react";
-import backgroundImg from '@/assets/background/gradient-mobile.webp';
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
@@ -39,20 +38,22 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
         <main className={`${apexFont.className} flex flex-col items-center min-h-[600px] justify-between gap-20 md:gap-36 mt-24 md:mt-0 md:px-24 ${ isMobile && 'overflow-hidden' }`}>
             {
                 isMobile &&
-                <div className="absolute right-0 w-[100%] z-[-1]">
+                <div className="absolute right-0 w-full h-[400px] z-[-1]">
                     <Image
-                        src={backgroundImg}
+                        src="/images/gradient-mobile.webp"
                         alt = "Background Image"
-                        className="w-full h-auto object-contain"
+                        className="w-full h-full object-cover"
+                        fill
                         priority
                         quality={50}
+                        sizes="100vw"
                     />
                 </div>
             }
             
             { 
                 ['/', '/#about-us', '/#services', '/#benefits', '/#hiring-process'].includes( pathName ) && 
-                    <h1 className="sr-only">Applica Corp.</h1> 
+                    <h1 className="sr-only">Applica Corp. | Build your dream team with top nearshore IT talent</h1> 
             }
             { isMobile ?  <MobileLandingSection /> : <LandingSection /> }
             { isMobile ? <MobileServicesSection /> : <AboutUs /> }

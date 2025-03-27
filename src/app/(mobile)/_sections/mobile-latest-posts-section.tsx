@@ -4,7 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import MobileH1 from '../_components/mobile-h1';
 import { avigeaFont } from '@/assets/fonts';
-import backgroundImg from '@/assets/background/gradient-mobile.webp';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
@@ -32,7 +31,7 @@ export default function MobileLatestPostsSection(
                 !fromPost &&
                 <div className="latest-posts-degraded-mobile">
                     <Image
-                        src={backgroundImg}
+                        src="/images/gradient-mobile.webp"
                         alt="Background Image"
                         fill
     	                style={{ objectFit: 'cover' }}
