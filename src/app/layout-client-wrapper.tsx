@@ -120,19 +120,6 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
     return (
         <body className={`${inter.className} overflow-x-hidden ${ isMobile && 'mobile-layout' }`}>
             { loading && <Loading /> }
-            {!isMobile && (
-                <div className="absolute top-0 right-0 max-w-[800px] w-[50vw] z-[-1]">
-                    <Image
-                    src="/images/gradient-desktop.webp"
-                    alt="Background Image"
-                    className="w-full h-auto object-contain mt-16"
-                    width={1280} 
-                    height={760} 
-                    priority
-                    quality={80} 
-                    />
-                </div>
-            )}
             { 
                 isMobile ? 
                     <MobileNavBar onMenuClick={handleMenuClick} handleScrollFromClick = { handleScroll } /> : 

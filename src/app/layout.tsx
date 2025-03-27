@@ -29,46 +29,30 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <Script 
-                id="gtm-script"
-                strategy="afterInteractive"
-                async
-                dangerouslySetInnerHTML={{
-                __html: `
-                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                    })(window,document,'script','dataLayer','G-689YV97H3W');
-                `,
-                }}
+                <Script
+                    id="gtm-script"
+                    src="https://www.googletagmanager.com/gtm.js?id=G-689YV97H3W"
+                    strategy="afterInteractive"
+                    async
                 />
 
                 {/* Metricool Tracking Script */}
-                <Script 
+                <Script
                     id="metricool-script"
+                    src="https://tracker.metricool.com/resources/be.js"
                     strategy="lazyOnload"
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                            function loadScript(callback) {
-                                const head = document.getElementsByTagName('head')[0];
-                                const script = document.createElement('script');
-                                script.type = 'text/javascript';
-                                script.src = 'https://tracker.metricool.com/resources/be.js';
-                                script.onreadystatechange = callback;
-                                script.onload = callback;
-                                head.appendChild(script);
-                            }
-                            loadScript(function () {
-                                if (window.beTracker) {
-                                    window.beTracker.t({
-                                        hash: "1290ec9204a13f1d44c1fae9bed96d16"
-                                    });
-                                }
-                            });
-                        `,
-                    }}
                 />
+                <Script 
+                    id="metricool-init" 
+                    strategy="lazyOnload">
+                    {`
+                        if (window.beTracker) {
+                        window.beTracker.t({
+                            hash: "1290ec9204a13f1d44c1fae9bed96d16"
+                        });
+                        }
+                    `}
+                </Script>
 
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

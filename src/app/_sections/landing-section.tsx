@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 import Button from "@/components/button";
 import { avigeaFont } from "@/assets/fonts";
 import H2 from "@/components/h2";
-import H1 from "@/components/h1";
 import dynamic from "next/dynamic";
-import H1Main from "@/components/h1-main";
 
 export default function LandingSection() {
     const onStartNowClick = () => {
@@ -27,16 +25,17 @@ export default function LandingSection() {
                 transition={{ duration: 0.6 }}
             >
                 <div className="w-[80%]">
-                    <div className="text-lg md:text-3xl text-violet mb-5">Build your dream team with top nearshore IT talent</div>
-                    <H2 className="mb-12">
-                        We are a software company focused on{" "}
+                    {/* <div className="text-lg md:text-3xl text-violet mb-5">Delivering cutting-edge solutions tailored to fuel your growth</div> */}
+                    <H2 className="mb-5">
+                        We turn{" "}
                         <span
                             className={`text-highlight ${avigeaFont.className} font-medium`}
                         >
-                            saving your time
+                             software development
                         </span>{" "}
-                        and delivering peace of mind
+                        into global impact
                     </H2>
+                    <div className="text-xl md:text-4xl mb-12 text-violet">Delivering cutting-edge solutions tailored to fuel your growth</div>
                     <Button highlightedArrow onClick={onStartNowClick}>
                         Start now!
                     </Button>
