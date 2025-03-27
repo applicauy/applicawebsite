@@ -23,7 +23,7 @@ export default function Page() {
     
     return (
         <>
-            <h1 className="sr-only">News</h1>
+            <h1 className="sr-only">Applica Corp. | News</h1>
             <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 mt-20 md:mt-8`}>
                 <NewsFilter isMobile = { isMobile }/>
             </div>

@@ -3,9 +3,10 @@ import { PropsWithChildren } from "react";
 const H3 = ({
     children,
     className,
-}: PropsWithChildren<{ className?: string }>) => {
+    subtitle
+}: PropsWithChildren<{ className?: string, subtitle?: boolean }>) => {
     return (
-        <h3 className={"text-xl md:text-4xl leading-tight" + (className ? " " + className : "")}>
+        <h3 className={`${ subtitle ? 'text-2xl md:text-3xl' : 'text-xl md:text-4xl' } leading-tight` + (className ? " " + className : "")}>
             {children}
         </h3>
     );

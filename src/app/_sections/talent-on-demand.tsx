@@ -9,9 +9,7 @@ import { /*onStartNowClick,*/ useNavigationHandlers } from "@/lib/helpers";
 import mapImg from "@/assets/mapa.webp";
 import { useInView } from "react-intersection-observer";
 import { motion } from 'framer-motion';
-import dynamic from "next/dynamic";
 import Section from "@/components/section";
-import H1 from "@/components/h1";
 
 /**
  * Renders the Talent on demand.
