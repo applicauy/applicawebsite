@@ -2,7 +2,6 @@
 import MobileDetect from "mobile-detect";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import backgroundImg from '@/assets/background/gradient-desktop.webp';
 
 import { GoogleTagManager } from "@next/third-parties/google";
 import TrackPageView from "../components/track-page-view";
@@ -124,7 +123,7 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
             {!isMobile && (
                 <div className="absolute top-0 right-0 max-w-[800px] w-[50vw] z-[-1]">
                     <Image
-                    src={backgroundImg}
+                    src="/images/gradient-desktop.webp"
                     alt="Background Image"
                     className="w-full h-auto object-contain mt-16"
                     width={1280} 

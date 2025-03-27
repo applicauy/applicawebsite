@@ -2,10 +2,8 @@
 import { avigeaFont } from '@/assets/fonts'
 import H2 from '@/components/h2'
 import Image from 'next/image';
-import backgroundImg from '@/assets/background/gradient-desktop.webp';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import H1 from '@/components/h1';
 
 export default function LatestPosts() {
   
@@ -23,7 +21,7 @@ export default function LatestPosts() {
       >
         <div className="latest-posts-degraded">
           <Image
-            src={backgroundImg}
+            src="/images/gradient-desktop.webp"
             alt="Background Image"
             fill
             style={{ objectFit: 'cover' }}
