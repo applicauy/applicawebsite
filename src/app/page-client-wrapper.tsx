@@ -36,20 +36,17 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
 
     return (
         <main className={`${apexFont.className} flex flex-col items-center min-h-[600px] justify-between gap-20 md:gap-36 mt-24 md:mt-0 md:px-24 ${ isMobile && 'overflow-hidden' }`}>
-            {
-                isMobile &&
-                <div className="absolute right-0 w-full h-[400px] z-[-1]">
-                    <Image
-                        src="/images/gradient-mobile.webp"
-                        alt = "Background Image"
-                        className="w-full h-full object-cover"
-                        fill
-                        priority
-                        quality={50}
-                        sizes="100vw"
-                    />
-                </div>
-            }
+            <div className={ `${ !isMobile && ' w-[50vw]' } absolute top-0 right-0 max-w-[800px] z-[-1]` }>
+                <Image
+                    src={isMobile ? "/images/gradient-mobile.webp" : "/images/gradient-desktop.webp"}
+                    alt="Background Image"
+                    className="w-full h-auto object-contain mt-16"
+                    width={1280}
+                    height={760}
+                    priority
+                    quality={80}
+                />
+            </div>
             
             { 
                 ['/', '/#about-us', '/#services', '/#benefits', '/#hiring-process'].includes( pathName ) && 
