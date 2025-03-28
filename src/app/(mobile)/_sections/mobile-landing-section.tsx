@@ -20,18 +20,18 @@ export default function MobileLandingSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                <div className="text-lg md:text-3xl w-full mb-4 text-center text-violet">
-                    Build your dream team with top nearshore IT talent
-                </div>
-                <H2 className="mb-12 text-center">
-                    We are a software company focused on{" "} 
+                <H2 className="mb-5 text-center">
+                    We turn{" "} 
                     <span
                         className={`text-highlight ${avigeaFont.className} font-medium`}
                     >
-                        saving you time
+                         software development
                     </span>{" "}
-                    and delivering peace of mind
+                    into global impact
                 </H2>
+                <div className="text-xl md:text-4xl w-full mb-12 text-center">
+                    Delivering cutting-edge solutions tailored to fuel your growth
+                </div>
 
                 <div className="flex flex-row items-center justify-center">
                     <MobileButton highlightedArrow onClick={onStartNowClick} >
