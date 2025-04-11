@@ -37,7 +37,7 @@ export default function TalentOnDemand() {
                     <span
                         className={`font-medium ${avigeaFont.className} block`}
                     >
-                        ready to be hired.
+                        ready to be hired
                     </span>
                 </H2>
 
@@ -49,35 +49,33 @@ export default function TalentOnDemand() {
                 <div ref = { ref } className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-8 md:mt-12 mb-12 md:mb-16 gap-10 justify-center">
                 { inView && 
                         <GradientBall 
-                            title = {15000} 
+                            title = {450} 
                             startSymbol = "+"
                             duration = { 5 }
-                            subtitle = "IT Talents" 
+                            subtitle = "Completed projects" 
                         />
                     }
                     { inView && 
                         <GradientBall 
-                            title = { 80 }
-                            endSymbol = "%"
+                            title = { 10 }
                             duration = { 5 }
-                            subtitle = "Senior level" 
+                            subtitle = "Years" 
                         />
                     }
                     { inView && 
                         <GradientBall 
-                            title = { 13 }
-                            startSymbol = "<"
+                            title = { 88 }
                             endSymbol = "%"
                             duration = { 5 } 
-                            subtitle = "Turnover rate" 
+                            subtitle = "Senior level tech talents" 
                         />
                     }
                     { inView && 
                         <GradientBall 
-                            title = { 60 } 
-                            startSymbol = "+"
+                            title = { 4.8 } 
+                            endSymbol = "/5"
                             duration = { 5 }
-                            subtitle = "Technologies" 
+                            subtitle = "Clutch average" 
                         />
                     }
                 </div>

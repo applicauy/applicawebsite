@@ -30,12 +30,17 @@ export default function GradientBall({
             {
                     startSymbol && startSymbol
                 }
-                <CountUp end = { title } duration = { duration } separator="."></CountUp>
+                <CountUp 
+                    end = { title } 
+                    duration = { duration } 
+                    decimals = { Number.isInteger(title) ? 0 : String(title).split('.')[1]?.length || 1 } 
+                    separator="."
+                ></CountUp>
                 {
                     endSymbol && endSymbol
                 }
             </H4>
-            <span className="text-sm md:text-lg leading-tight">{subtitle}</span>
+            <span className="text-lg leading-none text-center">{subtitle}</span>
         </div>
     );
 }

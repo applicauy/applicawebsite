@@ -30,7 +30,7 @@ export const LOCATIONS: {
     },
     {
         country: "Panamá",
-        location: "Av. Centenario - Torre de las Américas p12, Ciudad de Panamá.",
+        location: "Sortis Business Tower - 9C, Ciudad de Panamá.",
     },
     {
         country: "Chile",

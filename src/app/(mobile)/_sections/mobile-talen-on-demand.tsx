@@ -39,47 +39,44 @@ export default function MobileTalenOnDemand() {
                     <span
                         className={`font-medium ${avigeaFont.className} block`}
                     >
-                        ready to be hired.
+                        ready to be hired
                     </span>
                 </MobileH1>
 
-                <MobileH2 className="w-4/5 md:w-full text-center md:text-left">
-                    Just tell us your requirements and we will find it wherever
-                    it is.
+                <MobileH2 className="w-full text-center md:text-left">
+                    Bridging the gap between cutting-edge technology and impactful results, we deliver customized software solutions that scale with your business.
                 </MobileH2>
 
                 <div ref={ref} className="flex flex-wrap flex-row mt-12 md:mt-12 mb-12 md:mb-16 gap-6 justify-center">
                     { inView && 
                         <MobileGradientBall 
-                            title = {15000} 
+                            title = {450} 
                             startSymbol = "+"
                             duration = { 5 }
-                            subtitle = "IT Talents" 
+                            subtitle = "Completed projects" 
                         />
                     }
                     { inView && 
                         <MobileGradientBall 
-                            title = { 80 }
-                            endSymbol = "%"
+                            title = { 10 }
                             duration = { 5 }
-                            subtitle = "Senior level" 
+                            subtitle = "Years" 
                         />
                     }
                     { inView && 
                         <MobileGradientBall 
-                            title = { 13 }
-                            startSymbol = "<"
+                            title = { 88 }
                             endSymbol = "%"
                             duration = { 5 } 
-                            subtitle = "Turnover rate" 
+                            subtitle = "Senior level tech talents" 
                         />
                     }
                     { inView && 
                         <MobileGradientBall 
-                            title = { 60 } 
-                            startSymbol = "+"
+                            title = { 4.8 } 
+                            endSymbol = "/5"
                             duration = { 5 }
-                            subtitle = "Technologies" 
+                            subtitle = "Clutch average" 
                         />
                     }
                 </div>

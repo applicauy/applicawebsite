@@ -25,19 +25,24 @@ export default function MobileGradientBall({
     subtitle: string;
 }) {
     return (
-        <div className="rounded-full w-40 h-40 md:w-24 md:h-24 lg:w-36 lg:h-36 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 flex flex-col justify-center items-center">
+        <div className="rounded-full p-6 w-40 h-40 md:w-24 md:h-24 lg:w-36 lg:h-36 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 flex flex-col justify-center items-center leading-tight">
             <MobileH4
                 className={`${avigeaFont.className} font-normal text-3xl lg:text-base`}
             >
                 {
                     startSymbol && startSymbol
                 }
-                <CountUp end = { title } duration = { duration } separator="."></CountUp>
+                <CountUp
+                    end = { title } 
+                    duration = { duration } 
+                    decimals = { Number.isInteger(title) ? 0 : String(title).split('.')[1]?.length || 1 } 
+                    separator="."
+                ></CountUp>
                 {
                     endSymbol && endSymbol
                 }
             </MobileH4>
-            <span className="text-lg">{subtitle}</span>
+            <span className="text-lg text-center leading-none">{subtitle}</span>
         </div>
     );
 }
