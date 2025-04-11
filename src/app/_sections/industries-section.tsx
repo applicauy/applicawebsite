@@ -2,11 +2,12 @@ import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import H2 from '@/components/h2';
 import { avigeaFont } from '@/assets/fonts';
-import financial from "@/assets/financial.webp";
-import educational from "@/assets/educational.webp";
-import healthcare from "@/assets/healthcare.webp";
-import technology from "@/assets/technology.webp";
+import financial from "@/assets/icons/finance-icon.webp";
+import educational from "@/assets/icons/education-icon.webp";
+import healthcare from "@/assets/icons/heathcare-icon.webp";
+import technology from "@/assets/icons/technology-icon.webp";
 import Industry from '../_components/industry';
+import Attribute from '../_components/attribute';
 
 export default function IndustriesSection() {
     const Section = dynamic(() => import('@/components/section'));
@@ -39,7 +40,7 @@ export default function IndustriesSection() {
     ]
 
     return (
-        <Section className="flex flex-col w-full">
+        <Section className="flex flex-col w-full mb-8">
             
             <motion.div
                 className="flex flex-col gap-8 items-start"
@@ -55,18 +56,13 @@ export default function IndustriesSection() {
                     </span>
                 </H2>
 
-                <div className="grid grid-cols-2 w-full">
+                <div className="grid grid-cols-2 w-full gap-16">
                     {
                         INDUSTRIES.map(
                             (i, index) => (
-                                <Industry
-                                    key={index}
-                                    image={i.image}
-                                    imageAlt={i.imageAlt}
-                                    title={ i.title }
-                                    description={ i.description }
-                                >
-                                </Industry>
+                                <Attribute icon={ i.image } title = { i.title } key = { index }>
+                                    { i.description }
+                                </Attribute>
                             )
                         )
                     }

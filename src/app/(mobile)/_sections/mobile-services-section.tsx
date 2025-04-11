@@ -115,13 +115,13 @@ export default function MobileServicesSection() {
                 className="flex flex-col gap-6 px-6 mt-6 mb-6 md:px-36 pt-8 md:pt-16 pb-7 md:pb-9 rounded-3xl md:rounded-full text-center items-center fit-background"
                 id="services"
             >
-                <MobileH1 className="font-medium">
+                {/* <MobileH1 className="font-medium">
                     Find the{" "}
                     <span className={`font-medium ${avigeaFont.className}`}>
                         perfect fit
                     </span>{" "}
                     for your venture
-                </MobileH1>
+                </MobileH1> */}
 
                 <MobileH2>
                     With delivery centers based in the USA, Panama, Chile, Colombia, Argentina and Uruguay, 

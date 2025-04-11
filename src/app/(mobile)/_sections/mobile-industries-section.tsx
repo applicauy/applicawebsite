@@ -3,11 +3,11 @@ import MobileH1 from '../_components/mobile-h1';
 import { avigeaFont } from '@/assets/fonts';
 import { motion } from 'framer-motion';
 
-import financial from "@/assets/financial.webp";
-import educational from "@/assets/educational.webp";
-import healthcare from "@/assets/healthcare.webp";
-import technology from "@/assets/technology.webp";
-import MobileIndustry from '../_components/mobile-industry';
+import financial from "@/assets/icons/finance-icon.webp";
+import educational from "@/assets/icons/education-icon.webp";
+import healthcare from "@/assets/icons/heathcare-icon.webp";
+import technology from "@/assets/icons/technology-icon.webp";
+import Attribute from '@/app/_components/attribute';
 
 export default function MobileIndustriesSection() {
     const Section = dynamic(() => import('@/components/section'));
@@ -40,7 +40,7 @@ export default function MobileIndustriesSection() {
     ]
 
     return (
-        <Section className={`flex flex-col items-center w-full mt-6`}>
+        <Section className={`flex flex-col items-center w-full mt-6 mb-6`}>
             <motion.div
                 className="flex flex-col items-center md:items-start md:w-[60%] w-full z-20"
                 initial={{ opacity: 0, x: "-20px" }}
@@ -49,26 +49,23 @@ export default function MobileIndustriesSection() {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 id='industries'
             >
-                <MobileH1 className="mb-12 md:mb-12 text-center">
+                <MobileH1 className="mb-6 md:mb-12 text-center">
                     <span className={`font-medium ${avigeaFont.className}`}>
                         Industries
                     </span>
                 </MobileH1>
 
-                {
-                    INDUSTRIES.map(
-                        (i, index) => (
-                            <MobileIndustry
-                                key={index}
-                                image={i.image}
-                                imageAlt={i.imageAlt}
-                                title={ i.title }
-                                description={ i.description }
-                            >
-                            </MobileIndustry>
+                <div className="flex flex-col gap-6">
+                    {
+                        INDUSTRIES.map(
+                            (i, index) => (
+                                <Attribute icon={ i.image } title = { i.title } key = { index }>
+                                    { i.description }
+                                </Attribute>
+                            )
                         )
-                    )
-                }
+                    }
+                </div>
             </motion.div>
         </Section>
     );

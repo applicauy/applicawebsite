@@ -32,18 +32,17 @@ export default function TalentOnDemand() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
             >
-                <H2 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
+                {/* <H2 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
                     Talent on demand{" "}
                     <span
                         className={`font-medium ${avigeaFont.className} block`}
                     >
                         ready to be hired
                     </span>
-                </H2>
+                </H2> */}
 
                 <H3 className="w-4/5 md:w-full text-center md:text-left">
-                    Just tell us your requirements and we will find it wherever
-                    it is.
+                    Bridging the gap between cutting-edge technology and impactful results, we deliver customized software solutions that scale with your business.
                 </H3>
 
                 <div ref = { ref } className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-8 md:mt-12 mb-12 md:mb-16 gap-10 justify-center">

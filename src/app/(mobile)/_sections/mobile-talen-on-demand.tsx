@@ -34,14 +34,14 @@ export default function MobileTalenOnDemand() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
             >
-                <MobileH1 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
+                {/* <MobileH1 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
                     Talent on demand{" "}
                     <span
                         className={`font-medium ${avigeaFont.className} block`}
                     >
                         ready to be hired
                     </span>
-                </MobileH1>
+                </MobileH1> */}
 
                 <MobileH2 className="w-full text-center md:text-left">
                     Bridging the gap between cutting-edge technology and impactful results, we deliver customized software solutions that scale with your business.

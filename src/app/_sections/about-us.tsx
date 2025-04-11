@@ -113,13 +113,13 @@ export default function AboutUs() {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="flex flex-col gap-6 px-10 md:px-36 pt-8 md:pt-16 pb-7 md:pb-9 rounded-3xl md:rounded-full text-center items-center fit-background"
             >
-                <H2 className="font-medium text-3xl">
+                {/* <H2 className="font-medium text-3xl">
                     Find the{" "}
                     <span className={`font-medium ${avigeaFont.className}`}>
                         perfect fit
                     </span>{" "}
                     for your venture
-                </H2>
+                </H2> */}
 
                 <H3 className="text-md mb-8">
                     With delivery centers based in the USA, Panama, Chile, Colombia, Argentina and Uruguay, 
