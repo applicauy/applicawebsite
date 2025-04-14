@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 import placeholderImg from "@/assets/placeholder-img-2.webp";
 import { avigeaFont } from "@/assets/fonts";
 import checkboxIcon from "@/assets/icons/checkbox-icon.webp";
-import searchIcon from "@/assets/icons/seach-icon.webp";
-import lampIcon from "@/assets/icons/lamp-icon.webp";
+import digitalTansformationIcon from "@/assets/icons/digital-transformation-icon.webp";
+import aiIcon from "@/assets/icons/ai-icon.webp";
+import customizedIcon from "@/assets/icons/customized-icon.webp";
+import cloudSecurityIcon from "@/assets/icons/cloud-security-icon.webp";
 import Attribute from "@/app/_components/attribute";
 import MobileButton from "../_components/mobile-button";
-import MobileH3 from "../_components/mobile-h3";
 import {
     /*onMeetOurProcessClick,*/ useNavigationHandlers,
 } from "@/lib/helpers";
@@ -43,18 +44,19 @@ export default function MobileServicesSection() {
 
                 <div className="flex flex-col md:gap-8 md:w-2/4 text-center md:text-end my-4 md:my-0">
                     <p className="text-xl md:text-3sm leading-tight mb-8 md:mb-0">
-                        We specialize in IT staff augmentation services, using
-                        an agile model to deliver top talent in only 72 hours.
+                        We work with leading enterprises and forward-thinking organizations to create 
+                        tailored digital solutions, guiding them through their digital transformation.<br/>
+                        Long-term partnerships require flexible service. Since 2015, Applica Corp has been dedicated to helping companies scale.
                     </p>
 
-                    <p className="text-3xl md:text-4xl leading-none max-w-full md:max-w-full mx-auto md:mx-0 mb-8 mb:md-0">
+                    {/* <p className="text-3xl md:text-4xl leading-none max-w-full md:max-w-full mx-auto md:mx-0 mb-8 mb:md-0">
                         Ready to{" "}
                         <span
                             className={`font-medium ${avigeaFont.className}`}
                         >
                             ramp up your project?
                         </span>
-                    </p>
+                    </p> */}
 
                     <p className="text-2xl text-highlight">
                         We make it happen
@@ -67,21 +69,41 @@ export default function MobileServicesSection() {
                 whileInView={{ opacity: 1, x: "0px" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex flex-col md:flex-row gap-6 max-w-full mx-auto md:mx-0 mb-14 md:mb-0 md:my-0 my-12"
+                className="flex flex-col md:flex-row gap-6 max-w-full mx-auto md:mx-0 mb-14 md:mb-0 md:my-0 my-12 mt-20"
             >
-                <Attribute icon={searchIcon}>
-                    Pre-vetted & tailor matched nearshore IT talent you can count
-                    on.
+
+                <div className="w-full flex justify-center">
+                    <MobileH1>
+                        Our{" "}
+                        <span
+                            className={`font-medium ${avigeaFont.className}`}
+                        >
+                            expertise hubs
+                        </span>
+                    </MobileH1>
+                </div>
+                <Attribute icon={ digitalTansformationIcon } title = "Drive digital transformation">
+                    Bridging the gap between technology and impactful results, 
+                    we empower your business to scale, innovate, and stay ahead 
+                    in a dynamic market.
                 </Attribute>
 
-                <Attribute icon={lampIcon}>
-                    Deeper understanding of your needs, giving you even better
-                    solutions.
+                <Attribute icon={ aiIcon } title = "Leverage AI & Data for innovation">
+                    We turn data into smart decisions through automation, AI, 
+                    advanced chatbots, and interactive dashboards to enhance 
+                    decision-making.
                 </Attribute>
 
-                <Attribute icon={checkboxIcon}>
-                    Complete control over your team, its size, billed hours &
-                    ongoing projects.
+                <Attribute icon={ customizedIcon }  title = "Deliver Tailored Solutions">
+                    We design cutting-edge digital solutions tailored to your 
+                    needs—web and mobile apps, system modernization, and seamless 
+                    integrations—all with top-tier UX/UI.
+                </Attribute>
+
+                <Attribute icon={ cloudSecurityIcon } title = "Optimize cloud security & DevOps">
+                    Strengthening security, optimizing cloud infrastructure, and 
+                    accelerating deployments with DevOps to ensure top performance 
+                    and reliability.
                 </Attribute>
             </motion.div>
 
@@ -89,27 +111,22 @@ export default function MobileServicesSection() {
                 initial={{ opacity: 0, x: "-20px" }}
                 whileInView={{ opacity: 1, x: "0px" }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex flex-col gap-6 px-6 mt-12 mb-6 md:px-36 pt-8 md:pt-16 pb-7 md:pb-9 rounded-3xl md:rounded-full text-center items-center fit-background"
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex flex-col gap-6 px-6 mt-6 mb-6 md:px-36 pt-8 md:pt-16 pb-7 md:pb-9 rounded-3xl md:rounded-full text-center items-center fit-background"
                 id="services"
             >
-                <MobileH1 className="font-medium">
+                {/* <MobileH1 className="font-medium">
                     Find the{" "}
                     <span className={`font-medium ${avigeaFont.className}`}>
                         perfect fit
                     </span>{" "}
                     for your venture
-                </MobileH1>
+                </MobileH1> */}
 
                 <MobileH2>
-                    Whether you need a specialized skillset, a temporary highly
-                    qualified developer, a Senior team lead, or just more hands
-                    on deck, our nearshore IT talents are here to help.
+                    With delivery centers based in the USA, Panama, Chile, Colombia, Argentina and Uruguay, 
+                    we build long-term relationships based on collaboration, reliability and results.
                 </MobileH2>
-
-                <MobileButton onClick={onMeetOurProcessClick}>
-                    Meet our process
-                </MobileButton>
             </motion.div>
         </Section>
     );

@@ -11,14 +11,18 @@ import H5 from "@/components/h5";
  */
 export default function Attribute({
     icon,
+    title,
     children,
-}: PropsWithChildren<{ icon: any }>) {
+}: PropsWithChildren<{ icon: any, title: string }>) {
     return (
-        <div className="flex items-center md:flex-row flex-col">
-            <div className="min-w-24 md:min-w-20 min-h-24 md:min-h-20 size-24 md:size-20">
-                <Image src={icon} alt="Image" loading="lazy" width={100} height={100} quality={80}/>
+        <div className="flex items-center md:flex-row flex-col mt-6 md:mt-0">
+            <div className="min-w-36 md:min-w-32 min-h-36 md:min-h-32 size-36 md:size-32">
+                <Image src={icon} alt="Image" loading="lazy" width={150} height={150} quality={80}/>
             </div>
-            <span className = "text-xl md:text-2xl leading-tight text-center md:text-start">{children}</span>
+            <div className="flex flex-col md:ml-8">
+                <p className="text-2xl md:text-3xl font-semibold mb-4 md:text-left text-center">{ title }</p>
+                <span className = "text-xl md:text-2xl leading-tight text-center md:text-start">{children}</span>
+            </div>
         </div>
     );
 }
