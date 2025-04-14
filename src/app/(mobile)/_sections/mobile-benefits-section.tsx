@@ -1,14 +1,8 @@
 'use client'
 
 import { avigeaFont } from "@/assets/fonts";
-import costEffectiveness from "@/assets/cost-efectiveness.webp";
-import timeSaving from "@/assets/timesaving.webp";
-import focused from "@/assets/focused.webp";
-import flexibility from "@/assets/flexibility.webp";
-import MobileBenefit from "../_components/mobile-benefit";
 import MobileCarousel from "../_components/mobile-carousel";
 import MobileH1 from "../_components/mobile-h1";
-import { benefits } from "@/utils/models/Benefits";
 import { motion } from 'framer-motion';
 import dynamic from "next/dynamic";
 import strategicPartner from "@/assets/strategic.webp";
@@ -84,9 +78,8 @@ export default function MobileBenefitsSection() {
                         <div className="gradient-ball-benefit-3-mobile"></div> */}
 
                         {BENEFITS.map((b, index) => (
-                            <div className="px-2">
+                            <div className="px-2" key={index}>
                                 <BenefitsCard
-                                    key={index}
                                     image={b.image}
                                     imageAlt={b.imageAlt}
                                     title={b.title}
