@@ -23,7 +23,9 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
     const MobileServicesSection = dynamic(() => import('@/(mobile)/_sections/mobile-services-section'));
     const MobileBenefitsSection = dynamic(() => import('@/(mobile)/_sections/mobile-benefits-section'));
     const MobileProcessSection = dynamic(() => import('@/(mobile)/_sections/mobile-proccess-section'));
+    const MobileYourVisionSection = dynamic(() => import('@/(mobile)/_sections/mobile-your-vision-section'));
     const MobileTalenOnDemand = dynamic(() => import('@/(mobile)/_sections/mobile-talen-on-demand'));
+    const MobileIndustriesSection = dynamic(() => import('@/(mobile)/_sections/mobile-industries-section'));
     const MobileLatestPostsSection = dynamic(() => import('@/(mobile)/_sections/mobile-latest-posts-section'));
     const MobileLetsTalkSection = dynamic(() => import('@/(mobile)/_sections/mobile-lets-talk-section'));
 
@@ -31,7 +33,9 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
     const AboutUs = dynamic(() => import('@/sections/about-us'));
     const BenefitsSection = dynamic(() => import('@/sections/benefits-section'));
     const ProcessSection = dynamic(() => import('@/sections/process-section'));
+    const YourVisionSection = dynamic(() => import('@/sections/your-vision-section'));
     const TalentOnDemand = dynamic(() => import('@/sections/talent-on-demand'));
+    const IndustriesSection = dynamic(() => import('@/sections/industries-section'));
     const LatestPosts = dynamic(() => import('@/sections/latest-posts'));
 
     return (
@@ -55,8 +59,10 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
             { isMobile ?  <MobileLandingSection /> : <LandingSection /> }
             { isMobile ? <MobileServicesSection /> : <AboutUs /> }
             { isMobile ? <MobileBenefitsSection /> : <BenefitsSection /> }
-            { isMobile ? <MobileProcessSection /> : <ProcessSection /> }
+            {/* { isMobile ? <MobileProcessSection /> : <ProcessSection /> } */}
+            { isMobile ? <MobileYourVisionSection /> : <YourVisionSection /> }
             { isMobile ? <MobileTalenOnDemand /> : <TalentOnDemand /> }
+            { isMobile ? <MobileIndustriesSection /> : <IndustriesSection /> }
             { isMobile ? <MobileLatestPostsSection/> : <LatestPosts /> }
             { isMobile &&  <MobileLetsTalkSection /> }
         </main>
