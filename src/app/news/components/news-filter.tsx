@@ -91,7 +91,7 @@ export default function NewsFilter(
                                 width={75}
                                 height={75}
                             />
-            </div>
+                        </div>
                     </button>
                 </div>
             )}
