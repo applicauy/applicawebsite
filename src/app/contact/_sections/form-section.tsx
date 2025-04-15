@@ -123,7 +123,7 @@ export default function FormSection(
                         />
                     </div>
                     <div className="w-full md:w-1/2 mt-2 md:mt-0">
-                        <span className="text-xl">How did yu heart about us? <span className="text-red-500">*</span></span>
+                        <span className="text-xl">How did you heart about us? <span className="text-red-500">*</span></span>
                         <select 
                             name="referral" 
                             className="py-2 px-4 bg-primary-bg text-white rounded-md focus:ring-1 focus:ring-highlight focus:border-highlight w-full text-xl mt-2" 
