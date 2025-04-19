@@ -1,4 +1,5 @@
 "use client";
+import '../../styles/lets-talk.scss';
 import { apexFont, avigeaFont } from "@/assets/fonts";
 import Button from "@/components/button";
 import H3 from "@/components/h3";

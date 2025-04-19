@@ -1,5 +1,6 @@
 'use client'
 
+import '../styles/cards.scss';
 import Image from "next/image";
 import arrowIcon from "@/assets/icons/arrow-right.webp";
 import { useNavigationHandlers } from "@/lib/helpers";

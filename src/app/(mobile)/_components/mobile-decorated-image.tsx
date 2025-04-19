@@ -1,3 +1,4 @@
+import '../../styles/images.scss';
 import Image from "next/image";
 import { PropsWithChildren } from "react";
 import boxImg from '@/assets/shapes/box.webp';

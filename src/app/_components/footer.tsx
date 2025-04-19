@@ -1,3 +1,4 @@
+import '../styles/footer.scss';
 import Image from "next/image";
 import logo from "@/assets/logo/logo-footer.webp";
 import { apexFont } from "@/assets/fonts";

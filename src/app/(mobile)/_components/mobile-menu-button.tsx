@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import '../../styles/menu.scss'
 import styles from '../styles/mobile-menu-buton.module.scss';
 
 const MobileMenuButton = (

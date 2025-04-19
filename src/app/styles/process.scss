@@ -1,0 +1,19 @@
+.dot {
+  $diameter: 25px;
+  min-width: $diameter;
+  min-height: $diameter;
+  border-radius: 50%;
+}
+
+.candidates-background {
+  background-image: url('/images/container-candidates.webp');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

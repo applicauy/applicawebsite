@@ -2,6 +2,7 @@
 
 import { PropsWithChildren, ReactNode, useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion';
+import '../../styles/process.scss';
 
 export enum ContentPosition {
     Left,

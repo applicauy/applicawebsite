@@ -1,4 +1,4 @@
-import H5 from "@/components/h5";
+import '../styles/images.scss';
 import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
 import boxImg from '@/assets/shapes/box-benefits.webp';

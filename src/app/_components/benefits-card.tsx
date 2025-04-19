@@ -1,3 +1,4 @@
+import '../styles/cards.scss';
 import Image, { StaticImageData } from 'next/image';
 import React from 'react'
 

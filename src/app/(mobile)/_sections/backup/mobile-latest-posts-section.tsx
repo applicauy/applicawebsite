@@ -1,5 +1,6 @@
 "use client";
 
+import '../../../styles/latest-posts.scss';
 import React from 'react'
 import { motion } from 'framer-motion';
 import MobileH1 from '../../_components/mobile-h1';
