@@ -1,15 +1,14 @@
 "use client";
 
+import '../../styles/about-us.scss';
 import { motion } from "framer-motion";
 import placeholderImg from "@/assets/placeholder-img-2.webp";
 import { avigeaFont } from "@/assets/fonts";
-import checkboxIcon from "@/assets/icons/checkbox-icon.webp";
 import digitalTansformationIcon from "@/assets/icons/digital-transformation-icon.webp";
 import aiIcon from "@/assets/icons/ai-icon.webp";
 import customizedIcon from "@/assets/icons/customized-icon.webp";
 import cloudSecurityIcon from "@/assets/icons/cloud-security-icon.webp";
 import Attribute from "@/app/_components/attribute";
-import MobileButton from "../_components/mobile-button";
 import {
     /*onMeetOurProcessClick,*/ useNavigationHandlers,
 } from "@/lib/helpers";

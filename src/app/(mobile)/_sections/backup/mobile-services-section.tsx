@@ -1,5 +1,6 @@
 "use client";
 
+import '../../../styles/about-us.scss';
 import { motion } from "framer-motion";
 import placeholderImg from "@/assets/placeholder-img-2.webp";
 import { avigeaFont } from "@/assets/fonts";

@@ -1,10 +1,10 @@
 'use client';
 
+import '../../styles/menu.scss';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { apexFont } from '@/assets/fonts';
 import { menuItems } from '@/utils/menu/menu-items';
-import dynamic from 'next/dynamic';
 import MobileMenuButton from './mobile-menu-button';
 
 const MobileMenu = (

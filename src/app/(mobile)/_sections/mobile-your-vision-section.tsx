@@ -1,3 +1,4 @@
+import '../../styles/your-vision.scss';
 import dynamic from 'next/dynamic';
 import MobileH1 from '../_components/mobile-h1';
 import { avigeaFont } from '@/assets/fonts';

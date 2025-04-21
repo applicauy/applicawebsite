@@ -1,5 +1,6 @@
 'use client'
 
+import '../../styles/process.scss';
 import { avigeaFont } from "@/assets/fonts";
 import ProcessItem, { ContentPosition } from "../../_components/process-item";
 import ProcessItemBody from "../../_components/process-item-body";

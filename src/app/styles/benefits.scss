@@ -1,0 +1,45 @@
+
+.gradient-ball-benefit-1-mobile {
+  width: 45vw; 
+  height: 45vw;
+  background: radial-gradient(
+    circle at 20% 80%,
+    #542377, 
+    #52adc7 
+  );
+  border-radius: 50%;
+  position: absolute; 
+  margin-top: 35%;
+  margin-left: -18vw;
+  z-index: -1;
+}
+
+.gradient-ball-benefit-2-mobile {
+  width: 30vw;
+  height: 30vw;
+  background: radial-gradient(
+    circle at 300% 100%, 
+    rgba(255, 0, 150, 0.7),
+    #3d6f77
+  );
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 130%;
+  margin-left: 60vw;
+  z-index: -1;
+}
+
+.gradient-ball-benefit-3-mobile {
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(
+    circle at 20% 80%, 
+    #5a4fd3,
+    #d2c7a7
+  );
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 240%;
+  margin-left: 3vw;
+  z-index: -1;
+}

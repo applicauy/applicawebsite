@@ -1,5 +1,6 @@
 'use client'
 
+import '../styles/process.scss';
 import { avigeaFont } from "@/assets/fonts";
 import ProcessItem, { ContentPosition } from "../_components/process-item";
 import ProcessItemBody from "../_components/process-item-body";
@@ -9,7 +10,6 @@ import H2 from "@/components/h2";
 import H3 from "@/components/h3";
 import { motion } from 'framer-motion';
 import dynamic from "next/dynamic";
-import H1 from "@/components/h1";
 
 export default function ProcessSection() {
     

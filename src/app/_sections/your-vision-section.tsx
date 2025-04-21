@@ -1,3 +1,4 @@
+import '../styles/your-vision.scss';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import H2 from '@/components/h2';

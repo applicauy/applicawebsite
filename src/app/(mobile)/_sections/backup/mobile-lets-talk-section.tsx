@@ -1,4 +1,5 @@
 "use client";
+import '../../../styles/lets-talk.scss';
 import { apexFont, avigeaFont } from "@/assets/fonts";
 import MobileButton from "../../_components/mobile-button";
 import { /*onLetsTalkClick,*/ useNavigationHandlers } from "@/lib/helpers";

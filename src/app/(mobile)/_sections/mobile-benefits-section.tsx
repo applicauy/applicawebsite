@@ -73,9 +73,6 @@ export default function MobileBenefitsSection() {
                     </div>
 
                     <div className="flex flex-col gap-12">
-                        {/* <div className="gradient-ball-benefit-1-mobile"></div>
-                        <div className="gradient-ball-benefit-2-mobile"></div>
-                        <div className="gradient-ball-benefit-3-mobile"></div> */}
 
                         {BENEFITS.map((b, index) => (
                             <div className="px-2" key={index}>

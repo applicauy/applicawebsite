@@ -1,3 +1,4 @@
+import '../app/styles/loading.scss';
 import Image from 'next/image';
 import logo from '../assets/logo/logo-blanco.gif';
 

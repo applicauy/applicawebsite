@@ -1,3 +1,4 @@
+import '../../styles/footer.scss';
 import Image from "next/image";
 import { apexFont } from "@/assets/fonts";
 import logo from "@/assets/logo/logo-menu.webp";

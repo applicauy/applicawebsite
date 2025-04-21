@@ -1,5 +1,6 @@
 'use client'
 
+import '../styles/cards.scss';
 import Image from 'next/image';
 import React from 'react'
 import arrowIcon from '@/assets/icons/arrow-right.webp';

@@ -1,5 +1,6 @@
 'use client'
 
+import '../../../styles/benefits.scss';
 import { avigeaFont } from "@/assets/fonts";
 import costEffectiveness from "@/assets/cost-efectiveness.webp";
 import timeSaving from "@/assets/timesaving.webp";

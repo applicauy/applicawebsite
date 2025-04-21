@@ -1,4 +1,5 @@
 "use client";
+import '../../styles/menu.scss';
 import {
     Dialog,
     DialogBackdrop,

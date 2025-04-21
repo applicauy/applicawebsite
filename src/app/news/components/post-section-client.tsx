@@ -1,5 +1,7 @@
 'use client'
 
+import '../../styles/images.scss';
+import '../../styles/post.scss';
 import MobileH1 from "@/app/(mobile)/_components/mobile-h1";
 import { apexFont } from "@/assets/fonts";
 import H2 from "@/components/h2";
@@ -67,7 +69,7 @@ const PostSectionClient = (
                   <DecoratedImage image = { post.image } alt = { post.title  } fromPost = { true }/>
               }
             </div>
-            <Markdown className={`${ isMobile ? 'post-content-mobile' : 'post-content' } md:mt-20 mt-10`}>{ post.content }</Markdown>
+            <Markdown className={`${ isMobile ? 'post-content-mobile' : 'post-content' } md:mt-20 mt-10`}>{ String( post.content ) }</Markdown>
             {
               ( medias && medias.length > 0 ) &&
               <ImageCarousel images={ medias } />
