@@ -1,3 +1,4 @@
+import '../../styles/news.scss';
 import { IoSearch } from 'react-icons/io5';
 import { connectSearchBox } from 'react-instantsearch-dom';
 

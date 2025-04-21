@@ -1,0 +1,12 @@
+
+.box-your-vision {
+  &-desktop {
+    border-radius: 42px;
+  }
+  &-1 {
+    background: linear-gradient(135deg, #312E81 0%, #0EA5E9 50%,  #e977b0 100%);
+  }
+  &-2 {
+    background: radial-gradient(circle at top left, #0EA5E9 0%, rgba(0, 255, 128, 0.5) 60%, #312E81 100%);
+  }
+}

@@ -1,6 +1,6 @@
+import '../../styles/images.scss';
 import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
-import MobileH5 from "./mobile-h5";
 import boxImg from '@/assets/shapes/box-benefits.webp';
 import MobileH2 from "./mobile-h2";
 

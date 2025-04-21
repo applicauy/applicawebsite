@@ -1,5 +1,6 @@
 'use client'
 
+import '../../styles/post.scss';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Thumbs, Zoom } from 'swiper/modules';

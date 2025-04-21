@@ -1,4 +1,5 @@
 "use client";
+import '../../styles/navbar.scss';
 import Image from "next/image";
 import logo from "@/assets/logo/logo-menu.webp";
 import { useEffect, useState } from "react";

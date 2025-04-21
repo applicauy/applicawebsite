@@ -1,4 +1,5 @@
 'use client'
+import '../../styles/post.scss';
 import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
@@ -7,7 +8,6 @@ import 'lightgallery/css/lg-zoom.css';
 import lgZoom from 'lightgallery/plugins/zoom';
 import Image from 'next/image';
 import { Slide } from '@/utils/models/Slide';
-import { BASE_URL } from '@/utils/config/algolia-config';
 
 export default function ImageCarousel(
     {

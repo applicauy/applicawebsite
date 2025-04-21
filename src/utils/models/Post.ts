@@ -7,13 +7,13 @@ export interface Post {
     title: string;
     summary: string;
     tags: any[];
-    image: any | string | StaticImport;
-    publishedAt: string;
-    publishedDate: string;
-    author: any;
+    image?: any | string | StaticImport;
+    publishedAt?: string;
+    publishedDate?: string;
+    author?: any;
     position?: string;
     avatar?: string | StaticImport;
-    content: string;
+    content?: string;
     medias?: any[] | Slide[];
     meta_description?: string;
     meta_title?: string;

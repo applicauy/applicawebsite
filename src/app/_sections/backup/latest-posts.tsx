@@ -1,4 +1,6 @@
 'use client'
+
+import '../../styles/latest-posts.scss';
 import { avigeaFont } from '@/assets/fonts'
 import H2 from '@/components/h2'
 import Image from 'next/image';

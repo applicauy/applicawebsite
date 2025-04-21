@@ -1,0 +1,41 @@
+.gradient-ball-about-us {
+  width: 18vw; 
+  height: 18vw;
+  background: radial-gradient(
+    circle at 70% 30%,
+    rgba(0, 255, 128, 0.5), 
+    rgba(255, 0, 150, 0.7) 
+  );
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;  
+  z-index: -2; 
+}
+  
+.gradient-ball-about-us-mobile {
+  width: 40vw; 
+  height: 40vw;
+  background: radial-gradient(
+    circle at 70% 30%,
+    rgba(0, 255, 128, 0.5), 
+    #ff0096b3 
+  );
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+  left: -10px;  
+  z-index: -2; 
+}
+
+.fit-background {
+  background-image: url('/images/container.webp');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
