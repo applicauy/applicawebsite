@@ -70,6 +70,7 @@ export default function AboutUs() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="flex flex-col gap-6 max-w-[80%] md:max-w-full mx-auto md:mx-0 mb-14 md:mb-0 mt-20"
+                id="services"
             >
                 <H2 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
                     Our {" "}
@@ -107,7 +108,6 @@ export default function AboutUs() {
             </motion.div>
 
             <motion.div
-                id="services"
                 initial={{ opacity: 0, x: "-20px" }}
                 whileInView={{ opacity: 1, x: "0px" }}
                 viewport={{ once: true }}

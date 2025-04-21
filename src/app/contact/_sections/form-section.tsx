@@ -10,7 +10,7 @@ import { apexFont } from "@/assets/fonts";
 import MobileButton from "@/app/(mobile)/_components/mobile-button";
 
 const REFERRALS_VALUES = [
-    "Google search",
+    "Google Search",
     "LinkedIn",
     "Instagram",
     "Clutch",

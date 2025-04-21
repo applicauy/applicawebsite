@@ -26,7 +26,7 @@ export default function MobileYourVisionSection() {
                 <div className="w-full flex justify-center mb-8">
                     <p className="text-2xl md:text-3smt text-center">
                         <span className="font-bold">Custom solutions</span> or{" "}
-                        <span className="font-bold">expert teams.</span><br/>You choose.
+                        <span className="font-bold">expert teams.</span><br/>Your choise.
                     </p>
                 </div>
 

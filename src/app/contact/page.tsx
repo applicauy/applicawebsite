@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import MobileDetect from "mobile-detect";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import LookingForCareerSection from "./_sections/looking-for-career-section";
 
 export const metadata: Metadata = {
     title: 'Contact | Applica Corp.',
@@ -31,7 +32,9 @@ export default function Page() {
 
                 <div className="flex flex-row py-0 md:py-11 px-6 md:px-24 px-48-lg w-full mt-8">
                     <FormSection isMobile = { isMobile } />
-                </div>       
+                </div> 
+
+                <LookingForCareerSection isMobile = { isMobile } />      
 
             </div>     
 
