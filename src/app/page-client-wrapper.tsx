@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile: boolean }) {
     const pathName = usePathname();
     const [isMobile, setIsMobile] = useState(initialIsMobile);
+    const [showBg, setShowBg] = useState( false );
 
     useEffect(() => {
         if (initialIsMobile === undefined) {
@@ -18,6 +19,14 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
             setIsMobile(!!md.mobile());
         }
     }, []);
+
+    useEffect(
+        () => {
+            const timer = setTimeout( () => setShowBg( true ), 500 );
+            return () => clearTimeout( timer );
+        },
+        []
+    )
 
     const MobileLandingSection = dynamic(() => import('@/(mobile)/_sections/mobile-landing-section'));
     const MobileServicesSection = dynamic(() => import('@/(mobile)/_sections/mobile-services-section'));
@@ -41,25 +50,34 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
     return (
         <main className={`${apexFont.className} flex flex-col items-center min-h-[600px] justify-between gap-20 md:gap-36 mt-24 md:mt-0 md:px-24 ${ isMobile && 'overflow-hidden' }`}>
             
-            <div
-                className={`absolute top-0 right-0 ${ isMobile ? 'mt-12' : 'mt-16' } ${ isMobile ? 'w-[100vw]' : 'w-[70vw]'} ${ isMobile ? 'aspect-[1/1]' : 'aspect-[1280/760]' } z-[-1] ${ isMobile ? `bg-[url('/images/gradient-mobile.webp')]` : `bg-[url('/images/gradient-desktop.webp')]` } bg-contain bg-no-repeat bg-right` }
-                aria-hidden="true"
-                role="presentation"
-            />
+            {
+                showBg &&
+                    <div
+                        className={`absolute top-0 right-0 ${ isMobile ? 'mt-12' : 'mt-16' } ${ isMobile ? 'w-[100vw]' : 'w-[70vw]'} ${ isMobile ? 'aspect-[1/1]' : 'aspect-[1280/760]' } z-[-1] ${ isMobile ? `bg-[url('/images/gradient-mobile.webp')]` : `bg-[url('/images/gradient-desktop.webp')]` } bg-contain bg-no-repeat bg-right` }
+                        aria-hidden="true"
+                        role="presentation"
+                    />
+            }
             
             { 
                 ['/', '/#about-us', '/#services', '/#benefits', '/#hiring-process'].includes( pathName ) && 
                     <h1 className="sr-only">Applica Corp. | Build your dream team with top nearshore IT talent</h1> 
             }
-            { isMobile ?  <MobileLandingSection /> : <LandingSection /> }
-            { isMobile ? <MobileServicesSection /> : <AboutUs /> }
-            { isMobile ? <MobileBenefitsSection /> : <BenefitsSection /> }
-            {/* { isMobile ? <MobileProcessSection /> : <ProcessSection /> } */}
-            { isMobile ? <MobileYourVisionSection /> : <YourVisionSection /> }
-            { isMobile ? <MobileTalenOnDemand /> : <TalentOnDemand /> }
-            { isMobile ? <MobileIndustriesSection /> : <IndustriesSection /> }
-            { isMobile ? <MobileLatestPostsSection/> : <LatestPosts /> }
-            { isMobile &&  <MobileLetsTalkSection /> }
+            {
+                showBg &&
+                <>
+                    { isMobile ?  <MobileLandingSection /> : <LandingSection /> }
+                    { isMobile ? <MobileServicesSection /> : <AboutUs /> }
+                    { isMobile ? <MobileBenefitsSection /> : <BenefitsSection /> }
+                    {/* { isMobile ? <MobileProcessSection /> : <ProcessSection /> } */}
+                    { isMobile ? <MobileYourVisionSection /> : <YourVisionSection /> }
+                    { isMobile ? <MobileTalenOnDemand /> : <TalentOnDemand /> }
+                    { isMobile ? <MobileIndustriesSection /> : <IndustriesSection /> }
+                    { isMobile ? <MobileLatestPostsSection/> : <LatestPosts /> }
+                    { isMobile &&  <MobileLetsTalkSection /> }
+                </>
+            }
+            
         </main>
     )
 }
