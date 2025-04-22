@@ -27,7 +27,7 @@ export default function YourVisionSection() {
 
                 <div className="md:max-w-[80%] text-xl md:text-4xl leading-tight mb-8">
                     <span className="font-bold">Custom solutions</span> or{" "} 
-                    <span className="font-bold">expert teams</span>. Your choise.
+                    <span className="font-bold">expert teams</span>. Your choice.
                 </div>
                 
                 <div className="flex flex-row gap-16">

@@ -4,7 +4,7 @@ import { useFormState, useFormStatus } from "react-dom";
 import { handleContactRequest, Response } from "./actions";
 import Errors from "../_components/errors";
 import Button from "@/components/button";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { apexFont } from "@/assets/fonts";
 import MobileButton from "@/app/(mobile)/_components/mobile-button";
@@ -21,13 +21,15 @@ const REFERRALS_VALUES = [
 const initialState: Response = {
     success: false,
 };
-2
+
 function Submit(  
     {
-        isMobile
+        isMobile,
+        isLoading
     } :
     {
-        isMobile : boolean
+        isMobile : boolean;
+        isLoading: boolean;
     }
 ) {
     const { pending } = useFormStatus();
@@ -38,7 +40,8 @@ function Submit(
                     <MobileButton 
                         type="submit"
                         highlightedArrow={!pending}
-                        disabled={pending}>
+                        disabled={pending}
+                        isLoading={ isLoading }>
                         Submit
                     </MobileButton>
                     :
@@ -46,6 +49,7 @@ function Submit(
                         type="submit"
                         highlightedArrow={!pending}
                         disabled={pending}
+                        isLoading={ isLoading }
                     >
                         Submit
                     </Button>
@@ -68,8 +72,11 @@ export default function FormSection(
         handleContactRequest,
         initialState,
     );
+    const [formKey, setFormKey] = useState(0);
+    const [isLoading, setIsLoading] = useState( false );
 
     useEffect(() => {
+        
         if (!state.success) {
             return;
         }
@@ -79,14 +86,23 @@ export default function FormSection(
         });
 
         formRef.current?.reset();
-    }, [state.success, state.message]);
+        setIsLoading( false );
+        setFormKey(prev => prev + 1);
+        
+    }, [state]);
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        setIsLoading(true);
+    };
 
     return (
         <>
             <Toaster />
 
             <form
+                key = {formKey}
                 action={formAction}
+                onSubmit={handleSubmit}
                 className={`w-full flex flex-col gap-5 ${ apexFont.className }`}
                 ref={formRef}
             >
@@ -158,7 +174,7 @@ export default function FormSection(
                     </label>
                 </div>
                 <div className="flex w-full items-center justify-center">   
-                    <Submit isMobile = { isMobile } />                   
+                    <Submit isMobile = { isMobile } isLoading = { isLoading } />                   
                 </div>
                 {/* <div>
                     <Label title="Name" required>
