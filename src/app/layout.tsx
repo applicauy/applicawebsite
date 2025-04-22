@@ -32,7 +32,7 @@ export default function RootLayout({
                 <Script
                     id="gtm-script"
                     src="https://www.googletagmanager.com/gtm.js?id=G-689YV97H3W"
-                    strategy="afterInteractive"
+                    strategy="lazyOnload"
                     async
                 />
 
