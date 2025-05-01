@@ -5,18 +5,9 @@ import { Inter } from "next/font/google";
 import Script from 'next/script';
 import MobileDetect from 'mobile-detect';
 import LayoutClientWrapper from "./layout-client-wrapper";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-    title: "Applica Corp: IT Staff augmentation services",
-    description:
-        "We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs.",
-    keywords: ['staff augmentation', 'software', 'company', 'team', 'talent'],
-    alternates: {
-        canonical: `https://applicacorp.com/`,
-    }
-};
 
 export default function RootLayout({
     children
@@ -28,7 +19,7 @@ export default function RootLayout({
     const isMobile = !!md.mobile();
     return (
         <html lang="en">
-            <head>
+            <Head>
                 <Script
                     id="gtm-script"
                     src="https://www.googletagmanager.com/gtm.js?id=G-689YV97H3W"
@@ -53,11 +44,17 @@ export default function RootLayout({
                         }
                     `}
                 </Script>
+                <title>Applica Corp | Tailored software development for your growth</title>
+                <meta
+                    name="description"
+                    content="We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs."
+                />
+                <meta name="keywords" content="staff augmentation, software, company, team, talent" />
 
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
                 <link rel="apple-touch-icon" href="/icon_apple_touch.png" sizes="180x180" />
-            </head>
+            </Head>
             
             <LayoutClientWrapper initialIsMobile={isMobile}>{ children }</LayoutClientWrapper>
         </html>
