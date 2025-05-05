@@ -1,5 +1,4 @@
 import "./styles/globals.scss";
-import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import Script from 'next/script';
@@ -7,16 +6,6 @@ import MobileDetect from 'mobile-detect';
 import LayoutClientWrapper from "./layout-client-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-    title: "Applica Corp: IT Staff augmentation services",
-    description:
-        "We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs.",
-    keywords: ['staff augmentation', 'software', 'company', 'team', 'talent'],
-    alternates: {
-        canonical: `https://applicacorp.com/`,
-    }
-};
 
 export default function RootLayout({
     children
@@ -53,6 +42,12 @@ export default function RootLayout({
                         }
                     `}
                 </Script>
+                <title>Applica Corp | Tailored software development for your growth</title>
+                <meta
+                    name="description"
+                    content="We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs."
+                />
+                <meta name="keywords" content="staff augmentation, software, company, team, talent" />
 
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
