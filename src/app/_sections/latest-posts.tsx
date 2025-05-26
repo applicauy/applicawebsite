@@ -1,25 +1,27 @@
 'use client'
 
+import '../styles/animations.scss';
 import '../styles/latest-posts.scss';
 import { avigeaFont } from '@/assets/fonts'
 import H2 from '@/components/h2'
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import { useInView } from 'react-intersection-observer';
+import Section from '@/components/section';
 
 export default function LatestPosts() {
   
-  const Section = dynamic(() => import('@/components/section'));
-  const LatestPostsClient = dynamic(() => import('@/app/_components/latest-posts-client'));
+  const LatestPostsClient = dynamic(() => import('@/app/_components/latest-posts-client'), { ssr: false });
+
+  const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
 
   return (
     <Section className="relative flex flex-col gap-8 mb-20">
-      <motion.div
-          className="flex flex-col gap-8 items-center"
-          initial={{ opacity: 0, x: "-20px" }}
-          whileInView={{ opacity: 1, x: "0px" }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+      <div
+          ref={ref}
+          className={`flex flex-col gap-8 items-center transition-all duration-1000 ease-out transform ${
+            inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
+          }`}
       >
         <div className="latest-posts-degraded">
           <Image
@@ -47,7 +49,7 @@ export default function LatestPosts() {
         <div className="block w-[100%]">
           <LatestPostsClient></LatestPostsClient>
         </div>
-      </motion.div>
+      </div>
     </Section>
   )
 }

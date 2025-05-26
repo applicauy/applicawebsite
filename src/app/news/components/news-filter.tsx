@@ -107,7 +107,7 @@ export default function NewsFilter(
                     <div className="md:w-4/5 w-full">   
                         {category ? (
                             <>
-                                <span className={ `text-3xl text-secondary-text w-full flex justify-center mb-12 md:mb-20 items-stretch font-medium ${ isMobile && 'mt-5' }` } >
+                                <span className={ `text-3xl text-secondary-text w-full flex justify-center mb-12 md:mb-20 items-stretch font-medium` } >
                                     {category.name}
                                 </span>
                                 <Configure filters={`tags.id:${category.objectID}`} />

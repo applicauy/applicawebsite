@@ -1,16 +1,16 @@
 "use client"
+
+import '../../styles/animations.scss';
 import Image from "next/image";
-import { avigeaFont } from "@/assets/fonts";
 import MobileButton from "../_components/mobile-button";
 import MobileGradientBall from "../_components/mobile-gradient-ball";
 import MobileH2 from "../_components/mobile-h2";
-import { /*onStartNowClick,*/ useNavigationHandlers } from "@/lib/helpers";
+import { useNavigationHandlers } from "@/lib/helpers";
 import mapImg from "@/assets/mapa.webp";
-import MobileH1 from "../_components/mobile-h1";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import dynamic from "next/dynamic";
 import Section from "@/components/section";
+import { useEffect, useState } from 'react';
 
 
 /**
@@ -25,24 +25,19 @@ export default function MobileTalenOnDemand() {
       threshold: 0.9,
     });
 
+    const [hasMounted, setHasMounted] = useState(false);
+                    
+    useEffect(() => {
+        setHasMounted(true);
+    }, []);
+
     return (
         <Section className="flex flex-col-reverse gap-10">
-            <motion.div
-                className="flex flex-col items-center md:items-start md:w-[60%] w-full z-20"
-                initial={{ opacity: 0, x: "-20px" }}
-                whileInView={{ opacity: 1, x: "0px" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+            <div
+                className={ `flex flex-col items-center md:items-start md:w-[60%] w-full z-20 fade-in-left ${
+                  hasMounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
+                }` }
             >
-                {/* <MobileH1 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
-                    Talent on demand{" "}
-                    <span
-                        className={`font-medium ${avigeaFont.className} block`}
-                    >
-                        ready to be hired
-                    </span>
-                </MobileH1> */}
-
                 <MobileH2 className="w-full text-center md:text-left">
                     Bridging the gap between cutting-edge technology and impactful results, we deliver customized software solutions that scale with your business.
                 </MobileH2>
@@ -84,14 +79,12 @@ export default function MobileTalenOnDemand() {
                 <MobileButton onClick={onStartNowClick}>
                     Schedule a call
                 </MobileButton>      
-            </motion.div>
+            </div>
 
-            <motion.div
-                className="flex flex-col md:flex-row gap-8"
-                initial={{ opacity: 0, x: "-20px" }}
-                whileInView={{ opacity: 1, x: "0px" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+            <div
+                className={`flex flex-col md:flex-row gap-8 fade-in-left ${
+                  hasMounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
+                }`}
             >
                 <Image
                     src={mapImg}
@@ -100,7 +93,7 @@ export default function MobileTalenOnDemand() {
                     alt="Applica offices across the world"
                     loading="lazy"
                 />
-            </motion.div>
+            </div>
         </Section>
     );
 }

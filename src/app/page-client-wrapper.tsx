@@ -21,7 +21,9 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
 
     const MobileLandingSection = dynamic(() => import('@/(mobile)/_sections/mobile-landing-section'));
     const MobileServicesSection = dynamic(() => import('@/(mobile)/_sections/mobile-services-section'));
+    const MobileExpertiseHubSection = dynamic(() => import('@/(mobile)/_sections/mobile-expertise-hub-section'));
     const MobileBenefitsSection = dynamic(() => import('@/(mobile)/_sections/mobile-benefits-section'));
+    const MobileTechnologiesSection = dynamic(() => import('@/(mobile)/_sections/mobile-technologies-section'));
     const MobileProcessSection = dynamic(() => import('@/(mobile)/_sections/mobile-proccess-section'));
     const MobileYourVisionSection = dynamic(() => import('@/(mobile)/_sections/mobile-your-vision-section'));
     const MobileTalenOnDemand = dynamic(() => import('@/(mobile)/_sections/mobile-talen-on-demand'));
@@ -30,8 +32,10 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
     const MobileLetsTalkSection = dynamic(() => import('@/(mobile)/_sections/mobile-lets-talk-section'));
 
     const LandingSection = dynamic(() => import('@/sections/landing-section'));
-    const AboutUs = dynamic(() => import('@/sections/about-us'));
+    const AboutUsSection = dynamic(() => import('@/sections/about-us'));
+    const ExpertiseHubSection = dynamic(() => import('@/sections/expertise-hub-section'));
     const BenefitsSection = dynamic(() => import('@/sections/benefits-section'));
+    const TechnologiesSection = dynamic(() => import('@/sections/technologies-section'));
     const ProcessSection = dynamic(() => import('@/sections/process-section'));
     const YourVisionSection = dynamic(() => import('@/sections/your-vision-section'));
     const TalentOnDemand = dynamic(() => import('@/sections/talent-on-demand'));
@@ -39,7 +43,7 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
     const LatestPosts = dynamic(() => import('@/sections/latest-posts'));
 
     return (
-        <main className={`${apexFont.className} flex flex-col items-center min-h-[600px] justify-between gap-20 md:gap-36 mt-24 md:mt-0 md:px-24 ${ isMobile && 'overflow-hidden' }`}>
+        <main className={`${apexFont.className} flex flex-col items-center min-h-[600px] justify-between gap-12 md:gap-36 mt-24 md:mt-0 md:px-24 ${ isMobile && 'overflow-hidden' }`}>
             
             <div
                 className={`absolute top-0 right-0 ${ isMobile ? 'mt-12' : 'mt-16' } ${ isMobile ? 'w-[85vw]' : 'w-[70vw]'} ${ isMobile ? 'aspect-[1/1]' : 'aspect-[1280/760]' } z-[-1] ${ isMobile ? `bg-[url('/images/gradient-mobile.webp')]` : `bg-[url('/images/gradient-desktop.webp')]` } bg-contain bg-no-repeat bg-right` }
@@ -47,13 +51,15 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
                 role="presentation"
             />
             
-            { 
+            {/* { 
                 ['/', '/#about-us', '/#services', '/#benefits', '/#hiring-process'].includes( pathName ) && 
                     <h1 className="sr-only">Applica Corp. | Build your dream team with top nearshore IT talent</h1> 
-            }
+            } */}
             { isMobile ?  <MobileLandingSection /> : <LandingSection /> }
-            { isMobile ? <MobileServicesSection /> : <AboutUs /> }
+            { isMobile ? <MobileServicesSection /> : <AboutUsSection /> }
+            { isMobile ? <MobileExpertiseHubSection /> : <ExpertiseHubSection /> }
             { isMobile ? <MobileBenefitsSection /> : <BenefitsSection /> }
+            { isMobile ? <MobileTechnologiesSection /> : <TechnologiesSection /> }
             {/* { isMobile ? <MobileProcessSection /> : <ProcessSection /> } */}
             { isMobile ? <MobileYourVisionSection /> : <YourVisionSection /> }
             { isMobile ? <MobileTalenOnDemand /> : <TalentOnDemand /> }
