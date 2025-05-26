@@ -1,14 +1,13 @@
 "use client";
+
+import '../styles/animations.scss';
 import Image from "next/image";
-import { avigeaFont } from "@/assets/fonts";
 import Button from "@/components/button";
 import GradientBall from "../_components/gradient-ball";
-import H2 from "@/components/h2";
 import H3 from "@/components/h3";
-import { /*onStartNowClick,*/ useNavigationHandlers } from "@/lib/helpers";
+import { useNavigationHandlers } from "@/lib/helpers";
 import mapImg from "@/assets/mapa.webp";
 import { useInView } from "react-intersection-observer";
-import { motion } from 'framer-motion';
 import Section from "@/components/section";
 
 /**
@@ -18,29 +17,17 @@ import Section from "@/components/section";
  */
 export default function TalentOnDemand() {
     const { onStartNowClick } = useNavigationHandlers();
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 0.9,
-      });
+    
+    const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
     
     return (
         <Section className="flex flex-col md:flex-row gap-8">
-            <motion.div
-                className="flex flex-col items-center md:items-start md:w-full my-auto"
-                initial={{ opacity: 0, x: "-20px" }}
-                whileInView={{ opacity: 1, x: "0px" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+            <div
+                ref={ref}
+                className={`flex flex-col items-center md:items-start md:w-full my-auto transition-all duration-1000 ease-out transform ${
+                  inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
+                }`}
             >
-                {/* <H2 className="mb-6 md:mb-12 w-4/5 md:w-full text-center md:text-left">
-                    Talent on demand{" "}
-                    <span
-                        className={`font-medium ${avigeaFont.className} block`}
-                    >
-                        ready to be hired
-                    </span>
-                </H2> */}
-
                 <H3 className="w-4/5 md:w-full text-center md:text-left">
                     Bridging the gap between cutting-edge technology and impactful results, we deliver customized software solutions that scale with your business.
                 </H3>
@@ -81,14 +68,13 @@ export default function TalentOnDemand() {
 
                 <Button onClick={onStartNowClick}>Schedule a call</Button>
                 
-            </motion.div>
+            </div>
 
-            <motion.div
-                className="flex flex-col items-center md:items-start md:w-full my-auto"
-                initial={{ opacity: 0, x: "-20px" }}
-                whileInView={{ opacity: 1, x: "0px" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+            <div
+                ref={ref}
+                className={`flex flex-col items-center md:items-start md:w-full my-auto transition-all duration-1000 ease-out transform ${
+                  inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
+                }`}
             >
                 <div>
                     <Image
@@ -99,7 +85,7 @@ export default function TalentOnDemand() {
                         loading="lazy"
                     />
                 </div>
-            </motion.div>
+            </div>
 
 
         </Section>

@@ -5,6 +5,7 @@ import MobileDetect from "mobile-detect";
 import { Metadata } from "next";
 import { headers } from "next/headers";
 import dynamic from "next/dynamic";
+import NewsHeader from "../../components/news-header";
 
 interface Props {
   params: { url: string }
@@ -45,7 +46,7 @@ const page = async ( { params } : Props ) => {
 
     return (
         <>
-            <h1 className="sr-only">{ category?.name }</h1>
+            <NewsHeader />
             <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 mt-20 md:mt-8`}>
                 <NewsFilter isMobile = { isMobile } category = { category }/>
             </div>
