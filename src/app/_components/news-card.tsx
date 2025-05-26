@@ -57,7 +57,7 @@ const NewsCard = (
                         )
                     }
                 </div>
-               <h2 className={ `text-2xl text-left w-[80%] flex-col font-medium ${ fromNews ? 'text-highlight' : 'text-white' }` }>{ title }</h2>
+               <h3 className={ `text-2xl text-left w-[80%] flex-col font-medium ${ fromNews ? 'text-highlight' : 'text-white' }` }>{ title }</h3>
                {
                 fromNews &&
                 <p className="text-lg mt-5">{ summary }</p>

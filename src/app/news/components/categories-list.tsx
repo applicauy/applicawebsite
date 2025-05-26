@@ -39,7 +39,7 @@ const CategoriesList = () => {
 
     return (
         <div className="hidden md:block md:w-1/5">
-            <h3 className="text-2xl md:text-3xl leading-none text-highlight mb-5 font-medium">Categories</h3>
+            <h2 className="text-2xl md:text-3xl leading-none text-highlight mb-5 font-medium">Categories</h2>
             <ul>
                 {
                     filteredCategories.map(

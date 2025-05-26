@@ -1,17 +1,15 @@
 'use client'
 
 import { avigeaFont } from "@/assets/fonts";
-import MobileCarousel from "../_components/mobile-carousel";
 import MobileH1 from "../_components/mobile-h1";
-import { motion } from 'framer-motion';
-import dynamic from "next/dynamic";
 import strategicPartner from "@/assets/strategic.webp";
 import teamCulture from "@/assets/team-culture.webp";
 import scalability from "@/assets/scalability.webp";
 import ready from "@/assets/ready.webp";
 import { BenefitsCard } from "@/app/_components/benefits-card";
+import Section from "@/components/section";
+import { useInView } from "react-intersection-observer";
 
-// Benefits to be displayed in the section.
 const BENEFITS = [
     {
         image: strategicPartner,
@@ -40,15 +38,16 @@ const BENEFITS = [
 ];
 
 export default function MobileBenefitsSection() {
-    const Section = dynamic(() => import('@/components/section'));
+
+    const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
+
     return (
         <Section className="flex flex-col gap-12 md:gap-36  overflow-hidden">
-            <motion.div
-                className="md:max-w-[66%] relative"
-                initial={{ opacity: 0, x: "-20px" }}
-                whileInView={{ opacity: 1, x: "0px" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+            <div
+                ref={ref}
+                className={`md:max-w-[66%] relative transition-all duration-1000 ease-out transform ${
+                    inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
+                }`}
             >
 
                 <div className="flex flex-col md:flex-row gap-8 items-center" id="benefits">
@@ -87,17 +86,7 @@ export default function MobileBenefitsSection() {
                         ))}
                     </div>
                 </div>
-            </motion.div>
-            <motion.div
-                className="md:max-w-[66%] relative mt-6"
-                initial={{ opacity: 0, x: "-20px" }}
-                whileInView={{ opacity: 1, x: "0px" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-            >
-                <MobileCarousel />
-            </motion.div>
-
+            </div>
         </Section>
     );
 }

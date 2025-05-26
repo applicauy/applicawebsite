@@ -1,19 +1,22 @@
+'use client'
+
 import '../../styles/your-vision.scss';
-import dynamic from 'next/dynamic';
 import MobileH1 from '../_components/mobile-h1';
 import { avigeaFont } from '@/assets/fonts';
-import { motion } from 'framer-motion';
+import Section from '@/components/section';
+import { useInView } from 'react-intersection-observer';
 
 export default function MobileYourVisionSection() {
-    const Section = dynamic(() => import('@/components/section'));
+
+    const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
+    
     return (
         <Section className={`flex flex-col items-center w-full`}>
-            <motion.div
-                className="flex flex-col items-center md:items-start md:w-[60%] w-full z-20"
-                initial={{ opacity: 0, x: "-20px" }}
-                whileInView={{ opacity: 1, x: "0px" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+            <div
+                ref={ref}
+                className={`flex flex-col items-center md:items-start md:w-[60%] w-full z-20 transition-all duration-1000 ease-out transform ${
+                  inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
+                }`}
                 id='your-vision'
             >
                 <MobileH1 className="mb-12 md:mb-12 text-center">
@@ -42,7 +45,7 @@ export default function MobileYourVisionSection() {
                         <p className='text-xl text-white text-center'>Beyond technical expertise, we emphasize soft skills and a human-centered approach to drive collaboration, spark innovation, and ensure lasting success.</p>
                     </div>
                 </div>
-            </motion.div>
+            </div>
         </Section>
     );
 }

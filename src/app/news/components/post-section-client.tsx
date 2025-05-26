@@ -9,6 +9,7 @@ import { Post } from "@/utils/models/Post";
 import Markdown from "markdown-to-jsx";
 import ImageCarousel from "./lightgallery";
 import dynamic from "next/dynamic";
+import H1 from '@/components/h1';
 
 const PostSectionClient = (
     {
@@ -37,7 +38,7 @@ const PostSectionClient = (
     return (
         <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 md:mt-10 mt-24 overflow-hidden ${ isMobile && 'mb-16' }`}>
           <Section className="relative flex flex-col mb-4">
-            <h1 className="sr-only">{ post.title }</h1>
+            {/* <h1 className="sr-only">{ post.title }</h1> */}
             <div className="flex flex-wrap gap-2 mb-5">
               {
                 post.tags.map(
@@ -52,15 +53,9 @@ const PostSectionClient = (
                 )
               }
             </div>
-            {
-              isMobile ?
-                <MobileH1 className="font-medium text-highlight">
-                  { post.title }
-                </MobileH1> :
-                <H2 className="font-medium text-highlight">
-                  { post.title }
-                </H2>
-            }
+            <H1 className="font-medium text-highlight">
+              { post.title }
+            </H1>
             <span className={`md:mt-10 mt-6 text-secondary-text ${isMobile ? 'text-lg' : 'text-xl'}`}>Published at { post.publishedDate }</span>
             <div className="image-container-blog flex items-center justify-center w-full relative mt-10 md:mt-24">
               {

@@ -3,6 +3,8 @@ import { headers } from "next/headers";
 import MobileDetect from "mobile-detect";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import H1 from "@/components/h1";
+import NewsHeader from "./components/news-header";
 
 export const metadata: Metadata = {
     title: 'News | Applica Corp.',
@@ -23,8 +25,9 @@ export default function Page() {
     
     return (
         <>
-            <h1 className="sr-only">Applica Corp. | News</h1>
-            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 mt-20 md:mt-8`}>
+            {/* <h1 className="sr-only">Applica Corp. | News</h1> */}
+            <NewsHeader />
+            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 mt-6 md:mt-8`}>
                 <NewsFilter isMobile = { isMobile }/>
             </div>
             {
