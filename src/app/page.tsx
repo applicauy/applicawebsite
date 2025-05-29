@@ -10,6 +10,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://applicacorp.com/',
   },
+  openGraph: {
+    title: 'Applica Corp | Tailored software development for your growth',
+    description: 'We deliver peace of mind and time savings through our expert nearshore IT teams. Get started in 72 hours.',
+    url: 'https://applicacorp.com/',
+    siteName: 'Applica Corp',
+    images: [
+      {
+        url: 'https://applicacorp.com/images/og_image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Applica Corp team working on a project',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Applica Corp | Tailored software development for your growth',
+    description: 'We deliver peace of mind and time savings through our expert nearshore IT teams. Get started in 72 hours.',
+    images: ['https://applicacorp.com/images/og_image.png'],
+  }
 };
 
 export default function Home() {
