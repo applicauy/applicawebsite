@@ -42,13 +42,6 @@ export default function RootLayout({
                         }
                     `}
                 </Script>
-                <title>Applica Corp | Tailored software development for your growth</title>
-                <meta
-                    name="description"
-                    content="We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs."
-                />
-                <meta name="keywords" content="staff augmentation, software, company, team, talent" />
-
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
                 <link rel="apple-touch-icon" href="/icon_apple_touch.png" sizes="180x180" />
