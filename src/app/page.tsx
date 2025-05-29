@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     siteName: 'Applica Corp',
     images: [
       {
-        url: 'https://applicacorp.com/images/og_image.png',
+        url: 'https://applicacorp.com/images/og_image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Applica Corp team working on a project',
+        alt: 'Applica Corp Logo',
       },
     ],
     locale: 'en_US',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Applica Corp | Tailored software development for your growth',
     description: 'We deliver peace of mind and time savings through our expert nearshore IT teams. Get started in 72 hours.',
-    images: ['https://applicacorp.com/images/og_image.png'],
+    images: ['https://applicacorp.com/images/og_image.jpg'],
   }
 };
 
