@@ -35,7 +35,9 @@ const CategoriesList = () => {
       fetchActiveTags();
     }, []);
 
-    const filteredCategories = categories.filter((category) => activeTags.has(category.name));
+    const filteredCategories = categories
+                                .filter((category) => activeTags.has(category.name))
+                                .sort((a, b) => a.name.localeCompare(b.name));
 
     return (
         <div className="hidden md:block md:w-1/5">
