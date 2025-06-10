@@ -55,10 +55,10 @@ export const NAVIGATION_LINKS = [
         text: "Benefits",
         href: "#benefits",
     },
-    {
-        text: "Hiring process",
-        href: "#hiring-process",
-    },
+    // {
+    //     text: "Hiring process",
+    //     href: "#hiring-process",
+    // },
     {
         text: "News",
         href: "news",

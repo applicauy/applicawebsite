@@ -25,22 +25,21 @@ export default function RootLayout({
                     async
                 />
 
-                {/* Metricool Tracking Script */}
-                <Script
-                    id="metricool-script"
-                    src="https://tracker.metricool.com/resources/be.js"
-                    strategy="lazyOnload"
-                />
-                <Script 
-                    id="metricool-init" 
-                    strategy="lazyOnload">
-                    {`
-                        if (window.beTracker) {
-                        window.beTracker.t({
-                            hash: "1290ec9204a13f1d44c1fae9bed96d16"
-                        });
-                        }
-                    `}
+                <Script id="metricool-loader" strategy="lazyOnload">
+                {`
+                    function loadScript(a){
+                    var b=document.getElementsByTagName("head")[0],
+                        c=document.createElement("script");
+                    c.type="text/javascript";
+                    c.src="https://tracker.metricool.com/resources/be.js";
+                    c.onreadystatechange=a;
+                    c.onload=a;
+                    b.appendChild(c);
+                    }
+                    loadScript(function(){
+                    beTracker.t({hash:"1290ec9204a13f1d44c1fae9bed96d16"});
+                    });
+                `}
                 </Script>
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
