@@ -8,6 +8,7 @@ import clutchIcon from "@/assets/icons/clutch.webp";
 import clutchRecognitionImg from "@/assets/clutch/clutch-recognition.webp";
 import clutchStarsImg from "@/assets/clutch/clutch-stars.webp";
 import { LOCATIONS, NAVIGATION_LINKS } from "@/app/_components/footer";
+import Script from 'next/script';
 
 const MobileFooter = (
     {
@@ -23,6 +24,22 @@ const MobileFooter = (
         <footer
             className={`${apexFont.className} px-4 sm:px-6 md:px-8 py-8 sm:py-16 md:py-24 shadow-md`}
         >
+            <Script id="metricool-loader" strategy="afterInteractive">
+                {`
+                    function loadScript(a){
+                    var b=document.getElementsByTagName("head")[0],
+                        c=document.createElement("script");
+                    c.type="text/javascript";
+                    c.src="https://tracker.metricool.com/resources/be.js";
+                    c.onreadystatechange=a;
+                    c.onload=a;
+                    b.appendChild(c);
+                    }
+                    loadScript(function(){
+                    beTracker.t({hash:"1290ec9204a13f1d44c1fae9bed96d16"});
+                    });
+                `}
+                </Script>
             <div className="flex justify-between items-center py-2 sm:py-4 md:py-8">
                 <div className="w-3/5">
                     <div className="max-w-40">
