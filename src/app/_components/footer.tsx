@@ -8,6 +8,7 @@ import linkedinIcon from "@/assets/icons/linkedin.webp";
 import instagramIcon from "@/assets/icons/instagram.webp";
 import clutchIcon from "@/assets/icons/clutch.webp";
 import dynamic from "next/dynamic";
+import Script from 'next/script';
 
 /**
  * Array of locations.
@@ -55,10 +56,10 @@ export const NAVIGATION_LINKS = [
         text: "Benefits",
         href: "#benefits",
     },
-    // {
-    //     text: "Hiring process",
-    //     href: "#hiring-process",
-    // },
+    {
+        text: "Hiring process",
+        href: "#hiring-process",
+    },
     {
         text: "News",
         href: "news",
@@ -89,6 +90,22 @@ export default function Footer(
                 className={`${apexFont.className} py-16 bg-secondary-bg text-xl flex flex-col gap-8`}
                 style = {{ paddingLeft: '6rem', paddingRight: '6rem' }}
             >
+                <Script id="metricool-loader" strategy="afterInteractive">
+                    {`
+                        function loadScript(a){
+                        var b=document.getElementsByTagName("head")[0],
+                            c=document.createElement("script");
+                        c.type="text/javascript";
+                        c.src="https://tracker.metricool.com/resources/be.js";
+                        c.onreadystatechange=a;
+                        c.onload=a;
+                        b.appendChild(c);
+                        }
+                        loadScript(function(){
+                        beTracker.t({hash:"1290ec9204a13f1d44c1fae9bed96d16"});
+                        });
+                    `}
+                </Script>
                 <div className="container mx-25 flex flex-col md:flex-row gap-16 justify-between">
                     <a href="/">
                         <Image
