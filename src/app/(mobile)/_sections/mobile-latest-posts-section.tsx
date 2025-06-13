@@ -13,10 +13,12 @@ import { useInView } from 'react-intersection-observer';
 
 export default function MobileLatestPostsSection(
     { 
-        fromPost = false
+        fromPost = false,
+        fromLanding = false
     } :
     { 
-        fromPost?: boolean
+        fromPost?: boolean,
+        fromLanding?: boolean
     }
 ) {
   const LatestPostsClient = dynamic(() => import('@/app/_components/latest-posts-client'));
@@ -24,15 +26,15 @@ export default function MobileLatestPostsSection(
   const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
   
   return (
-    <Section className="flex flex-col md:gap-20">
+    <Section className="flex flex-col lg:gap-20 md:mt-8">
         <div
             ref={ref}
-            className={`flex flex-col md:flex-row gap-8 transition-all duration-1000 ease-out transform ${
+            className={`flex flex-col lg:flex-row gap-8 transition-all duration-1000 ease-out transform ${
                 inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
             }`}
         >
             {
-                !fromPost &&
+                ( !fromPost && !fromLanding ) &&
                 <div className="latest-posts-degraded-mobile">
                     <Image
                         src="/images/gradient-mobile.webp"
@@ -51,7 +53,7 @@ export default function MobileLatestPostsSection(
                     latest posts
                 </span>
             </MobileH1>
-            <div className="flex flex-col">
+            <div className="flex flex-col md:mt-8 md:mb-12">
                 <LatestPostsClient></LatestPostsClient>
             </div>
         </div>

@@ -1,27 +1,28 @@
 'use client';
 import MobileDetect from "mobile-detect";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 import { GoogleTagManager } from "@next/third-parties/google";
 import TrackPageView from "../components/track-page-view";
 
 const GTM_ID = "GTM-PQ3DNDZ";
 
-
 import { Inter } from "next/font/google";
 import Loading from "@/components/loading";
-import { usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 const inter = Inter({ subsets: ["latin"] });
 
-
-export default function LayoutClientWrapper({ children, initialIsMobile }: { children: React.ReactNode, initialIsMobile: boolean }) {
-    const [isMobile, setIsMobile] = useState(initialIsMobile);
+export default function LayoutClientWrapper({ children }: { children: React.ReactNode }) {
+    const [isMobile, setIsMobile] = useState(false);
 
     const [loading, setLoading] = useState(false);
 
-    const pathname = usePathname();
+    const [width, setWidth] = useState(0);
+
+    useEffect(() => {
+      setWidth(window.innerWidth);
+      setIsMobile( window.innerWidth <= 800 );
+    }, []);
 
     const handleMenuClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         setLoading(isMobile ? true : false);
@@ -70,13 +71,6 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
             document.body.style.overflow = ''; 
         };
     }, [loading]);
-
-    useEffect(() => {
-        if (!initialIsMobile) {
-            const md = new MobileDetect(window.navigator.userAgent);
-            setIsMobile(!!md.mobile());
-        }
-    }, [initialIsMobile]);
 
     useEffect(() => {
 
@@ -129,7 +123,7 @@ export default function LayoutClientWrapper({ children, initialIsMobile }: { chi
             {children}
             
             { 
-                isMobile ? 
+                width < 1025 ? 
                     <MobileFooter handleScroll = { handleScroll }/> : 
                     <Footer handleScroll = { handleScroll }/> 
             }

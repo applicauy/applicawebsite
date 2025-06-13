@@ -57,10 +57,6 @@ export const NAVIGATION_LINKS = [
         href: "#benefits",
     },
     {
-        text: "Hiring process",
-        href: "#hiring-process",
-    },
-    {
         text: "News",
         href: "news",
     },

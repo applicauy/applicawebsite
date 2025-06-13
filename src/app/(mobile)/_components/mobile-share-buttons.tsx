@@ -26,6 +26,12 @@ export default function MobileShareButtons(
 
     const [ url, setUrl ] = useState('');
 
+    const [width, setWidth] = useState(0);
+        
+    useEffect(() => {
+      setWidth(window.innerWidth);
+    }, []);
+
     useEffect(
         () => {
             if( typeof window !== 'undefined' ) {
@@ -38,16 +44,16 @@ export default function MobileShareButtons(
     return (
 
         <div className="share-buttons flex flex-col gap-5 justify-center items-center mt-8">
-          <span className='text-lg'>Share this post</span>
-          <div className="flex flex-row gap-2">
+          <span className='text-lg md:text-xl mdplus:text-2xl'>Share this post</span>
+          <div className="flex flex-row gap-2 mdplus:gap-5">
 
             <FacebookShareButton url={url} title={title}>
                 <div className="bg-white rounded-full hover:bg-[#1877F2] transition-all duration-300">
                 <Image
                         src = {facebookLogoImg}
                         alt = "Facebook Logo"
-                        width={45}
-                        height={45}
+                        width={ width > 767 ? 60 : 45}
+                        height={ width > 767 ? 60 : 45}
                         className='rounded-full'
                         loading="lazy"
                 />
@@ -59,8 +65,8 @@ export default function MobileShareButtons(
                 <Image
                     src = {xLogoImg}
                     alt = "X Logo"
-                    width={45}
-                    height={45}
+                    width={ width > 767 ? 60 : 45}
+                    height={ width > 767 ? 60 : 45}
                     className='rounded-full'
                     loading="lazy"
                 />
@@ -73,8 +79,8 @@ export default function MobileShareButtons(
                 <Image
                     src = {linkedinLogoImg}
                     alt = "LinkedIn Logo"
-                    width={45}
-                    height={45}
+                    width={ width > 767 ? 60 : 45}
+                    height={ width > 767 ? 60 : 45}
                     className='rounded-full'
                     loading="lazy"
                 />
@@ -86,9 +92,9 @@ export default function MobileShareButtons(
                 <div className="bg-white rounded-full hover:bg-gray-400 transition-all duration-300">
                 <Image
                     src = {emailLogoImg}
-                    alt = "Email Logo"
-                    width={45}
-                    height={45}
+                    alt = "E-mail Logo"
+                    width={ width > 767 ? 60 : 45}
+                    height={ width > 767 ? 60 : 45}
                     className='rounded-full'
                     loading="lazy"
                 />
@@ -100,8 +106,8 @@ export default function MobileShareButtons(
                 <Image
                     src = {whatsappLogoImg}
                     alt = "WhatsApp Logo"
-                    width={45}
-                    height={45}
+                    width={ width > 767 ? 60 : 45}
+                    height={ width > 767 ? 60 : 45}
                     className='rounded-full'
                     loading="lazy"
                 />

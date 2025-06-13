@@ -6,7 +6,7 @@ const H2 = ({
     subtitle
 }: PropsWithChildren<{ className?: string, subtitle?: boolean }>) => {
     return (
-        <h2 className={`${ subtitle ? 'text-2xl md:text-3xl' : 'text-3xl md:text-6xl' }  leading-none` + (className ? " " + className : "")}>
+        <h2 className={`${ subtitle ? 'text-2xl md:text-3xl' : 'text-4xl lg:text-6xl' }  leading-none` + (className ? " " + className : "")}>
             {children}
         </h2>
     );

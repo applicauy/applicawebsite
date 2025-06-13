@@ -1,16 +1,15 @@
 "use client"
 
-import '../../styles/animations.scss';
 import Image from "next/image";
 import MobileButton from "../_components/mobile-button";
 import MobileGradientBall from "../_components/mobile-gradient-ball";
 import MobileH2 from "../_components/mobile-h2";
 import { useNavigationHandlers } from "@/lib/helpers";
 import mapImg from "@/assets/mapa.webp";
-import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Section from "@/components/section";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import MobileH3 from "../_components/mobile-h3";
 
 
 /**
@@ -20,29 +19,27 @@ import { useEffect, useState } from 'react';
  */
 export default function MobileTalenOnDemand() {
     const { onStartNowClick } = useNavigationHandlers();
-    const { ref, inView } = useInView({
-      triggerOnce: true,
-      threshold: 0.9,
-    });
+    const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
 
-    const [hasMounted, setHasMounted] = useState(false);
-                    
+    const [width, setWidth] = useState(0);
+                
     useEffect(() => {
-        setHasMounted(true);
+      setWidth(window.innerWidth);
     }, []);
 
     return (
-        <Section className="flex flex-col-reverse gap-10">
+        <Section className="flex flex-col-reverse gap-10 md:mt-12">
             <div
-                className={ `flex flex-col items-center md:items-start md:w-[60%] w-full z-20 fade-in-left ${
-                  hasMounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
+                ref={ref}
+                className={ `flex flex-col items-center lg:items-start lg:w-[60%] w-full z-20 transition-all duration-1000 ease-out transform ${
+                  inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
                 }` }
             >
-                <MobileH2 className="w-full text-center md:text-left">
+                <MobileH3 className="w-full text-center lg:text-left">
                     Bridging the gap between cutting-edge technology and impactful results, we deliver customized software solutions that scale with your business.
-                </MobileH2>
+                </MobileH3>
 
-                <div ref={ref} className="flex flex-wrap flex-row mt-12 md:mt-12 mb-12 md:mb-16 gap-6 justify-center">
+                <div ref={ref} className="flex flex-wrap flex-row mt-12 lg:mt-12 mb-12 lg:mb-16 gap-6 justify-center md:w-full">
                     { inView && 
                         <MobileGradientBall 
                             title = {450} 
@@ -82,13 +79,11 @@ export default function MobileTalenOnDemand() {
             </div>
 
             <div
-                className={`flex flex-col md:flex-row gap-8 fade-in-left ${
-                  hasMounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
-                }`}
+                className={'flex flex-col items-center lg:flex-row gap-8 transition-all duration-1000 ease-out transform'}
             >
                 <Image
                     src={mapImg}
-                    width={1000}
+                    width={ width < 767 ? 1000 : 500 }
                     height={100}
                     alt="Applica offices across the world"
                     loading="lazy"

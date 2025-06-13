@@ -36,11 +36,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
 
-    const userAgent = headers().get('user-agent') || '';
-    const md = new MobileDetect(userAgent);
-    const isMobile = !!md.mobile();
-
     return (
-        <PageClientWrapper initialIsMobile = { isMobile }></PageClientWrapper>
+        <PageClientWrapper></PageClientWrapper>
     );
 }

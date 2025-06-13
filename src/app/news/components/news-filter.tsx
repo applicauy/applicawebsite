@@ -20,15 +20,22 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 export default function NewsFilter(
     {
-        isMobile,
         category
     } :
     {
-        isMobile: boolean;
         category?: Cateogry | null
     }
 ) {
     const [loading, setLoading] = useState( false );
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    const [width, setWidth] = useState(0);
+
+    useEffect(() => {
+      setWidth(window.innerWidth);
+      setIsMobile( window.innerWidth <= 800 );
+    }, []);
 
     const searchParams = useSearchParams();
     const pageParam = searchParams.get('page');
@@ -104,7 +111,7 @@ export default function NewsFilter(
                 <Configure hitsPerPage={ isMobile ? currentPage * 4 : currentPage * 6 } page = { currentPage }/>
                 <div className="flex w-full">
                     <CategoriesList />
-                    <div className="md:w-4/5 w-full">   
+                    <div className="lg:w-4/5 w-full">   
                         {category ? (
                             <>
                                 <span className={ `text-3xl text-secondary-text w-full flex justify-center mb-12 md:mb-20 items-stretch font-medium` } >

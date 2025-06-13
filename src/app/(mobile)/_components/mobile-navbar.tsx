@@ -20,6 +20,12 @@ const MobileNavBar = (
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
+    const [width, setWidth] = useState(0);
+      
+    useEffect(() => {
+      setWidth(window.innerWidth);
+    }, []);
+
     const handleScroll = () => {
         if (window.scrollY === 0) {
           setShowNavbar(true);
@@ -56,9 +62,15 @@ const MobileNavBar = (
             variants={variants}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
         >
-            <div className="max-w-48 z-[1100]">
+            <div className="max-w-48 md:max-w-60 z-[1100]">
                 <a href="/">
-                    <Image alt="Applica's logo" src={logo} loading="lazy" width={300} height={100}/>
+                    <Image 
+                        alt="Applica's logo" 
+                        src={logo} 
+                        loading="lazy" 
+                        width={ width > 767 ? 400 : 300 } 
+                        height={ width > 767 ? 130 : 100}
+                    />
                 </a>
             </div>
             <MobileMenu onMenuClick = { (event: any) => onMenuClick( event ) } handleScroll = { handleScrollFromClick } />

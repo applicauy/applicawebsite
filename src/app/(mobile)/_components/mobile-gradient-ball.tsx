@@ -25,7 +25,7 @@ export default function MobileGradientBall({
     subtitle: string;
 }) {
     return (
-        <div className="rounded-full p-6 w-40 h-40 md:w-24 md:h-24 lg:w-36 lg:h-36 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 flex flex-col justify-center items-center leading-tight">
+        <div className="rounded-full p-6 w-40 h-40 lg:w-24 lg:h-24 xl:w-36 xl:h-36 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 flex flex-col justify-center items-center leading-tight">
             <MobileH4
                 className={`${avigeaFont.className} font-normal text-3xl lg:text-base`}
             >

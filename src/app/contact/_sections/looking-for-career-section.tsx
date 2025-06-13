@@ -3,18 +3,21 @@
 import MobileButton from "@/app/(mobile)/_components/mobile-button"
 import StrongText from "@/app/_components/strong-text"
 import Button from "@/components/button"
+import { useEffect, useState } from "react";
 
-export default function LookingForCareerSection(
-    {
-        isMobile
-    } :
-    {
-        isMobile : boolean
-    }
-) {
+export default function LookingForCareerSection() {
+
+    const [isMobile, setIsMobile] = useState(false);
+    
+    const [width, setWidth] = useState(0);
+    
+    useEffect(() => {
+      setWidth(window.innerWidth);
+      setIsMobile( window.innerWidth < 800 );
+    }, []);
 
     return (
-        <div className="md:text-4xl text-2xl text-center w-full mt-16 md:mb-20">
+        <div className="lg:text-4xl text-3xl text-center w-full mt-16 mb-16 lg:mb-20">
             <p className="mb-4">
                 Looking for <StrongText content="career?" />{" "}
             </p>

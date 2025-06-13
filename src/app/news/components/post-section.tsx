@@ -5,12 +5,10 @@ import dynamic from "next/dynamic";
 
 export default async function PostSection( 
     {
-        post,
-        isMobile
+        post
     }:
     {   
-        post: Post,
-        isMobile: boolean
+        post: Post
     }
 ) {
     
@@ -50,7 +48,6 @@ export default async function PostSection(
     return (
         <PostSectionClient
           post = { post }
-          isMobile = { isMobile }
           medias = { medias }
           author = { author } 
         ></PostSectionClient>

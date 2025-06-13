@@ -15,18 +15,16 @@ export default function NavBar(
         handleScroll: any
     }
 ) {
-    
-
     return (
-        <nav className={`sticky flex justify-center ${apexFont.className} px-24`}>
-            <div className="flex justify-between content-center container md:px-0 py-8">
+        <nav className={`sticky flex justify-center ${apexFont.className} px-4 lg:px-24`}>
+            <div className="flex justify-between content-center container md:px-0 py-4 lg:py-8">
                 <div className="logo">
                     {/* If someone clicks the logo, then redirect him to the home view. */}
                     <a href="/">
                         <Image
                             alt="Applica's logo"
                             src={logo}
-                            className="h-14 md:h-20 w-auto"
+                            className="h-14 mdplus:h-20 md:h-16 w-auto"
                             loading="lazy"
                             width={300}
                             height={100}
@@ -34,7 +32,7 @@ export default function NavBar(
                     </a>
                 </div>
 
-                <ul className="hidden md:flex flex-row gap-10 h-fit max-h-fit self-center">
+                <ul className={`hidden md:flex flex-row gap-6 lg:gap-10 h-fit max-h-fit self-center`}>
                     {
                         menuItems.map(
                             (item, index) => (

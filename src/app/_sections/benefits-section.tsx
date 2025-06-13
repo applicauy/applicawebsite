@@ -54,7 +54,7 @@ export default function BenefitsSection() {
                 }`}
                 id="benefits"
             >
-                <div className="flex flex-col gap-12 text-center md:text-left">
+                <div className="flex flex-col gap-6 lg:gap-12 text-center md:text-left">
                     <H2 className="md:max-w-[70%]">
                         Why{" "}
                         <span
@@ -64,7 +64,7 @@ export default function BenefitsSection() {
                         </span>?
                     </H2>
 
-                    <div className="md:max-w-[80%] text-xl md:text-4xl leading-tight">
+                    <div className="lg:max-w-[80%] text-3xl lg:text-4xl leading-tight">
                         <span className="font-bold text-highlight">Seamless</span> collaboration,{" "} 
                         <span className="font-bold text-highlight">smarter</span> technology.
                     </div>

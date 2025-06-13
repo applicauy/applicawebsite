@@ -59,14 +59,7 @@ function Submit(
     );
 }
 
-export default function FormSection(
-    {
-        isMobile
-    } :
-    {
-        isMobile : boolean
-    }
-) {
+export default function FormSection() {
     const formRef = useRef<HTMLFormElement>(null);
     const [state, formAction] = useFormState(
         handleContactRequest,
@@ -74,6 +67,15 @@ export default function FormSection(
     );
     const [formKey, setFormKey] = useState(0);
     const [isLoading, setIsLoading] = useState( false );
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    const [width, setWidth] = useState(0);
+
+    useEffect(() => {
+      setWidth(window.innerWidth);
+      setIsMobile( window.innerWidth < 800 );
+    }, []);
 
     useEffect(() => {
         
@@ -96,7 +98,7 @@ export default function FormSection(
     };
 
     return (
-        <>
+        <div className={`flex flex-row py-0 md:py-11 px-6 md:px-0 mdplus:px-24 lg:px-24 px-48-lg w-full mt-8 ${ ( width > 1000 && width < 1025 ) && 'px-24' } ${ ( width > 900 && width < 1000 ) && 'px-12' }`}>
             <Toaster />
 
             <form
@@ -246,6 +248,6 @@ export default function FormSection(
                 src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}&onload=test`}
             /> */}
             </form>
-        </>
+        </div>
     );
 }

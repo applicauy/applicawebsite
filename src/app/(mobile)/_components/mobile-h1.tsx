@@ -7,7 +7,7 @@ const MobileH1 = ({
     return (
         <h2
             className={
-                "text-3xl md:text-4xl leading-none" +
+                "text-3xl mdplus:text-4xl leading-none" +
                 (className ? " " + className : "")
             }
         >

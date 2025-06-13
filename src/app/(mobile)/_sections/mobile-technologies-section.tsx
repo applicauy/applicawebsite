@@ -12,7 +12,7 @@ export default function MobileTechnologiesSection() {
         <Section>
             <div
                 ref={ref}
-                className={`md:max-w-[66%] relative mt-6 transition-all duration-1000 ease-out transform ${
+                className={`lg:max-w-[66%] relative mt-6 transition-all duration-1000 ease-out transform ${
                     inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
                 }`}
             >
