@@ -16,10 +16,10 @@ export default function MobileExpertiseHubSection() {
     const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
 
     return (
-        <Section className="flex flex-col md:gap-20">
+        <Section className="flex flex-col lg:gap-20">
             <div
                 ref={ref}
-                className={`flex flex-col transition-all duration-1000 ease-out transform md:flex-row gap-6 max-w-full mx-auto md:mx-0 md:my-0 my-12 mt-12 ${
+                className={`flex flex-col transition-all duration-1000 ease-out transform lg:flex-row gap-6 max-w-full mx-auto md:mx-0 lg:my-0 my-6 mt-12 ${
                     inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
                   }`}
                 id="services"
@@ -59,7 +59,7 @@ export default function MobileExpertiseHubSection() {
                     and reliability.
                 </Attribute>
                 <div
-                    className={'flex flex-col gap-6 px-6 mt-10 mb-6 md:px-36 pt-8 md:pt-16 pb-7 md:pb-9 rounded-3xl md:rounded-full text-center items-center fit-background'}
+                    className={'flex flex-col gap-6 px-6 mt-10 md:mt-20 mb-6 mdplus:px-36 pt-8 mdplus:pt-16 pb-7 mdplus:pb-9 rounded-3xl md:rounded-full text-center items-center fit-background'}
                 >
                     <MobileH2>
                         With delivery centers based in the USA, Panama, Chile, Colombia, Argentina and Uruguay, 

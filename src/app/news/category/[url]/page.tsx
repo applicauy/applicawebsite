@@ -35,10 +35,6 @@ const findCategory:any = async( url: string ) => {
 }
 
 const page = async ( { params } : Props ) => { 
-    const userAgent = headers().get('user-agent') || '';
-    const md = new MobileDetect(userAgent);
-    const isMobile = !!md.mobile();  
-
     const category: Cateogry | undefined = await findCategory( params.url );
 
     const NewsFilter = dynamic(() => import('@/app/news/components/news-filter'), { ssr: false });
@@ -47,12 +43,9 @@ const page = async ( { params } : Props ) => {
     return (
         <>
             <NewsHeader />
-            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 mt-20 md:mt-8`}>
-                <NewsFilter isMobile = { isMobile } category = { category }/>
+            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-4 lg:px-24 lg:mt-20 mt-12`}>
+                <NewsFilter category = { category }/>
             </div>
-            {
-                isMobile && <MobileLetsTalkSection></MobileLetsTalkSection>
-            }
         </>
     ); 
 }

@@ -15,24 +15,17 @@ export const metadata: Metadata = {
     }
 };
 
-export default function Page() {
-    const userAgent = headers().get('user-agent') || '';
-    const md = new MobileDetect(userAgent);
-    const isMobile = !!md.mobile();  
+export default function Page() { 
 
     const NewsFilter = dynamic(() => import('@/app/news/components/news-filter'), { ssr: false });
-    const MobileLetsTalkSection = dynamic(() => import('@/(mobile)/_sections/mobile-lets-talk-section'), { ssr: false });
     
     return (
         <>
             {/* <h1 className="sr-only">Applica Corp. | News</h1> */}
             <NewsHeader />
-            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 mt-6 md:mt-8`}>
-                <NewsFilter isMobile = { isMobile }/>
+            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-4 lg:px-24 mt-6 md:mt-8`}>
+                <NewsFilter />
             </div>
-            {
-                isMobile && <MobileLetsTalkSection></MobileLetsTalkSection>
-            }
         </>
     ); 
 }

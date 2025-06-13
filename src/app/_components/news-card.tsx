@@ -6,6 +6,7 @@ import arrowIcon from "@/assets/icons/arrow-right.webp";
 import { useNavigationHandlers } from "@/lib/helpers";
 import { Post } from "@/utils/models/Post";
 import Badge from "./badge";
+import { useEffect, useState } from 'react';
 
 
 const NewsCard = (
@@ -19,20 +20,28 @@ const NewsCard = (
       publishedDate,
       fromNews = true,
       handleClick,
-      isMobile
+      isMobile,
+      fromLanding = false
     } : 
     Post & 
     { fromNews?: boolean } &
     { handleClick: any } &
-    { isMobile: boolean }
+    { isMobile: boolean } &
+    { fromLanding?: boolean }
 ) => {
+
+    const [width, setWidth] = useState(0);
+    
+    useEffect(() => {
+      setWidth(window.innerWidth);
+    }, []);
 
     const { onGoToPost } = useNavigationHandlers();    
 
     return (
-        <div className="relative flex flex-col overflow-hidden card-border bg-clip-border hover:shadow-lg hover:cursor-pointer bg-secondary-bg group md:z-[1] z-[10] w-full"
+        <div className={`relative flex ${ ( fromLanding && width < 1025 && width > 767 ) && 'min-w-[400px]' } flex-col overflow-hidden card-border bg-clip-border hover:shadow-lg hover:cursor-pointer bg-secondary-bg group md:z-[1] z-[10] w-full`}
             onClick={ () => onGoToPost( slug ) }>
-           <div className="relative h-[200px] md:h-[250px] m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border transition-transform duration-300 ease-in-out transform group-hover:scale-110">
+           <div className="relative h-[200px] lg:h-[250px] m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border transition-transform duration-300 ease-in-out transform group-hover:scale-110">
                 <Image 
                     src={ image.url }
                     fill
@@ -63,7 +72,7 @@ const NewsCard = (
                 <p className="text-lg mt-5">{ summary }</p>
                }
                <div className="flex flex-row flex-wrap my-3 mb-1 w-full h-full items-center justify-between self-end">
-                    <p className="text-md flex items-center text-secondary-text">
+                    <p className="text-md flex items-end text-secondary-text">
                         { publishedDate }
                     </p>
                     <div className='flex items-end'>
