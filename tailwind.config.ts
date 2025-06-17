@@ -21,7 +21,8 @@ const config: Config = {
                 "secondary-muted": "#848483",
                 "secondary-text": "#B69FE2",
                 "violet-background": "#6233CE",
-                "violet": "#b69fe2"
+                "violet": "#b69fe2",
+                "form-error": "#991b1b"
             },
         },
         screens: {
