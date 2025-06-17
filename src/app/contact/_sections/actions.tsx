@@ -24,8 +24,8 @@ const Schema = z.object({
     [FieldName.PHONE]: z
         .string()
         .regex(/^\+?[0-9]+$/, "Invalid phone format")
-        .optional(),
-        //.or(z.literal("")),
+        .optional()
+        .or(z.literal("")),
     [FieldName.REFERRAL]: z.string(),
     [FieldName.MESSAGE]: z.string(),
     [FieldName.SUBSCRIBE]: z.coerce.boolean(),
