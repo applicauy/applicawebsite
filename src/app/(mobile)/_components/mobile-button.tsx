@@ -49,7 +49,7 @@ export default function MobileButton({
             }
             <div
                 className={`rounded-full w-10 h-10 md:w-${highlightedArrow ? "10" : "8"} 
-                    ${ isLoading ? 'p-1' : 'p-1.5 md:p-2.5' }
+                    ${ isLoading ? 'p-1' : 'p-1.5 lg:p-2.5' }
                     ${ !isLoading ? 'ms-2 md:ms-3' : 'ms-1' }
                     ${ ( highlightedArrow && !isLoading ) && "bg-highlight" } 
                     ${ ( !highlightedArrow && !isLoading ) && "bg-white" }`

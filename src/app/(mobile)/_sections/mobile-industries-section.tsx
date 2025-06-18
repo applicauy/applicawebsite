@@ -42,15 +42,15 @@ export default function MobileIndustriesSection() {
     const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
 
     return (
-        <Section className={`flex flex-col items-center w-full mt-6 mb-6`}>
+        <Section className={`flex flex-col items-center w-full mt-6 md:mt-12 mb-6`}>
             <div
                 ref={ref}
-                className={`flex flex-col items-center md:items-start md:w-[60%] w-full z-20 transition-all duration-1000 ease-out transform ${
+                className={`flex flex-col items-center lg:items-start lg:w-[60%] w-full z-20 transition-all duration-1000 ease-out transform ${
                     inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
                   }`}
                 id='industries'
             >
-                <MobileH1 className="mb-6 md:mb-12 text-center">
+                <MobileH1 className="mb-6 lg:mb-12 text-center">
                     <span className={`font-medium ${avigeaFont.className}`}>
                         Industries
                     </span>

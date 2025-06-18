@@ -53,13 +53,13 @@ export default function IndustriesSection() {
                 }` }
                 id="industries"
             >
-                <H2 className="mb-9 md:mb-12 text-center">
+                <H2 className="mb-6 lg:mb-12 text-center">
                     <span className={`font-medium ${avigeaFont.className}`}>
                         Industries
                     </span>
                 </H2>
 
-                <div className="grid grid-cols-2 w-full gap-16">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
                     {
                         INDUSTRIES.map(
                             (i, index) => (

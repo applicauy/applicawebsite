@@ -42,21 +42,10 @@ const page = async ( { params } : Props ) => {
     throw new Error("Post not found");
   }
 
-  const userAgent = headers().get('user-agent') || '';
-  const md = new MobileDetect(userAgent);
-  const isMobile = !!md.mobile();  
-
   const PostSection = dynamic(() => import('@/app/news/components/post-section'), { ssr: false });
-  const MobileLetsTalkSection = dynamic(() => import('@/(mobile)/_sections/mobile-lets-talk-section'), { ssr: false });
 
   return (
-      <>
-        <PostSection post = { post } isMobile = { isMobile }></PostSection>
-        {
-          isMobile && <MobileLetsTalkSection />
-        }
-        
-      </>
+      <PostSection post = { post } ></PostSection>
   )
 }
 

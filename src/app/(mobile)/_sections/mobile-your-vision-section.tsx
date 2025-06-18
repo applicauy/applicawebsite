@@ -14,12 +14,12 @@ export default function MobileYourVisionSection() {
         <Section className={`flex flex-col items-center w-full`}>
             <div
                 ref={ref}
-                className={`flex flex-col items-center md:items-start md:w-[60%] w-full z-20 transition-all duration-1000 ease-out transform ${
+                className={`flex flex-col items-center md:items-start lg:w-[60%] w-full z-20 transition-all duration-1000 ease-out transform md:mt-12 ${
                   inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"
                 }`}
                 id='your-vision'
             >
-                <MobileH1 className="mb-12 md:mb-12 text-center">
+                <MobileH1 className="mb-12 lg:mb-12 text-center w-full">
                     Your vision,{" "}
                     <span className={`font-medium ${avigeaFont.className}`}>
                         your way
@@ -33,7 +33,7 @@ export default function MobileYourVisionSection() {
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-12">
+                <div className="flex flex-col gap-12 md:gap-8">
                     <div className="box-your-vision-mobile rounded-3xl box-your-vision-1 px-4 py-6 flex flex-col gap-6">
                         <p className={`font-medium ${avigeaFont.className} text-3xl text-white text-center`}>Tailored development</p>
                         <p className='text-xl text-white text-center'>From ideation to deployment, our expert teams ensure scalable, high-performance end to end solutions that drive innovation and long-term success.</p>

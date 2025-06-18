@@ -40,7 +40,7 @@ const CategoriesList = () => {
                                 .sort((a, b) => a.name.localeCompare(b.name));
 
     return (
-        <div className="hidden md:block md:w-1/5">
+        <div className="hidden lg:block lg:w-1/5">
             <h2 className="text-2xl md:text-3xl leading-none text-highlight mb-5 font-medium">Categories</h2>
             <ul>
                 {
