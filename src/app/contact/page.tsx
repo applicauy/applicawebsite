@@ -22,25 +22,12 @@ export default function Page() {
 
     const ContactSection = dynamic(() => import('@/app/contact/_sections/contact-section'), { ssr: false });
     const FormSection = dynamic(() => import('@/app/contact/_sections/form-section'), { ssr: false });
-    const MobileLetsTalkSection = dynamic(() => import('@/(mobile)/_sections/mobile-lets-talk-section'), { ssr: false });
 
     return (
-        <>
-            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-24 px-48-lg md:mt-10 mt-24 overflow-hidden ${ isMobile && 'mb-16' }`}>
-
-                <ContactSection isMobile = { isMobile } />
-
-                <div className="flex flex-row py-0 md:py-11 px-6 md:px-24 px-48-lg w-full mt-8">
-                    <FormSection isMobile = { isMobile } />
-                </div> 
-
-                <LookingForCareerSection isMobile = { isMobile } />      
-
-            </div>     
-
-            {
-                isMobile && <MobileLetsTalkSection></MobileLetsTalkSection>
-            }
-        </>
+        <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-4 px-48-lg mdplus:mt-10 mt-24 overflow-hidden ${ isMobile && 'mb-16' }`}>
+            <ContactSection />
+            <FormSection />
+            <LookingForCareerSection />      
+        </div>  
     );
 }

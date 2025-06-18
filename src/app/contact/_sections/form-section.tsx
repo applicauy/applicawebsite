@@ -59,14 +59,7 @@ function Submit(
     );
 }
 
-export default function FormSection(
-    {
-        isMobile
-    } :
-    {
-        isMobile : boolean
-    }
-) {
+export default function FormSection() {
     const formRef = useRef<HTMLFormElement>(null);
     const [state, formAction] = useFormState(
         handleContactRequest,
@@ -75,9 +68,19 @@ export default function FormSection(
     const [formKey, setFormKey] = useState(0);
     const [isLoading, setIsLoading] = useState( false );
 
+    const [isMobile, setIsMobile] = useState(false);
+
+    const [width, setWidth] = useState(0);
+
+    useEffect(() => {
+      setWidth(window.innerWidth);
+      setIsMobile( window.innerWidth < 800 );
+    }, []);
+
     useEffect(() => {
         
         if (!state.success) {
+            setIsLoading(false);
             return;
         }
 
@@ -96,7 +99,7 @@ export default function FormSection(
     };
 
     return (
-        <>
+        <div className={`flex flex-row py-0 md:py-11 px-6 md:px-0 mdplus:px-24 lg:px-24 px-48-lg w-full mt-8 ${ ( width > 1000 && width < 1025 ) && 'px-24' } ${ ( width > 900 && width < 1000 ) && 'px-12' }`}>
             <Toaster />
 
             <form
@@ -116,6 +119,11 @@ export default function FormSection(
                             className="py-2 px-4 bg-transparent text-white rounded-md focus:ring-1 focus:ring-highlight focus:border-highlight w-full text-xl mt-2" 
                             required 
                         />
+                        {state.errors?.fieldErrors.name && (
+                            <div className="text-xl mt-3">
+                                <Errors errors={state.errors?.fieldErrors.name} />
+                            </div>
+                        )}
                     </div>
                     <div className="w-full md:w-1/2 mt-2 md:mt-0">
                         <span className="text-xl">Work e-mail <span className="text-red-500">*</span></span>
@@ -126,6 +134,11 @@ export default function FormSection(
                             className="py-2 px-4 bg-transparent text-white rounded-md focus:ring-1 focus:ring-highlight focus:border-highlight w-full text-xl mt-2" 
                             required 
                         />
+                        {state.errors?.fieldErrors.email && (
+                            <div className="text-xl mt-3">
+                                <Errors errors={state.errors?.fieldErrors.email} />
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-5 w-full">
@@ -137,6 +150,11 @@ export default function FormSection(
                             placeholder="Your phone" 
                             className="py-2 px-4 bg-transparent text-white rounded-md focus:ring-1 focus:ring-highlight focus:border-highlight w-full text-xl mt-2" 
                         />
+                        {state.errors?.fieldErrors.phone && (
+                            <div className="text-xl mt-3">
+                                <Errors errors={state.errors?.fieldErrors.phone} />
+                            </div>
+                        )}
                     </div>
                     <div className="w-full md:w-1/2 mt-2 md:mt-0">
                         <span className="text-xl">How did you heart about us? <span className="text-red-500">*</span></span>
@@ -153,6 +171,11 @@ export default function FormSection(
                                 )
                             }
                         </select>
+                        {state.errors?.fieldErrors.referral && (
+                            <div className="text-xl mt-3">
+                                <Errors errors={state.errors?.fieldErrors.referral} />
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="w-full mt-2 md:mt-0">
@@ -161,6 +184,12 @@ export default function FormSection(
                         name="message" 
                         placeholder="Your answer" 
                         className="py-2 px-4 bg-transparent text-xl min-h-[50px] h-[150px] text-white rounded-md focus:ring-1 focus:ring-highlight focus:border-highlight mb-4 resize-y w-full mt-2" required />
+                    
+                    {state.errors?.fieldErrors.message && (
+                        <div className="text-xl mt-3">
+                            <Errors errors={state.errors?.fieldErrors.message} />
+                        </div>
+                    )}
                 </div>
                 <div className="w-full">
                     <input 
@@ -176,6 +205,7 @@ export default function FormSection(
                 <div className="flex w-full items-center justify-center">   
                     <Submit isMobile = { isMobile } isLoading = { isLoading } />                   
                 </div>
+                
                 {/* <div>
                     <Label title="Name" required>
                         <Input name="name" type="text" required />
@@ -246,6 +276,6 @@ export default function FormSection(
                 src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}&onload=test`}
             /> */}
             </form>
-        </>
+        </div>
     );
 }

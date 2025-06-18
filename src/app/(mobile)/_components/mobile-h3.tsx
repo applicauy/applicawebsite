@@ -7,7 +7,7 @@ const MobileH3 = ({
     return (
         <h3
             className={
-                "text-xl md:text-3sm leading-tight" +
+                "text-xl mdplus:text-3sm leading-tight" +
                 (className ? " " + className : "")
             }
         >

@@ -12,9 +12,6 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode
 }>) {
-    const userAgent = headers().get('user-agent') || '';
-    const md = new MobileDetect(userAgent);
-    const isMobile = !!md.mobile();
     return (
         <html lang="en">
             <head>
@@ -29,7 +26,7 @@ export default function RootLayout({
                 <link rel="apple-touch-icon" href="/icon_apple_touch.png" sizes="180x180" />
             </head>
             
-            <LayoutClientWrapper initialIsMobile={isMobile}>{ children }</LayoutClientWrapper>
+            <LayoutClientWrapper>{ children }</LayoutClientWrapper>
         </html>
     );
 }
