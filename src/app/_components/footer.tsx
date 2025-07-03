@@ -114,7 +114,7 @@ export default function Footer(
                     </a>
 
                     <div>
-                        <ul>
+                        <ul translate='no'>
                             {LOCATIONS.map((l, index) => (
                                 <li key={index} className="my-1">
                                     <span className="font-medium">{l.country}</span>
