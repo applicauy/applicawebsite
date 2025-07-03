@@ -117,7 +117,7 @@ const MobileFooter = (
 
                 <div className="flex justify-between items-center py-2 sm:py-4 md:py-8">
                     <div className="w-4/5">
-                        <ul>
+                        <ul translate='no'>
                             {LOCATIONS.map((l, index) => (
                                 <li
                                     key={index}
