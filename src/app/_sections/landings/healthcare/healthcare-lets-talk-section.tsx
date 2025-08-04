@@ -19,7 +19,7 @@ const HealthcareLetsTalkSection = () => {
                   className='max-w-screen-md w-full font-bold text-center'
                   title
                 >
-                  Let's Talk
+                  Let&apos;s Talk
                 </LandingsH2>
                 <div className="max-w-screen-lg text-2xl xl:text-3xl text-white leading-tight text-center flex flex-col gap-12">
                     <p>

@@ -41,7 +41,7 @@ export const TabletHealthcareHeroSection = () => {
               type = "primary"
             >
               <span>
-                <b>Let's build</b> your next healthcare solution
+                <b>Let&apos;s build</b> your next healthcare solution
               </span>
             </LandingsButton>
           </div>

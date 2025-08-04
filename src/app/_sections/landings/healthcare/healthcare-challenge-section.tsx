@@ -24,7 +24,7 @@ export const HealthcareChallengeSection = () => {
             </LandingsH2>
             <div className="w-full xl:max-w-screen-lg text-2xl xl:text-3xl text-white leading-tight text-center flex flex-col gap-12">
                 <p>
-                    Schedule a discovery call and let's develop the right one for you.
+                    Schedule a discovery call and let&apos;s develop the right one for you.
                 </p>
             </div>
             <LandingsButton

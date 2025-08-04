@@ -63,7 +63,7 @@ export const HealthcareServicesSection = () => {
                         At Applica, we build digital solutions that strengthen the healthcare ecosystem. We work with clinics, hospitals, eHealth platforms, labs, and medtech startups to turn technology into real value.
                     </p>
                     <p>
-                        We don't just write code—we understand clinical workflows, regulatory demands, and the need for intuitive, secure, and scalable experiences.
+                        We don&apos;t just write code—we understand clinical workflows, regulatory demands, and the need for intuitive, secure, and scalable experiences.
                     </p>
                 </div>
             </div>

@@ -3,8 +3,7 @@ import { rubikFont } from '@/assets/fonts'
 import Section from '@/components/landings/section'
 import React from 'react'
 import { motion } from 'framer-motion';
-import FAQItem from '@/app/_components/landings/faq-item';
-import MobileFAQItem from '../../_components/landings/mobile-faq-item';
+import MobileFAQItem from '../../../_components/landings/mobile-faq-item';
 import { LandingsH2 } from '@/components/landings/h2';
 
 const container = {

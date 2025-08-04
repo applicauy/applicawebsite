@@ -4,8 +4,8 @@ import Section from '@/components/section';
 import React from 'react'
 import { motion } from 'framer-motion';
 import { industriesSpecialization } from '@/utils/data/industries-specialization';
-import MobileLandingsCard from '../../_components/landings/mobile-card';
-import '../../../styles/healthcare.scss';
+import MobileLandingsCard from '../../../_components/landings/mobile-card';
+import '../../../../styles/healthcare.scss';
 import ball from "@/assets/shapes/ball.webp";
 import Image from 'next/image';
 import { LandingsH2 } from '@/components/landings/h2';

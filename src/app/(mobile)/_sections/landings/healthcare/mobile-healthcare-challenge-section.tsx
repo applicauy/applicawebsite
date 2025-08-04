@@ -1,7 +1,7 @@
 import FadeUp from "@/app/_components/effects/fade-up";
 import { rubikFont } from "@/assets/fonts";
-import '../../../styles/healthcare.scss';
-import '../../../styles/effects.scss';
+import '../../../../styles/healthcare.scss';
+import '../../../../styles/effects.scss';
 import { LandingsButton } from "@/components/landings/button";
 import { LandingsH2 } from "@/components/landings/h2";
 

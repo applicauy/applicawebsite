@@ -57,16 +57,6 @@ export default function MobileProcessItem({
             threshold: 0.7, // Activar cuando el 50% del elemento esté en la vista
         }
         );
-
-        if (ref.current) {
-        observer.observe(ref.current);
-        }
-
-        return () => {
-        if (ref.current) {
-            observer.disconnect();
-        }
-        };
     }, []);
 
     const itemVariants = {

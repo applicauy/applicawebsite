@@ -1,12 +1,12 @@
 import FadeIn from "@/app/_components/effects/fade-in";
-import '../../../styles/healthcare.scss';
-import '../../../styles/effects.scss';
+import '../../../../styles/healthcare.scss';
+import '../../../../styles/effects.scss';
 import { rubikFont } from '@/assets/fonts';
 import curantis from '@/assets/curantis.webp';
 import Image from "next/image";
 import HealthcareCardValue from "@/app/_components/landings/card-value";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
-import MobileHealthcareCardValue from "../../_components/landings/mobile-card-value";
+import MobileHealthcareCardValue from "../../../_components/landings/mobile-card-value";
 import Section from "@/components/landings/section";
 import { LandingsButton } from "@/components/landings/button";
 import { LandingsH2 } from "@/components/landings/h2";
@@ -24,7 +24,7 @@ const donwload = () => {
 
 const MobileHealthcareCaseStudySection = () => {
   return (
-    <Section fullWidth className={`${ rubikFont.className } relative left-0 right-0 px-8 py-10 px-4 w-screen section-gradient`} >
+    <Section fullWidth className={`${ rubikFont.className } relative left-0 right-0 py-10 px-4 w-screen section-gradient`} >
         <div className='flex flex-row gap-6 justify-start items-center text-white '>
           <FadeIn>
             <div className="flex flex-col gap-6 w-full">

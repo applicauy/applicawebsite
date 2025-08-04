@@ -2,7 +2,7 @@ import FadeIn from "@/app/_components/effects/fade-in";
 import Section from "@/components/landings/section";
 import Image from "next/image";
 import { motion } from 'framer-motion';
-import MobileHealthcareCardWhyUs from "../../_components/landings/mobile-card-why-us";
+import MobileHealthcareCardWhyUs from "../../../_components/landings/mobile-card-why-us";
 import { rubikFont } from "@/assets/fonts";
 import dialogo from '@/assets/shapes/dialogo-invertida.webp';
 import { LandingsH2 } from "@/components/landings/h2";

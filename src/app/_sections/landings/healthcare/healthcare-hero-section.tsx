@@ -68,7 +68,7 @@ const HealthcareHeroSection = () => {
             onClick={ onRedirectClick }
             redirect
             className='mt-14'>
-            <b>Let's build</b> your next healthcare solution
+            <b>Let&apos;s build</b> your next healthcare solution
           </LandingsButton>
         </ZoomIn>
       </div>

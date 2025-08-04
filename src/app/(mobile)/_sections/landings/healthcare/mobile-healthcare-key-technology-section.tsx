@@ -3,7 +3,7 @@ import { rubikFont } from "@/assets/fonts";
 import Section from "@/components/section";
 import { ketTechnologyServices } from "@/utils/data/key-technology-services";
 import { motion } from 'framer-motion';
-import MobileLandingsCard from "../../_components/landings/mobile-card";
+import MobileLandingsCard from "../../../_components/landings/mobile-card";
 import Image from "next/image";
 import ameba from "@/assets/shapes/ameba-invertida.webp";
 import { LandingsH2 } from "@/components/landings/h2";

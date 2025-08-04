@@ -1,5 +1,5 @@
-import '../../../styles/healthcare.scss'
-import '../../../styles/effects.scss'
+import '../../../../styles/healthcare.scss'
+import '../../../../styles/effects.scss'
 import { rubikFont } from '@/assets/fonts';
 import Image from 'next/image';
 import dialog from '@/assets/shapes/dialog-3.webp';
