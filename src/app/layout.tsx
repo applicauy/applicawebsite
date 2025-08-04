@@ -1,8 +1,6 @@
 import "./styles/globals.scss";
-import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import Script from 'next/script';
-import MobileDetect from 'mobile-detect';
 import LayoutClientWrapper from "./layout-client-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });

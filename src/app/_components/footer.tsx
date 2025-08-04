@@ -83,7 +83,7 @@ export default function Footer(
             <LetsTalkSection />
 
             <footer
-                className={`${apexFont.className} py-16 bg-secondary-bg text-xl flex flex-col gap-8`}
+                className={`${apexFont.className} py-16 bg-secondary-bg text-xl flex flex-col gap-8 items-center`}
                 style = {{ paddingLeft: '6rem', paddingRight: '6rem' }}
             >
                 <Script id="metricool-loader" strategy="afterInteractive">

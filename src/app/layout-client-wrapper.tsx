@@ -10,6 +10,10 @@ const GTM_ID = "GTM-PQ3DNDZ";
 import { Inter } from "next/font/google";
 import Loading from "@/components/loading";
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
+import MobileLandingsNavBar from "./(mobile)/_components/landings/mobile-navbar";
+import './styles/globals.scss';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function LayoutClientWrapper({ children }: { children: React.ReactNode }) {
@@ -19,9 +23,12 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
 
     const [width, setWidth] = useState(0);
 
+    const pathname = usePathname();
+    const isHealthcare = pathname.startsWith("/healthcare");
+
     useEffect(() => {
       setWidth(window.innerWidth);
-      setIsMobile( window.innerWidth <= 800 );
+      setIsMobile( window.innerWidth < 800 );
     }, []);
 
     const handleMenuClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -105,27 +112,52 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
 
     const MobileNavBar = dynamic(() => import('@/(mobile)/_components/mobile-navbar'), { ssr: false });
     const MobileFooter = dynamic(() => import('@/(mobile)/_components/mobile-footer'));
+    const MobileLandingsFooter = dynamic(() => import('@/(mobile)/_components/landings/mobile-footer'));
 
     
     const NavBar = dynamic(() => import('@/app/_components/navbar'), { ssr: false });
+    const LandingsNavBar = dynamic(() => import('@/app/_components/landings/navbar'), { ssr: false });
     const Footer = dynamic(() => import('@/app/_components/footer'));
+    const LandingsFooter = dynamic(() => import('@/app/_components/landings/footer'));
     
     
     return (
         <body className={`${inter.className} overflow-x-hidden ${ isMobile && 'mobile-layout' }`}>
             { loading && <Loading /> }
             { 
-                isMobile ? 
-                    <MobileNavBar onMenuClick={handleMenuClick} handleScrollFromClick = { handleScroll } /> : 
-                    <NavBar onMenuClick={handleMenuClick} handleScroll = { handleScroll }/> 
+                !isHealthcare &&
+                    ( 
+                        isMobile ? 
+                            <MobileNavBar onMenuClick={handleMenuClick} handleScrollFromClick = { handleScroll } /> : 
+                            <NavBar onMenuClick={handleMenuClick} handleScroll = { handleScroll }/> 
+                    )
+            }
+            { 
+                isHealthcare &&
+                    ( 
+                        isMobile ? 
+                            <MobileLandingsNavBar onMenuClick={handleMenuClick} handleScrollFromClick = { handleScroll } /> : 
+                            <div className="flex flex-row justify-center items-center w-full global-container">
+                                <LandingsNavBar onMenuClick={handleMenuClick} handleScroll = { handleScroll }/> 
+                            </div> 
+                    )
             }
             
             {children}
             
             { 
-                width < 1025 ? 
-                    <MobileFooter handleScroll = { handleScroll }/> : 
-                    <Footer handleScroll = { handleScroll }/> 
+                !isHealthcare && (
+                    width < 1024 ? 
+                        <MobileFooter handleScroll = { handleScroll }/> : 
+                        <Footer handleScroll = { handleScroll }/> 
+                )
+            }
+            { 
+                isHealthcare && (
+                    width < 1024 ? 
+                        <MobileLandingsFooter handleScroll = { handleScroll }/> : 
+                        <LandingsFooter handleScroll = { handleScroll }/> 
+                )
             }
             <GoogleTagManager gtmId={GTM_ID} />
             <TrackPageView />

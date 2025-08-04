@@ -39,7 +39,7 @@ export default function PageClientWrapper() {
     const LatestPosts = dynamic(() => import('@/sections/latest-posts'));
 
     return (
-        <main className={`${apexFont.className} flex flex-col items-center min-h-[600px] justify-between gap-12 mdplus:gap-32 lg:gap-36 mt-24 md:mt-0 md:px-4 lg:px-24 ${ width <= 768 && 'overflow-hidden' }`}>
+        <main className={`${apexFont.className} flex flex-col items-center min-h-[600px] justify-between gap-12 mdplus:gap-32 lg:gap-36 mt-24 md:mt-0 px-4 lg:px-24 ${ width <= 768 && 'overflow-hidden' }`}>
             
             <div
                 className={`absolute top-0 right-0 md:mt-16 mt-20 md:w-[70vw] w-[85vw] aspect-[1/1] lg:aspect-[1280/760] z-[-1] ${ width <= 768 ? `bg-[url('/images/gradient-mobile.webp')]` : `bg-[url('/images/gradient-desktop.webp')]` } bg-contain bg-no-repeat bg-right` }
