@@ -27,7 +27,7 @@ export default function LetsTalkSection() {
                         </span>
                         ?
                     </H3> :
-                    <div className="block">
+                    <div className="block z-50">
                         <H2>
                             Got a{" "}
                             <span className={`font-medium ${avigeaFont.className}`}>

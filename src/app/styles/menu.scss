@@ -5,8 +5,6 @@
     }
 }
 
-
-
 .menu-container {
   position: relative;
 }
@@ -31,18 +29,38 @@
   z-index: 1000;
 }
 
-.menu ul {
+.menu-landings {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menu-landings ul, .menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.menu ul li {
+.menu-landings ul li, .menu ul li {
   margin: 16px 0;
+}
+
+.menu-landings ul li a, .menu ul li a {
+  font-size: 1.5rem;
+  text-decoration: none;
 }
 
 .menu ul li a {
   color: white;
-  font-size: 1.5rem;
-  text-decoration: none;
+}
+
+.menu-landings ul li a {
+  color: black;
 }

@@ -17,7 +17,7 @@ export default function PageClientWrapper({ initialIsMobile }: { initialIsMobile
             const md = new MobileDetect(window.navigator.userAgent);
             setIsMobile(!!md.mobile());
         }
-    }, []);
+    }, [initialIsMobile]);
 
     const MobileLandingSection = dynamic(() => import('@/(mobile)/_sections/backup/mobile-landing-section'));
     const MobileServicesSection = dynamic(() => import('@/(mobile)/_sections/backup/mobile-services-section'));
