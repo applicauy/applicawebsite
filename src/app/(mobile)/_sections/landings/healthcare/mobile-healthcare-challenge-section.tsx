@@ -24,7 +24,7 @@ const MobileHealthcareChallengeSection = () => {
           </LandingsH2>
           <div className="max-w-screen-xs text-md leading-tight text-center flex flex-col gap-12">
             <p>
-              Schedule a discovery call and let's develop the right one for you.
+              Schedule a discovery call and let&apos;s develop the right one for you.
             </p>
           </div>
           <LandingsButton

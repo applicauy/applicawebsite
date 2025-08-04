@@ -43,7 +43,7 @@ const page = async ( { params } : Props ) => {
     return (
         <>
             <NewsHeader />
-            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-4 lg:px-24 lg:mt-20 mt-12`}>
+            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between px-4 lg:px-24 lg:mt-20 mt-12`}>
                 <NewsFilter category = { category }/>
             </div>
         </>

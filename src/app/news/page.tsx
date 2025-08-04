@@ -23,7 +23,7 @@ export default function Page() {
         <>
             {/* <h1 className="sr-only">Applica Corp. | News</h1> */}
             <NewsHeader />
-            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-4 lg:px-24 mt-6 md:mt-8`}>
+            <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between px-4 lg:px-24 mt-6 md:mt-8`}>
                 <NewsFilter />
             </div>
         </>

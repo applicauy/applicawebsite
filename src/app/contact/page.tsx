@@ -24,7 +24,7 @@ export default function Page() {
     const FormSection = dynamic(() => import('@/app/contact/_sections/form-section'), { ssr: false });
 
     return (
-        <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between md:px-4 px-48-lg mdplus:mt-10 mt-24 overflow-hidden ${ isMobile && 'mb-16' }`}>
+        <div className={`${apexFont.className} flex min-h-screen flex-col items-start justify-between px-4 px-48-lg mdplus:mt-10 mt-24 overflow-hidden ${ isMobile && 'mb-16' }`}>
             <ContactSection />
             <FormSection />
             <LookingForCareerSection />      
