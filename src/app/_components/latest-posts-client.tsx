@@ -14,7 +14,9 @@ const Hits = connectHits(({ hits, currentPostId }: { hits: any[], currentPostId:
       setWidth(window.innerWidth);
     }, []);
 
-    const filteredHits = hits.filter( hit => hit.objectID !== currentPostId );
+    const filteredHits = currentPostId
+        ? hits.filter(hit => hit.objectID !== currentPostId)
+        : hits;
     const hitsToShow = filteredHits.slice(0, 3);
     return  ( width > 1024 || width < 767 ) ?
                 <div className="grid w-full sm:grid-cols-2 lg:grid-cols-3 md:my-10 gap-10 items-stretch">
@@ -38,21 +40,33 @@ const Hits = connectHits(({ hits, currentPostId }: { hits: any[], currentPostId:
 });
 
 
-export default async function LatestPostsClient() {
-    const path = usePathname();
-    const postName = path.split('/').pop() ?? '';
+export default function LatestPostsClient() {
+  const path = usePathname();
+  const [postId, setPostId] = useState<string | null>(null);
 
-    const { hits: posts } = await indexPosts.search('', { hitsPerPage: 1000 })
-    
-    const postId: string | undefined = posts.find( (post: any) => post.slug === postName )?.objectID;    
-    
-    return (
-        <InstantSearch
-          searchClient={searchClient}
-          indexName="production_posts-from-strapi"
-        >
-          <Configure hitsPerPage = { 4 } />
-          <Hits currentPostId = { postId ? postId : '' }/>
-        </InstantSearch>
-    );
+  useEffect(() => {
+    if (!path) return;
+
+    const slug = path.split('/').pop() ?? '';
+
+    if (!slug || slug === 'news') {
+        setPostId(null);
+        return;
+    }
+
+    indexPosts.search('', { hitsPerPage: 1000 }).then(({ hits }) => {
+        const found = hits.find((post: any) => post.slug === slug);
+        setPostId(found?.objectID ?? null);
+    });
+    }, [path]);
+
+  return (
+    <InstantSearch
+      searchClient={searchClient}
+      indexName="production_posts-from-strapi"
+    >
+      <Configure hitsPerPage={4} />
+      <Hits currentPostId={postId ?? ''} />
+    </InstantSearch>
+  );
 }

@@ -2,7 +2,7 @@
 import '../../styles/navbar.scss';
 import Image from "next/image";
 import logo from "@/assets/logo/logo-menu.webp";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import dynamic from "next/dynamic";
 
@@ -26,26 +26,26 @@ const MobileNavBar = (
       setWidth(window.innerWidth);
     }, []);
 
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         if (window.scrollY === 0) {
-          setShowNavbar(true);
+            setShowNavbar(true);
         } else if (window.scrollY > lastScrollY) {
-          setShowNavbar(false);
+            setShowNavbar(false);
         } else {
-          setShowNavbar(true);
+            setShowNavbar(true);
         }
+
         setLastScrollY(window.scrollY);
-    };
+    }, [lastScrollY]);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
             window.addEventListener('scroll', handleScroll);
-            
             return () => {
-                window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll);
             };
         }
-    }, [lastScrollY]);
+    }, [handleScroll]);
 
     const variants = {
       hidden: { y: '-100%', opacity: 0 },

@@ -47,7 +47,7 @@ const MobileHealthcareHeroSection = () => {
                     redirect
                 >
                     <span>
-                        <b>Let's build</b> { width > 767 ? 'your next healthcare solution' : 'your solution' }
+                        <b>Let&apos;s build</b> { width > 767 ? 'your next healthcare solution' : 'your solution' }
                     </span>
                 </LandingsButton>
             </div>

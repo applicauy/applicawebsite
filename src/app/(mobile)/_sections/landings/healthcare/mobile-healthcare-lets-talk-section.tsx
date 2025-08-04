@@ -19,7 +19,7 @@ export const MobileHealthcareLetsTalkSection = () => {
                     title
                     className='max-w-screen-md leading-tight w-full font-bold text-center'
                 >
-                    Let's Talk
+                    Let&apos;s Talk
                 </LandingsH2>
                 <div className="max-w-screen-lg text-xl text-white leading-tight text-center flex flex-col gap-12">
                     <p>
