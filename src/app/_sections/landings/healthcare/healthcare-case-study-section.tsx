@@ -29,7 +29,7 @@ export const HealthcareCaseStudySection = () => {
 
     a.href = url;
     a.target = '_blank';
-    a.download = 'Applica_Case_Cutantis.pdf';
+    a.download = 'Applica_Case_Curantis.pdf';
     a.click();
   }
 
@@ -107,7 +107,7 @@ export const HealthcareCaseStudySection = () => {
                 type = "outline-secondary"
                 onClick = { donwload }
               >
-                <span className='text-2xl xl:text-3xl'>Read more</span>
+                <span className='text-xl lg:text-2xl xl:text-3xl'>Read more</span>
                 <ArrowDownTrayIcon className="w-7 xl:w-10 h-7 xl:h-10 text-white group-hover:text-landing-indigo transition-all duration-700" strokeWidth={1.5} />
               </LandingsButton>
             </div>

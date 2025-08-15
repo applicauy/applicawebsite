@@ -3,11 +3,11 @@ import { rubikFont } from '@/assets/fonts'
 import dialogo from '@/assets/shapes/dialogo-invertida.webp';
 import React from 'react'
 import Image from 'next/image';
-import HealthcareCardWhyUs from '@/app/_components/landings/card-why-us';
 import FadeIn from '@/app/_components/effects/fade-in';
 import { motion } from 'framer-motion';
 import Section from '@/components/landings/section';
 import { LandingsH2 } from '@/components/landings/h2';
+import CardWhyUs from '@/app/_components/landings/card-why-us';
 
 const container = {
   hidden: { opacity: 0 },
@@ -40,7 +40,7 @@ export const HealthcareWhyUsSection = () => {
         <Image
           src={dialogo}
           alt="Dialog"
-          className="absolute w-[80%] mdplus:w-[80%] lg:w-[70%] xl:w-[80%] 2xl:w-[60%] z-0 pointer-events-none animate-float-right-extended mt-28 xl:mt-48"
+          className="absolute w-[70%] mdplus:w-[75%] lg:w-[70%] xl:w-[80%] 2xl:w-[60%] z-0 pointer-events-none animate-float-right-extended mt-28 xl:mt-48"
         />
         
         <motion.div
@@ -51,19 +51,26 @@ export const HealthcareWhyUsSection = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-20 z-10 relative w-full px-4 items-stretch"
         >
             <motion.div variants={item}>
-                <HealthcareCardWhyUs value={450} endSymbol="+" concept="Successful projects" />
+                <CardWhyUs value={450} endSymbol="+">
+                  Successful projects
+                </CardWhyUs>
             </motion.div>
             <motion.div variants={item}>
-                <HealthcareCardWhyUs value={88} endSymbol="%" concept="Senior-level team" />
+                <CardWhyUs value={88} endSymbol="%">
+                  Senior-level team
+                </CardWhyUs>
             </motion.div>
             <motion.div variants={item}>
-                <HealthcareCardWhyUs isConsole = { true } concept="Proven clinical software expertise" />
+                <CardWhyUs isConsole = { true }>
+                  Proven clinical software expertise
+                </CardWhyUs>
             </motion.div>
             <motion.div variants={item}>
-                <HealthcareCardWhyUs isPeople = { true } concept="Flexible nearshore teams" />
+                <CardWhyUs isPeople = { true }>
+                  Flexible nearshore teams
+                </CardWhyUs>
             </motion.div>          
         </motion.div>
-
-</Section>
+    </Section>
   )
 }

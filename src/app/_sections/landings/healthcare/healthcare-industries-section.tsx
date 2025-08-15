@@ -2,7 +2,7 @@ import { rubikFont } from '@/assets/fonts';
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import { LandingsCard } from '@/app/_components/landings/card';
-import { industriesSpecialization } from '@/utils/data/industries-specialization';
+import { industriesSpecialization } from '@/utils/data/healthcare/industries-specialization';
 import ameba from '@/assets/shapes/ameba-invertida.webp';
 import { motion } from 'framer-motion';
 import FadeIn from '@/app/_components/effects/fade-in';

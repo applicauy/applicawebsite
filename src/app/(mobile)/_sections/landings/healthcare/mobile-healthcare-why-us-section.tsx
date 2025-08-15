@@ -1,11 +1,11 @@
 import FadeIn from "@/app/_components/effects/fade-in";
-import Section from "@/components/landings/section";
+import Section from "@/components/section";
 import Image from "next/image";
 import { motion } from 'framer-motion';
-import MobileHealthcareCardWhyUs from "../../../_components/landings/mobile-card-why-us";
 import { rubikFont } from "@/assets/fonts";
 import dialogo from '@/assets/shapes/dialogo-invertida.webp';
 import { LandingsH2 } from "@/components/landings/h2";
+import MobileCardWhyUs from "../../../_components/landings/mobile-card-why-us";
 
 const container = {
   hidden: { opacity: 0 },
@@ -25,7 +25,7 @@ const item = {
 
 export const MobileHealthcareWhyUsSection = () => {
   return (
-    <Section className={`${rubikFont.className} relative flex flex-col items-center px-2`}>
+    <Section className={`${rubikFont.className} relative flex flex-col items-center px-8`}>
         <FadeIn> 
             <LandingsH2
               mobile
@@ -35,12 +35,6 @@ export const MobileHealthcareWhyUsSection = () => {
               Why Applica?
             </LandingsH2>
         </FadeIn>
-
-        <Image
-          src={dialogo}
-          alt="Dialog"
-          className="absolute w-[70%] z-0 pointer-events-none animate-float mt-36"
-        />
         
         <motion.div
             variants={container}
@@ -50,19 +44,31 @@ export const MobileHealthcareWhyUsSection = () => {
             className="grid grid-cols-2 gap-4 z-10 relative w-full items-stretch"
         >
             <motion.div variants={item}>
-                <MobileHealthcareCardWhyUs value={450} endSymbol="+" concept="Successful projects" />
+                <MobileCardWhyUs value={450} endSymbol="+">
+                  Successful projects
+                </MobileCardWhyUs>
             </motion.div>
             <motion.div variants={item}>
-                <MobileHealthcareCardWhyUs value={88} endSymbol="%" concept="Senior-level team" />
+                <MobileCardWhyUs value={88} endSymbol="%">
+                  Senior-level team
+                </MobileCardWhyUs>
             </motion.div>
-            <motion.div variants={item}>
-                <MobileHealthcareCardWhyUs isConsole = { true } concept="Proven clinical software expertise" />
+            <motion.div variants={item} className="col-span-2">
+                <MobileCardWhyUs isConsole = { true }>
+                  Proven clinical software expertise
+                </MobileCardWhyUs>
             </motion.div>
-            <motion.div variants={item}>
-                <MobileHealthcareCardWhyUs isPeople = { true } concept="Flexible nearshore teams" />
+            <motion.div variants={item} className="col-span-2">
+                <MobileCardWhyUs isPeople = { true }>
+                  Flexible nearshore teams
+                </MobileCardWhyUs>              
             </motion.div>          
         </motion.div>
-
-</Section>
+        <Image
+          src={dialogo}
+          alt="Dialog"
+          className="absolute w-[85%] z-0 pointer-events-none animate-float-right-extended mt-24"
+        />
+    </Section>
   )
 }

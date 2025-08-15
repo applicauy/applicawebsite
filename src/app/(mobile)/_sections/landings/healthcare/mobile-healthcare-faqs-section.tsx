@@ -1,6 +1,6 @@
 import FadeIn from '@/app/_components/effects/fade-in'
 import { rubikFont } from '@/assets/fonts'
-import Section from '@/components/landings/section'
+import Section from '@/components/section'
 import React from 'react'
 import { motion } from 'framer-motion';
 import MobileFAQItem from '../../../_components/landings/mobile-faq-item';
