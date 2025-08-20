@@ -7,13 +7,16 @@ import logo from "@/assets/logo/logo-menu.webp";
 import linkedinIcon from "@/assets/icons/linkedin.webp";
 import instagramIcon from "@/assets/icons/instagram.webp";
 import clutchIcon from "@/assets/icons/clutch.webp";
-import clutchRecognitionImg from "@/assets/clutch/clutch-recognition.webp";
-import clutchStarsImg from "@/assets/clutch/clutch-stars.webp";
 import { LOCATIONS, NAVIGATION_LINKS } from "@/app/_components/footer";
 import Script from 'next/script';
 import MobileLetsTalkSection from '../_sections/mobile-lets-talk-section';
 import LetsTalkSection from '@/app/_sections/lets-talk-section';
 import { useEffect, useState } from 'react';
+import clutchIPhone from "@/assets/footer/clutch iphone.webp";
+import clutchSoftware from "@/assets/footer/clutch software.webp";
+import cuti from "@/assets/footer/cuti.png";
+import panFinance from "@/assets/footer/pan finance.png";
+import databricks from "@/assets/footer/databricks.png";
 
 const MobileFooter = (
     {
@@ -57,6 +60,16 @@ const MobileFooter = (
                         });
                     `}
                 </Script>
+                <div className="flex flex-row justify-center gap-4 md:gap-10 mb-8 mt-4">
+                    <Image src={databricks} alt="Databricks" height={ width >= 768 ? 100 : width >= 390 ? 60 : 55 } />
+                    <Image src={clutchSoftware} alt="Clutch Software" height={ width >= 768 ? 100 : width >= 390 ? 60 : 55 } />
+                    <Image src={clutchIPhone} alt="Clutch iPhone" height={ width >= 768 ? 100 : width >= 390 ? 60 : 55 } />
+                    <Image src={cuti} alt="CUTI" height={ width >= 768 ? 100 : width >= 390 ? 60 : 55 } />
+                    <Image src={panFinance} alt="PAN Finance" height={ width >= 768 ? 100 : width >= 390 ? 60 : 55 } />
+                </div>
+                <div className="flex container">
+                    <hr className="border-t-2 border-gray-600 w-full mb-8"/>
+                </div>
                 <div className="flex justify-between items-center py-2 sm:py-4 lg:py-8">
                     <div className="w-3/5">
                         <div className="mdplus:max-w-72 max-w-52">
@@ -65,7 +78,7 @@ const MobileFooter = (
                                     alt="Applica's logo" 
                                     src={logo} 
                                     loading="lazy" 
-                                    width={ width > 767 ? 300 : 200 } 
+                                    width={ width > 767 ? 300 : 180 } 
                                     height={ width > 767 ? 50 : 35 }
                                 />
                             </a>
@@ -157,34 +170,13 @@ const MobileFooter = (
                         </ul>
                     </div>
                 </div>
-
-                <div className="flex justify-between items-center py-2 sm:py-4 md:py-8">
-                    <div className="w-3/5">
-                        <div className="flex gap-4">
-                            <Image 
-                                src={clutchRecognitionImg} 
-                                alt="Clutch Recognition" 
-                                height={ width > 767 ? 90 : 60 } 
-                                width={ width > 767 ? 90 : 60 }
-                                loading="lazy"
-                            />
-                            <Image 
-                                src={clutchStarsImg} 
-                                alt="Clutch Stars" 
-                                height={ width > 767 ? 90 : 60 } 
-                                width={ width > 767 ? 150 : 100 } 
-                                loading="lazy"
-                            />
-                        </div>
-                    </div>
-                    <div className="w-2/5">
-                        <p
-                            className="mx-auto text-muted text-base flex justify-end"
-                            style={{ fontSize: "2.2vw", whiteSpace: "nowrap" }}
-                        >
-                            &copy; {currentYear} Applica Corp. All rights reserved.
-                        </p>
-                    </div>
+                <div className="flex w-full justify-center mt-8">
+                    <p
+                        className="mx-auto text-muted text-base flex justify-end"
+                        style={{ fontSize: "2.2vw", whiteSpace: "nowrap" }}
+                    >
+                        &copy; {currentYear} Applica Corp. All rights reserved.
+                    </p>
                 </div>
             </footer>
         </div>

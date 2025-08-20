@@ -2,8 +2,11 @@ import '../styles/footer.scss';
 import Image from "next/image";
 import logo from "@/assets/logo/logo-footer.webp";
 import { apexFont } from "@/assets/fonts";
-import clutchRecognitionImg from "@/assets/clutch/clutch-recognition.webp";
-import clutchStarsImg from "@/assets/clutch/clutch-stars.webp";
+import clutchIPhone from "@/assets/footer/clutch iphone.webp";
+import clutchSoftware from "@/assets/footer/clutch software.webp";
+import cuti from "@/assets/footer/cuti.png";
+import panFinance from "@/assets/footer/pan finance.png";
+import databricks from "@/assets/footer/databricks.png";
 import linkedinIcon from "@/assets/icons/linkedin.webp";
 import instagramIcon from "@/assets/icons/instagram.webp";
 import clutchIcon from "@/assets/icons/clutch.webp";
@@ -102,18 +105,33 @@ export default function Footer(
                         });
                     `}
                 </Script>
+                <div className="flex flex-row justify-center gap-20 mb-8">
+                    <Image src={databricks} alt="Databricks" height={125} />
+                    <Image src={clutchSoftware} alt="Clutch Software" height={125} />
+                    <Image src={clutchIPhone} alt="Clutch iPhone" height={125} />
+                    <Image src={cuti} alt="CUTI" height={125} />
+                    <Image src={panFinance} alt="PAN Finance" height={125} />
+                </div>
+                <div className="flex container">
+                    <hr className="border-t-2 border-gray-600 w-full mb-8"/>
+                </div>
                 <div className="container mx-25 flex flex-col md:flex-row gap-16 justify-between">
-                    <a href="/">
-                        <Image
-                            src={logo}
-                            alt="Applica Corp's logo"
-                            width={300}
-                            height={220}
-                            loading="lazy"
-                        />
-                    </a>
+                    <div className="flex flex-col gap-4 w-3/12">
+                        <a href="/">
+                            <Image
+                                src={logo}
+                                alt="Applica Corp's logo"
+                                width={300}
+                                height={220}
+                                loading="lazy"
+                            />
+                        </a>
 
-                    <div>
+                        
+
+                    </div>
+
+                    <div className='w-5/12'>
                         <ul translate='no'>
                             {LOCATIONS.map((l, index) => (
                                 <li key={index} className="my-1">
@@ -126,8 +144,9 @@ export default function Footer(
                         </ul>
                     </div>
 
-                    <div>
-                        <ul>
+                    <div className='flex flex-col gap-6 w-4/12'>
+                        
+                        <ul className='text-right'>
                             {NAVIGATION_LINKS.map((nl, index) => (
                                 nl.href.startsWith('#') ? 
                                 <a
@@ -137,7 +156,7 @@ export default function Footer(
                                             handleScroll(nl.href.slice(1));
                                         }
                                     }
-                                    className="text-xl hover:text-highlight transition-all duration-300 flex items-start text-left justify-start font-medium"
+                                    className="text-xl hover:text-highlight transition-all duration-300 font-medium text-right w-full block"
                                     key={index}
                                 >
                                     {nl.text}
@@ -149,10 +168,8 @@ export default function Footer(
                                 </li>
                             ))}
                         </ul>
-                    </div>
 
-                    <div className="flex flex-col items-end justify-between">
-                        <div className="flex gap-2">
+                        <div className="flex gap-4 w-full justify-end">
                             <a
                                 href="https://www.linkedin.com/company/applica-corp/"
                                 target="_blank"
@@ -175,32 +192,6 @@ export default function Footer(
                             </a>
                         </div>
 
-                        <div className="flex gap-8" role="link">
-                            <a
-                                href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
-                                target="_blank"
-                            >
-                                <Image
-                                    src={clutchStarsImg}
-                                    alt="AplicaCorp at Clutch"
-                                    width={250}
-                                    height={100}
-                                    loading="lazy"
-                                />
-                            </a>
-                            <a
-                                href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
-                                target="_blank"
-                            >
-                                <Image
-                                    src={clutchRecognitionImg}
-                                    alt="Clutch recognition for ApplicaCorp"
-                                    height={150}
-                                    width={150}
-                                    loading="lazy"
-                                />
-                            </a>
-                        </div>
                     </div>
                 </div>
 
