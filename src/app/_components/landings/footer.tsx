@@ -2,12 +2,15 @@ import '../../styles/footer.scss';
 import Image from "next/image";
 import logo from "@/assets/logo/logo-footer.webp";
 import { rubikFont } from "@/assets/fonts";
-import clutchRecognitionImg from "@/assets/clutch/clutch-recognition.webp";
-import clutchStarsImg from "@/assets/clutch/clutch-stars.webp";
 import linkedinIcon from "@/assets/icons/linkedin.webp";
 import instagramIcon from "@/assets/icons/instagram.webp";
 import clutchIcon from "@/assets/icons/clutch.webp";
 import Script from 'next/script';
+import clutchIPhone from "@/assets/footer/clutch iphone.webp";
+import clutchSoftware from "@/assets/footer/clutch software.webp";
+import cuti from "@/assets/footer/cuti.png";
+import panFinance from "@/assets/footer/pan finance.png";
+import databricks from "@/assets/footer/databricks.png";
 
 /**
  * Array of locations.
@@ -94,20 +97,32 @@ export default function LandingsFooter(
                     });
                 `}
             </Script>
-            <div className="container flex flex-col md:flex-row gap-8 justify-between  max-w-[960px] 
+            <div className="flex flex-row justify-center gap-20 mb-8">
+                <Image src={databricks} alt="Databricks" height={125} />
+                <Image src={clutchSoftware} alt="Clutch Software" height={125} />
+                <Image src={clutchIPhone} alt="Clutch iPhone" height={125} />
+                <Image src={cuti} alt="CUTI" height={125} />
+                <Image src={panFinance} alt="PAN Finance" height={125} />
+            </div>
+            <div className="flex container">
+                <hr className="border-t-2 border-gray-600 w-full mb-8"/>
+            </div>
+            <div className="container flex flex-col md:flex-row gap-8 justify-between max-w-[960px] 
                 lg:max-w-[1024px]
                 xl:max-w-[1280px]
                 2xl:max-w-[1440px]">
-                <a href="/">
-                    <Image
-                        src={logo}
-                        alt="Applica Corp's logo"
-                        width={300}
-                        height={220}
-                        loading="lazy"
-                    />
-                </a>
-                <div>
+                <div className="w-3/12">
+                    <a href="/">
+                        <Image
+                            src={logo}
+                            alt="Applica Corp's logo"
+                            width={300}
+                            height={220}
+                            loading="lazy"
+                        />
+                    </a>
+                </div>
+                <div className='w-5/12'>
                     <ul translate='no'>
                         {LOCATIONS.map((l, index) => (
                             <li key={index} className="my-1">
@@ -119,17 +134,8 @@ export default function LandingsFooter(
                         ))}
                     </ul>
                 </div>
-                <div>
-                    {/* <ul>
-                        {NAVIGATION_LINKS.map((nl, index) => (
-                            <li key={index} className="my-1">
-                                <a href={nl.href} className="font-medium hover:text-landing-violet text-md">
-                                    {nl.text}
-                                </a>
-                            </li>
-                        ))}
-                    </ul> */}
-                    <ul>
+                <div className='flex flex-col gap-6 w-4/12'>
+                    <ul className='text-right'>
                         {NAVIGATION_LINKS.map((nl, index) => (
                             nl.href.startsWith('#') ? 
                             <a
@@ -139,7 +145,7 @@ export default function LandingsFooter(
                                         handleScroll(nl.href.slice(1));
                                     }
                                 }
-                                className="text-xl hover:text-landing-violet transition-all duration-300 flex items-start text-left justify-start font-medium"
+                                className="text-xl hover:text-landing-violet transition-all duration-300 text-right w-full block font-medium"
                                 key={index}
                             >
                                 {nl.text}
@@ -151,53 +157,27 @@ export default function LandingsFooter(
                             </li>
                         ))}
                     </ul>
-                </div>
-                <div className="flex flex-col items-end justify-between">
-                    <div className="flex gap-2">
-                        <a
-                            href="https://www.linkedin.com/company/applica-corp/"
-                            target="_blank"
-                        >
-                            <Image src={linkedinIcon} alt="LinkedIn" width={48} height={48} loading="lazy" />
-                        </a>
-                        <a
-                            href="https://www.instagram.com/applica.corp/"
-                            target="_blank"
-                        >
-                            <Image src={instagramIcon} alt="Instagram" width={48} height={48} loading="lazy" />
-                        </a>
-                        <a
-                            href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay"
-                            target="_blank"
-                        >
-                            <Image src={clutchIcon} alt="Clutch" width={48} height={48} loading="lazy" />
-                        </a>
-                    </div>
-                    <div className="flex gap-8" role="link">
-                        <a
-                            href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
-                            target="_blank"
-                        >
-                            <Image
-                                src={clutchStarsImg}
-                                alt="AplicaCorp at Clutch"
-                                width={250}
-                                height={100}
-                                loading="lazy"
-                            />
-                        </a>
-                        <a
-                            href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay#highlights"
-                            target="_blank"
-                        >
-                            <Image
-                                src={clutchRecognitionImg}
-                                alt="Clutch recognition for ApplicaCorp"
-                                height={150}
-                                width={150}
-                                loading="lazy"
-                            />
-                        </a>
+                    <div className="flex flex-col items-end justify-between">
+                        <div className="flex gap-2">
+                            <a
+                                href="https://www.linkedin.com/company/applica-corp/"
+                                target="_blank"
+                            >
+                                <Image src={linkedinIcon} alt="LinkedIn" width={48} height={48} loading="lazy" />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/applica.corp/"
+                                target="_blank"
+                            >
+                                <Image src={instagramIcon} alt="Instagram" width={48} height={48} loading="lazy" />
+                            </a>
+                            <a
+                                href="https://clutch.co/profile/applica-corp-it-staff-augmentation-uruguay"
+                                target="_blank"
+                            >
+                                <Image src={clutchIcon} alt="Clutch" width={48} height={48} loading="lazy" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
