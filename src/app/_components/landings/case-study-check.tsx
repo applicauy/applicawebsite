@@ -9,7 +9,7 @@ export const CaseStudyCheck = (
 ) => {
   return (
     <div className="flex flew-row items-start gap-2 xl:gap-4">
-        <div className='pt-1 lg:pt-3 xl:pt-5'>
+        <div className='pt-1'>
             <CheckIcon className="h-8 lg:h-10 xl:h-15 text-green-400" strokeWidth={2.5}/>
         </div>
         <p className='text-md lg:text-xl xl:text-2xl'>
