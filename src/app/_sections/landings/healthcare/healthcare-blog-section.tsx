@@ -37,10 +37,10 @@ const HealthcareBlogSection = () => {
                     >
                       Resources & Blog
                     </LandingsH2>
-                    <p className="text-2xl xl:text-3xl text-black">
+                    <p className="text-xl lg:text-2xl xl:text-3xl text-black">
                         Visit our blog to explore more about digital health innovation.
                     </p>
-                    <ul className='text-2xl xl:text-3xl text-black list-disc list-inside'>
+                    <ul className='text-xl lg:text-2xl xl:text-3xl text-black list-disc list-inside'>
                         <li>Clinical software</li>
                         <li>Data security</li>
                         <li>Hospital transformation</li>
@@ -50,7 +50,7 @@ const HealthcareBlogSection = () => {
                         onClick={ onRedirectClick }
                         redirect
                     >
-                        <span className='text-2xl xl:text-3xl'>Read more</span>
+                        Read more
                     </LandingsButton>
                 </div>
             </FadeLeft>

@@ -9,9 +9,10 @@ export const LandingsCard = (
         alt,
         title,
         inline = false,
+        smallText = false,
         children
     }:
-    PropsWithChildren<{ image: any, alt: string, title: string , inline?: boolean }>
+    PropsWithChildren<{ image: any, alt: string, title: string, smallText?: boolean, inline?: boolean }>
 ) => {
 
   const [width, setWidth] = useState(0);
@@ -22,7 +23,7 @@ export const LandingsCard = (
 
   return (
     inline ?
-        ( <div className="h-full shadow-[0_4px_16px_rgba(0,0,0,0.2)] flex flex-row gap-5 xl:gap-5 bg-white rounded-2xl p-6 xl:p-8">
+        ( <div className="h-full shadow-[0_4px_16px_rgba(0,0,0,0.2)] flex flex-row gap-5 xl:gap-5 bg-white rounded-2xl p-6 xl:p-8 items-center">
             <Image
                 src = { image }
                 alt = { alt }
@@ -54,7 +55,7 @@ export const LandingsCard = (
                     { title }
                 </LandingsH3>
             </div>
-            <p className='text-md lg:text-xl xl:text-3xl font-normal z-50'>
+            <p className={`text-md lg:text-xl ${ smallText ? 'xl:text-2xl' : 'xl:text-3xl' } font-normal z-50`}>
                 { children }
             </p>
         </div> )

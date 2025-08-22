@@ -4,7 +4,7 @@ import ai from '@/assets/icons/Technologies/ai.svg';
 import lock from '@/assets/icons/Technologies/lock.svg';
 import pencil from '@/assets/icons/Technologies/pencil.svg';
 
-export const ketTechnologyServices = [
+export const keyTechnologyServices = [
     {
         image: healthcareComputer,
         alt: 'Healthcare Computer',

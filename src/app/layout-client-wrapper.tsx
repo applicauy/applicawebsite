@@ -24,7 +24,7 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
     const [width, setWidth] = useState(0);
 
     const pathname = usePathname();
-    const isHealthcare = pathname.startsWith("/healthcare");
+    const isNewLanding = pathname.startsWith("/healthcare") || pathname.startsWith("/finance");
 
     useEffect(() => {
       setWidth(window.innerWidth);
@@ -125,15 +125,13 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
         <body className={`${inter.className} overflow-x-hidden ${ isMobile && 'mobile-layout' }`}>
             { loading && <Loading /> }
             { 
-                !isHealthcare &&
+                !isNewLanding ?
                     ( 
                         isMobile ? 
                             <MobileNavBar onMenuClick={handleMenuClick} handleScrollFromClick = { handleScroll } /> : 
                             <NavBar onMenuClick={handleMenuClick} handleScroll = { handleScroll }/> 
-                    )
-            }
-            { 
-                isHealthcare &&
+                    ) 
+                    :
                     ( 
                         isMobile ? 
                             <MobileLandingsNavBar onMenuClick={handleMenuClick} handleScrollFromClick = { handleScroll } /> : 
@@ -146,14 +144,13 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
             {children}
             
             { 
-                !isHealthcare && (
+                !isNewLanding ? (
                     width < 1024 ? 
                         <MobileFooter handleScroll = { handleScroll }/> : 
                         <Footer handleScroll = { handleScroll }/> 
                 )
-            }
-            { 
-                isHealthcare && (
+                :
+                (
                     width < 1024 ? 
                         <MobileLandingsFooter handleScroll = { handleScroll }/> : 
                         <LandingsFooter handleScroll = { handleScroll }/> 

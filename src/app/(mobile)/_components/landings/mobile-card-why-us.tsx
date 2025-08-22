@@ -4,25 +4,25 @@ import console from '@/assets/icons/icon-code.svg';
 import people from '@/assets/icons/icon-group.svg';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
+import { PropsWithChildren } from 'react';
 
-const MobileHealthcareCardWhyUs = (
+const MobileCardWhyUs = (
     {   
         value,
         startSymbol,
         endSymbol,
         duration,
-        concept,
         isConsole,
-        isPeople
-    } : {
+        isPeople,
+        children
+    } : PropsWithChildren<{
         value?: number,
         startSymbol?: string,
         endSymbol?: string,
         duration?: number,
-        concept: string,
         isConsole?: boolean,
         isPeople?: boolean
-    }
+    }>
 ) => {
 
     const { ref, inView } = useInView({
@@ -69,9 +69,9 @@ const MobileHealthcareCardWhyUs = (
               }
               { endSymbol }
           </div>
-          <div className="text-md text-center max-w-xs">{ concept }</div>
+          <div className="text-md text-center max-w-xs">{ children }</div>
       </div>
     )
 }
 
-export default MobileHealthcareCardWhyUs;
+export default MobileCardWhyUs;

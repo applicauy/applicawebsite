@@ -3,7 +3,7 @@ import { rubikFont } from '@/assets/fonts';
 import Section from '@/components/section';
 import React from 'react'
 import { motion } from 'framer-motion';
-import { industriesSpecialization } from '@/utils/data/industries-specialization';
+import { industriesSpecialization } from '@/utils/data/healthcare/industries-specialization';
 import MobileLandingsCard from '../../../_components/landings/mobile-card';
 import '../../../../styles/healthcare.scss';
 import ball from "@/assets/shapes/ball.webp";

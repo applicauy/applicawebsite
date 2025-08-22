@@ -5,7 +5,6 @@ import infinito from '@/assets/shapes/infinito.webp';
 import React from 'react'
 import ZoomIn from '@/app/_components/effects/zoom-in';
 import { LandingsButton } from '@/components/landings/button';
-import classnames from 'classnames';
 import { LandingsH1 } from '@/components/landings/h1';
 import { LandingsH2 } from '@/components/landings/h2';
 

@@ -1,7 +1,7 @@
 import FadeIn from "@/app/_components/effects/fade-in";
 import { rubikFont } from "@/assets/fonts";
 import Section from "@/components/section";
-import { ketTechnologyServices } from "@/utils/data/key-technology-services";
+import { keyTechnologyServices } from "@/utils/data/healthcare/key-technology-services";
 import { motion } from 'framer-motion';
 import MobileLandingsCard from "../../../_components/landings/mobile-card";
 import Image from "next/image";
@@ -44,7 +44,7 @@ const MobileHealthcareKeyTechnologySection = () => {
             className="flex flex-col gap-8 mt-10"
         >
             {
-                ketTechnologyServices.map(
+                keyTechnologyServices.map(
                     ( { image, alt, title, content }, index ) => (
                         <motion.div
                             key={index}

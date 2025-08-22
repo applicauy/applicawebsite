@@ -1,0 +1,74 @@
+import FadeIn from '@/app/_components/effects/fade-in';
+import { rubikFont } from '@/assets/fonts';
+import { LandingsH2 } from '@/components/landings/h2';
+import Section from '@/components/section';
+import React from 'react'
+import { motion } from 'framer-motion';
+import { keyTechnologyServices } from '@/utils/data/finance/key-technology-services';
+import MobileLandingsCard from '@/app/(mobile)/_components/landings/mobile-card';
+import Image from 'next/image';
+import ameba from "@/assets/shapes/ameba-invertida.webp";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
+
+export const MobileFinanceKeyTechnologySection = () => {
+  return (
+    <Section className={`${rubikFont.className} relative px-8`}>
+        <FadeIn>
+            <LandingsH2
+                mobile
+                title
+                className='text-black font-bold text-center'
+            >
+              Key Technology Services
+            </LandingsH2>
+        </FadeIn>
+        <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="flex flex-col gap-8 mt-10"
+        >
+            {
+                keyTechnologyServices.map(
+                    ( { image, alt, title, content }, index ) => (
+                        <motion.div
+                            key={index}
+                            variants={item}>    
+                            <MobileLandingsCard
+                                image = { image }
+                                alt = { alt }
+                                title = { title }
+                            >
+                                { content }
+                            </MobileLandingsCard>
+                        </motion.div>
+                    )
+                )
+            }
+        </motion.div>
+        <Image
+            src={ameba}
+            alt="Ameba"
+            width={150}
+            height={150}
+            className="ameba-right-mobile animate-float-right-extended"
+        />
+    </Section>
+  )
+}
