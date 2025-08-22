@@ -39,7 +39,7 @@ const HealthcareFaqsSection = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="flex flex-col gap-5 2xl:w-[77%] mdplus:w-[80%]"
+            className="flex flex-col gap-5 2xl:w-[77%] mdplus:w-[90%]"
       >
         <motion.div variants={item}>
           <FAQItem

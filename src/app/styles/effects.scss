@@ -81,6 +81,16 @@
       justify-content: center;
       color: white;
     }
+
+    .inner-content-start {
+      position: relative;
+      z-index: 1;
+      background-color: #2e3a8c;
+      height: 100%;
+      width: 100%;
+      justify-content: start;
+      color: white;
+    }
 }
 
 .bordered-gradient-box-mobile {
@@ -110,6 +120,19 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      color: white;
+    }
+
+    .inner-content-start {
+      position: relative;
+      z-index: 1;
+      background-color: #2e3a8c;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
       color: white;
     }
 }

@@ -2,7 +2,7 @@ import '../../../styles/healthcare.scss';
 import '../../../styles/effects.scss';
 import { LandingsCard } from '@/app/_components/landings/card';
 import { rubikFont } from '@/assets/fonts';
-import { ketTechnologyServices } from '@/utils/data/key-technology-services';
+import { keyTechnologyServices } from '@/utils/data/healthcare/key-technology-services';
 import React, { useEffect, useState } from 'react'
 import ball from '@/assets/shapes/ball.webp';
 import Image from 'next/image';
@@ -53,7 +53,7 @@ export const HealthcareKeyTechnologySection = () => {
             className={`grid ${ width >= 970 ? 'grid-cols-2' : 'grid-cols-1' } gap-6 xl:gap-16 mt-10 xl:mt-24 items-stretch`}
         >
             {
-                ketTechnologyServices.map(
+                keyTechnologyServices.map(
                     ( { image, alt, title, content }, index ) => (
                         <motion.div
                             key={index}

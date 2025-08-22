@@ -21,7 +21,7 @@ const HealthcareLetsTalkSection = () => {
                 >
                   Let&apos;s Talk
                 </LandingsH2>
-                <div className="max-w-screen-lg text-2xl xl:text-3xl text-white leading-tight text-center flex flex-col gap-12">
+                <div className="max-w-screen-lg text-xl lg:text-2xl xl:text-3xl text-white leading-tight text-center flex flex-col gap-12">
                     <p>
                         Ready to build your next healthcare solution?
                     </p>
@@ -32,7 +32,7 @@ const HealthcareLetsTalkSection = () => {
                     onClick={ onRedirectClick }
                     redirect
                 >
-                    <span className='text-2xl xl:text-3xl'>Talk to a specialist</span>
+                    Talk to a specialist
                 </LandingsButton>
             </div>
         </FadeIn>
