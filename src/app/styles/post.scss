@@ -32,6 +32,14 @@
   }
 }
 
+.post-content a {
+  text-decoration: underline;
+  color: #b69fe2;  
+}
+
+.post-content a:hover {
+  color: #e5a818;
+}
 .post-content p {
   margin-top: 0; 
   margin-bottom: 1rem;
