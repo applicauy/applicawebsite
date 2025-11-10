@@ -1,8 +1,8 @@
-import { MenuIitem } from '../models/MenuItem';
+import { MenuItem } from '../models/MenuItem';
 import { IoGlobeOutline, IoNewspaperOutline, IoPeopleOutline, IoRocketOutline, IoSchoolOutline } from "react-icons/io5";
 
 
-export const menuItems: MenuIitem[] = [
+export const menuItems: MenuItem[] = [
     {
         name: 'about us',
         icon: <IoPeopleOutline />,

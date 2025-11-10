@@ -5,20 +5,46 @@ import '../../styles/healthcare.scss';
 export const GradientCard = (
     {
         title,
+        gradient = true,
         children
     } :
-    PropsWithChildren<{ title: string }>
+    PropsWithChildren<{ title: string, gradient?: boolean }>
 ) => {
   return (
-    <div className="h-full shadow-[0_2px_8px_rgba(0,0,0,0.2)] flex flex-col gap-3 xl:gap-4 card-gradient rounded-2xl p-6 xl:p-8 justify-center">
+    <div className={`
+        ${ gradient && 'h-full' } 
+        shadow-[0_2px_8px_rgba(0,0,0,0.2)] 
+        flex 
+        flex-col 
+        gap-3 
+        xl:gap-4 
+        ${ gradient ? 'card-gradient' : 'bg-white' }
+        rounded-2xl 
+        p-6 
+        xl:p-10 
+        justify-center
+    `}>
         <div className="flex flex-row gap-2 xl:gap-3 items-center justify-center">
             <LandingsH3
-                className='font-bold text-white z-50 text-center'
+                className={`
+                    font-bold 
+                    ${ gradient ? 'text-white' : 'text-indigo-700' } 
+                    z-50 
+                    text-center
+                `}
             >
                 { title }
             </LandingsH3>
         </div>
-        <p className={`text-center text-md lg:text-xl xl:text-3xl font-normal z-50 text-white`}>
+        <p className={`
+            text-center 
+            text-md 
+            lg:text-xl 
+            ${ gradient ? 'xl:text-3xl' : 'xl:text-xl' }
+            font-normal 
+            z-50 
+            ${ gradient ? 'text-white' : 'text-black' }
+        `}>
             { children }
         </p>
     </div>

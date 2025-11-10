@@ -1,0 +1,96 @@
+.ameba-right-technology {
+    position: absolute;
+    right: -15%;
+    bottom: -5%;
+    z-index: 10;
+
+    @media(min-width: 800px) {
+      right: -15%;
+      bottom: -10%;
+    }
+
+    @media(min-width: 1025px) {
+      right: -5%;
+      top: 55%;
+    }
+
+    @media(min-width: 1281px) {
+      right: -5%;
+      bottom: 5%;
+    }
+}
+
+.ameba-ball-technology {
+    position: absolute;
+    right: 0;
+    bottom: 22%;
+    z-index: 10;
+
+    @media(min-width: 1281px) {
+      bottom: 20%;
+    }
+
+    @media(min-width: 1441px) {  
+      bottom: 7%;
+      right: -2%;
+    }
+
+     @media(min-width: 2000px) {
+      bottom: 18%;
+      right: -2%;
+    }
+}
+
+
+.dialog-left-technology {
+    position: absolute;
+    z-index: 10;
+    left: -5%;
+    bottom: -15%;
+
+    @media(min-width: 1281px) {
+      bottom: -10%;      
+      left: -20%;
+    }
+
+    @media(min-width: 1441px) {  
+      bottom: -10%;
+      left: -20%;
+    }
+
+     @media(min-width: 2000px) {
+      bottom: 18%;
+      left: -20%;
+    }
+
+}
+
+.dialog-right-technology {
+    position: absolute;
+    bottom: -30%;
+    right: -27%;
+    z-index: 0;
+
+    @media(min-width: 970px){
+      bottom: -25%;
+      right: -30%;
+      
+    }
+
+    @media(min-width: 1025px) {
+      right: -20%;
+    }
+
+    @media(min-width: 1281px) {
+      right: -25%;
+    }
+
+    @media(min-width: 1441px) {
+      right: -30%;
+    }
+
+     @media(min-width: 2000px) {
+      right: -15%;
+    }
+
+}

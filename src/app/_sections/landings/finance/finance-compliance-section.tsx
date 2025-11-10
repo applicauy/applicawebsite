@@ -1,7 +1,6 @@
 'use client'
 
 import FadeIn from '@/app/_components/effects/fade-in';
-import FadeLeft from '@/app/_components/effects/fade-left';
 import { rubikFont } from '@/assets/fonts';
 import { LandingsH2 } from '@/components/landings/h2';
 import Section from '@/components/landings/section';
@@ -29,7 +28,6 @@ const item = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0 },
 };
-
 
 export const FinanceComplianceSection = () => {
 

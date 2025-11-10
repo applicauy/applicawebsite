@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import CountUp from 'react-countup';
 import console from '@/assets/icons/icon-code.svg';
 import people from '@/assets/icons/icon-group.svg';
+import isolation from '@/assets/icons/isolation.svg';
+import partnership from '@/assets/icons/partnership.svg';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import { PropsWithChildren } from 'react';
@@ -14,6 +16,8 @@ const MobileCardWhyUs = (
         duration,
         isConsole,
         isPeople,
+        isIsolation,
+        isPartnership,
         children
     } : PropsWithChildren<{
         value?: number,
@@ -21,7 +25,9 @@ const MobileCardWhyUs = (
         endSymbol?: string,
         duration?: number,
         isConsole?: boolean,
-        isPeople?: boolean
+        isPeople?: boolean,
+        isIsolation?: boolean,
+        isPartnership?: boolean,
     }>
 ) => {
 
@@ -63,6 +69,24 @@ const MobileCardWhyUs = (
                       <Image
                           src = { people }
                           alt = "Group"
+                          width={75}
+                          height={75}
+                      />
+              }
+              {
+                  isIsolation &&
+                      <Image
+                          src = { isolation }
+                          alt = "Isolation"
+                          width={75}
+                          height={75}
+                      />
+              }
+              {
+                  isPartnership &&
+                      <Image
+                          src = { partnership }
+                          alt = "Partnership"
                           width={75}
                           height={75}
                       />
