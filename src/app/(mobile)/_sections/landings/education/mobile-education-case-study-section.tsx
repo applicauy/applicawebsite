@@ -9,7 +9,7 @@ import Section from "@/components/landings/section";
 import { LandingsButton } from "@/components/landings/button";
 import { LandingsH2 } from "@/components/landings/h2";
 import { LandingsH3 } from "@/components/landings/h3";
-import laptop from '@/assets/laptop.webp';
+import laptop from '@/assets/Laptop.webp';
 import { caseStudyChecks } from "@/utils/data/education/case-study-check";
 import { MobileCaseStudyCheck } from "@/app/(mobile)/_components/landings/mobile-case-study-check";
 
