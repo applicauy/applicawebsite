@@ -5,7 +5,6 @@ import '../../../styles/healthcare.scss'
 import '../../../styles/effects.scss'
 import { rubikFont } from '@/assets/fonts';
 import Image from 'next/image';
-import { HealthcareCardValue } from '@/app/_components/landings/card-value';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import FadeLeft from '@/app/_components/effects/fade-left';
 import FadeRight from '@/app/_components/effects/fade-right';
