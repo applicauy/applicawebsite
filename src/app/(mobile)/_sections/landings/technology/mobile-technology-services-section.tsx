@@ -39,7 +39,7 @@ export const MobileTechnologyServicesSection = () => {
                 </div>
                 <div className="max-w-screen-sm text-md text-white leading-tight text-center flex flex-col gap-4">
                     <p>
-                        At Applica, we turn product ideas into high-impact software. Whether you're building your MVP, scaling an existing platform, or augmenting your tech team, we bring the mindset, speed, and quality execution your roadmap demands.
+                        At Applica, we turn product ideas into high-impact software. Whether you&apos;re building your MVP, scaling an existing platform, or augmenting your tech team, we bring the mindset, speed, and quality execution your roadmap demands.
                     </p>
                     <p>
                         From early-stage startups to venture-backed scaleups, we help companies move fast, with structure.
