@@ -53,11 +53,11 @@ const MobileLandingsNavBar = (
       visible: { y: '0%', opacity: 1 },
     };
 
-    const MobileMenu = dynamic(() => import('@/(mobile)/_components/mobile-menu'));
+    const MobileMenu = dynamic(() => import('@/(mobile)/_components/mobile-menu'));     
     
     return (
         <motion.header 
-            className={`flex justify-between items-center px-4 sm:px-6 md:px-8 py-2 sm:py-16 applica-navbar-mobile ${showNavbar ? 'visible' : 'hidden'}`}
+            className={`flex justify-between items-center px-4 sm:px-6 md:px-8 py-2 sm:py-16 applica-navbar-mobile ${showNavbar ? 'visible' : 'hidden'} `}
             initial="visible"
             animate={showNavbar ? 'visible' : 'hidden'}
             variants={variants}

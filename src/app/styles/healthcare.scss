@@ -139,7 +139,7 @@ nav {
 
 .ameba-left-mobile {
     position: absolute;
-    left: -30%;
+    left: -20%;
     top: -5%;
     transform: rotate(140deg);
     z-index: 0;
@@ -154,8 +154,18 @@ nav {
 
 .ameba-right-mobile {
     position: absolute;
+    right: -15%;
+    bottom: 15%;
+    z-index: 1;
+    @media(min-width: 550px) {
+      right: -8%;
+      bottom: 10%;
+    }
+}
+
+.ameba-right-mobile-up {
+    position: absolute;
     right: -8%;
-    bottom: -10%;
     z-index: 1;
 }
 

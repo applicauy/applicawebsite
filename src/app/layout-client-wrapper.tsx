@@ -24,7 +24,7 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
     const [width, setWidth] = useState(0);
 
     const pathname = usePathname();
-    const isNewLanding = pathname.startsWith("/healthcare") || pathname.startsWith("/finance");
+    const isNewLanding = pathname.startsWith("/healthcare") || pathname.startsWith("/finance") || pathname.startsWith("/technology") || pathname.startsWith("/education");
 
     useEffect(() => {
       setWidth(window.innerWidth);
@@ -83,7 +83,6 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
 
         if( window.location.href.includes('/#') ) {
 
-            
             setTimeout(
                 () => {
                     const scrollToId = localStorage.getItem('scrollToId');
@@ -122,7 +121,7 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
     
     
     return (
-        <body className={`${inter.className} overflow-x-hidden ${ isMobile && 'mobile-layout' }`}>
+        <body className={`${inter.className} overflow-x-hidden ${ isMobile && 'mobile-layout' }`} >
             { loading && <Loading /> }
             { 
                 !isNewLanding ?
@@ -135,7 +134,8 @@ export default function LayoutClientWrapper({ children }: { children: React.Reac
                     ( 
                         isMobile ? 
                             <MobileLandingsNavBar onMenuClick={handleMenuClick} handleScrollFromClick = { handleScroll } /> : 
-                            <div className="flex flex-row justify-center items-center w-full global-container">
+                            <div className={`flex flex-row justify-center items-center w-full global-container 
+                                ${ width <= 970 && 'bg-white' }`}>
                                 <LandingsNavBar onMenuClick={handleMenuClick} handleScroll = { handleScroll }/> 
                             </div> 
                     )
