@@ -26,7 +26,7 @@ export default function LandingSection() {
     };
 
     return (
-        <Section className="py-12 lg:py-24">
+        <Section className="py-12 lg:py-24 z-[-1]">
             {/* Example of how to utilize motion's animation upon the user's first view (it 
                 only triggers when the user sees it for the first time). */}
             <div

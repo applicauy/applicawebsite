@@ -12,7 +12,7 @@ const MobileLandingsCard = (
     PropsWithChildren<{ image: any, alt: string, title: string }>
 ) => {
   return (
-    <div className="shadow-[0_4px_16px_rgba(0,0,0,0.2)] flex flex-col gap-4 bg-white rounded-2xl px-4 py-6 text-black">
+    <div className={`shadow-[0_4px_16px_rgba(0,0,0,0.2)] flex flex-col gap-4 bg-white rounded-2xl px-4 ${ children ? 'py-6' : 'pt-4' } text-black h-full`}>
         <div className="flex flex-col gap-3 items-center justify-center">
             <Image
                 src = { image }

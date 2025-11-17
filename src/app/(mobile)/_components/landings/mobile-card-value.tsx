@@ -1,5 +1,5 @@
 'use client'
-import { ArrowDownIcon } from '@heroicons/react/24/outline';
+import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/24/outline';
 import React, { useEffect, useState } from 'react'
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
@@ -11,13 +11,15 @@ const MobileHealthcareCardValue = (
         startSymbol,
         endSymbol,
         duration,
-        concept
+        concept,
+        text = false
     } : {
-        value: number,
+        value: string | number,
         startSymbol?: string,
         endSymbol?: string,
         duration: number,
-        concept: string
+        concept: string,
+        text?: boolean
     }
 
 ) => {
@@ -41,21 +43,27 @@ const MobileHealthcareCardValue = (
   return (
     <div ref = { ref } className="bordered-gradient-box-mobile rounded-3xl">
         <div className="inner-content flex flex-col gap-2 px-2 py-6 text-white items-center shadow-lg rounded-3xl bg-indigo-600">
-            <div className={`flex flex-row ${ width > 400 ? 'text-5xl' : 'text-4xl' } font-bold items-center`}>
+            <div className={`flex flex-row ${ width > 400 ? 'text-3xl' : 'text-2xl' } font-bold items-center justify-center text-center`}>
                 {
                     startSymbol === '↓' ?
-                        <ArrowDownIcon className={`${ width > 400 ? 'w-10 h-10' : 'w-7 h-7' }text-white font-extrabold mr-1`} strokeWidth={3} /> :
-                        startSymbol
+                        <ArrowDownIcon className={`${ width > 400 ? 'w-6 h-10' : 'w-7 h-7' }text-white font-extrabold mr-1`} strokeWidth={3} /> :
+                        startSymbol === '↑' ?
+                          <ArrowUpIcon className={`${ width > 400 ? 'w-6 h-10' : 'w-7 h-7'}text-white font-extrabold mr-1`} strokeWidth={3} /> :
+                          startSymbol
                 }
                 {
-                    startCount ?
-                        <CountUp 
-                            end={value} 
-                            duration={duration} 
-                            decimals={Number.isInteger(value) ? 0 : String(value).split('.')[1]?.length || 1} 
-                            separator="."
-                        /> :
-                        0
+                    text ? 
+                      value :
+                      (
+                        startCount ?
+                          <CountUp 
+                              end={value as number} 
+                              duration={duration} 
+                              decimals={Number.isInteger(value) ? 0 : String(value).split('.')[1]?.length || 1} 
+                              separator="."
+                          /> :
+                          0
+                      )
                 }
                 {endSymbol}
             </div>

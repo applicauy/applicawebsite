@@ -64,3 +64,10 @@
 .menu-landings ul li a {
   color: black;
 }
+
+.subitems li {
+  margin: 12px 0 !important;
+  &:first-child {
+    margin-top: 16px !important;
+  }
+}

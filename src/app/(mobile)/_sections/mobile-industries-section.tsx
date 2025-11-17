@@ -9,6 +9,7 @@ import technology from "@/assets/icons/technology-icon.webp";
 import Attribute from '@/app/_components/attribute';
 import { useInView } from 'react-intersection-observer';
 import Section from '@/components/section';
+import { CardIndustry } from '@/app/_components/card-industry';
 
 export default function MobileIndustriesSection() {
 
@@ -17,25 +18,29 @@ export default function MobileIndustriesSection() {
             image: financial,
             imageAlt: 'Financing',
             title: 'Financing',
-            description: 'We specialize in fintechs, banks, and insurance. From core system integration to regulatory automation and operational security, we deliver tailor-made solutions that drive real impact.'
+            description: 'We specialize in fintechs, banks, and insurance. From core system integration to regulatory automation and operational security, we deliver tailor-made solutions that drive real impact.',
+            redirect: '/finance'
         },
         {
             image: educational,
             imageAlt: 'Education',
             title: 'Education',
-            description: 'We help institutions scale their digital presence through powerful e-learning platforms, seamless integrations, and data-driven engagement. Better tech, better learning.'
+            description: 'We help institutions scale their digital presence through powerful e-learning platforms, seamless integrations, and data-driven engagement. Better tech, better learning.',
+            redirect: '/education'
         },
         {
             image: healthcare,
             imageAlt: 'Healthcare',
             title: 'Healthcare',
-            description: 'We build smart solutions for hospitals and healthcare providers. Our expertise in clinical data tracking, interoperability, and process automation makes care more connected and efficient.'
+            description: 'We build smart solutions for hospitals and healthcare providers. Our expertise in clinical data tracking, interoperability, and process automation makes care more connected and efficient.',
+            redirect: '/healthcare'
         },
         {
             image: technology,
             imageAlt: 'Technology',
             title: 'Technology',
-            description: 'We partner with tech companies to scale products and boost performance. With deep know-how in software architecture and agile development, we help you stay ahead—fast.'
+            description: 'We partner with tech companies to scale products and boost performance. With deep know-how in software architecture and agile development, we help you stay ahead—fast.',
+            redirect: '/technology'
         },
     ];
 
@@ -60,9 +65,14 @@ export default function MobileIndustriesSection() {
                     {
                         INDUSTRIES.map(
                             (i, index) => (
-                                <Attribute icon={ i.image } title = { i.title } key = { index }>
+                                <CardIndustry 
+                                    icon={ i.image } 
+                                    title = { i.title } 
+                                    redirect={i.redirect}
+                                    key = { index }
+                                >
                                     { i.description }
-                                </Attribute>
+                                </CardIndustry>
                             )
                         )
                     }
