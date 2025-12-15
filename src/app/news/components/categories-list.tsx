@@ -26,8 +26,15 @@ const CategoriesList = () => {
       };
 
       const fetchActiveTags = async () => {
-        const { hits } = await indexPosts.search<Post>("");
-        const usedTags = new Set(hits.flatMap((post) => post.tags.map((tag) => tag.name)));
+      const { facets } = await indexPosts.search("", {
+          facets: ['tags.name'],
+          hitsPerPage: 0,
+        });
+      
+        const usedTags = new Set(
+          Object.keys(facets?.['tags.name'] || {})
+        );
+      
         setActiveTags(usedTags);
       };
 

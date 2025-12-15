@@ -6,6 +6,8 @@ import PostSection from "../components/post-section";
 import { indexPosts, searchClient } from "@/utils/config/algolia-config";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { redirect } from 'next/navigation';
+
 
 interface Props {
   params: { id: string }
@@ -39,7 +41,8 @@ const page = async ( { params } : Props ) => {
   const post: Post | undefined = await findPost( params.id ); 
 
   if (!post) {
-    throw new Error("Post not found");
+    redirect('/news');
+    return null;
   }
 
   const PostSection = dynamic(() => import('@/app/news/components/post-section'), { ssr: false });

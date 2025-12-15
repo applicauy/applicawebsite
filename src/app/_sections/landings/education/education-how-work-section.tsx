@@ -60,7 +60,7 @@ export const EducationHowWorkSection = () => {
             </p>
             <LandingsButton
               type="secondary"
-              onClick={ onRedirectClick }
+              href='/contact'
               redirect
               className='mx-auto'
             >

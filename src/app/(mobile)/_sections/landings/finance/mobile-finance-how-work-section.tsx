@@ -52,7 +52,7 @@ export const MobileFinanceHowWorkSection = () => {
         <div className="flex flex-row justify-center mt-12 mb-4">
           <LandingsButton
               type = "secondary"
-              onClick={ onRedirectClick }
+              href='/contact'
               redirect
           >
               <span>Explore models in detail</span>

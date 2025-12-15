@@ -62,7 +62,7 @@ const TechnologyHeroSection = () => {
         <ZoomIn>
           <LandingsButton
             type = "primary"
-            onClick={ onRedirectClick }
+            href='/contact'
             redirect
             className='mt-14'>
             Let&apos;s make IT happen

@@ -47,7 +47,7 @@ const HealthcareBlogSection = () => {
                     </ul>
                     <LandingsButton
                         type = "outline-primary"
-                        onClick={ onRedirectClick }
+                        href='/news'
                         redirect
                     >
                         Read more

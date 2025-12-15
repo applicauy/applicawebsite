@@ -108,7 +108,7 @@ export default function AboutUs() {
                     on deck, our nearshore IT talents are here to help.
                 </H3>
 
-                <Button onClick={onMeetOurProcessClick}>
+                <Button onClick={onMeetOurProcessClick} href = "/#hiring-process">
                     Meet our process
                 </Button>
             </motion.div>

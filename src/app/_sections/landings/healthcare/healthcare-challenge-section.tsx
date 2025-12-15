@@ -29,7 +29,7 @@ export const HealthcareChallengeSection = () => {
             </div>
             <LandingsButton
               type="secondary"
-              onClick={ onRedirectClick }
+              href='/contact'
               redirect
             >
               Contact our team

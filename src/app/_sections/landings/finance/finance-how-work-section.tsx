@@ -62,7 +62,7 @@ export const FinanceHowWorkSection = () => {
         <FadeIn>
           <LandingsButton
             type="secondary"
-            onClick={ onRedirectClick }
+            href='/contact'
             redirect
           >
             Explore both models in detail

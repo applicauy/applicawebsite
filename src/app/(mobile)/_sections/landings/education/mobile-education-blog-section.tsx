@@ -38,6 +38,7 @@ export const MobileEducationBlogSection = () => {
                         onClick={ onRedirectClick }
                         redirect
                         className='mt-6'
+                        href='/news'
                     >
                         <span>Read more</span>
                     </LandingsButton>
