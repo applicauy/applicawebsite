@@ -29,7 +29,7 @@ export const MobileTechnologyDontSeeStackSection = () => {
               <div className="w-full text-center flex align-items-center justify-center mt-4">
                 <LandingsButton
                     type="secondary"
-                    onClick={ onRedirectClick }
+                    href='/contact'
                     redirect
                 >
                     Let&apos;s talk about your tech stack

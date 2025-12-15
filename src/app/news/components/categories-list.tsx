@@ -1,7 +1,7 @@
 import H3 from "@/components/h3";
 import H4 from "@/components/h4";
 import { indexPosts, indexTags } from "@/utils/config/algolia-config";
-import { Cateogry } from "@/utils/models/Category";
+import { Category } from "@/utils/models/Category";
 import { Post } from "@/utils/models/Post";
 import { useEffect, useState } from "react"
 
@@ -15,19 +15,26 @@ type Tag = {
 
 const CategoriesList = () => {
 
-    const [categories, setCategories] = useState<Cateogry[]>([]);
+    const [categories, setCategories] = useState<Category[]>([]);
     const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
 
 
       useEffect(() => {
       const fetchCategories = async () => {
-        const { hits } = await indexTags.search<Cateogry>("");
+        const { hits } = await indexTags.search<Category>("");
         setCategories(hits); 
       };
 
       const fetchActiveTags = async () => {
-        const { hits } = await indexPosts.search<Post>("");
-        const usedTags = new Set(hits.flatMap((post) => post.tags.map((tag) => tag.name)));
+      const { facets } = await indexPosts.search("", {
+          facets: ['tags.name'],
+          hitsPerPage: 0,
+        });
+      
+        const usedTags = new Set(
+          Object.keys(facets?.['tags.name'] || {})
+        );
+      
         setActiveTags(usedTags);
       };
 

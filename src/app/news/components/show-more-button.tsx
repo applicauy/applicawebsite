@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import arrowDown from "@/assets/icons/arrow-down.webp";
-import { Cateogry } from "@/utils/models/Category";
+import { Category } from "@/utils/models/Category";
 
 export default function ShowMoreButton({
   isMobile,
@@ -14,7 +14,7 @@ export default function ShowMoreButton({
   isMobile: boolean;
   currentPage: number;
   fromCategory: boolean;
-  category?: Cateogry | null;
+  category?: Category | null;
 }) {
   const router = useRouter();
   const nextPage = currentPage + 1;

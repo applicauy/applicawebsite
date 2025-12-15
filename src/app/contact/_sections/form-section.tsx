@@ -41,7 +41,9 @@ function Submit(
                         type="submit"
                         highlightedArrow={!pending}
                         disabled={pending}
-                        isLoading={ isLoading }>
+                        isLoading={ isLoading }
+                        isButton
+                    >                    
                         Submit
                     </MobileButton>
                     :
@@ -50,6 +52,7 @@ function Submit(
                         highlightedArrow={!pending}
                         disabled={pending}
                         isLoading={ isLoading }
+                        isButton
                     >
                         Submit
                     </Button>

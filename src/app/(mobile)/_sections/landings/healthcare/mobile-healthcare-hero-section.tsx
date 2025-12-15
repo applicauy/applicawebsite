@@ -43,7 +43,7 @@ const MobileHealthcareHeroSection = () => {
             <div className="flex flex-col justify-between items-center mt-8 w-full">
                 <LandingsButton
                     type = "primary"
-                    onClick={ onRedirectClick }
+                    href='/contact'
                     redirect
                 >
                     <span>

@@ -28,7 +28,7 @@ export const FinanceChallengeSection = () => {
           </div>
           <LandingsButton
             type="secondary"
-            onClick={ onRedirectClick }
+            href='/contact'
             redirect
           >
             Contact our team

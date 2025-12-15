@@ -29,7 +29,7 @@ export const MobileFinanceChallengeSection = () => {
           </div>
           <LandingsButton
               type = "secondary"
-              onClick={ onRedirectClick }
+              href='/contact'
               redirect
           >
               <span>Contact our team</span>

@@ -34,7 +34,7 @@ export const MobileFinanceBlogSection = () => {
                     </ul>
                     <LandingsButton
                         type = "outline-primary"
-                        onClick={ onRedirectClick }
+                        href='/news'
                         redirect
                         className='mt-6'
                     >

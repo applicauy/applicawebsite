@@ -27,7 +27,7 @@ export const MobileTechnologyLetsTalkSection = () => {
                     </p>
                 </div>
                 <LandingsButton
-                    onClick={ onRedirectClick }
+                    href='/contact'
                     type = "secondary"
                     redirect
                     className='mt-4'

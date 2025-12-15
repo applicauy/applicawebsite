@@ -2,7 +2,7 @@
 
 import '../../styles/news.scss';
 import Section from "@/components/section";
-import { InstantSearch, connectRefinementList, RefinementList, Hits, Index, Configure, SortBy, connectInfiniteHits } from "react-instantsearch-dom";
+import { InstantSearch, connectRefinementList, RefinementList, Hits, Index, Configure, SortBy, connectInfiniteHits, connectStateResults } from "react-instantsearch-dom";
 import { useEffect, useState } from "react";
 import Loading from "@/components/loading";
 import { searchClient } from "@/utils/config/algolia-config";
@@ -10,20 +10,22 @@ import SearchPosts from "./search-posts";
 import { Post } from "@/utils/models/Post";
 import NewsCard from "@/app/_components/news-card";
 import CategoriesList from "./categories-list";
-import { Cateogry } from "@/utils/models/Category";
+import { Category } from "@/utils/models/Category";
 
 import arrowDown from "@/assets/icons/arrow-down.webp";
 import H4 from "@/components/h4";
 import Image from "next/image";
 import ShowMoreButton from "./show-more-button";
 import { usePathname, useSearchParams } from "next/navigation";
+import { redirect } from 'next/navigation';
+import { NoResultsRedirect } from './no-results-redirect';
 
 export default function NewsFilter(
     {
         category
     } :
     {
-        category?: Cateogry | null
+        category?: Category | null
     }
 ) {
     const [loading, setLoading] = useState( false );
@@ -108,18 +110,22 @@ export default function NewsFilter(
                 searchClient={searchClient}
                 indexName="production_posts-from-strapi"
             >
+                <NoResultsRedirect category = { category } />
                 <Configure hitsPerPage={ isMobile ? currentPage * 4 : currentPage * 6 } page = { currentPage }/>
-                <div className="flex w-full">
+                {
+                    category &&                             
+                        <div className='flex w-full'>
+                            <h1 className={ `text-3xl text-secondary-text w-full flex justify-center mb-12 md:mb-20 items-stretch font-medium` } >
+                                {category.name}
+                            </h1>
+                        </div>
+                }
+                <div className="flex w-full">                    
                     <CategoriesList />
                     <div className="lg:w-4/5 w-full">   
-                        {category ? (
-                            <>
-                                <span className={ `text-3xl text-secondary-text w-full flex justify-center mb-12 md:mb-20 items-stretch font-medium` } >
-                                    {category.name}
-                                </span>
-                                <Configure filters={`tags.id:${category.objectID}`} />
-                            </>
-                        ) : (
+                        {category ? 
+                            <Configure filters={`tags.id:${category.objectID}`} />
+                         : (
                             <div className="search-panel w-full flex mb-12 md:mb-20 items-stretch">
                                 <SearchPosts />
                             </div>

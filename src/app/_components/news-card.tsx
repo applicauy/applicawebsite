@@ -39,8 +39,8 @@ const NewsCard = (
     const { onGoToPost } = useNavigationHandlers();    
 
     return (
-        <div className={`relative flex ${ ( fromLanding && width < 1025 && width > 767 ) && 'min-w-[400px]' } flex-col overflow-hidden card-border bg-clip-border hover:shadow-lg hover:cursor-pointer bg-secondary-bg group md:z-[1] z-[10] w-full`}
-            onClick={ () => onGoToPost( slug ) }>
+        <a className={`relative flex ${ ( fromLanding && width < 1025 && width > 767 ) && 'min-w-[400px]' } flex-col overflow-hidden card-border bg-clip-border hover:shadow-lg hover:cursor-pointer bg-secondary-bg group md:z-[1] z-[10] w-full`}
+            href={ `/news/${ slug }` }>
            <div className="relative h-[200px] lg:h-[250px] m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border transition-transform duration-300 ease-in-out transform group-hover:scale-110">
                 <Image 
                     src={ image.url }
@@ -96,7 +96,7 @@ const NewsCard = (
                </div>
                 
            </div>
-        </div>
+        </a>
     );
 }
 

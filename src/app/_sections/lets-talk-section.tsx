@@ -37,8 +37,8 @@ export default function LetsTalkSection() {
                         </H2>
                     </div>
             }
-            
-            <Button onClick={onLetsTalkClick}>Let&apos;s talk!</Button>
+
+            <Button onClick={onLetsTalkClick} href = '/contact'>Let&apos;s talk!</Button>
         </section>
     );
 }

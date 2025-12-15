@@ -87,6 +87,7 @@ export const EducationCaseStudySection = () => {
               <LandingsButton
                 type = "outline-secondary"
                 onClick = { download }
+                download
               >
                 <span className='text-xl lg:text-2xl xl:text-3xl'>Read more</span>
                 <ArrowDownTrayIcon className="w-7 xl:w-10 h-7 xl:h-10 text-white group-hover:text-landing-indigo transition-all duration-700" strokeWidth={1.5} />

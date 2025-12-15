@@ -8,7 +8,7 @@ export const CardIndustry = ({ icon, title, redirect, children } : PropsWithChil
     };
 
     return (
-      <div className={`
+      <a className={`
           h-full 
           shadow-[0_2px_8px_rgba(0,0,0,0.2)] 
           xl:shadow-[0_4px_16px_rgba(0,0,0,0.2)] 
@@ -25,7 +25,8 @@ export const CardIndustry = ({ icon, title, redirect, children } : PropsWithChil
           transition-all
           duration-300
       `}
-      onClick={onRedirect}>
+      href={redirect}
+      target='_blank'>
           <div className="flex items-center justify-center mdplus:flex-row flex-col mt-6 md:mt-0 h-full">
               <div className="min-w-28 lg:min-w-32 min-h-28 lg:min-h-32 size-28 lg:size-32 flex justify-center h-full">
                   <Image src={icon} alt="Image" loading="lazy" width={150} height={150} quality={80}/>
@@ -35,6 +36,6 @@ export const CardIndustry = ({ icon, title, redirect, children } : PropsWithChil
                   <span className = "text-xl lg:text-2xl leading-tight text-center mdplus:text-start h-full">{children}</span>
               </div>
           </div>
-      </div>
+      </a>
     )
 }

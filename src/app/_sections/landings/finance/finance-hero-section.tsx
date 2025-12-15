@@ -63,7 +63,7 @@ export const FinanceHeroSection = () => {
         <ZoomIn>
           <LandingsButton
             type = "primary"
-            onClick={ onRedirectClick }
+            href='/contact'
             redirect
             className='mt-14'>
             <b>Let&apos;s build</b> your next finance solution

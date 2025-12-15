@@ -36,7 +36,7 @@ export default function LandingSection() {
                         into global impact
                     </H2>
                     <div className="text-xl md:text-4xl mb-12 text-violet">Delivering cutting-edge solutions tailored to fuel your growth</div>
-                    <Button highlightedArrow onClick={onStartNowClick}>
+                    <Button highlightedArrow onClick={onStartNowClick} href = '/contact'>
                         Start now!
                     </Button>
                 </div>

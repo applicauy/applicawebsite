@@ -20,11 +20,32 @@ const getAllCategories = async() => {
     }));
 }
 
+const getCategoriesWithPosts = async () => {
+  const results = await indexTags.search('', {
+    attributesToRetrieve: ['url', 'objectID'],
+  });
+
+  const categories = results.hits;
+
+  const categoriesWithPosts = await Promise.all(
+    categories.map(async (cat: any) => {
+      const postsResult = await indexPosts.search('', {
+        filters: `tags.id:${cat.objectID}`,
+        hitsPerPage: 0, // IMPORTANTE: no traemos posts
+      });
+
+      return postsResult.nbHits > 0 ? cat : null;
+    })
+  );
+
+  return categoriesWithPosts.filter(Boolean);
+};
+
 export async function GET() {
   const baseUrl = 'https://applicacorp.com';
 
   const posts = await getAllPosts();
-  const categories = await getAllCategories();
+  const categories = await getCategoriesWithPosts();
 
   const staticUrls = [
     '/news',

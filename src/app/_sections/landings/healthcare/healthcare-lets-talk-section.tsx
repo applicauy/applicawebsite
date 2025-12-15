@@ -29,7 +29,7 @@ const HealthcareLetsTalkSection = () => {
 
                 <LandingsButton
                     type = "secondary"
-                    onClick={ onRedirectClick }
+                    href='/contact'
                     redirect
                 >
                     Talk to a specialist
