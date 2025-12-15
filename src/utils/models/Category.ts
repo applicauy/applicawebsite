@@ -1,4 +1,4 @@
-export interface Cateogry {
+export interface Category {
     objectID: string;
     name: string;
     url: string;

@@ -10,7 +10,7 @@ import SearchPosts from "./search-posts";
 import { Post } from "@/utils/models/Post";
 import NewsCard from "@/app/_components/news-card";
 import CategoriesList from "./categories-list";
-import { Cateogry } from "@/utils/models/Category";
+import { Category } from "@/utils/models/Category";
 
 import arrowDown from "@/assets/icons/arrow-down.webp";
 import H4 from "@/components/h4";
@@ -18,13 +18,14 @@ import Image from "next/image";
 import ShowMoreButton from "./show-more-button";
 import { usePathname, useSearchParams } from "next/navigation";
 import { redirect } from 'next/navigation';
+import { NoResultsRedirect } from './no-results-redirect';
 
 export default function NewsFilter(
     {
         category
     } :
     {
-        category?: Cateogry | null
+        category?: Category | null
     }
 ) {
     const [loading, setLoading] = useState( false );
@@ -100,24 +101,6 @@ export default function NewsFilter(
         </>
     );
 
-    const NoResultsRedirect = connectStateResults(
-      ({ searchResults, searching }: any) => {
-
-        useEffect(() => {
-          if (
-            category &&
-            !searching &&
-            searchResults &&
-            searchResults.nbHits === 0
-          ) {
-            redirect('/news');
-          }
-        }, [searchResults, searching, category]);
-
-        return null;
-      }
-    );
-
     const CustomInfiniteHits = connectInfiniteHits(InfiniteHits);
     return (
         loading ?
@@ -127,7 +110,7 @@ export default function NewsFilter(
                 searchClient={searchClient}
                 indexName="production_posts-from-strapi"
             >
-                <NoResultsRedirect />
+                <NoResultsRedirect category = { category } />
                 <Configure hitsPerPage={ isMobile ? currentPage * 4 : currentPage * 6 } page = { currentPage }/>
                 {
                     category &&                             
