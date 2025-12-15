@@ -1,6 +1,6 @@
 import { apexFont } from "@/assets/fonts";
 import { indexTags } from "@/utils/config/algolia-config";
-import { Cateogry } from "@/utils/models/Category";
+import { Category } from "@/utils/models/Category";
 import MobileDetect from "mobile-detect";
 import { Metadata } from "next";
 import { headers } from "next/headers";
@@ -13,7 +13,7 @@ interface Props {
 
 export async function generateMetadata( { params }: Props ): Promise<Metadata> {
     
-  const category: Cateogry | undefined = await findCategory( params.url );
+  const category: Category | undefined = await findCategory( params.url );
   return {
     title: `${ category?.meta_title } | Applica Corp.`,
     description: `${ category?.meta_description }`,
@@ -25,7 +25,7 @@ export async function generateMetadata( { params }: Props ): Promise<Metadata> {
 }
 
 const findCategory:any = async( url: string ) => {
-  const { hits } = await indexTags.search<Cateogry>( url,
+  const { hits } = await indexTags.search<Category>( url,
     {
       filters: `url:"${ url }"`
     }
@@ -35,7 +35,7 @@ const findCategory:any = async( url: string ) => {
 }
 
 const page = async ( { params } : Props ) => { 
-    const category: Cateogry | undefined = await findCategory( params.url );
+    const category: Category | undefined = await findCategory( params.url );
 
     const NewsFilter = dynamic(() => import('@/app/news/components/news-filter'), { ssr: false });
     const MobileLetsTalkSection = dynamic(() => import('@/(mobile)/_sections/mobile-lets-talk-section'), { ssr: false });

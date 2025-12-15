@@ -76,6 +76,7 @@ const MobileEducationCaseStudySection = () => {
                 <LandingsButton
                     type = "outline-secondary"
                     onClick={ donwload }
+                    download
                 >
                     <span>Read more</span>
                     <ArrowDownTrayIcon className="w-6 h-6 text-white group-hover:text-landing-indigo transition-all duration-700" strokeWidth={1.5} />

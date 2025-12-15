@@ -17,7 +17,7 @@ export default function LetsTalkSection() {
                 </span>
                 ?
             </H3>
-            <Button onClick={onLetsTalkClick}>Let&apos;s talk!</Button>
+            <Button onClick={onLetsTalkClick} href = '/contact'>Let&apos;s talk!</Button>
         </section>
     );
 }

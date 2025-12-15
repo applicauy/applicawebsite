@@ -56,7 +56,7 @@ export const MobileTechnologyHowWorkSection = () => {
         <div className="flex flex-row justify-center mt-8 mb-4">
           <LandingsButton
               type = "secondary"
-              onClick={ onRedirectClick }
+              href='/contact'
               redirect
           >
               <span>See how we work</span>

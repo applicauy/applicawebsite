@@ -26,7 +26,7 @@ export default function LandingSection() {
     };
 
     return (
-        <Section className="py-12 lg:py-24 z-[-1]">
+        <Section className="py-12 lg:py-24]">
             {/* Example of how to utilize motion's animation upon the user's first view (it 
                 only triggers when the user sees it for the first time). */}
             <div
@@ -47,7 +47,7 @@ export default function LandingSection() {
                     </H1>
                     
                     <div className="md:text-3xl lg:text-4xl mb-12 text-violet">Delivering cutting-edge solutions tailored to fuel your growth</div>
-                    <Button highlightedArrow onClick={onStartNowClick}>
+                    <Button highlightedArrow href = "/contact">
                         Start now!
                     </Button>
                 </div>

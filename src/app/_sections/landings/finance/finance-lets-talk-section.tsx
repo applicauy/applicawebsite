@@ -26,7 +26,7 @@ export const FinanceLetsTalkSection = () => {
               </div>
               <LandingsButton
                   type = "secondary"
-                  onClick={ onRedirectClick }
+                  href='/contact'
                   redirect
               >
                   Talk to our fintech experts

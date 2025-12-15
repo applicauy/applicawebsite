@@ -122,6 +122,7 @@ export const TechnologyCaseStudySection = () => {
               type = "outline-secondary"
               onClick = { download }
               className = {`${ width <= 1024 && 'mx-auto' }`}
+              download
             >
               <span className='text-xl lg:text-2xl xl:text-3xl'>Read more - download full case study</span>
               <ArrowDownTrayIcon className="w-7 xl:w-10 h-7 xl:h-10 text-white group-hover:text-landing-indigo transition-all duration-700" strokeWidth={1.5} />

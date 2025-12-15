@@ -75,7 +75,7 @@ const MobileTechnologyProductChallengeSection = () => {
           </div>
           <LandingsButton
               type = "secondary"
-              onClick={ onRedirectClick }
+              href='/contact'
               redirect
           >
               <span>Contact our team</span>

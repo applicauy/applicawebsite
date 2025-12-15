@@ -62,7 +62,7 @@ const PostSectionClient = (
                 )
               }
             </div>
-            <H1 className="font-medium text-highlight">
+            <H1 className="font-medium text-highlight z-[-1]">
               { post.title }
             </H1>
             <span className={`md:mt-10 mt-6 text-secondary-text ${isMobile ? 'text-lg' : 'text-xl'}`}>Published at { post.publishedDate }</span>
@@ -73,7 +73,13 @@ const PostSectionClient = (
                   <DecoratedImage image = { post.image } alt = { post.title  } fromPost = { true }/>
               }
             </div>
-            <Markdown className={`${ isMobile ? 'post-content-mobile' : 'post-content' } md:mt-20 mt-10`}>{ String( post.content ) }</Markdown>
+            <Markdown className={`${ isMobile ? 'post-content-mobile' : 'post-content' } md:mt-20 mt-10`}>
+              { String(post.content).replace(
+                  /^# (.*)$/gm,
+                  '## $1'
+                ) 
+              } 
+            </Markdown>
             {
               ( medias && medias.length > 0 ) &&
               <ImageCarousel images={ medias } />

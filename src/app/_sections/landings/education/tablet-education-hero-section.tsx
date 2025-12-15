@@ -36,7 +36,7 @@ export const TabletEducationHeroSection = () => {
             <LandingsButton
               className='mt-12'
               redirect
-              onClick={ onRedirectClick }
+              href='/contact'
               type = "primary"
             >
               <span>

@@ -92,7 +92,7 @@ export default function TalentOnDemand() {
                     </div>
 
                 </div>
-                <Button onClick={onStartNowClick}>Schedule a call</Button>
+                <Button onClick={onStartNowClick} href = '/contact'>Schedule a call</Button>
                 
             </div>
 
