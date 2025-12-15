@@ -17,9 +17,6 @@ type AlgoliaProps = {
 
 type Props = AlgoliaProps & OwnProps;
 
-/* ----------------------------------
-   1️⃣ Componente REAL (con hooks)
----------------------------------- */
 const NoResultsRedirectComponent = ({
   searchResults,
   searching,
@@ -41,9 +38,6 @@ const NoResultsRedirectComponent = ({
   return null;
 };
 
-/* ----------------------------------
-   2️⃣ Conexión con Algolia
----------------------------------- */
 export const NoResultsRedirect = connectStateResults<Props>(
     NoResultsRedirectComponent
   );
