@@ -65,7 +65,7 @@ export default function ExpertiseHubSection () {
                     className="flex flex-col gap-6 px-10 lg:px-36 pt-8 pb-1 lg:pt-16 lg:pb-9 mt-28 rounded-3xl mdplus:rounded-full text-center items-center fit-background"
                 >
                     <H3 className="text-md mb-8">
-                        With delivery centers based in the USA, Panama, Chile, Colombia, Argentina and Uruguay, 
+                        With delivery centers based in the USA, Panama, Chile, Colombia, Ecuador, Dominican Republic, Argentina and Uruguay,
                         we build long-term relationships based on collaboration, reliability and results.
                     </H3>
                 </div>

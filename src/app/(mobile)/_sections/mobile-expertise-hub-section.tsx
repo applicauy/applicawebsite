@@ -62,7 +62,7 @@ export default function MobileExpertiseHubSection() {
                     className={'flex flex-col gap-6 px-6 mt-10 md:mt-20 mb-6 mdplus:px-36 pt-8 mdplus:pt-16 pb-7 mdplus:pb-9 rounded-3xl md:rounded-full text-center items-center fit-background'}
                 >
                     <MobileH2>
-                        With delivery centers based in the USA, Panama, Chile, Colombia, Argentina and Uruguay, 
+                        With delivery centers based in the USA, Panama, Chile, Colombia, Ecuador, Dominican Republic, Argentina and Uruguay,
                         we build long-term relationships based on collaboration, reliability and results.
                     </MobileH2>
                 </div>
