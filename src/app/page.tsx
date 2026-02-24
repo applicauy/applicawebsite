@@ -4,15 +4,15 @@ import PageClientWrapper from "./page-client-wrapper";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Applica Corp | Tailored software development for your growth',
-  description: 'We are a software company focused on saving you time and delivering peace of mind. Build your dream team with top nearshore IT talent in only 72 hs.',
-  keywords: ['staff augmentation', 'software', 'company', 'team', 'talent'],
+  title: 'Applica Corp | Building technology that drives global impact',
+  description: 'Delivering cutting-edge software solutions designed to fuel growth, scale innovation, and turn bold ideas into global impact.',
+  keywords: ['software', 'company', 'team', 'talent'],
   alternates: {
     canonical: 'https://applicacorp.com/',
   },
   openGraph: {
-    title: 'Applica Corp | Tailored software development for your growth',
-    description: 'We deliver peace of mind and time savings through our expert nearshore IT teams. Get started in 72 hours.',
+    title: 'Applica Corp | Building technology that drives global impact',
+    description: 'We deliver high-performance software solutions that drive innovation, accelerate growth, and create global impact.',
     url: 'https://applicacorp.com/',
     siteName: 'Applica Corp',
     images: [
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Applica Corp | Tailored software development for your growth',
-    description: 'We deliver peace of mind and time savings through our expert nearshore IT teams. Get started in 72 hours.',
+    title: 'Applica Corp | Building technology that drives global impact',
+    description: 'We deliver high-performance software solutions that drive innovation, accelerate growth, and create global impact.',
     images: ['https://applicacorp.com/images/og_image.jpg'],
   }
 };

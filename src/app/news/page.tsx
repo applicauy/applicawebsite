@@ -8,7 +8,7 @@ import NewsHeader from "./components/news-header";
 
 export const metadata: Metadata = {
     title: 'News | Applica Corp.',
-    description: 'Stay updated with the latest news and insights from Applica Corp. Discover trends, success stories, and expert advice in IT staff augmentation.',
+    description: 'Stay updated with the latest news and insights from Applica Corp. Discover trends, success stories, and expert advice.',
     keywords: ['blog', 'news', 'posts', 'stories', 'tips', 'articles'],
     alternates: {
         canonical: `https://applicacorp.com/news`,
