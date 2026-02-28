@@ -22,27 +22,31 @@ export const LOCATIONS: {
 }[] = [
     {
         country: "USA",
-        location: "1900 N Bayshore Drive 1A/1B, Miami.",
+        location: "Austin, TX",
     },
     {
         country: "Uruguay",
-        location: "Bvar. España 2476, Montevideo.",
+        location: "Montevideo",
     },
     {
         country: "Argentina",
-        location: "San Lorenzo 1440 - Piso 5, Rosario.",
+        location: "Rosario",
     },
     {
-        country: "Panamá",
-        location: "Sortis Business Tower - 9C, Ciudad de Panamá.",
-    },
-    {
-        country: "Chile",
-        location: "Avenida Suecia 0142 - Of. 202, Santiago.",
+        country: "Panama",
+        location: "Panama City",
     },
     {
         country: "Colombia",
-        location: "Carrera 14 # 93-68, Bogotá.",
+        location: "Bogota",
+    },
+    {
+        country: "Ecuador",
+        location: "Quito",
+    },
+    {
+        country: "Dominican Republic",
+        location: "Santo Domingo",
     },
 ];
 
